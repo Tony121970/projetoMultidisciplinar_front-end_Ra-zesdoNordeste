@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clube Raízes</title>
+    <link rel="stylesheet" href="../css/alertas.css">
+    <link rel="stylesheet" href="../css/fidelidade.css" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DO SITE COM LOGO E LINKS DE NAVEGAÇÃO -->
+    <header>
+      <div class="logo">Raízes do Nordeste</div>
+
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="pagamento.html">Pagamento</a>
+        <a href="carrinho.html"> 🛒 <span id="contadorCarrinho">0</span> </a>
+      </nav>
+    </header>
+
+    <!-- SEÇÃO DE INTRODUÇÃO E TITULO DO PROGRAMA DE FIDELIDADE -->
+    <section class="titulo">
+      <h1>Clube Fiel</h1>
+      <p>
+        Receba cashback em <strong>Moedas Raízes</strong>
+        e utilize como desconto em suas próximas compras.
+      </p>
+    </section>
+
+    <!-- EXIBIÇÃO DO SALDO ACUMULADO ATUALIZADO VIA JAVASCRIPT -->
+    <section class="saldo">
+      <div class="card-saldo">
+        <h2>Saldo Disponível</h2>
+
+        <div class="valor">
+          R$
+          <span id="saldoMoedas">0,00</span>
+        </div>
+
+        <p>Disponível para desconto em seu próximo pedido.</p>
+      </div>
+    </section>
+
+    <!-- BLOCO EXPLICATIVO COM O PASSO A PASSO DO PROGRAMA -->
+    <section class="funciona">
+      <h2>Como funciona?</h2>
+
+      <div class="cards-info">
+        <!-- ICONES E INFORMAÇÕES SOBRE O FLUXO DE RECOMPENSAS -->
+        <div class="info">
+          <i class="fa-solid fa-basket-shopping"></i>
+
+          <h3>Faça sua compra</h3>
+
+          <p>Escolha seus pratos favoritos.</p>
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-money-bill-wave"></i>
+
+          <h3>Pagamento confirmed</h3>
+
+          <p>Após o pagamento você recebe cashback.</p>
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-coins"></i>
+
+          <h3>Ganhe 2%</h3>
+
+          <p>Receba 2% do valor pago em Moedas Raízes.</p>
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-tags"></i>
+
+          <h3>Use como desconto</h3>
+
+          <p>Utilize suas moedas in futuras compras.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREA PARA LISTAGEM DO EXTRATO DE ENTRADAS E SAIDAS DE SALDO -->
+    <section class="historico">
+      <h2>Últimas movimentações</h2>
+
+      <div id="listaMovimentos">
+        <p class="vazio">Ainda não existem movimentações.</p>
+      </div>
+    </section>
+
+    <!-- INFORMAÇÕES JURIDICAS E DE USO DOS CRÉDITOS -->
+    <section class="regras">
+      <h2>Regras do Programa</h2>
+
+      <ul>
+        <li>✔ Cashback de 2% sobre o valor efetivamente pago.</li>
+        <li>✔ O crédito ocorre somente após a confirmação do pagamento.</li>
+        <li>✔ As Moedas Raízes podem ser usadas como desconto.</li>
+        <li>✔ As moedas não podem ser convertidas em dinheiro.</li>
+        <li>✔ O desconto nunca poderá ultrapassar o valor da compra.</li>
+      </ul>
+    </section>
+
+    <!-- RODAPE PADRÃO COM MENSAGEM INSTITUCIONAL ACADEMICA -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA LOGICA DE ATUALIZAÇÃO DO CARRINHO E EXTRATO -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/fidelidade.js"></script>
+    <script src="../js/carrinho.js"></script>
+  </body>
+</html>

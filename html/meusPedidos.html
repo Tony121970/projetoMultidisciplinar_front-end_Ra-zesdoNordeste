@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meus Pedidos</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/meusPedidos.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DO SITE COM IDENTIFICAÇÃO DA ÁREA DO CLIENTE E BOTÕES DE DIRECIONAMENTO -->
+    <header>
+      <div class="titulo">
+        <h1>Meus Pedidos</h1>
+        <p>Área do Cliente</p>
+      </div>
+
+      <button onclick="window.history.back()">Voltar</button>
+    </header>
+
+    <!-- CONTAINER ONDE O JAVASCRIPT INSERE DINAMICAMENTE OS CARDS DOS PEDIDOS DO CLIENTE -->
+    <main id="listaMeusPedidos"></main>
+
+    <!-- INFORMAÇÃO EXIBIDA CASO O USUÁRIO NÃO TENHA NENHUM REGISTRO DE COMPRA DE FLAG OCULTA -->
+    <p id="semPedidos" style="display: none; text-align: center; margin: 30px">
+      Você ainda não possui pedidos.
+    </p>
+
+    <!-- MODAL DE AVALIAÇÃO -->
+    <div id="modalAvaliacao" class="modal">...</div>
+
+    <!-- RODAPÉ INTEGRADO COM OBSERVAÇÃO INSTITUCIONAL ACADÊMICA -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA LÓGICA E CONTROLES DAS ETAPAS DO PEDIDO E HISTÓRICO -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/pedidos.js"></script>
+    <script src="../js/meusPedidos.js"></script>
+    <script src="../js/historico.js"></script>
+  </body>
+</html>

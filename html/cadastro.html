@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Raízes do Nordeste</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/cadastro.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DO SITE COM LOGO E BOTAO DE SAIDA -->
+    <header class="header">
+      <div class="logo">Raízes do Nordeste</div>
+
+      <div class="botoes-header">
+        <a href="index.html" class="btn-header"> Sair </a>
+      </div>
+    </header>
+
+    <!-- BLOCO CENTRAL QUE COMPORTA O FORMULARIO DE CADASTRO -->
+    <div class="container">
+      <div class="form-box">
+        <h1>Cadastro de Cliente</h1>
+
+        <!-- FORMULARIO QUE CHAMA A FUNÇAO DE CADASTRO AO CLICAR EM ENVIAR -->
+        <form id="cadastroForm" onsubmit="cadastrar(event)">
+          <!-- INPUTS PARA ENTRADA DOS DADOS OBRIGATORIOS DO CLIENTE -->
+          <input type="text" id="nome" placeholder="Nome completo" required />
+
+          <input type="cep" id="cep" placeholder="CEP" required />
+
+          <input
+            type="text"
+            id="endereco"
+            placeholder="Endereço completo"
+            required
+          />
+
+          <input type="email" id="emailCad" placeholder="E-mail" required />
+
+          <input
+            type="tel"
+            id="telefone"
+            placeholder="Telefone (WhatsApp)"
+            required
+          />
+
+          <input type="password" id="senhaCad" placeholder="Senha" required />
+
+          <!-- ATUALIZADO: Caixa de seleção da LGPD com link para Política de Privacidade -->
+          <div
+            class="lgpd-container"
+            style="
+              margin: 15px 0;
+              text-align: left;
+              display: flex;
+              align-items: flex-start;
+              gap: 8px;
+            "
+          >
+            <input
+              type="checkbox"
+              id="termosLgpd"
+              required
+              style="margin-top: 4px; cursor: pointer"
+            />
+            <label
+              for="termosLgpd"
+              style="
+                font-size: 14px;
+                color: #333;
+                cursor: pointer;
+                line-height: 1.4;
+              "
+            >
+              Estou ciente e concordo com a
+              <a
+                href="politicadePrivacidade.pdf"
+                target="_blank"
+                style="
+                  color: #e67e22;
+                  font-weight: bold;
+                  text-decoration: underline;
+                "
+                >Política de Privacidade</a
+              >
+              da lanchonete Raízes do Nordeste e autorizo o uso dos meus dados
+              exclusivamente para a gestão de pedidos e o programa de
+              fidelidade.
+            </label>
+          </div>
+
+          <!-- BOTAO PARA ENVIAR OS DADOS PREENCHIDOS -->
+          <button type="submit">Cadastrar</button>
+
+          <!-- ESPAÇO PARA EXIBIR MENSAGEM DE ERRO OU SUCESSO -->
+          <p id="msg"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- RODAPE COM ALERTA ACADEMICO -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- LOGICA E COMPORTAMENTO DA PAGINA EM JAVASCRIPT -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/cadastro.js"></script>
+  </body>
+</html>

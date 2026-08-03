@@ -1,0 +1,314 @@
+/* CONFIGURAÇÃO GERAL DA PÁGINA */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e5c482;
+}
+
+/* CABEÇALHO FIXO WITH TÍTULO, BOTÕES E POSICIONAMENTO FIXO NA TELA */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #5f472c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  z-index: 999;
+}
+
+/* FORMATA O TÍTULO PRINCIPAL DO PAINEL */
+.titulo h1 {
+  margin: 0;
+}
+
+/* FORMATA O SUBTÍTULO DO PAINEL */
+.titulo h2 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* ORGANIZAÇÃO DOS BOTÕES DO CABEÇALHO */
+.btn-header {
+  display: flex;
+  margin-right: 90px;
+  gap: 15px;
+}
+
+/* ESTILIZA OS BOTÕES DE NAVEGAÇÃO E LOGOUT */
+.btn-header button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn-voltar{
+  background: green;
+  color: white;
+}
+
+/* ALTERA A COR DO BOTÃO AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background: white;
+  color: green;
+}
+
+.btn-sair{
+  background: red;
+  color: white;
+}
+
+.btn-sair:hover {
+  background: white;
+  color: red;
+}
+
+/* ESPAÇO SUPERIOR AMENTADO PARA EVITAR QUE O CONTEÚDO SUMA SOB O HEADER */
+main {
+  padding: 140px 30px 60px;
+  min-height: calc(70vh - 110px);
+}
+
+/* GRID DOS INDICADORES DE DESEMPENHO EM QUATRO COLUNAS */
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARACTERÍSTICAS COMUNS DE ESTILO PARA OS CARDS DO TOPO */
+.card-indicador {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 3px 8px #999;
+  border-left: 8px solid #8b0000;
+  transition: 0.3s;
+}
+
+/* EFEITO DE FLUTUAÇÃO E SOMBRA AO PASSAR O MOUSE NO CARD */
+.card-indicador:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px #777;
+}
+
+/* TITULO INTERNO DE CADA CARD INDICADOR */
+.card-indicador h3 {
+  margin-top: 0;
+  color: #8b0000;
+}
+
+/* ESTILO DOS NÚMEROS E MÊTRICAS PRINCIPAIS DO CARD */
+.card-indicador p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* CORES DAS BORDAS DOS INDICADORES SUPERIORES */
+.pedidos {
+  border-left-color: #007bff;
+}
+
+.faturamento {
+  border-left-color: #28a745;
+}
+
+.ticket {
+  border-left-color: #ff9800;
+}
+
+.cancelamentos {
+  border-left-color: #dc3545;
+}
+
+/* GRID DOS PAINÉIS INFORMATIVOS DO BLOCO INFERIOR */
+.informacoes {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARACTERÍSTICAS COMUNS DE ESTILO PARA OS PAINÉIS DE DETALHES */
+.painel-info {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px #999;
+  border-left: 8px solid #8b0000;
+  transition: 0.3s;
+}
+
+/* EFEITO DE FLUTUAÇÃO E SOMBRA AO PASSAR O MOUSE NO PAINEL */
+.painel-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px #777;
+}
+
+/* TITULO INTERNO DOS PAINÉIS INFORMATIVOS */
+.painel-info h2 {
+  color: #8b0000;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+/* ESTILO DO TEXTO INTERNO DOS PAINÉIS INFORMATIVOS */
+.painel-info p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* CORES DAS BORDAS DOS PAINÉIS INFERIORES */
+.produto {
+  border-left-color: #28a745;
+}
+
+.status {
+  border-left-color: #007bff;
+}
+
+.cliente {
+  border-left-color: #ff9800;
+}
+
+.ultimo {
+  border-left-color: #6f42c1;
+}
+
+/* FIXA A BARRA DE RODAPÉ MARROM NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CENTRALIZA E ORGANIZA OS TEXTOS DENTRO DO RODAPÉ */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 900px) {
+
+  /* ALTERA OS GRIDS PARA EXIBIÇÃO EM DUAS COLUNAS */
+  .indicadores,
+  .informacoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* REDUZ O PREENCHIMENTO LATERAL DO TOPO FIXO */
+  header {
+    padding: 10px 20px;
+  }
+
+  /* REAJUSTA O RECUO DOS BOTÕES DO TOPO */
+  .btn-header {
+    margin-right: 30px;
+  }
+}
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS EM FORMATO CELULAR */
+@media (max-width: 500px) {
+
+  /* REMOVE A ALTURA FIXA E EMPILHA O TOPO EM COLUNA VERTICAL */
+  header {
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  /* CENTRALIZA OS TEXTOS DOS TÍTULOS DO TOP */
+  .titulo {
+    text-align: center;
+  }
+
+  /* DIMINUI O TEXTO DO TÍTULO PRINCIPAL */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* DIMINUI O TEXTO DO SUBTÍTULO */
+  .titulo h2 {
+    font-size: 15px;
+  }
+
+  /* ZERA AS MARGENS DOS BOTÕES DO TOPO EMPILHADOS */
+  .btn-header {
+    margin-right: 0;
+  }
+
+  /* QUEBRA OS GRIDS PARA EXIBIÇÃO EM COLUNA ÚNICA VERTICAL */
+  .indicadores,
+  .informacoes {
+    grid-template-columns: 1fr;
+  }
+
+  /* COMPENSA O ESPAÇAMENTO DO CONTEÚDO COM O CRESCIMENTO DO CABEÇALHO */
+  main {
+    padding: 200px 15px 65px;
+  }
+
+  /* REDUZ A FONTE DAS METRICAS DOS CARDS SUPERIORES */
+  .card-indicador p {
+    font-size: 26px;
+  }
+
+  /* REDUZ A FONTE DOS TEXTOS DOS CARDS INFERIORES */
+  .painel-info p {
+    font-size: 20px;
+  }
+
+  /* REDUZ O PADDING INTERNO PARA EVITAR APERTO VISUAL */
+  .card-indicador {
+    padding: 20px 15px;
+  }
+
+  .painel-info {
+    padding: 15px;
+  }
+}
+
+/* AJUSTE ESPECÍFICO PARA DISPOSITIVOS COM TELAS MUITO PEQUENAS */
+@media (max-width: 400px) {
+
+  /* REORGANIZA E EMPILHA OS BOTÕES EM UMA COLUNA ÚNICA VERTICAL */
+  .btn-header {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* ESTICA OS BOTÕES DO TOPO PARA OCUPAR TODA A LARGURA DA TELA */
+  .btn-header button {
+    width: 100%;
+  }
+
+  /* COMPENSA O ESPAÇAMENTO DO CONTEÚDO COM O CRESCIMENTO VERTICAL DO HEADER */
+  main {
+    padding: 240px 15px 65px;
+  }
+}

@@ -1,0 +1,576 @@
+/* REMOVE OS ESPAÇAMENTOS PADRÃO DOS ELEMENTOS, DEFINE O MODELO DE CÁLCULO DE TAMANHO DOS ELEMENTOS E PADRONIZA A FAMÍLIA DE FONTES UTILIZADA EM TODA A PÁGINA. */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* DEFINE O FUNDO DA PÁGINA, GARANTE ALTURA MÍNIMA DE TODA A TELA E ORGANIZA O CONTEÚDO EM ESTRUTURA VERTICAL UTILIZANDO FLEXBOX. */
+body {
+  background: #e5c482; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CRIA O TOPO FIXO DA PÁGINA, MANTENDO TÍTULO E BOTÕES SEMPRE VISÍVEIS DURANTE A NAVEGAÇÃO. */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background: #5f472c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  z-index: 999;
+}
+
+/* DEFINE O TAMANHO DO TEXTO PRINCIPAL EXIBIDO NO CABEÇALHO. */
+.titulo h1 {
+  font-size: 28px;
+}
+
+/* SUBTÍTULO DO CABEÇALHO: CONTROLA O ESPAÇAMENTO, TAMANHO E TRANSPARÊNCIA DO TEXTO COMPLEMENTAR. */
+.titulo p {
+  margin-top: 5px;
+  font-size: 16px;
+  opacity: .9;
+}
+
+/* ORGANIZA OS BOTÕES DO CABEÇALHO EM LINHA, CONTROLANDO ESPAÇAMENTO E QUEBRA DE LINHA QUANDO NECESSÁRIO. */
+.acoes {
+  display: flex;
+  justify-self: end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* DEFINE A APARÊNCIA PADRÃO DOS BOTÕES DO CABEÇALHO, INCLUINDO TAMANHO, CORES E EFEITO DE TRANSIÇÃO. */
+.acoes button {
+  padding:8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #f4c542;
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* MOVE LEVEMENTE O BOTÃO PARA CIMA QUANDO O USUÁRIO PASSA O MOUSE SOBRE ELE, CRIANDO SENSAÇÃO DE INTERAÇÃO. */
+.acoes button:hover {
+  background: #ffd95e;
+  transform: translateY(-2px);
+}
+
+/* DEFINE UMA COR DIFERENCIADA PARA DESTACAR A PRINCIPAL AÇÃO DO PAINEL. */
+.novoPedido {
+  background: #ff9800;
+  color: white;
+}
+
+/* ESCURECE A COR DO BOTÃO PARA INDICAR INTERAÇÃO DO USUÁRIO. */
+.novoPedido:hover {
+  background: #f57c00;
+}
+
+button[onclick="window.history.back()"] {
+  background: green;
+  color: white;
+}
+
+button[onclick="window.history.back()"]:hover{
+  background: white;
+  color: green;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO QUE UTILIZA O COMANDO DE RETORNO DO NAVEGADOR. */
+button[onclick="logoutColaborador()"] {
+  background-color: red;
+  color: white;
+}
+
+/* BOTÃO VOLTAR E SAIR AO PASSAR O MOUSE, INVERTE AS CORES PARA DESTACAR A INTERAÇÃO. */
+button[onclick="logoutColaborador()"]:hover {
+  background-color: white;
+  color: red;
+}
+
+/* DEFINE A ÁREA CENTRAL DA PÁGINA, CONTROLANDO A LARGURA MÁXIMA, ESPAÇAMENTO INTERNO E ORGANIZAÇÃO DOS ELEMENTOS PRINCIPAIS DO PAINEL. */
+main {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 110px 20px 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ORGANIZA OS INDICADORES DO PAINEL EM UM GRID COM CINCO COLUNAS, MANTENDO ESSA ÁREA FIXA DURANTE A ROLAGEM DA PÁGINA. */
+.painel-resumo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 15px;
+  padding: 15px 0;
+  background: #f7f3be;
+  position: sticky;
+  top: 90px; 
+  z-index: 998; 
+  width: 100%;
+}
+
+/* CRIA OS CARDS INDIVIDUAIS QUE MOSTRAM OS DADOS RESUMIDOS DOS PEDIDOS, COMO QUANTIDADE E STATUS. */
+.painel-resumo .info {
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  border: 1px solid #e0dcd3;
+}
+
+/* DESTACA OS NÚMEROS PRINCIPAIS DOS INDICADORES COM TAMANHO MAIOR E COR DE DESTAQUE. */
+.painel-resumo span {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #2E7D32;
+  line-height: 1.2;
+}
+
+/* DEFINE A APARÊNCIA DOS TEXTOS AUXILIARES DOS INDICADORES. */
+.painel-resumo small {
+  color: #666;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ORGANIZA OS PEDIDOS EM CARDS LADO A LADO UTILIZANDO GRID RESPONSIVO. */
+#listaPedidos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 90px;
+  width: 100%;
+}
+
+/* CRIA A ESTRUTURA VISUAL INDIVIDUAL DE CADA PEDIDO, COM FUNDO, SOMBRA, BORDA E ORGANIZAÇÃO INTERNA. */
+.card-pedido {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  border-left: 6px solid #5f472c;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* CRIA UMA ANIMAÇÃO DE ELEVAÇÃO QUANDO O USUÁRIO PASSA O MOUSE SOBRE O PEDIDO. */
+.card-pedido:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+/* DEFINE A COR E O ESPAÇAMENTO DO IDENTIFICADOR DO PEDIDO EXIBIDO NO CARD. */
+.card-pedido h3 {
+  color: #5f472c;
+  margin-bottom: 10px;
+}
+
+/* CONTROLA O ESPAÇAMENTO, COR, TAMANHO E ALTURA DAS INFORMAÇÕES EXIBIDAS NO CARD. */
+.card-pedido p {
+  margin: 4px 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.2; 
+}
+
+/* APLICA A COR PADRÃO DO SISTEMA AOS TEXTOS IMPORTANTES DOS PEDIDOS. */
+.card-pedido p strong {
+  color: #5f472c;
+}
+
+/* REMOVE MARCADORES PADRÃO E ORGANIZA OS ITENS QUE COMPÕEM CADA PEDIDO. */
+.card-pedido ul {
+  margin: 8px 0;
+  padding-left: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+/* DEFINE O ESPAÇAMENTO E TAMANHO DOS NOMES DOS PRODUTOS DENTRO DO PEDIDO. */
+.card-pedido li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  list-style: none;
+  list-style-type: none;
+}
+
+/* ALTERA A COR DO TOTAL EXIBIDO NO CARD PARA FACILITAR A IDENTIFICAÇÃO DO VALOR FINAL. */
+.card-pedido h2 {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* ORGANIZA AS AÇÕES DISPONÍVEIS DENTRO DE CADA CARD DE PEDIDO EM COLUNA. */
+.botoes-acao-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* PADRONIZA TAMANHO, ESPAÇAMENTO, BORDA E INTERAÇÃO DOS BOTÕES DE AÇÃO DOS PEDIDOS. */
+.card-pedido button {
+  width: 100%;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0; 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* CRIA UMA JANELA SOBREPOSTA À PÁGINA PARA CADASTRO DE PEDIDOS PRESENCIAIS. */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* DEFINE O TAMANHO, FUNDO, ARREDONDAMENTO E ROLAGEM INTERNA DA JANELA DE PEDIDO. */
+.modal-conteudo {
+  width: 95%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+/* ORGANIZA O TÍTULO E O BOTÃO DE FECHAMENTO NAS EXTREMIDADES DA ÁREA SUPERIOR. */
+.modal-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* APLICA A COR PADRÃO DA IDENTIDADE VISUAL AO TÍTULO DA JANELA. */
+.modal-topo h2 {
+  color: #5f472c;
+}
+
+/* DEFINE O TAMANHO E A COR DO ÍCONE RESPONSÁVEL POR FECHAR O MODAL. */
+#fecharModal {
+  font-size: 40px;
+  cursor: pointer;
+  color: red;
+}
+
+/* ORGANIZA OS CAMPOS DO FORMULÁRIO EM COLUNA COM ESPAÇAMENTO AUTOMÁTICO. */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* PADRONIZA INPUTS E SELECTS UTILIZADOS NO CADASTRO DE PEDIDOS. */
+.modal-body input,
+.modal-body select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* ORGANIZA OS BOTÕES DE AÇÃO DO FORMULÁRIO LADO A LADO. */
+.botoesModal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* DEFINE O PADRÃO VISUAL DOS BOTÕES CANCELAR E CONTINUAR. */
+#cancelarPedido,
+#continuarPedido {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 48%;
+}
+
+/* CRIA MOVIMENTO DE ELEVAÇÃO AO PASSAR O MOUSE SOBRE OS BOTÕES. */
+#cancelarPedido:hover,
+#continuarPedido:hover {
+  transform: translateY(-2px);
+}
+
+/* DEFINE A IDENTIDADE VISUAL DO BOTÃO RESPONSÁVEL PELO CANCELAMENTO DA AÇÃO. */
+#cancelarPedido {
+  background: #ee6472;
+  color: white;
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+}
+
+/* ALTERA A COR E INTENSIFICA A SOMBRA PARA INDICAR INTERAÇÃO. */
+#cancelarPedido:hover {
+  background: #c82333;
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.35);
+}
+
+/* DEFINE A IDENTIDADE VISUAL DO BOTÃO RESPONSÁVEL POR AVANÇAR O CADASTRO DO PEDIDO. */
+#continuarPedido {
+  background: #62c767;
+  color: white;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+}
+
+/* ALTERA A COR E A SOMBRA DO BOTÃO DE CONFIRMAÇÃO. */
+#continuarPedido:hover {
+  background: #215c24;
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.35);
+}
+
+/* ORGANIZA CADA PRODUTO DISPONÍVEL NO PEDIDO PRESENCIAL, SEPARANDO NOME, VALOR E BOTÃO DE ADIÇÃO. */
+.produto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f5efe7;
+  border-radius: 10px;
+}
+
+/* ALTERA A COR DO SÍMBOLO DE MOEDA E DO PREÇO PARA FACILITAR A VISUALIZAÇÃO DO VALOR. */
+.produto-item div {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* GARANTE QUE O TEXTO DO NOME DO ITEM PERMANEÇA NA COR ESCURA PADRÃO PARA CONTRASTE COM O VALOR. */
+.produto-item div strong {
+  color: #000000;
+}
+
+/* DESTACA O VALOR FINAL DO PEDIDO WITH TAMANHO MAIOR E COR DE DESTAQUE. */
+#totalPresencial {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 22px; 
+}
+
+/* CRIA UM BOTÃO CIRCULAR PARA INSERIR PRODUTOS NO PEDIDO PRESENCIAL. */
+.btnAdicionar {
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  background: #62c767;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO E ADICIONA SOMBRA PARA INDICAR INTERAÇÃO. */
+.btnAdicionar:hover{
+  background: #215c24;
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.35);
+}
+
+/* MANTÉM A INFORMAÇÃO INSTITUCIONAL FIXADA NA PARTE INFERIOR DA TELA DURANTE A UTILIZAÇÃO DO SISTEMA. */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* ORGANIZA O TEXTO E O ÍCONE DO AVISO CENTRALIZANDO OS ELEMENTOS COM FLEXBOX. */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* CRIA UMA MENSAGEM TEMPORÁRIA INFORMANDO AO USUÁRIO QUE UMA AÇÃO FOI REALIZADA. */
+.alerta-adicionado {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2e7d32; 
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 99999; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.3s ease, fadeOut 0.3s ease 1.7s forwards;
+}
+
+
+/* REDUZ A QUANTIDADE DE COLUNAS DOS CARDS QUANDO A TELA FICA MENOR FACILITANDO A VISUALIZAÇÃO DOS PEDIDOS */
+@media (max-width: 1300px) {
+  
+  /* LISTA DE PEDIDOS RESPONSIVA CONFIGURA A EXIBIÇÃO PARA EXIBIR TRÊS COLUNAS EM NOTEBOOKS */
+  #listaPedidos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ÁREA DOS CONTADORES RESPONSIVA REORGANIZA OS CINCO CONTADORES EM APENAS TRÊS COLUNAS EVITANDO ESMAGAMENTO */
+  .painel-resumo {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 950px) {
+  
+  /* HEADER MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA QUANDO A TELA DIMINUI */
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  /* BOTÕES DO HEADER MOBILE CENTRALIZA OS BOTÕES DE AÇÃO DO CABEÇALHO NO TABLET */
+  .acoes {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ÁREA DOS CONTADORES RESPONSIVA REAJUSTA O POSICIONAMENTO FIXO PARA ENCAIXAR ABAIXO DO CABEÇALHO EXPANDIDO */
+  .painel-resumo {
+    top: auto;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+  }
+
+  /* LISTA DE PEDIDOS RESPONSIVA REORGANIZA OS CARDS DE PEDIDO EM DUAS COLUNAS */
+  #listaPedidos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ÁREA PRINCIPAL MOBILE COMPENSA A ALTURA DINÂMICA DO TOPO EM TELAS INTERMEDIÁRIAS */
+  main {
+    padding: 20px 15px 90px;
+  }
+}
+
+/* ORGANIZA OS ELEMENTOS EM UMA ÚNICA COLUNA PARA MELHORAR A LEITURA EM TELAS PEQUENAS */
+@media (max-width: 600px) {
+  
+  /* BOTÕES PRINCIPAIS RESPONSIVOS EXPANDE OS BOTÕES DO TOPO PARA ASSUMIREM LARGURA TOTAL */
+  .acoes button {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* ÁREA DOS CONTADORES RESPONSIVA EMPILHA TODOS OS INDICADORES DE PEDIDOS EM UMA ÚNICA COLUNA */
+  .painel-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  /* LISTA DE PEDIDOS RESPONSIVA FORÇA OS CARDS DE PEDIDOS A COMPOR UMA COLUNA VERTICAL */
+  #listaPedidos {
+    grid-template-columns: 1fr;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE REDUZ AS MARGENS LATERAIS EM DISPOSITIVOS MÓVEIS */
+  main {
+    padding: 15px 10px 90px;
+  }
+
+  /* CAIXA INTERNA DO MODAL ADAPTADA COMPACTA O PREENCHIMENTO INTERNO DO FORMULÁRIO NO CELULAR */
+  .modal-conteudo {
+    padding: 20px 15px;
+  }
+
+  /* BOTÕES DO MODAL RESPONSIVOS ALTERA A EXIBIÇÃO PARA COLUNA EMPILHANDO OS COMANDOS VERTICALMENTE */
+  .botoesModal {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* BOTÕES DE CONFIRMAÇÃO RESPONSIVOS ADAPTA OS BOTÕES DE CANCELAR E CONFIRMAR PARA OCUPAREM LARGURA INTEGRAL */
+  #cancelarPedido,
+  #continuarPedido {
+    width: 100%;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO EM CELULARES MINI */
+  .titulo h1 {
+    font-size: 24px;
+  }
+
+  /* ORGANIZA CADA PRODUTO RESPONSIVO ALTERA OS ITENS DO PEDIDO PRESENCIAL PARA COLUNA IMPEDINDO TEXTOS SOBREPOSTOS */
+  .produto-item {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* COMPACTA O TAMANHO DO BOTÃO CIRCULAR DE ADIÇÃO EM TELAS MINI */
+  .btnAdicionar {
+    width: 100%;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+/* FAZ A MENSAGEM SURGIR DESLIZANDO DA LATERAL DIREITA DA TELA */
+@keyframes slideIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* REDUZ GRADUALMENTE A OPACIDADE ATÉ REMOVER VISUALMENTE A MENSAGEM */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

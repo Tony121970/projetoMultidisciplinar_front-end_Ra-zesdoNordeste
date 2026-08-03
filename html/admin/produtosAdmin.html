@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>Controle de Produtos</title>
+
+    <!-- IMPORTA O CSS RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA O CSS ESPECÍFICO DO CONTROLE DE PRODUTOS -->
+    <link rel="stylesheet" href="../../css/produtos.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO PRINCIPAL DA PÁGINA DE CONTROLE DE PRODUTOS -->
+    <header>
+      <!-- ÁREA RESPONSÁVEL PELA IDENTIFICAÇÃO DO MÓDULO -->
+      <div class="titulo">
+        <!-- TÍTULO PRINCIPAL DA PÁGINA -->
+        <h1>Estoque de Produtos</h1>
+
+        <!-- IDENTIFICAÇÃO DO SETOR RESPONSÁVEL PELO CONTROLE -->
+        <h2>Setor Administrtivo</h2>
+      </div>
+
+      <!-- ÁREA DOS BOTÕES DE NAVEGAÇÃO DO CABEÇALHO -->
+      <div class="btn-header">
+
+        <button class="btn-voltar"  onclick="window.history.back()">Voltar</button>
+
+
+        <button class="btn-sair" onclick="window.location.href='../index.html'" id="inicio">
+          Sair
+        </button>
+      </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL DE GERENCIAMENTO DOS PRODUTOS -->
+    <main>
+      <!-- SEÇÃO SUPERIOR COM PESQUISA E CADASTRO DE NOVOS PRODUTOS -->
+      <section class="topo">
+        <!-- CAMPO DE PESQUISA DOS PRODUTOS CADASTRADOS -->
+        <input
+          type="text"
+          id="pesquisa"
+          placeholder="🔎 Pesquisar produto..."
+        />
+
+        <!-- BOTÃO QUE ABRE O CADASTRO DE UM NOVO PRODUTO -->
+        <button id="btnNovo">Novo Produto</button>
+      </section>
+
+      <!-- SEÇÃO DE RESUMO COM INDICADORES DO ESTOQUE -->
+      <section class="resumo">
+        <!-- CARD QUE MOSTRA A QUANTIDADE TOTAL DE PRODUTOS -->
+        <div class="box">
+          <h3>Total Produtos</h3>
+
+          <!-- VALOR PREENCHIDO DINAMICAMENTE PELO JAVASCRIPT -->
+          <span id="totalProdutos"> 0 </span>
+        </div>
+
+        <!-- CARD QUE MOSTRA A QUANTIDADE DE PRODUTOS ATIVOS -->
+        <div class="box">
+          <h3>Ativos</h3>
+
+          <!-- VALOR ATUALIZADO PELO SISTEMA -->
+          <span id="produtosAtivos"> 0 </span>
+        </div>
+
+        <!-- CARD QUE MOSTRA A QUANTIDADE DE PRODUTOS INATIVOS -->
+        <div class="box">
+          <h3>Inativos</h3>
+
+          <!-- VALOR ATUALIZADO PELO SISTEMA -->
+          <span id="produtosInativos"> 0 </span>
+        </div>
+      </section>
+
+      <!-- ÁREA ONDE OS CARDS DOS PRODUTOS SERÃO INSERIDOS PELO JAVASCRIPT -->
+      <section id="listaProdutos" class="lista">
+        <!-- CARDS CRIADOS DINAMICAMENTE PELO JAVASCRIPT -->
+      </section>
+    </main>
+
+    <!-- JANELA MODAL UTILIZADA PARA CADASTRO E EDIÇÃO DE PRODUTOS -->
+    <div id="modal" class="modal">
+      <!-- CONTEÚDO INTERNO DA JANELA MODAL -->
+      <div class="modal-conteudo">
+        <!-- TÍTULO DO FORMULÁRIO DO MODAL -->
+        <h2 id="tituloModal">Novo Produto</h2>
+
+        <!-- CAMPO PARA INFORMAR O NOME DO PRODUTO -->
+        <input type="text" id="nome" placeholder="Nome do produto" />
+
+        <!-- CAMPO PARA INFORMAR A CATEGORIA DO PRODUTO -->
+        <input type="text" id="categoria" placeholder="Categoria" />
+
+        <!-- CAMPO DE TEXTO PARA DESCRIÇÃO DETALHADA DO PRODUTO -->
+        <textarea id="descricao" placeholder="Descrição do produto"> </textarea>
+
+        <!-- CAMPO PARA INFORMAR O PREÇO DO PRODUTO -->
+        <!-- O STEP PERMITE VALORES COM CASAS DECIMAIS -->
+        <input type="number" id="preco" step="0.01" placeholder="Preço" />
+
+        <!-- GRUPO DE CAMPO RESPONSÁVEL PELO CONTROLE DE QUANTIDADE EM ESTOQUE -->
+        <div class="campo">
+          <!-- IDENTIFICA O CAMPO DE QUANTIDADE -->
+          <label for="quantidade">Quantidade em Estoque</label>
+
+          <!-- CAMPO NUMÉRICO DA QUANTIDADE DISPONÍVEL -->
+          <input type="number" id="quantidade" min="0" value="0" />
+        </div>
+
+        <!-- GRUPO DE CAMPO RESPONSÁVEL PELO ESTOQUE MÍNIMO -->
+        <div class="campo">
+          <!-- IDENTIFICA O CAMPO DE ESTOQUE MÍNIMO -->
+          <label for="estoqueMinimo">Estoque Mínimo</label>
+
+          <!-- DEFINE O LIMITE MÍNIMO DE ESTOQUE DO PRODUTO -->
+          <input type="number" id="estoqueMinimo" min="0" value="5" />
+        </div>
+
+        <!-- SELEÇÃO DO STATUS ATUAL DO PRODUTO -->
+        <select id="status">
+          <!-- OPÇÃO PARA PRODUTO DISPONÍVEL -->
+          <option value="ativo">Ativo</option>
+
+          <!-- OPÇÃO PARA PRODUTO DESATIVADO -->
+          <option value="inativo">Inativo</option>
+        </select>
+
+        <!-- ÁREA DOS BOTÕES DE AÇÃO DO MODAL -->
+        <div class="acoes-modal">
+          <!-- BOTÃO RESPONSÁVEL POR SALVAR O PRODUTO -->
+          <button id="salvar">Salvar</button>
+
+          <!-- BOTÃO RESPONSÁVEL POR CANCELAR A OPERAÇÃO -->
+          <button id="cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ COM INFORMAÇÃO INSTITUCIONAL DA PÁGINA -->
+    <footer>
+
+      <p>
+
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- SCRIPT RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <script src="../js/alertas.js"></script>
+
+    <!-- SCRIPT RESPONSÁVEL PELO BANCO DE DADOS DOS PRODUTOS -->
+    <script src="../../js/produtosDB.js"></script>
+
+    <!-- SCRIPT RESPONSÁVEL PELAS FUNÇÕES DA PÁGINA DE PRODUTOS -->
+    <script src="../../js/produtos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliações dos Clientes</title>
+
+    <!-- IMPORTA A FOLHA DE ESTILOS DOS ALERTAS PERSONALIZADOS DO SISTEMA. -->
+    <link rel="stylesheet" href="../../css/alertas.css" />
+
+    <!-- IMPORTA A FOLHA DE ESTILOS ESPECÍFICA DA PÁGINA DE AVALIAÇÕES. -->
+    <link rel="stylesheet" href="../../css/admin/avaliacoes.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO: EXIBE O TÍTULO DA PÁGINA E O BOTÃO PARA RETORNAR À TELA ANTERIOR. -->
+    <header>
+      <h1>⭐ Feedback do Cliente</h1>
+
+      <button onclick="window.history.back()">Voltar</button>
+    </header>
+
+    <section class="resumo">
+      <div class="cardResumo">
+        <h3>⭐ Média</h3>
+        <span id="mediaAvaliacoes">0,0</span>
+      </div>
+
+      <div class="cardResumo">
+        <h3>Avaliações</h3>
+        <span id="totalAvaliacoes">0</span>
+      </div>
+
+      <div class="cardResumo">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <span id="nota5">0</span>
+      </div>
+
+      <div class="cardResumo">
+        <h3>⭐⭐⭐⭐</h3>
+        <span id="nota4">0</span>
+      </div>
+
+      <div class="cardResumo">
+        <h3>⭐⭐⭐</h3>
+        <span id="nota3">0</span>
+      </div>
+
+      <div class="cardResumo">
+        <h3>⭐⭐</h3>
+        <span id="nota2">0</span>
+      </div>
+
+      <div class="cardResumo">
+        <h3>⭐</h3>
+        <span id="nota1">0</span>
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL: ÁREA RESPONSÁVEL POR EXIBIR TODOS OS CARDS DAS AVALIAÇÕES DOS CLIENTES. -->
+    <main class="container">
+      <div id="listaAvaliacoes"></div>
+    </main>
+
+    <!-- RODAPÉ: EXIBE O AVISO INFORMANDO QUE O SISTEMA FOI DESENVOLVIDO APENAS PARA FINS ACADÊMICOS. -->
+    <footer>
+      <p>
+        <!-- ÍCONE ILUSTRATIVO DO AVISO. -->
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO PWA: SCRIPT DE REGISTRO DO SERVICE WORKER (APONTA PARA A RAIZ DO HTML). -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("../service-worker.js")
+            .then((registro) =>
+              console.log("PWA Raízes ativada na página Admin!", registro)
+            )
+            .catch((erro) => console.error("Erro PWA Admin:", erro));
+        });
+      }
+    </script>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELOS ALERTAS PERSONALIZADOS. -->
+    <script src="../../js/alertas.js"></script>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL POR CARREGAR, EXIBIR E GERENCIAR AS AVALIAÇÕES DOS CLIENTES. -->
+    <script src="../../js/admin/avaliacoes.js"></script>
+  </body>
+</html>

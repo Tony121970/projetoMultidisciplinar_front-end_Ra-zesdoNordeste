@@ -1,0 +1,273 @@
+/* ZERA O ESPAÇAMENTO PADRÃO E TRAVA O TAMANHO DAS CAIXAS DO SISTEMA */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO CLARA PARA A PÁGINA */
+body{
+  background:#e5c482;
+  min-height:100vh;
+}
+
+/* ESTILIZA E CENTRALIZA A BARRA DE TOPO MARROM */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 6%;
+  background:#5f472c;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:999;
+  height:60px;
+}
+
+/* POSICIONA E ESTILIZA O BOTÃO VERMELHO NO CANTO DO CABEÇALHO */
+header button{
+  position:absolute;
+  right:40px;
+  top:50%;
+  transform: translateY(-50%);
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  background:red;
+  color:white;
+  transition:.2s;
+}
+
+/* ALTERA A COR DO BOTÃO DO CABEÇALHO AO PASSAR O MOUSE */
+header button:hover{
+  background:white;
+  color: red;
+}
+
+/* AJUSTA O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO */
+.titulo h1{
+  font-size:34px;
+  color: white;
+  margin-top: 4px;
+}
+
+/* ESTILIZA O SUBTÍTULO AMARELO DO CABEÇALHO */
+.titulo h2{
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size:16px;
+  color:#f7d08a;
+  font-weight:bold;
+}
+
+/* CRIA A MALHA DE CARTÕES DO PAINEL UTILIZANDO GRID RESPONSIVO */
+main{
+  width:90%;
+  max-width:900px;
+  margin:30px auto 80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+
+/* ESTILIZA O CARD COLORIDO DO PAINEL */
+.card {
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,.15);
+  transition: 0.4s;
+  border-left: 8px solid #c43509;
+  position: relative;
+}
+
+/* ADICIONA UMA BORDA LATERAL NO MÓDULO DE PEDIDOS */
+.card:nth-child(1) {
+  border-left-color: #3498db;
+}
+
+.card:nth-child(2) {
+  border-left-color: #e67e22;
+}
+
+.card:nth-child(3) {
+  border-left-color: #27ae60;
+}
+
+.card:nth-child(4) {
+  border-left-color: #8e44ad;
+}
+
+.card:nth-child(5) {
+  border-left-color: #c0392b;
+}
+
+.card:nth-child(6) {
+  border-left-color: #16a085;
+}
+
+.card:nth-child(7) {
+  border-left-color: #f39c12;
+}
+
+.card:nth-child(8) {
+  border-left-color: #2980b9;
+}
+
+.card:nth-child(9) {
+  border-left-color: #8e44ad;
+}
+
+.card:nth-child(10) {
+  border-left-color: #2c3e50;
+}
+
+.card:nth-child(11) {
+  border-left-color: #d35400;
+}
+
+.card:nth-child(12) {
+  border-left-color: #27ae60;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* TÍTULO DOS CARDS */
+.card h2 {
+  margin-top: 10px;
+  color: #5f472c;
+}
+
+/* TEXTO DOS CARDS */
+.card p {
+  margin-top: 8px;
+}
+
+/* FIXA A BARRA DE RODAPÉ BEGE NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CENTRALIZA E ORGANIZA OS TEXTOS DENTRO DO RODAPÉ */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* BARRA DE TOPO ADAPTADA NOTEBOOK REDUZ O ESPAÇAMENTO LATERAL INTERNO DO MENU SUPERIOR */
+  header {
+    padding: 0 4%;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO NOTEBOOK REAJUSTA O POSICIONAMENTO PARA EVITAR CONFLITOS COM O TEXTO */
+  header button {
+    right: 20px;
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 900px) {
+
+  /* BARRA DE TOPO ADAPTADA TABLET REMOVE O POSICIONAMENTO FIXO ABSOLUTO DO BOTÃO PARA PREVENIR SOBREPOSIÇÕES FEIAS */
+  header button {
+    position: static;
+    transform: none;
+    margin-right: 0;
+  }
+
+  /* BARRA DE TOPO ADAPTADA TABLET MODIFICA O ALINHAMENTO DO CABEÇALHO PARA ACOMODAR O BOTÃO LADO A LADO SEM COLISÃO */
+  header {
+    padding: 10px 4%;
+  }
+
+  /* CRIA A MALHA DE CARTÕES ADAPTADA TABLET REAJUSTA A DISTRIBUIÇÃO DO GRID PARA EXIBIR DUAS COLUNAS NAS TELAS INTERMEDIÁRIAS */
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* REGRAS DE ADAPTAÇÃO PARA TELAS DE DISPOSITIVOS MÓVEIS */
+@media (max-width: 600px) {
+  
+  /* REDUZ O ESPAÇAMENTO INTERNO DO CABEÇALHO E EMPILHA OS ELEMENTOS */
+  header {
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    height: auto;
+  }
+
+  /* CENTRALIZA VISUALMENTE OS TEXTOS DO TITULO NO MOBILE */
+  .titulo {
+    text-align: center;
+  }
+
+  /* REMOVE O POSICIONAMENTO ABSOLUTO DO BOTÃO PARA ELE NÃO CORTAR O TEXTO */
+  header button {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  /* MUDA A GRADE DOS CARTÕES PARA OCUPAR APENAS UMA COLUNA POR LINHA */
+  main {
+    grid-template-columns: 1fr;
+    margin: 20px auto 100px;
+    gap: 15px;
+  }
+
+  /* REDUZ LEVEMENTE O PREENCHIMENTO INTERNO DO CARTÃO */
+  .card {
+    padding: 15px;
+  }
+
+  /* ENCOLHE A FONTE DA BARRA DE RODAPÉ */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO EM TELAS MINI */
+  .titulo h1 {
+    font-size: 26px;
+  }
+
+  /* REDUZ O TAMANHO DOS ENUNCIADOS INTERNOS DOS CARTÕES NA EXIBIÇÃO MAIS ESTREITA */
+  .card h2 {
+    font-size: 20px;
+  }
+}

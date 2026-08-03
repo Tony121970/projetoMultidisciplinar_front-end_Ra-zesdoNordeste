@@ -1,0 +1,343 @@
+/* ZERA OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR E DEFINE O MODELO DE CAIXAS DO SISTEMA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE O FUNDO PRINCIPAL DA PÁGINA E CONFIGURA A REFRESH VERTICAL DO FLEXBOX */
+body {
+  background: #e5c482;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CRIA O CABEÇALHO SUPERIOR E MANTÉM A NAVEGAÇÃO FIXA DURANTE A ROLAGEM */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  background: #5f472c;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 60px;
+}
+
+/* EQUIVALÊNCIA: AJUSTADO SELETOR PARA MANDAR O ESTILO DIRETO NO H1 DE CLASSE TITULO */
+h1.titulo {
+  font-size: 28px;
+  color: white;
+}
+
+/* ORGANIZA OS ELEMENTOS E LINKS DE ATALHO DO CABEÇALHO LADO A LADO */
+.acesso {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* PADRONIZA O FORMATO VISUAL E ANIMAÇÃO DOS LINKS DO CABEÇALHO */
+.acesso a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+/* COR DE FUNDO ESPECÍFICA PARA O LINK VOLTAR (VERDE) */
+.btn-voltar {
+  background: green;
+  color: white;
+}
+
+.btn-voltar:hover {
+  background-color: white;
+  color: green;
+}
+
+/* COR DE FUNDO ESPECÍFICA PARA O LINK SAIR (VERMELHO) */
+.btn-sair {
+  background: red;
+  color: white;
+}
+
+.btn-sair:hover {
+  background-color: white;
+  color: red;
+}
+
+/* CONTAINER CENTRAL QUE EVENTUALMENTE AGRUPA OS CARDS DA SEÇÃO */
+.container {
+  width: 95%;
+  max-width: 650px;
+  margin: 30px auto 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ESTILIZA OS BLOCOS BRANCOS INTERNOS DE OPÇÕES E RESUMOS */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+/* FORMATA OS TÍTULOS INTERNOS DE CADA CARD */
+.card h2 {
+  color: #8b4513;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* FORMATA OS BLOCOS DE ESCOLHA (RADIO BUTTONS) DO FORMULÁRIO */
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fffdf8;
+  border: 1px solid #e5d6c3;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* AJUSTA O ESPAÇAMENTO DO INPUT INTERNO DE SELEÇÃO */
+.opcao input[type="radio"] {
+  cursor: pointer;
+}
+
+/* BLOCO SECUNDÁRIO DO FORMULÁRIO DE ENDEREÇOS (INICIA OCULTO OU EXIBIDO VIA SCRIPT) */
+.dados {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* PADRONIZA AS CAIXAS DE DIGITAÇÃO DE TEXTO DO ENDEREÇO */
+.dados input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fdfdfd;
+  margin-bottom: 15px;
+}
+
+/* TRAVA DE SEGURANÇA PARA CAMPOS EM MODO SOMENTE LEITURA */
+.dados input[readonly] {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* DESTACA A LINHA DO CÁLCULO DE DISTÂNCIA */
+.dados p {
+  font-size: 15px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* BOTÃO DE CALCULAR TAXAS INTERNO DO FORMULÁRIO */
+#btnCalcular {
+  display: block;
+  padding: 12px;
+  background: #5f472c;
+  color: white;
+  border: none;
+  margin: 15px auto 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .3s;
+}
+
+#btnCalcular:hover {
+  background: #8f6b42;
+}
+
+/* ORGANIZA AS LINHAS DE MÉTRICAS E VALORES DO RESUMO */
+.linha {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* CRIA UMA DIVISÃO VISUAL INTERNA */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+/* DESTACA A LINHA DO MONTANTE TOTAL DO PEDIDO */
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+
+/* BOTÃO DE AVANÇO COMPORTAMENTAL PARA REDIRECIONAR AO PAGAMENTO */
+#btnContinuar {
+  width: 46%;
+  padding: 16px;
+  background: #1b5e20;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto 0;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+#btnContinuar:hover {
+  background: #39993f;
+}
+
+/* FIXA O RODAPÉ NA BASE DA TELA COM NOTA DE USO RESTRITO */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CENTRALIZA OS COMPONENTES INTERNOS DO RODAPÉ */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR EM TELAS INTERMEDIÁRIAS */
+  header {
+    padding: 0 4%;
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 768px) {
+
+  /* EMPILHA OS ELEMENTOS DO TOPO SE VISUALIZADO EM DISPOSITIVOS MENORES */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* TRANSFORMA OS LINKS DO MENU EM COLUNA EXPANDIDA */
+  .acesso {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS TABLET EXPANDE OS ATALHOS PARA LARGURA TOTAL PREVENINDO APERTOS */
+  .acesso a {
+    width: 100%;
+    text-align: center;
+    max-width: 250px;
+  }
+
+  /* REAJUSTA O ESPAÇAMENTO DO CONTAINER COMPENSANDO A ALTURA MAIOR DO NOVO CABEÇALHO EM COLUNA */
+  .container {
+    width: 92%;
+    margin: 180px auto 90px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA SMARTPHONES E CELULARES PEQUENOS */
+@media (max-width: 480px) {
+
+  /* REDUZ O TAMANHO DO TÍTULO NO MOBILE */
+  h1.titulo {
+    font-size: 22px;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE REAJUSTA A MARGEM SUPERIOR JÁ QUE OS LINKS SUPERIORES SE EMPIILHARAM COESAMENTE */
+  .container {
+    margin-top: 200px;
+    margin-bottom: 80px;
+  }
+
+  /* DIMINUI OS ESPAÇAMENTOS INTERNOS DOS CARDS COMPENSANDO A TELA */
+  .card {
+    padding: 18px;
+  }
+
+  /* COMPACTA O TAMANHO DOS ENUNCIADOS INTERNOS DAS CAIXAS NO SMARTPHONE */
+  .card h2 {
+    font-size: 18px;
+  }
+
+  /* REDUZ O TAMANHO DA FONTE DO RODAPÉ */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* CONTAINER PRINCIPAL ADAPTADO MINI AUMENTA A MARGEM DO TOPO PARA EVITAR SOBREPOSIÇÃO NO CELULAR SMALL */
+  .container {
+    margin-top: 220px;
+    padding: 0 10px;
+    width: 95%;
+  }
+
+  /* DIMINUI O TAMANHO DA TIPOGRAFIA DA LOGOMARCA EM LARGURAS EXTREMAS */
+  h1.titulo {
+    font-size: 18px;
+  }
+
+  /* ORGANIZA LINHAS DE VALORES ADAPTADAS CONVERTE AS METRICAS LADO A LADO EM COLUNA VERTICAL ÚNICA EVITANDO TEXTOS PREMIDOS */
+  .linha {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  /* BLOCOS DE ESCOLHA ADAPTADOS MINI COMPACTA O RECUO INTERNO DOS BOTÕES DE SELEÇÃO */
+  .opcao {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

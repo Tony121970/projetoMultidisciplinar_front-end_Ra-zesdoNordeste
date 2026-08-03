@@ -1,0 +1,392 @@
+/* ZERA OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR E DEFINE O MODELO DE CAIXAS DO SISTEMA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE O FUNDO PRINCIPAL DA PÁGINA AND ORGANIZA A ESTRUTURA VERTICAL VIA FLEXBOX */
+body {
+  background: #e5c482;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CRIA O CABEÇALHO SUPERIOR E MANTÉM A NAVEGAÇÃO SEMPRE VISÍVEL NO TOPO (STICKY) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  background: #5f472c;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 60px;
+}
+
+/* AJUSTA O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO */
+.titulo h1 {
+  font-size: 34px;
+  color: white;
+  margin-top: 4px;
+}
+
+/* ESTILIZA O SUBTÍTULO AMARELO DO CABEÇALHO */
+.titulo h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #f7d08a;
+  font-weight: bold;
+}
+
+/* DEFINE AS PROPRIEDADES COMUNS DE FORMATO E ANIMAÇÃO DOS BOTÕES DO TOPO */
+.btn-voltar {
+  background: green;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+  cursor: pointer;
+}
+
+/* INVERTE AS CORES DO BOTÃO DE SAIR AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background-color: white;
+  color: green;
+}
+
+/* CENTRALIZA E LIMITA A LARGURA GERAL DA TELA */
+main {
+  width: 95%;
+  max-width: 1400px;
+  margin: 30px auto;
+  flex: 1;
+}
+
+/* FLEXBOX PARA ORGANIZAR CAMPO DE BUSCA E BOTÃO NOVO */
+.topo {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* FORMATA A BARRA DE PESQUISA DE ITENS */
+#pesquisa {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* ALTERA O COMPORTAMENTO E DESIGN DO BOTÃO DE NOVO ITEM */
+#btnNovo {
+  background: #5f472c;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* EFEITO VISUAL DO BOTÃO INSERIR AO PASSAR O MOUSE */
+#btnNovo:hover {
+  background: #7a5d39;
+}
+
+/* CENTRALIZA AS CAIXAS E PERMITE QUE ELAS SE REORGANIZEM COESAMENTE */
+.resumo {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center; /* ALINHAMENTO: Garante centralização visual após encolher as caixas */
+}
+
+/* CONTROLA O DESIGN E A NOVA PROPORÇÃO MENOS ESTICADA DO CONTADOR */
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  width: 100%;            
+  max-width: 280px;        
+  min-width: 220px;        
+}
+
+/* ADICIONA FORMATAÇÃO AO TEXTO EXPLICATIVO DO RESUMO */
+.box h3 {
+  color: #777;
+  font-size: 16px;
+}
+
+/*EXIBE A QUANTIDADE ATUAL EM TAMANHO GRANDE NO CARD */
+.box span {
+  display: block;
+  margin-top: 10px;
+  color: #5f472c;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* ORGANIZA OS CARDS DE ITENS EM UM SINO RESPONSIVO AUTOMÁTICO */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ADICIONA DESIGN DE CONTEINER DO ITEM EM ESTOQUE */
+.card-estoque {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.12);
+  transition: .3s;
+}
+
+/* LEVANTA O CONTAINER QUANDO O MOUSE PASSA POR CIMA */
+.card-estoque:hover {
+  transform: translateY(-5px);
+}
+
+/* FORMATA O NOME DO ITEM EXIBIDO NO CARD */
+.card-estoque h2 {
+  color: #5f472c;
+  margin-bottom: 15px;
+}
+
+/* ORGANIZA AS INFORMAÇÕES SECUNDÁRIAS DO PRODUTO */
+.info {
+  margin: 8px 0;
+  color: #555;
+}
+
+/* DESTACA SE O ITEM ESTÁ DISPONÍVEL OU ACABANDO */
+.status {
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* COR VERDE PARA PRODUTOS EM QUANTIDADE ADEQUADA */
+.normal {
+  color: #218739;
+}
+
+/* COR AMARELA PARA PRODUTOS ACABANDO */
+.baixo {
+  color: #d18b00;
+}
+
+/* COR VERMELHA PARA PRODUTOS SEM QUANTIDADE EM ESTOQUE */
+.esgotado {
+  color: #c62828;
+}
+
+/* DETERMINA O ESPAÇAMENTO DOS COMANDOS DO CARD */
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* PADRONIZA AS CONFIGURAÇÕES DE INTERAÇÃO NO CARD */
+.botoes button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ESTILO DO BOTÃO DE EDIÇÃO */
+.editar {
+  background: #153f69;
+  color: white;
+}
+
+/* ESTILO DO BOTÃO DE EXCLUSÃO */
+.excluir {
+  background: #c62828;
+  color: white;
+}
+
+/* CRIA UMA CAMADA ESCURA DE MEIO-FUNDO PARA OCUPAR A TELA INTEGRAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORMATA O FORMULÁRIO CENTRAL FLUTUANTE DO MODAL */
+.modal-conteudo {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* FORMATA A IDENTIFICAÇÃO DO FORMULÁRIO FLUTUANTE */
+.modal-conteudo h2 {
+  text-align: center;
+  color: #5f472c;
+  margin-bottom: 20px;
+}
+
+/* PADRONIZA OS CAMPOS DO FORMULÁRIO */
+.modal-conteudo input,
+.modal-conteudo select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* DISPÕE OS BOTÕES DE FECHAR E ENVIAR FORMULÁRIO LADO A LADO */
+.acoes-modal {
+  display: flex;
+  gap: 10px;
+}
+
+/* PADRONIZA O SISTEMA DE INTERAÇÃO DOS COMANDOS DO MODAL */
+.acoes-modal button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* DESIGN DO BOTÃO SALVAR DO FORMULÁRIO DO MODAL */
+#salvar {
+  background: #2e7d32;
+  color: white;
+}
+
+/* DESIGN DO BOTÃO CANCELAR DO FORMULÁRIO DO MODAL */
+#cancelar {
+  background: #c62828;
+  color: white;
+}
+
+/* COMPUTA A ESTILIZAÇÃO DO TEXTO ACADÊMICO FIXADO NA BASE */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* CONTROLA O ESPAÇAMENTO INTERNO DAS DIRETRIZES TEXTUAIS */
+footer p {
+  margin: 0;
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media(max-width: 1024px) {
+
+  /* CABEÇALHO ADAPTADO TABLET REDUZ O ESPAÇAMENTO INTERNO PARA ACOMODAR OS TEXTOS EM TELAS MÉDIAS */
+  header {
+    padding: 0 4%;
+  }
+
+  /* GRADE DE PRODUTOS ADAPTADA TABLET AJUSTA A EXIBIÇÃO PARA EXIBIR DUAS COLUNAS EM TELAS INTERMEDIÁRIAS */
+  .lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* DISPOSITIVOS MOBILE INTERMEDIÁRIOS OU SMARTPHONES */
+@media(max-width: 700px) {
+
+  /* CABEÇALHO ADAPTADO REORGANIZA OS TEXTOS EM COLUNA EVITANDO QUEBRAS */
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    height: auto;          
+    padding: 15px 6%;
+  }
+
+  /* BOTÃO DO TOPO ADAPTADO ADEQUA O BOTÃO DE VOLTAR PARA LARGURA COMPATÍVEL NO MOBILE */
+  .btn-voltar {
+    position: static;     
+    transform: none;      
+    width: 100%;          
+    max-width: 200px;
+    margin: 5px auto 0;
+    text-align: center;
+  }
+
+  /* CONTADORES ADAPTADOS FAZ OS CARDS DO RESUMO EMPILHAREM EM COLUNA ÚNICA */
+  .resumo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* CARDS DO RESUMO NO MOBILE PERMITE EXPANDIR INTEGRALMENTE EM TELAS DE CELULAR */
+  .box {
+    max-width: 100%;       
+  }
+
+  /* BARRA DE AÇÕES ADAPTADA EMPILHA A PESQUISA E O BOTÃO NOVO EM TELAS PEQUENAS */
+  .topo {
+    flex-direction: column;
+  }
+    
+  /* BOTÃO INSERIR NO MOBILE EXPANDE PARA DAR MELHOR ÁREA DE TOQUE */
+  #btnNovo {
+    width: 100%;
+  }
+  
+  /* GRADE DE PRODUTOS ADAPTADA FORÇA TODOS OS CARDS A PERMANECEREM EM UMA ÚNICA COLUNA */
+  .lista {
+    grid-template-columns: 1fr;
+  }
+
+  /* BOTÕES DO CARD ADAPTADOS EMPILHA OS COMANDOS DE EDIÇÃO E EXCLUSÃO EM TELAS PEQUENAS */
+  .botoes {
+    flex-direction: column;
+  }
+
+  /* ELEMENTO DE CONTEÚDO PRINCIPAL ADAPTADO ADICIONA ESPAÇAMENTO EXTRA NA BASE PARA NÃO COBRIR O ESTOQUE COM O RODAPÉ FIXO */
+  main {
+    margin-bottom: 80px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media(max-width: 400px) {
+
+  /* CAIXA INTERNA DO MODAL ADAPTADA REDUZ O RESPIRO INTERNO PARA MELHORAR O ESPAÇO DOS CAMPOS EM DISPOSITIVOS MINI */
+  .modal-conteudo {
+    padding: 20px 15px;
+  }
+
+  /* BOTÕES DE ENVIO DO MODAL ADAPTADOS EMPILHA OS COMANDOS DE SALVAR E CANCELAR VERTICALMENTE */
+  .acoes-modal {
+    flex-direction: column;
+  }
+}

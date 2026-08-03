@@ -1,0 +1,410 @@
+/* ZERA OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR E DEFINE O MODELO DE CAIXAS DO SISTEMA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO PRINCIPAL DA ÁREA DO CLIENTE */
+body {
+  background: #e5c482;
+}
+
+/* CRIA O CABEÇALHO FIXO NO TOPO DA PÁGINA MANTENDO AS INFORMAÇÕES SEMPRE VISÍVEIS */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  background: #5f472c;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 60px;
+}
+
+/* DEFINE O TAMANHO DO TÍTULO PRINCIPAL DO CABEÇALHO */
+.titulo h1 {
+  font-size: 28px;
+}
+
+/* CONFIGURA O TEXTO COMPLEMENTAR ABAIXO DO TÍTULO */
+.titulo p {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* CONFIGURAÇÃO DO BOTÃO VOLTAR*/
+header button {
+  align-items: center;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+header button:hover {
+  background: white;
+  color: green;
+}
+
+/* DEFINE O ESPAÇAMENTO PRINCIPAL DO CONTEÚDO PARA NÃO FICAR ATRÁS DO HEADER E FOOTER */
+main {
+  width: 100%;
+  padding: 40px 20px 90px;
+}
+
+/* CRIA A GRADE RESPONSIVA DOS PEDIDOS DO CLIENTE */
+#listaMeusPedidos {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-items: start;
+}
+
+/* DEFINE O VISUAL DOS CARDS INDIVIDUAIS DOS PEDIDOS */
+.card-pedido {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 5px 12px rgba(0,0,0,.15);
+  border-left: 6px solid #8b4513;
+  transition: .25s;
+}
+
+/* CRIA O EFEITO DE MOVIMENTO DO CARD AO PASSAR O MOUSE */
+.card-pedido:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.20);
+}
+
+/* FORMATA O TÍTULO DO PEDIDO DENTRO DO CARD */
+.card-pedido h3 {
+  color: #8b4513;
+  margin-bottom: 10px;
+}
+
+/* DESTACA INFORMAÇÕES IMPORTANTES COMO STATUS OU ALERTAS */
+h4 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: red;
+}
+
+/* ORGANIZA OS TEXTOS INTERNOS DO CARD */
+.card-pedido p {
+  margin: 6px 0;
+  line-height: 1.2;
+}
+
+/* ORGANIZA OS STATUS DO PEDIDO EM DUAS COLUNAS PARA FACILITAR A VISUALIZAÇÃO DO CLIENTE */
+.progresso {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* CRIA O FORMATO DE CÁPSULA PARA CADA ETAPA DO STATUS DO PEDIDO */
+.etapa {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* DEFINE A COR DA ETAPA JÁ FINALIZADA */
+.etapa.ok {
+  background: #4caf50;
+  color: white;
+  border: none;
+}
+
+/* DEFINE A COR DA ETAPA QUE ESTÁ EM ANDAMENTO */
+.etapa.atual {
+  background: #2196f3;
+  color: white;
+  border: none;
+}
+
+/* DEFINE A APARÊNCIA DAS ETAPAS QUE AINDA NÃO FORAM INICIADAS */
+.etapa.pendente {
+  background: #ececec;
+  color: #777;
+}
+
+/* CRIA A ÁREA DA LINHA DE ACOMPANHAMENTO DO PEDIDO */
+.barra-progresso {
+  margin-top: 20px;
+}
+
+/* ORGANIZA OS PONTOS DO PROGRESSO EM UMA LINHA HORIZONTAL */
+.pontos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* DEFINE O ESPAÇO INDIVIDUAL DE CADA ETAPA DO PROGRESSO */
+.ponto {
+  flex: 1;
+  text-align: center;
+}
+
+/* CRIA O CÍRCULO DE CADA ETAPA DO PEDIDO */
+.ponto span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 6px;
+  background: #ccc;
+  transition: .3s;
+}
+
+/* AJUSTA O TAMANHO DO TEXTO DAS ETAPAS */
+.ponto small {
+  font-size: 11px;
+}
+
+/* INDICA VISUALMENTE AS ETAPAS JÁ CONCLUÍDAS */
+.ponto.ok span {
+  background: #4caf50;
+}
+
+/* DESTACA A ETAPA ATUAL COM ANIMAÇÃO */
+.ponto.atual span {
+  background: #2196f3;
+  transform: scale(1.25);
+  animation: pulse 1s infinite;
+}
+
+/* DEFINE A APARÊNCIA DAS ETAPAS FUTURAS */
+.ponto.pendente span {
+  background: #ddd;
+}
+
+/* CRIA UM AVISO TEMPORÁRIO FIXADO NO CANTO DA TELA */
+.alerta {
+  position: fixed;
+  top: 105px;
+  right: 20px;
+  background: #333;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  z-index: 99999;
+  animation: fadein .3s;
+}
+
+/* DESTACA PEDIDOS CANCELADOS WITH UMA CAIXA DE ALERTA */
+.cancelado {
+  margin-top: 18px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  background: #dc3545;
+  color: white;
+  font-weight: bold;
+}
+
+/* CRIA O BOTÃO PARA O CLIENTE AVALIAR O PEDIDO FINALIZADO */
+.btn-avaliar {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#ff9800,#f57c00);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all .25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,.20);
+}
+
+/* CRIA EFEITO DE ELEVAÇÃO NO BOTÃO DE AVALIAÇÃO */
+.btn-avaliar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,.25);
+  background: linear-gradient(135deg,#f57c00,#ef6c00);
+}
+
+/* DIMINUI O BOTÃO QUANDO ELE É PRESSIONADO */
+.btn-avaliar:active {
+  transform: scale(.98);
+}
+
+/* FIXA O RODAPÉ NA PARTE INFERIOR DA PÁGINA */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 9999;
+}
+
+/* CENTRALIZA OS ELEMENTOS INTERNOS DO RODAPÉ */
+footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* AJUSTA A QUANTIDADE DE CARDS QUANDO A TELA DIMINUI PARA NOTEBOOKS OU TABLETS DEITADOS */
+@media (max-width: 1200px) {
+  
+  /* LISTA DE PEDIDOS RESPONSIVA REORGANIZA A GRADE DE ACOMPANHAMENTO PARA TRÊS COLUNAS EM NOTEBOOKS */
+  #listaMeusPedidos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* AJUSTA O GRID PARA DUAS COLUNAS EM TABLETS E REORGANIZA O MENU */
+@media (max-width: 900px) {
+  
+  /* HEADER MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA QUANDO A TELA DIMINUI */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* BOTÕES DO HEADER MOBILE CENTRALIZA OS BOTÕES DE AÇÃO DO CABEÇALHO NO TABLET */
+  .acoes {
+    margin-right: 0;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* LISTA DE PEDIDOS RESPONSIVA REORGANIZA OS CARDS DE PEDIDO EM DUAS COLUNAS NAS RESOLUÇÕES MEDIANAS */
+  #listaMeusPedidos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ÁREA PRINCIPAL MOBILE AJUSTA O RECUO SUPERIOR COMPENSANDO A ALTURA MAIOR DO HEADER EM COLUNA */
+  main {
+    padding-top: 170px;
+    padding-bottom: 80px;
+  }
+}
+
+/* TRANSFORMA A LISTA EM UMA COLUNA ÚNICA E ESTICA OS BOTÕES PARA CELULARES */
+@media (max-width: 600px) {
+  
+  /* BOTÕES DO HEADER MOBILE CONVERTE OS COMANDOS DE AÇÃO DO TOPO PARA O FORMATO VERTICAL */
+  .acoes {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* BOTÕES PRINCIPAIS RESPONSIVOS FORÇA TODOS OS BOTÕES DO MENU SUPERIOR MOBILE A FILTRAREM COM LARGURA TOTAL */
+  .acoes button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO MOBILE ASSEGURA QUE O BOTÃO VOLTAR TAMBÉM ASSUMA LARGURA TOTAL NO MOBILE */
+  header button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  /* LISTA DE PEDIDOS RESPONSIVA FORÇA OS CARDS DE PEDIDOS A COMPOR UMA COLUNA VERTICAL ÚNICA */
+  #listaMeusPedidos {
+    grid-template-columns: 1fr;
+  }
+
+  /* ORGANIZA OS STATUS DO PEDIDO ADAPTADO REDUZ CIRURGICAMENTE O PROGRESSO PARA NÃO APERTAR O TEXTO DAS ETAPAS */
+  .progresso {
+    grid-template-columns: 1fr;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE COMPENSA OS ESPAÇAMENTOS DO CONTEÚDO NO SMARTPHONE */
+  main {
+    padding-top: 140px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO EM CELULARES MINI */
+  .titulo h1 {
+    font-size: 24px;
+  }
+
+  /* BARRA DE PROGRESSO ADAPTADA MINI MODIFICA A EXIBIÇÃO DA BARRA DE PONTOS PARA VERTICAL EVITANDO ESMAGAMENTOS DE TEXTO */
+  .pontos {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* DEFINE O ESPAÇO INDIVIDUAL ADAPTADO MINI CENTRALIZA OS COMPARTIMENTOS DE CADA PONTO EM EXIBIÇÃO ESTREITA */
+  .ponto {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* BARRA DE RODAPÉ ADAPTADA MOBILE REDUZ A TIPOGRAFIA DA MENSAGEM ACADÊMICA INSTITUCIONAL */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* CRIA A ANIMAÇÃO DE ENTRADA SUAVE DOS ALERTAS NA TELA */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CRIA A ANIMAÇÃO DE PULSAÇÃO DO STATUS ATUAL DO PEDIDO */
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

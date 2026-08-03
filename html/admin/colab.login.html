@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área do Colaborador</title>
+    <!-- IMPORTA O ARQUIVO RESPONSÁVEL PELOS ALERTAS PERSONALIZADOS DO SISTEMA. -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA A FOLHA DE ESTILOS ESPECÍFICA DA TELA DE LOGIN DOS COLABORADORES. -->
+    <link rel="stylesheet" href="../../css/admin/colab.login.css" />
+
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DA PÁGINA: EXIBE O TÍTULO DA ÁREA RESTRITA E O BOTÃO PARA SAIR DO SISTEMA. -->
+    <header>
+      <!-- ÁREA RESPONSÁVEL POR EXIBIR O TÍTULO PRINCIPAL DA PÁGINA. -->
+      <div class="titulo">
+        <h1>Área do Colaborador</h1>
+      </div>
+
+      <!-- ÁREA DOS BOTÕES DO CABEÇALHO, CONTENDO O BOTÃO PARA RETORNAR À PÁGINA INICIAL. -->
+
+      <div class="botoes-header">
+        <a href="../index.html" class="btn-header"> Sair </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- CAIXA CENTRAL DE LOGIN: AGRUPA TODOS OS CAMPOS NECESSÁRIOS PARA A AUTENTICAÇÃO DO COLABORADOR. -->
+      <div class="login-box">
+        <!-- TÍTULO DO FORMULÁRIO DE LOGIN. -->
+        <h2>Fazer Login</h2>
+
+        <!-- FORMULÁRIO RESPONSÁVEL PELO ENVIO DAS CREDENCIAIS DE ACESSO DO COLABORADOR. -->
+
+        <form id="formLogin">
+
+          <label>Usuário</label>
+
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Digite seu usuário"
+            required
+          />
+
+
+          <label>Senha</label>
+
+          <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            required
+          />
+
+
+          <button type="submit">Entrar</button>
+ 
+    <!-- ÁREA DESTINADA À EXIBIÇÃO DE MENSAGENS DE ERRO DURANTE A AUTENTICAÇÃO. -->
+    <p id="erro"></p>
+
+    <!-- MENSAGEM INFORMATIVA PARA COLABORADORES QUE ESQUECERAM A SENHA. -->
+    <p>Esqueceu a senha? Contate o RH</p>
+  </form>
+</div>
+</main>
+    <!-- RODAPÉ DA PÁGINA: EXIBE O AVISO INFORMANDO QUE O SISTEMA FOI DESENVOLVIDO APENAS PARA FINS ACADÊMICOS. -->
+    <footer>
+      <p>
+        <!-- ÍCONE ILUSTRATIVO DO AVISO. -->
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELOS ALERTAS PERSONALIZADOS DO SISTEMA. -->
+    <script src="../js/alertas.js"></script>
+    
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELA AUTENTICAÇÃO DO COLABORADOR. -->
+    <script src="../../js/admin/auth.js"></script>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELA VALIDAÇÃO E PROCESSAMENTO DO LOGIN DOS COLABORADORES. -->
+    <script src="../../js/admin/colab.login.js"></script>
+  </body>
+</html>

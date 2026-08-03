@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardapio</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/cardapio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DO SITE COM MENU DE NAVEGAÇÃO E DROPDOWN DO CARDAPIO -->
+    <header>
+      <div class="logo">Raízes do Nordeste</div>
+      <nav>
+        <div class="dropdown">
+          <button class="dropbtn">Cardápio</button>
+
+          <!-- CONTEUDO DO DROPDOWN DIVIDIDO EM SUBMENUS POR CATEGORIA -->
+          <div class="dropdown-content">
+            <div class="submenu">
+              <a href="#cafeDaManha">Café da Manhã ▸</a>
+
+              <div class="submenu-content">
+                <a href="#cuscuz">Cuscuz Simples</a>
+                <a href="#tapioca">Tapioca Tradicional</a>
+                <a href="#boloDeFuba">Bolo de Fubá</a>
+                <a href="#canjica">Canjica</a>
+              </div>
+            </div>
+
+            <!-- SUBMENU DE MAIS OPÇÕES COM CHAMADAS PARA FUNÇÕES JAVASCRIPT -->
+            <div class="submenu">
+              <a href="#almoco">Almoço ▸</a>
+
+              <div class="submenu-content">
+                <a href="#arrumadinho">Arrumadinho</a>
+                <a href="#boboDeCamarao">Bobó de Camarão</a>
+                <a href="#baiaoDeDois">Baião de Dois</a>
+                <a href="#carneDeSol">Carne de Sol</a>
+              </div>
+            </div>
+
+            <div class="submenu">
+              <a href="#jantar">Jantar ▸</a>
+
+              <div class="submenu-content">
+                <a href="#vatapa">Vatapá</a>
+                <a href="#sarapatel">Sarapatel</a>
+                <a href="#cabritoAoForno">Cabrito ao Forno</a>
+              </div>
+            </div>
+
+            <div class="submenu">
+              <a href="#sobremesas">Sobremesas ▸</a>
+
+              <div class="submenu-content">
+                <a href="#arrozDoce">Arroz Doce</a>
+                <a href="#pamonha">Pamonha</a>
+                <a href="#tapibana">Tapibana</a>
+              </div>
+            </div>
+
+            <div class="submenu">
+              <a href="#bebidas">Bebidas ▸</a>
+
+              <div class="submenu-content">
+                <a href="#refrigeranteLata">Refrigerantes</a>
+                <a href="#refrigeranteGarrafa">Refrigerantes 2l</a>
+                <a href="#aguaMineral">Água Mineral</a>
+              </div>
+            </div>
+
+            <div class="submenu">
+              <a href="#" onclick="abrirMaisOpcoes(); return false;"
+                >Mais Opções ▸</a
+              >
+              <div class="submenu-content">
+                <a
+                  href="#"
+                  onclick="pesquisarItem('Cartola Simples'); return false;"
+                  >Cartola Simples</a
+                >
+                <a
+                  href="#"
+                  onclick="pesquisarItem('Chá de Canela'); return false;"
+                  >Chá de Canela</a
+                >
+                <a
+                  href="#"
+                  onclick="pesquisarItem('Chá de Hortelã'); return false;"
+                  >Chá de Hortelã</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINKS DIRETOS PARA OUTRAS PAGINAS E CONTADOR DO CARRINHO -->
+        <a href="meusPedidos.html">Meus Pedidos</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="index.html">Início</a>
+        <a href="login.html">🔑Login</a>
+        <a href="carrinho.html">🛒 <span id="contadorCarrinho">0</span></a>
+      </nav>
+    </header>
+
+     <!-- ADICIONA UMA FAIXA DESLIZANTE NA TELA -->
+    <div class="faixa">
+      <div class="texto">
+        SEJA BEM VINDO! ESTAMOS 24 HORAS À SUA DISPOSIÇÃO • "SÃO 24 HORAS NO AR"
+      </div>
+    </div>
+
+    <!-- SEÇÃO HERO COM SLOGAN E CAMPO DE PESQUISA DE PRATOS -->
+    <section class="hero">
+      <div>
+        <h1>Sabores que contam histórias</h1>
+        <p>A tradição nordestina servida à mesa</p>
+
+        <div class="pesquisa-cardapio">
+          <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar pratos, bebidas ou sobremesas..."
+          />
+          <button id="btnPesquisar" type="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO EXIBINDO OS CARDS DAS PRINCIPAIS ESPECIALIDADES -->
+    <section class="produtos">
+      <h2>Especialidades</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="../imagens/maoDeVaca.jpg" />
+          <h3>Mão de Vaca</h3>
+          <p>Um tradicional prato que dá água na boca, só de olhar...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/feijoada.jpg" />
+          <h3>Feijoada Completa</h3>
+          <p>Quem prova, jamais esquece...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/CarneDeSol.jpg" />
+          <h3>Carne de Sol com Fritas</h3>
+          <p>Se não gostar, não precisa pagar... Você vai pagar...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/camaraoNaMoranga.jpg" />
+          <h3>Camarão na Moranga</h3>
+          <p>Uma tentação para os olhos...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/cuscuzRecheado.jpg" />
+          <h3>Cuscuz Recheado</h3>
+          <p>Uma delícia que fará você apreciar outras vezes...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/tapiocaRecheada.jpg" />
+          <h3>Tapioca Recheada</h3>
+          <p>Se você aprecia tapiocas, essa você vai amar...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/boloDeBanana.jpg" />
+          <h3>Bolo de Banana</h3>
+          <p>Um delicioso bolo coberto com calda de goiabada...</p>
+        </div>
+
+        <div class="card">
+          <img src="../imagens/munguza.jpg" />
+          <h3>Munguzá</h3>
+          <p>Pra adoçar a vida, e aquecer as noites frias...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTAGEM COMPLETA DE IGUARIAS DISPONIVEIS PARA PEDIDO -->
+    <section class="cardapio">
+      <h2>Nossas Iguarias para Cada Horário</h2>
+
+      <div class="grade-iguarias">
+        <!-- ITENS ESPECIFICOS COM BOTOES PARA ADICIONAR AO CARRINHO -->
+        <div class="card" id="tapioca">
+          <img src="../imagens/tapioca.jpg" alt="Tapioca Tradicional" />
+          <h3>Tapioca Tradicional</h3>
+          <p>Recheada com coco, queijo coalho e leite condensado.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="tapioca"
+            data-nome="Tapioca Tradicional"
+            data-imagem="../imagens/tapioca.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="boloDeFuba">
+          <img src="../imagens/boloDeFuba.jpg" alt="Bolo de Fubá" />
+          <h3>Bolo de Fubá</h3>
+          <p>Bolo acompanhado de café com leite.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="boloDeFuba"
+            data-nome="Bolo de Fubá"
+            data-imagem="../imagens/boloDeFuba.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="canjica">
+          <img src="../imagens/canjica.jpg" alt="Canjica Tradicional" />
+          <h3>Canjica Tradicional</h3>
+          <p>Canjica ao leite de coco temperada com canela.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="canjica"
+            data-nome="Canjica Tradicional"
+            data-imagem="../imagens/canjica.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="milhoVerde">
+          <img src="../imagens/milhoVerde.jpg" alt="Milho Verde Cozido" />
+          <h3>Milho Verde Cozido</h3>
+          <p>Milho banhado na manteiga de garrafa.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="milhoVerde"
+            data-nome="Milho Verde Cozido"
+            data-imagem="../imagens/milhoVerde.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="boloDeRolo">
+          <img src="../imagens/boloDeRolo.jpg" alt="Bolo de Rolo" />
+          <h3>Bolo de Rolo</h3>
+          <p>Bolo recheado com goiabada derretida.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="boloDeRolo"
+            data-nome="Bolo de Rolo"
+            data-imagem="../imagens/boloDeRolo.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="pamonhaRecheada">
+          <img src="../imagens/pamonhaRecheada.jpg" alt="Pamonha Recheada" />
+          <h3>Pamonha Recheada</h3>
+          <p>Pamonha recheada com queijo coalho.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="pamonhaRecheada"
+            data-nome="Pamonha Recheada"
+            data-imagem="../imagens/pamonhaRecheada.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="boloDeMacaxeira">
+          <img src="../imagens/boloDeMacaxeira.jpg" alt="Bolo de Macaxeira" />
+          <h3>Bolo de Macaxeira</h3>
+          <p>Bolo de macaxeira recheado com coco.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="boloDeMacaxeira"
+            data-nome="Bolo de Macaxeira"
+            data-imagem="../imagens/boloDeMacaxeira.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="arrozDoce">
+          <img src="../imagens/arrozDoce.jpg" alt="Arroz Doce" />
+          <h3>Arroz Doce</h3>
+          <p>Arroz cozido no leite de coco povilhado com canela.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="arrozDoce"
+            data-nome="Arroz Doce"
+            data-imagem="../imagens/arrozDoce.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- SEÇÃO DO CARDAPIO DESTINADA AO ALMOÇO -->
+      <div class="categoria" id="almoco">
+        <h3>🍛 Almoço</h3>
+      </div>
+
+      <div class="cards">
+        <!-- PRATOS DO ALMOÇO COM IDENTIFICADORES UNICOS E COMPORTAMENTO DE SELEÇÃO -->
+        <div class="card" id="arrumadinho">
+          <img src="../imagens/arrumadinho.jpg" alt="Arrumadinho" />
+          <h3>Arrumadinho</h3>
+          <p>Preparado com feijão verde, arroz e carne seca.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="arrumadinho"
+            data-nome="Arrumadinho"
+            data-imagem="../imagens/arrumadinho.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="boboDeCamarao">
+          <img src="../imagens/boboDeCamarao.jpg" alt="Bobó de Camarão" />
+          <h3>Bobó de Camarão</h3>
+          <p>Camarão cozido no tempeiro e leite de coco.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="boboDeCamarao"
+            data-nome="Bobó de Camarão"
+            data-imagem="../imagens/boboDeCamarao.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="baiaoDeDois">
+          <img src="../imagens/baiaoDeDois.jpg" alt="Baião de Dois" />
+          <h3>Baião de Dois</h3>
+          <p>Prato típico com feijão, arroz, , cuscuz e carne.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="baiaoDeDois"
+            data-nome="Baião de Dois"
+            data-imagem="../imagens/baiaoDeDois.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="carneDeSol">
+          <img src="../imagens/carneDeSol.jpg" alt="Carne de Sol com Fritas" />
+          <h3>Carne de Sol com Fritas</h3>
+          <p>Carne de sol acompanhada de macaxeira frita.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="carneDeSol"
+            data-nome="Carne de Sol com Fritas"
+            data-imagem="../imagens/carneDeSol.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="muquecaDePeixe">
+          <img src="../imagens/muquecaDePeixe.jpg" alt="Muqueca De Peixe" />
+          <h3>Muqueca De Peixe</h3>
+          <p>Peixe cozido no leite de coco com legumes.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="muquecaDePeixe"
+            data-nome="Muqueca De Peixe"
+            data-imagem="../imagens/muquecaDePeixe.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="feijoada">
+          <img src="../imagens/feijoada.jpg" alt="Feijoada" />
+          <h3>Feijoada</h3>
+          <p>Feijoada com arroz,farofa e bastantes legumes.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="feijoada"
+            data-nome="Feijoada"
+            data-imagem="../imagens/feijoada.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="caranguejo">
+          <img src="../imagens/caranguejo.jpg" alt="Caranguejo" />
+          <h3>Caranguejo</h3>
+          <p>Caranguejo acompanhado de pirão, arroz e salada.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="caranguejo"
+            data-nome="Caranguejo"
+            data-imagem="../imagens/caranguejo.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="buchadaDeBode">
+          <img src="../imagens/buchadaDeBode.jpg" alt="Buchada de Bode" />
+          <h3>Buchada de Bode</h3>
+          <p>Buchada acomponhada de pirão, arroz e legumes.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="buchadaDeBode"
+            data-nome="Buchada de Bode"
+            data-imagem="../imagens/buchadaDeBode.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- SEÇÃO DO CARDAPIO DESTINADA AO JANTAR -->
+      <div class="categoria" id="jantar">
+        <h3>🥣 Jantar</h3>
+      </div>
+
+      <div class="cards">
+        <!-- PRATOS DO JANTAR COM IDENTIFICADORES UNICOS E COMPORTAMENTO DE SELEÇÃO -->
+        <div class="card" id="vatapa">
+          <img src="../imagens/vatapa.jpg" alt="Vatapá" />
+          <h3>Vatapá</h3>
+          <p>Típico da culinária baiana recheado com camarão.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="vatapa"
+            data-nome="Vatapá"
+            data-imagem="../imagens/vatapa.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="macaxeiraComCharque">
+          <img
+            src="../imagens/macaxeiraComCharque.jpg"
+            alt="Macaxeira com Charque"
+          />
+          <h3>Macaxeira com Charque</h3>
+          <p>Macaxeira cozida, charque acebolada e batata frita.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="macaxeiraComCharque"
+            data-nome="Macaxeira com Charque"
+            data-imagem="../imagens/macaxeiraComCharque.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="cabritoAoForno">
+          <img src="../imagens/cabritoAoForno.jpg" alt="Cabrito ao Forno" />
+          <h3>Cabrito ao Forno</h3>
+          <p>O prato é acompanhado de arroz, feijão verde e farofa.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="cabritoAoForno"
+            data-nome="Cabrito ao Forno"
+            data-imagem="../imagens/cabritoAoForno.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="galinhaDeCabidela">
+          <img
+            src="../imagens/galinhaDeCabidela.jpg"
+            alt="Galinha à Cabidela"
+          />
+          <h3>Galinha à Cabidela</h3>
+          <p>Guizado acompanhado de arroz, pirão e farofa.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="galinhaDeCabidela"
+            data-nome="Galinha à Cabidela"
+            data-imagem="../imagens/galinhaDeCabidela.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="peixeAssado">
+          <img src="../imagens/peixeAssado.jpg" alt="Peixe Assado" />
+          <h3>Peixe Assado</h3>
+          <p>Peixe frito acompanhado de arroz, farofa e salada.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="peixeAssado"
+            data-nome="Peixe Assado"
+            data-imagem="../imagens/peixeAssado.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="sarapatel">
+          <img src="../imagens/sarapatel.jpg" alt="Sarapatel" />
+          <h3>Sarapatel</h3>
+          <p>Prato típico acompanado de arroz, farofa e salada.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="sarapatel"
+            data-nome="Sarapatel"
+            data-imagem="../imagens/sarapatel.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="inhameCozido">
+          <img src="../imagens/inhameCozido.jpg" alt="Inhame Cozido" />
+          <h3>Inhame Cozido</h3>
+          <p>Inhame cozido com carne guizada.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="inhameCozido"
+            data-nome="Inhame Cozido"
+            data-imagem="../imagens/inhameCozido.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="batataDoceCozida">
+          <img src="../imagens/batataDoceCozida.jpg" alt="Batata Doce Cozida" />
+          <h3>Batata Doce Cozida</h3>
+          <p>Acompanhado com guizado de boi e batata inglesa.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="batataDoceCozida"
+            data-nome="Batata Doce Cozida"
+            data-imagem="../imagens/batataDoceCozida.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- SEÇÃO DO CARDAPIO DESTINADA ÀS SOBREMESAS -->
+      <div class="categoria" id="sobremesas">
+        <h3>🍮 Sobremesas</h3>
+      </div>
+
+      <div class="cards">
+        <!-- PRATOS DA SOBREMESA COM IDENTIFICADORES UNICOS E COMPORTAMENTO DE SELEÇÃO -->
+        <div class="card" id="boloDeMilho">
+          <img src="../imagens/boloDeMilho.jpg" alt="Arroz Doce" />
+          <h3>Bolo de Milho</h3>
+          <p>Preparado com milho verde e leite de coco.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="boloDeMilho"
+            data-nome="Bolo de Milho"
+            data-imagem="../imagens/boloDeMilho.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="pamonha">
+          <img src="../imagens/pamonha.jpg" alt="Pamonha Tradicional" />
+          <h3>Pamonha Tradicional</h3>
+          <p>Receita tradicionalmente nordestina.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="pamonha"
+            data-nome="Pamonha Tradicional"
+            data-imagem="../imagens/pamonha.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="tapibana">
+          <img src="../imagens/tapibana.jpg" alt="Tapibana" />
+          <h3>Tapibana</h3>
+          <p>Tapioca recheada com banana e leite condensado.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="tapibana"
+            data-nome="Tapibana"
+            data-imagem="../imagens/tapibana.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="comidasTipicas">
+          <img
+            src="../imagens/comidasTipicas.jpg"
+            alt="Pratos Tipicos da Região"
+          />
+          <h3>Pratos Tipicos da Região</h3>
+          <p>Uma diversidade de pratos típicos do nordeste.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="comidasTipicas"
+            data-nome="Pratos Tipicos da Região"
+            data-imagem="../imagens/comidasTipicas.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- SEÇÃO DO CARDAPIO DESTINADA ÀS BEBIDAS -->
+      <div class="categoria" id="bebidas">
+        <h3>🥤 Bebidas</h3>
+      </div>
+
+      <div class="cards">
+        <!-- BEBIDAS COM IDENTIFICADORES UNICOS E COMPORTAMENTO DE SELEÇÃO -->
+        <div class="card" id="sucosGarrafa">
+          <img src="../imagens/sucosGarrafa.jpg" alt="Sucos Diversos Sabores" />
+          <h3>Sucos Diversos Sabores</h3>
+          <p>Garrafa Plástica volume de 250ml.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="sucosGarrafa"
+            data-nome="Sucos Diversos Sabores"
+            data-imagem="../imagens/sucosGarrafa.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="aguaMineral">
+          <img src="../imagens/aguaMineral.jpg" alt="Água Mineral" />
+          <h3>Água Mineral</h3>
+          <p>Água Mineral volume de 500ml.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="aguaMineral"
+            data-nome="Água Mineral"
+            data-imagem="../imagens/aguaMineral.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="refrigeranteGarrafa">
+          <img
+            src="../imagens/refrigeranteGarrafa.jpg"
+            alt="Refrigerante 2 litros"
+          />
+          <h3>Refrigerante 2 litros</h3>
+          <p>Refrigerantes diversos sabores.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="refrigeranteGarrafa"
+            data-nome="Refrigerante 2 litros"
+            data-imagem="../imagens/refrigeranteGarrafa.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card" id="refrigeranteLata">
+          <img src="../imagens/refrigeranteLata.jpg" alt="Lata de 350ml" />
+          <h3>Lata de 350ml</h3>
+          <p>Refrigerantes diversos sabores.</p>
+          <span class="preco"></span>
+          <button
+            class="btn-pedir"
+            data-id="refrigeranteLata"
+            data-nome="Lata de 350ml"
+            data-imagem="../imagens/refrigeranteLata.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- AREA COM BOTAO PARA EXPANDIR E EXIBIR ITENS COMPLEMENTARES -->
+      <div class="mais-opcoes" id="mais-opcoes">
+        <button type="button" onclick="abrirMaisOpcoes()" class="btn-mais">
+          Ver Mais Opções
+        </button>
+      </div>
+
+      <!-- SEÇÃO CONTENDO OS CARDS COMPLEMENTARES QUE INICIAM OCULTOS -->
+      <div id="itens-extras" class="itens-extras">
+        <div class="card card-opcao" id="cartola">
+          <img src="../imagens/cartola.jpg" alt="Cartola Simples" />
+          <h4>Cartola Simples</h4>
+          <p>Banana frita com queijo e canela.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="cartola"
+            data-nome="Cartola Simples"
+            data-imagem="../imagens/cartola.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="rabada">
+          <img src="../imagens/rabada.jpg" alt="Rabada de Boi" />
+          <h4>Rabada de Boi</h4>
+          <p>Rabada com pirão e arroz.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="rabada"
+            data-nome="Rabada de Boi"
+            data-imagem="../imagens/rabada.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="coxinha">
+          <img src="../imagens/coxinha.jpg" alt="Coxinha de frango" />
+          <h4>Coxinha de frango</h4>
+          <p>Coxinha recheada com frango.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="coxinha"
+            data-nome="Coxinha de frango"
+            data-imagem="../imagens/coxinha.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="acarajeRecheado">
+          <img src="../imagens/acarajeRecheado.jpg" alt="Acarajé Recheado" />
+          <h4>Acarajé Recheado</h4>
+          <p>Acarajé recheado com camarão</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="acarajeRecheado"
+            data-nome="Acarajé Recheado"
+            data-imagem="../imagens/acaraje.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="boloDeMandioca">
+          <img src="../imagens/boloDeMandioca.jpg" alt="Bolo de Mandioca" />
+          <h4>Bolo de Mandioca</h4>
+          <p>Bolo à base de mandioca.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="boloDeMandioca"
+            data-nome="Bolo de Mandioca"
+            data-imagem="../imagens/boloDeMandioca.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="acarajeSimples">
+          <img src="../imagens/acarajeSimples.jpg" alt="Acarajé Simples" />
+          <h4>Acarajé Simples</h4>
+          <p>Acarajé com camarão.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="acarajeSimples"
+            data-nome="Acarajé Simples"
+            data-imagem="../imagens/acarajeSimples.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="cocada">
+          <img src="../imagens/cocada.jpg" alt="Cocada Simples" />
+          <h4>Cocada Simples</h4>
+          <p>Cocada com cobertura de leite condensado.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="cocada"
+            data-nome="Cocada Simples"
+            data-imagem="../imagens/cocada.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="peDeMoleque">
+          <img src="../imagens/peDeMoleque.jpg" alt="Pé de Moleque" />
+          <h4>Pé de Moleque</h4>
+          <p>Cocada de amendoim.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="peDeMoleque"
+            data-nome="Pé de Moleque"
+            data-imagem="../imagens/peDeMoleque.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="tapiocaComCharque">
+          <img src="../imagens/tapiocaComCharque.jpg" alt="Tapioca (charque)" />
+          <h4>Tapioca (charque)</h4>
+          <p>Tapioca recheada com charque.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="tapiocaComCharque"
+            data-nome="Tapioca (charque)"
+            data-imagem="../imagens/tapiocaComCharque.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="tapiocaRecheada1">
+          <img src="../imagens/tapiocaRecheada1.jpg" alt="Tapioca (camarão)" />
+          <h4>Tapioca (camarão)</h4>
+          <p>Tapioca recheada com camarão.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="tapiocaRecheada1"
+            data-nome="Tapioca (camarão)"
+            data-imagem="../imagens/tapiocaRecheada1.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="churros">
+          <img src="../imagens/churros.jpg" alt="Churros ao Leite" />
+          <h4>Churros ao Leite</h4>
+          <p>Churros ao leite condensado.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="churros"
+            data-nome="Churros ao Leite"
+            data-imagem="../imagens/churros.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="sururuAoCoco">
+          <img src="../imagens/sururuAoCoco.jpg" alt="Sururu ao Molho" />
+          <h4>Sururu ao Molho</h4>
+          <p>Sururu ao molho de leite de coco.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="sururuAoCoco"
+            data-nome="Sururu ao Molho"
+            data-imagem="../imagens/sururuAoCoco.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="vacaAtolada">
+          <img src="../imagens/vacaAtolada.jpg" alt="Vaca Atolada" />
+          <h4>Vaca Atolada</h4>
+          <p>Prato servido com pirão e arroz.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="vacaAtolada"
+            data-nome="Vaca Atolada"
+            data-imagem="../imagens/vacaAtolada.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="paçoca">
+          <img src="../imagens/paçoca.jpg" alt="Paçoca (unidade)" />
+          <h4>Paçoca (unidade)</h4>
+          <p>Sobremesa à base de amendoim.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="paçoca"
+            data-nome="Paçoca (unidade)"
+            data-imagem="../imagens/paçoca.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="quentaoCaseiro">
+          <img src="../imagens/quentaoCaseiro.jpg" alt="Quentão Caseiro" />
+          <h4>Quentão Caseiro</h4>
+          <p>Bebida à base de cachaça gengibre e especiarias.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="quentaoCaseiro"
+            data-nome="Quentão Caseiro"
+            data-imagem="../imagens/quentaoCaseiro.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="chaDeHortela">
+          <img src="../imagens/chaDeHortela.jpg" alt="Chá De Hortelã" />
+          <h4>Chá De Hortelã</h4>
+          <p>Bebida feita com folhas de hortelã.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="chaDeHortela"
+            data-nome="Chá De Hortelã"
+            data-imagem="../imagens/chaDeHortela.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="chaDeCanela">
+          <img src="../imagens/chaDeCanela.jpg" alt="Chá de Canela" />
+          <h4>Chá de Canela</h4>
+          <p>Feito à base de canela com limão.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="chaDeCanela"
+            data-nome="Chá de Canela"
+            data-imagem="../imagens/chaDeCanela.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="sucosEspeciais">
+          <img src="../imagens/sucosEspeciais.jpg" alt="Sucos Naturais" />
+          <h4>Sucos Naturais</h4>
+          <p>Suco à base de laranja e cenoura.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="sucosEspeciais"
+            data-nome="Sucos Naturais"
+            data-imagem="../imagens/sucosEspeciais.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="sucosSabores">
+          <img src="../imagens/sucosSabores.jpg" alt="Sucos Típicos" />
+          <h4>Sucos Típicos</h4>
+          <p>Produzidos com frutas da região.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="sucosSabores"
+            data-nome="Sucos Típicos"
+            data-imagem="../imagens/sucosSabores.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="aguaDeCoco">
+          <img src="../imagens/aguaDeCoco.jpg" alt="Água de coco" />
+          <h4>Água de coco</h4>
+          <p>Água de coco verde.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="aguaDeCoco"
+            data-nome="Água de coco"
+            data-imagem="../imagens/aguaDeCoco.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <div class="card card-opcao" id="sucosDaFruta">
+          <img src="../imagens/sucosDaFruta.jpg" alt="Sucos de Fruta" />
+          <h4>Sucos de Fruta</h4>
+          <p>Sucos de frutas típicas da região.</p>
+          <span class="preco-mini"></span>
+          <button
+            class="btn-mini"
+            data-id="sucosDaFruta"
+            data-nome="Sucos de Fruta"
+            data-imagem="../imagens/sucosDaFruta.jpg"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODAPE COM ALERTA ACADEMICO -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- LOGICA E COMPORTAMENTO DA PAGINA EM JAVASCRIPT -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/produtosDB.js"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/cardapio.js"></script>
+  </body>
+</html>

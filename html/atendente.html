@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Painel da Atendente</title>
+
+    <!-- IMPORTA O CSS RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA O CSS ESPECÍFICO DO PAINEL DA ATENDENTE -->
+    <link rel="stylesheet" href="../css/atendente.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- ÁREA DE IDENTIFICAÇÃO DO SETOR ACESSADO -->
+      <div class="titulo">
+        <h1 id="tituloArea">Painel do Atendente</h1>
+
+        <!-- IDENTIFICAÇÃO DO SETOR RESPONSÁVEL PELOS PEDIDOS -->
+        <p>Setor de Pedidos</p>
+      </div>
+
+      <!-- ÁREA COM OS BOTÕES DE AÇÃO E NAVEGAÇÃO -->
+      <div class="acoes">
+        <button id="btnNovoPedido">Novo Pedido</button>
+
+        <button onclick="window.location.href='produtos.html'">Produtos</button>
+
+        <button onclick="window.location.href='historico.html'">
+          Histórico
+        </button>
+
+        <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+
+        <button onclick="logoutColaborador()" class="btn-header">Sair</button>
+      </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL DO PAINEL DE ATENDIMENTO -->
+    <main>
+      <!-- SEÇÃO COM OS INDICADORES RESUMIDOS DOS PEDIDOS -->
+      <section class="painel-resumo">
+        <div class="info">
+          <span id="totalPedidos">0</span>
+
+          <small>Total</small>
+        </div>
+
+        <div class="info">
+          <span id="recebidos">0</span>
+
+          <small>Recebidos</small>
+        </div>
+
+        <div class="info">
+          <span id="preparo">0</span>
+
+          <small>Preparando</small>
+        </div>
+
+        <div class="info">
+          <span id="prontos">0</span>
+
+          <small>Prontos</small>
+        </div>
+
+        <div class="info">
+          <span id="cancelados">0</span>
+
+          <small>Cancelados</small>
+        </div>
+      </section>
+
+      <!-- ÁREA ONDE OS PEDIDOS SERÃO INSERIDOS DINAMICAMENTE PELO JAVASCRIPT -->
+      <section id="listaPedidos"></section>
+    </main>
+
+    <!-- MODAL RESPONSÁVEL PELO CADASTRO DE PEDIDO PRESENCIAL -->
+    <div id="modalPedido" class="modal">
+      <div class="modal-conteudo">
+        <div class="modal-topo">
+          <h2>Novo Pedido Presencial</h2>
+
+          <span id="fecharModal">&times;</span>
+        </div>
+
+        <!-- CORPO DO FORMULÁRIO DO PEDIDO -->
+        <div class="modal-body">
+          <label>Nome do Cliente</label>
+
+          <input type="text" id="clientePresencial" placeholder="Opcional" />
+
+          <label>Telefone</label>
+
+          <input type="text" id="telefonePresencial" placeholder="Opcional" />
+
+          <label>E-mail do Cliente (Fidelidade)</label>
+  
+          <input type="email" id="emailClientePresencial" placeholder="Opcional (ex: nome@email.com)" />
+          
+          <label>Endereço</label>
+
+          <input
+            type="text"
+            id="enderecoPresencial"
+            placeholder="Rua, nº, bairro"
+          />
+
+          <label>CEP</label>
+
+          <input type="text" id="cepPresencial" placeholder="00000-000" />
+
+          <label>Tipo de Atendimento</label>
+
+          <select id="tipoPedido">
+            <option value="local">Consumo no Local</option>
+
+            <option value="retirada">Retirada</option>
+
+            <option value="entrega">Entrega</option>
+          </select>
+
+          <!-- SEPARADOR VISUAL ENTRE DADOS DO CLIENTE E PRODUTOS -->
+          <hr />
+
+          <h3>Produtos</h3>
+
+          <!-- LISTA DE PRODUTOS DISPONÍVEIS PARA O PEDIDO -->
+          <!-- CONTEÚDO PREENCHIDO PELO JAVASCRIPT -->
+          <div id="listaProdutosPedido" class="listaProdutosPedido"></div>
+
+          <hr />
+
+          <h3>Total do Pedido</h3>
+
+          <!-- VALOR TOTAL CALCULADO PELO SISTEMA -->
+          <div id="totalPresencial">R$ 0,00</div>
+
+          <!-- ÁREA DOS BOTÕES DE CONTROLE DO PEDIDO -->
+          <div class="botoesModal">
+            <button id="cancelarPedido">Cancelar</button>
+
+            <button id="continuarPedido">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ COM AVISO INFORMATIVO -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- SCRIPT RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <script src="../js/alertas.js"></script>
+
+    <!-- SCRIPT RESPONSÁVEL PELO SISTEMA DE FIDELIDADE -->
+    <script src="../js/fidelidade.js"></script>
+
+    <!-- SCRIPT RESPONSÁVEL PELO GERENCIAMENTO DOS PEDIDOS -->
+    <script src="../js/pedidos.js"></script>
+
+    <!-- SCRIPT RESPONSÁVEL PELA AUTENTICAÇÃO DOS COLABORADORES -->
+    <script src="../js/admin/auth.js"></script>
+
+    <!-- SCRIPT PRINCIPAL DO PAINEL DA ATENDENTE -->
+    <script src="../js/atendente.js"></script>
+  </body>
+</html>

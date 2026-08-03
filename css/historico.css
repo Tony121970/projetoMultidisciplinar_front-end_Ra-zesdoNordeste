@@ -1,0 +1,268 @@
+/* REMOVE ESPAÇAMENTOS PADRÕES DO NAVEGADOR, DEFINE O MODELO DE TAMANHO E PADRONIZA A FONTE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO PRINCIPAL DO SISTEMA */
+body{
+  background:#e5c482;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* CRIA A BARRA SUPERIOR COM TÍTULO, BOTÕES E POSICIONAMENTO FIXO NA TELA */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #5f472c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  z-index: 999;
+}
+
+/* DEFINE TAMANHO DO NOME DA PÁGINA */
+.titulo h1 {
+  font-size: 28px;
+}
+
+/* CONFIGURA A DESCRIÇÃO ABAIXO DO TÍTULO */
+.titulo p {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* CONFIGURAÇÃO DO BOTÃO VOLTAR*/
+header button {
+  align-items: center;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+header button:hover {
+  background: white;
+  color: green;
+}
+
+/* CRIA ESPAÇO PARA NÃO FICAR ESCONDIDA ATRÁS DO HEADER E RODAPÉ */
+main {
+  margin-top: 110px;
+  margin-bottom: 70px;
+  padding: 20px;
+}
+
+/* ORGANIZA OS CARDS EM QUATRO COLUNAS NA TELA GRANDE */
+#listaHistorico, #listaEntrega {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* CRIA O BLOCO VISUAL DE CADA PEDIDO DO HISTÓRICO */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 5px 12px rgba(0,0,0,.15);
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* LEVANTA O CARD AO PASSAR O MOUSE */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.20);
+}
+
+/* MOSTRA INFORMAÇÕES IMPORTANTES COMO NÚMERO OU STATUS */
+.card h1 {
+  margin: 6px 0;
+  font-size: 14px;
+  color: red;
+  line-height: 1; 
+}
+
+/* DESTACAM AS INFORMAÇÕES PRINCIPAIS */
+.card h2, .card h3 {
+  color: #8b4513; 
+  margin-bottom: 10px;
+}
+
+/* PADRONIZAM AS INFORMAÇÕES DO PEDIDO */
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1; 
+}
+
+/* DESTACA RÓTULOS COMO CLIENTE, DATA E VALOR */
+.card p strong {
+  color: #5f472c;
+}
+
+/* REMOVE ESTILOS PADRÕES E AJUSTA ESPAÇAMENTO */
+.card ul {
+  margin: 8px 0;
+  padding-left: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+/* ORGANIZA OS PRODUTOS DENTRO DO CARD */
+.card li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  list-style-type: none; 
+}
+
+/* DEFINE DESTAQUE DO TEXTO DE SITUAÇÃO */
+.status {
+  font-weight: bold;
+}
+
+/* USA COR VERDE PARA INDICAR FINALIZAÇÃO */
+.entregue {
+  color: #28a745;
+}
+
+/* USA COR VERMELHA PARA INDICAR CANCELAMENTO */
+.cancelado {
+  color: #dc3545;
+}
+
+/* CENTRALIZA O AVISO QUANDO NÃO EXISTEM REGISTROS */
+.semPedidos {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #5f472c;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 40px;
+}
+
+/* MANTÉM A INFORMAÇÃO ACADÊMICA VISÍVEL NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CENTRALIZA TEXTO E ÍCONE */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ADAPTA O GRID PARA DIFERENTES TAMANHOS DE TELA */
+@media(max-width: 1300px) {
+
+  /* REDUZ OS CARDS PARA TRÊS COLUNAS EM TELAS MÉDIAS */
+  #listaHistorico, #listaEntrega {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media(max-width: 950px) {
+
+  /* HEADER MOBILE ORGANIZA O CABEÇALHO EM COLUNA E PROMOVE EXTENSÃO DE ALTURA FLUIDA PREVENINDO VAZAMENTOS */
+  header {
+      flex-direction: column;
+      height: auto;
+      gap: 15px;
+      padding: 15px;
+  }
+
+  /* BOTÕES MOBILE PERMITE QUE OS BOTÕES QUEBREM LINHA E SE ALINHEM NO CENTRO EM TELAS INTERMEDIÁRIAS */
+  .btn-header {
+      margin-top: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-right: 0;
+      gap: 10px;
+  }
+
+  /* AJUSTA O ESPAÇO SUPERIOR DO CONTEÚDO COMPENSANDO A MAIOR ALTURA DO HEADER EXPANDIDO NO TABLET */
+  main {
+      margin-top: 170px;
+      margin-bottom: 80px;
+  }
+
+  /* GRID TABLET REDUZ OS CARDS PARA DUAS COLUNAS NAS RESOLUÇÕES MEDIANAS */
+  #listaHistorico, #listaEntrega {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ADAPTAÇÃO DIRECIONADA PARA SMARTPHONES EM GERAL */
+@media(max-width: 600px) {
+
+  /* GRID CELULAR COLOCA UM CARD POR LINHA FACILITANDO A LEITURA DO HISTÓRICO NO CELULAR */
+  #listaHistorico, #listaEntrega {
+      grid-template-columns: 1fr;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE AJUSTA O RECUO SUPERIOR JÁ QUE O CABEÇALHO PASSA A INTEGRAR O FLUXO */
+  main {
+      margin-top: 150px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media(max-width: 360px) {
+
+  /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO EM DISPOSITIVOS MINI */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO MINI EXPANDE O BOTÃO DE RETORNO PARA OCUPAR LARGURA TOTAL PREVENINDO APERTOS */
+  header button {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 5px;
+  }
+
+  /* BARRA DE RODAPÉ ADAPTADA MOBILE REDUZ A TIPOGRAFIA DA MENSAGEM ACADÊMICA INSTITUCIONAL */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

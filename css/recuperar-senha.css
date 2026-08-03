@@ -1,0 +1,278 @@
+/* ZERA OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR E DEFINE O MODELO DE TAMANHO DOS ELEMENTOS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A IMAGEM DE FUNDO, O POSICIONAMENTO E A ORGANIZAÇÃO CENTRAL DO CONTEÚDO DA PÁGINA */
+body {
+  background:
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url("../Imagens/Imagem16.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 20px 80px; /* AJUSTE: RECUO INTEGRADO PARA EVITAR CONTEÚDO ATRÁS DO HEADER/FOOTER FIXOS */
+}
+
+/* CRIA O CABEÇALHO FIXO COM LOGO E MENU DE NAVEGAÇÃO SEMPRE VISÍVEIS */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #5f472c;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* CONFIGURA O TAMANHO E O DESTAQUE VISUAL DO NOME DA MARCA */
+.logo {
+  font-weight: bold;
+  font-size: 32px; /* AJUSTE: TAMANHO PROPORCIONAL À ALTURA DO HEADER */
+  margin-left: 30px;
+}
+
+/* CONTAINER DOS LINKS DO MENU SUPERIOR */
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+/* ESTILIZA OS LINKS DO MENU SUPERIOR INDIVIDUALMENTE */
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+/* ALTERA A COR DOS LINKS DO MENU AO PASSAR O MOUSE */
+.menu a:hover {
+  text-decoration: none;
+  color: #f7d08a;
+}
+
+/* CONFIGURA O TÍTULO PRINCIPAL DA INTERFACE */
+h1 {
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+}
+
+/* CRIA O CARTÃO PRINCIPAL DO FORMULÁRIO DE RECUPERAÇÃO/ENVIO DE DADOS */
+form {
+  background: rgb(224, 187, 118);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* CONFIGURA OS CAMPOS DE DIGITAÇÃO INTERNOS DO FORMULÁRIO */
+input {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  margin-top: 5px; /* AJUSTE: REDUZIDO PARA NÃO DISTANCIAR DEMAIS DO TOPO DO CARD */
+}
+
+/* DESTACA O CAMPO QUANDO O USUÁRIO SELECIONA PARA DIGITAR */
+input:focus {
+  border-color: #5f472c;
+}
+
+/* ESTILIZA O BOTÃO PRINCIPAL DE ENVIO DO FORMULÁRIO */
+button {
+  padding: 12px;
+  background: #5f472c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO QUANDO O CURSOR PASSA SOBRE ELE */
+button:hover {
+  background: #ab7d61;
+  color: black;
+}
+  
+/* CONFIGURA A ÁREA DE MENSAGEM DE RETORNO DO SISTEMA */
+#mensagem {
+  text-align: center;
+  font-weight: bold;
+  color: #d62828;
+  min-height: 20px;
+  padding: 0;
+}
+
+/* FIXA O RODAPÉ NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* ORGANIZA E CENTRALIZA AS INFORMAÇÕES DENTRO DO RODAPÉ */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* REAJUSTA O ESPAÇAMENTO LATERAL DO MENU SUPERIOR EM MONITORES COMPACTOS */
+  .header {
+    padding: 10px 20px;
+  }
+
+  /* BOTÕES DE NAVEGAÇÃO ADAPTADOS NOTEBOOK REDUZ A MARGEM DIREITA DOS LINKS PARA PREVENIR QUEBRAS ANTECIPADAS */
+  .menu a {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 1024px) {
+  
+  /* REAJUSTA O ESPAÇAMENTO LATERAL DO MENU SUPERIOR INTERMEDIÁRIO */
+  .header {
+    padding: 10px 30px;
+  }
+  
+  /* LOGO ADAPTADA TABLET AJUSTA A TIPOGRAFIA DA MARCA NO HEADER INTERMEDIÁRIO */
+  .logo {
+    margin-left: 10px;
+    font-size: 28px;
+  }
+
+  /* INCREMENTA A LARGURA MÁXIMA PARA CONFORTO DE DIGITAÇÃO NO TABLET */
+  form {
+    max-width: 400px;
+    padding: 35px;
+  }
+}
+
+/* ADAPTAÇÃO PARA SMARTPHONES E TELAS MOBILE */
+@media (max-width: 600px) {
+
+  /* EQUIVALÊNCIA CRÍTICA QUEBRA O HEADER EM COLUNA PARA EVITAR SOBREPOSIÇÃO NO CELULAR */
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* LOGO ADAPTADA MOBILE CENTRALIZA O TEXTO DO TOPO REMOVENDO RECUOS ANTIGOS */
+  .logo {
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  /* CONTAINER DOS LINKS ADAPTADO MOBILE COMPACTA O ESPAÇAMENTO DO MENU NO CELULAR */
+  .menu {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS MOBILE REMOVE AS MARGENS LATERAIS FIXAS SUBSTITUINDO PELO GAP */
+  .menu a {
+    margin-right: 0;
+    font-size: 16px;
+  }
+
+  /* REORGANIZA O ALINHAMENTO DO CORPO COMPENSANDO O HEADER VERTICAL EXPANDIDO */
+  body {
+    align-items: flex-start;
+    padding-top: 160px;
+    padding-bottom: 70px;
+    height: auto;
+  }
+
+  /* ENCOLHE O FORMULÁRIO PROPORCIONALMENTE AO MOBILE SEM ESTOURAR A TELA */
+  form {
+    width: 100%;
+    max-width: 92%;
+    padding: 20px;
+  }
+
+  /* DIMINUI O TAMANHO DO TÍTULO EM TELAS PEQUENAS */
+  h1 {
+    font-size: 22px;
+  }
+
+  /* AJUSTA O TAMANHO DO TEXTO DO BOTÃO EM OPERAÇÕES MOBILE */
+  button {
+    font-size: 16px;
+  }
+
+  /* REDUZ O TAMANHO DA FONTE DO RODAPÉ */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* FORMULÁRIO ADAPTADO MINI PERMITE AJUSTE TOTAL DA CAIXA FLUTUANTE EM LARGURAS EXTREMAMENTE ESTREITAS */
+  form {
+    max-width: 100%;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  /* ENCOLHE AS TEXTURAS DE DIGITAÇÃO PARA GANHO DE ESPAÇO NO SMARTPHONE SMALL */
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* BOTÃO PRINCIPAL ADAPTADO MINI AJUSTA A TIPOGRAFIA DE ENVIO PREVENINDO APERTOS */
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

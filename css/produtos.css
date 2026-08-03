@@ -1,0 +1,464 @@
+/* ZERA OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR E DEFINE O MODELO DE CAIXAS DO SISTEMA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE O FUNDO PRINCIPAL DA PÁGINA E ORGANIZA A ESTRUTURA VERTICAL */
+body {
+  background: #e5c482;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CRIA A BARRA SUPERIOR COM TÍTULO, BOTÕES E POSICIONAMENTO FIXO NA TELA */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #5f472c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  z-index: 999;
+}
+
+/* AJUSTA O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO */
+.titulo h1 {
+  font-size: 28px;
+  color: white;
+  margin-top: 4px;
+}
+
+/* ESTILIZA O SUBTÍTULO AMARELO DO CABEÇALHO */
+.titulo h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #f7d08a;
+  font-weight: bold;
+}
+
+/* CONTAINER DOS BOTÕES DO MENU SUPERIOR */
+.btn-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* ESTILIZA OS BOTÕES DE NAVEGAÇÃO E LOGOUT */
+.btn-header button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-voltar{
+  background: green;
+  color: white;
+}
+
+/* ALTERA A COR DO BOTÃO AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background: white;
+  color: green;
+}
+
+.btn-sair{
+  background: red;
+  color: white;
+}
+
+.btn-sair:hover {
+  background: white;
+  color: red;
+}
+
+/* ORGANIZA O ESPAÇAMENTO RECUADO PARA CONTEÚDO NÃO SUMIR SOB O HEADER FIXO */
+main {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto 100px;
+  padding-top: 120px;
+  flex: 1;
+}
+
+/* BARRA SUPERIOR DE FILTRO E ADIÇÃO DE PRODUTOS */
+.topo {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* CAIXA DE TEXTO PARA BUSCA RÁPIDA DE ITENS */
+#pesquisa {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* BOTÃO MARROM PARA REGISTRAR NOVAS MERCADORIAS */
+#btnNovo {
+  background: #5f472c;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#btnNovo:hover {
+  background: #7a5d39;
+}
+
+/* CONTÊINER PARA OS BLOCOS DE INDICADORES NUMÉRICOS */
+.resumo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* CARD DE MÉTRICA INDIVIDUAL DO TOPO DO PAINEL */
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+/* RÓTULO DE DESCRIÇÃO DO BLOCO DE RESUMO */
+.box h3 {
+  color: #777;
+  font-size: 16px;
+}
+
+/* DESTAQUE NUMÉRICO DO CONTADOR DO CARD */
+.box span {
+  display: block;
+  margin-top: 10px;
+  color: #5f472c;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* LISTAGEM EM GRADE AUTOCALCULADA PARA OS CARDS DE MERCADORIA */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* CARD INDIVIDUAL COMPORTANDO AS INFORMAÇÕES DO PRODUTO */
+.card-produto {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.12);
+  transition: .3s;
+}
+
+/* CRIA EFEITO VISUAL DE ELEVAÇÃO AO PASSAR O MOUSE NO CARD */
+.card-produto:hover {
+  transform: translateY(-5px);
+}
+
+/* TÍTULO DA MERCADORIA EXIBIDO DENTRO DO CARD */
+.card-produto h2 {
+  color: #5f472c;
+  margin-bottom: 15px;
+}
+
+/* LINHAS TEXTUAIS COMPLEMENTARES DE METADADOS DO ITEM */
+.info {
+  margin: 8px 0;
+  color: #555;
+}
+
+/* EXIBIÇÃO EM DESTAQUE DO PREÇO EM TOM VERDE */
+.preco {
+  font-size: 22px;
+  font-weight: bold;
+  color: #218739;
+  margin: 15px 0;
+}
+
+/* ESTILO TEXTUAL DE ALERTA PARA ITENS EM SISTEMA ATIVO */
+.ativo {
+  color: #218739;
+  font-weight: bold;
+}
+
+/* ESTILO TEXTUAL DE ALERTA PARA ITENS EM SISTEMA INATIVO */
+.inativo {
+  color: #c62828;
+  font-weight: bold;
+}
+
+/* AGRUPAMENTO LATERAL DE BOTÕES DE MANUTENÇÃO DO PRODUTO */
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* PROPRIEDADES COMUNS DE CLIQUE PARA OS BOTÕES INTERNOS DO CARD */
+.botoes button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* MARCAÇÃO DO BOTÃO DE EDIÇÃO DE DADOS (TOM VERDE ESCURO) */
+.editar {
+  background: #0f5c5c;
+  color: white;
+}
+
+/* MARCAÇÃO DO BOTÃO DE REMOÇÃO DA FILA (TOM VERMELHO) */
+.excluir {
+  background: #c62828;
+  color: white;
+}
+
+/* JANELA FLUTUANTE DE SUPORTE A ALTERAÇÕES DE CADASTRO */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* CAIXA BRANCA INTERNA CENTRALIZADA DO MODAL */
+.modal-conteudo {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* TÍTULO PRINCIPAL DO MODAL DE OPERAÇÕES */
+.modal-conteudo h2 {
+  text-align: center;
+  color: #5f472c;
+  margin-bottom: 12px;
+}
+
+/* REMOVIDO TRAVA DE HEIGHT 22PX PARA NÃO CORTAR TEXTO INTERNO */
+.modal-conteudo input,
+.modal-conteudo textarea,
+.modal-conteudo select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* REDIMENSIONAMENTO ESPECÍFICO PARA O CAMPO DE DESCRIÇÃO DO MODAL */
+.modal-conteudo textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* BLOCO DE ENCERRAMENTO DOS CONTROLES DO FORMULÁRIO DO MODAL */
+.acoes-modal {
+  display: flex;
+  gap: 10px;
+}
+
+/* CONTROLES DE CONFIRMAÇÃO OU REJEIÇÃO DA SALVAGUARDA DO PRODUTO */
+.acoes-modal button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* BOTÃO SALVAR (VERDE OPERACIONAL) */
+#salvar {
+  background: #2e7d32;
+  color: white;
+}
+
+/* BOTÃO CANCELAR (VERMELHO OPERACIONAL) */
+#cancelar {
+  background: #c62828;
+  color: white;
+}
+
+/* FIXA A BARRA DE RODAPÉ NO FIM DA INTERFACE VISUAL */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* MARCAÇÃO EM VERDE PARA VOLUMES NORMAIS */
+.estoque-normal {
+  color: #2e7d32;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* MARCAÇÃO EM LARANJA PARA ALERTA DE VOLUMES BAIXOS */
+.estoque-baixo {
+  color: #f57c00;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* MARCAÇÃO EM VERMELHO PARA ALERTA DE VOLUME ESGOTADO */
+.estoque-esgotado {
+  color: #d32f2f;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR FIXA */
+  header {
+    padding: 10px 20px;
+  }
+
+  /* BLOCO DE RESUMO ADAPTADO NOTEBOOK AJUSTA AS CAIXAS MÉTRICAS PARA REORGANIZAREM EM LINHAS FLEXÍVEIS PREVENINDO APERTOS */
+  .resumo {
+    justify-content: center;
+  }
+
+  /* CARD DE MÉTRICA ADAPTADO NOTEBOOK FIXA UMA LARGURA MÁXIMA PARA EVITAR QUE AS CAIXAS ESTIQUEM DEMAIS */
+  .box {
+    max-width: 280px;
+  }
+}
+
+/* REGRAS DE ADAPTAÇÃO DIRECIONADAS PARA SMARTPHONES E TABLETS */
+@media (max-width: 700px) {
+
+  /* DESFAZ ALTURA DO TOPO FIXO E COMPENSA EM COLUNA PARA MOBILE */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* BOTÕES DO HEADER MOBILE SEPARA OS BOTÕES DO TOPO COM LARGURA COMPLETA NO SMARTPHONE */
+  .btn-header {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* BOTÕES PRINCIPAIS RESPONSIVOS DIRECIONA OS BOTÕES DO MENU SUPERIOR PARA FORMATO VERTICAL */
+  .btn-header button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE COMPENSA O CRESCIMENTO VERTICAL DO NOVO HEADER EM COLUNA */
+  main {
+    padding-top: 180px;
+    margin-bottom: 60px;
+  }
+
+  /* EMPILHA OS CONTROLES DE FILTRO E NOVOS PRODUTOS */
+  .topo {
+    flex-direction: column;
+  }
+  
+  /* BOTÃO INSERIR NO MOBILE EXPANDE PARA DAR MELHOR ÁREA DE TOQUE */
+  #btnNovo {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* CONTADORES ADAPTADOS FAZ OS CARDS DO RESUMO EMPILHAREM EM COLUNA ÚNICA */
+  .resumo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* CARD DE RESUMO NO MOBILE PERMITE EXPANDIR INTEGRALMENTE EM TELAS DE CELULAR */
+  .box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* QUEBRA A LISTA GRID PARA APRESENTAÇÃO VERTICAL DE UMA COLUNA */
+  .lista {
+    grid-template-columns: 1fr;
+  }
+
+  /* BOTÕES DO CARD ADAPTADOS EMPILHA OS COMANDOS DE EDIÇÃO E EXCLUSÃO EM TELAS PEQUENAS */
+  .botoes {
+    flex-direction: column;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO EM CELULARES MINI */
+  .titulo h1 {
+    font-size: 24px;
+  }
+
+  /* CAIXA INTERNA DO MODAL ADAPTADA MINI REDUZ O RECUO DO FORMULÁRIO EM DISPOSITIVOS DE LARGURA EXTREMA */
+  .modal-conteudo {
+    padding: 15px;
+  }
+
+  /* CONTROLES DO FORMULÁRIO ADAPTADOS MODIFICA OS BOTÕES DE SALVAR E CANCELAR PARA FORMATO VERTICAL */
+  .acoes-modal {
+    flex-direction: column;
+  }
+
+  /* ENCOLHE A FONTE DA BARRA DE RODAPÉ */
+  footer {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

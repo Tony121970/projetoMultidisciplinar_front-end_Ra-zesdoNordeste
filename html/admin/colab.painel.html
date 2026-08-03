@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Painel do Colaborador</title>
+
+    <!-- IMPORTA A FOLHA DE ESTILOS DOS ALERTAS PERSONALIZADOS DO SISTEMA. -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA A FOLHA DE ESTILOS ESPECÍFICA DO PAINEL DO COLABORADOR. -->
+    <link rel="stylesheet" href="../../css/admin/colab.painel.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO: EXIBE O TÍTULO DA ÁREA RESTRITA E OS BOTÕES DE NAVEGAÇÃO DO SISTEMA. -->
+    <header>
+      <div class="titulo">
+        <h1>Painel do Colaborador</h1>
+
+        <h2>Gerência</h2>
+      </div>
+
+      <!-- ÁREA DOS BOTÕES DE ACESSO PARA RETORNAR AO LOGIN OU ENCERRAR A SESSÃO. -->
+      <div class="acesso">
+        <a href="colab.login.html" class="btn-voltar"> Voltar </a>
+
+        <a href="../index.html" class="btn-sair"> Sair </a>
+      </div>
+    </header>
+
+    <!-- PAINEL PRINCIPAL: AGRUPA TODOS OS CARDS QUE DÃO ACESSO AOS SETORES DO SISTEMA. -->
+    <main class="painel">
+      
+      <!-- CARD ESTOQUE: PERMITE CONSULTAR E ACOMPANHAR O CONTROLE DOS INSUMOS DISPONÍVEIS. -->
+      <a href="../estoque.html" class="card-link">
+        <div class="card pagamentos">
+          <div class="icone"></div>
+
+          <h3>Estoque</h3>
+
+          <p>Consulte e acompanhe o estoque de insumos.</p>
+        </div>
+      </a>
+
+      <!-- CARD ESTOQUE: PERMITE CONSULTAR E ACOMPANHAR O CONTROLE DOS PRODUTOS DISPONÍVEIS. -->
+      <a href="../produtos.html" class="card-link">
+        <div class="card pagamentos">
+          <div class="icone"></div>
+
+          <h3>Produtos</h3>
+
+          <p>Consulte e acompanhe o estoque de produtos.</p>
+        </div>
+      </a>
+
+      <!-- CARD COZINHA: DIRECIONA PARA O SETOR RESPONSÁVEL PELO PREPARO DOS PEDIDOS. -->
+      <a href="../cozinha.html" class="card-link">
+        <div class="card cozinha">
+          <div class="icone"></div>
+
+          <h3>Cozinha</h3>
+
+          <p>Acompanhe os pedidos em preparo.</p>
+        </div>
+      </a>
+
+      <!-- CARD ATENDENTE: DIRECIONA PARA O PAINEL DE ATENDIMENTO AO CLIENTE. -->
+      <a href="../atendente.html" class="card-link">
+        <div class="card atendente">
+          <div class="icone"></div>
+
+          <h3>Atendente</h3>
+
+          <p>Acompanhe o atendimento ao cliente.</p>
+        </div>
+      </a>
+
+      <!-- CARD ENTREGAS: PERMITE GERENCIAR OS PEDIDOS PRONTOS PARA ENTREGA OU RETIRADA. -->
+      <a href="../entrega.html" class="card-link">
+        <div class="card entrega">
+          <div class="icone"></div>
+
+          <h3>Entregas</h3>
+
+          <p>Controle pedidos prontos para entrega ou retirada.</p>
+        </div>
+      </a>
+
+      <!-- CARD HISTÓRICO: EXIBE O REGISTRO DOS PEDIDOS JÁ FINALIZADOS PELO SISTEMA. -->
+      <a href="../historico.html" class="card-link">
+        <div class="card historico">
+          <div class="icone"></div>
+
+          <h3>Histórico</h3>
+
+          <p>Visualize todos os pedidos finalizados.</p>
+        </div>
+      </a>
+
+      <!-- CARD AVALIAÇÕES: DIRECIONA PARA O PAINEL RESPONSÁVEL PELA VISUALIZAÇÃO DAS AVALIAÇÕES DOS CLIENTES. -->
+      <a href="avaliacoes.html" class="card-link">
+        <div class="card avaliacoes">
+          <div class="icone"></div>
+
+          <h3>Avaliações</h3>
+
+          <p>Atente-se às avaliações dos clientes.</p>
+        </div>
+      </a>
+
+      <!-- CARD DASHBOARD: DIRECIONA PARA O PAINEL RESPONSÁVEL PELA VISUALIZAÇÃO DO RESUMO DE NEGÓCIOS. -->
+      <a href="dashboard.html" class="card-link">
+        <div class="card dashboard">
+          <div class="icone"></div>
+
+          <h3>Dashboard</h3>
+
+          <p>Indicadores de negócios por período.</p>
+        </div>
+      </a>
+    </main>
+
+    <!-- RODAPÉ: EXIBE O AVISO INFORMANDO QUE O SISTEMA FOI DESENVOLVIDO APENAS PARA FINS ACADÊMICOS. -->
+    <footer>
+      <p>
+        <!-- ÍCONE ILUSTRATIVO DO AVISO. -->
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELOS ALERTAS PERSONALIZADOS DO SISTEMA. -->
+    <script src="../js/alertas.js"></script>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELO FUNCIONAMENTO DO PAINEL DO COLABORADOR. -->
+    <script src="../../js/admin/colab.painel.js"></script>
+  </body>
+</html>
+
+

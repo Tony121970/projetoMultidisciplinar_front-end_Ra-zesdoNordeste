@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Painel Admin</title>
+
+    <!-- IMPORTA O CSS RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA O CSS ESPECÍFICO DO PAINEL ADMINISTRATIVO -->
+    <link rel="stylesheet" href="../../css/admin/painel.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO PRINCIPAL DO PAINEL ADMINISTRATIVO -->
+    <header>
+      <!-- ÁREA RESPONSÁVEL PELA IDENTIFICAÇÃO DO PAINEL -->
+      <div class="titulo">
+        <!-- TÍTULO PRINCIPAL DA ÁREA ADMINISTRATIVA -->
+        <h1>Painel de Controle</h1>
+
+        <!-- IDENTIFICAÇÃO DO SETOR RESPONSÁVEL -->
+        <h2>Setor Administrativo</h2>
+      </div>
+
+      <!-- BOTÃO RESPONSÁVEL POR ENCERRAR A SESSÃO DO ADMINISTRADOR -->
+      <button onclick="sair()">Sair</button>
+    </header>
+
+    <!-- ÁREA PRINCIPAL COM OS CARDS DE ACESSO AOS MÓDULOS DO SISTEMA -->
+    <main>
+      <!-- A FUNÇÃO ABRIRSETOR DIRECIONA PARA A PÁGINA CORRESPONDENTE -->
+      <div class="card" onclick="abrirSetor('../atendente.html')">
+        <h2>Atendente</h2>
+
+        <p>Receber pedidos</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('../cozinha.html')">
+        <h2>Cozinha</h2>
+
+        <p>Preparação dos pedidos</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('../entrega.html')">
+        <h2>Entrega</h2>
+
+        <p>Pedidos em rota</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('../historico.html')">
+        <h2>Histórico</h2>
+
+        <p>Pedidos finalizados</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('produtosAdmin.html')">
+        <h2>Produtos</h2>
+
+        <p>Alterar preços e cadastro</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('estoqueAdmin.html')">
+        <h2>Estoque</h2>
+
+        <p>Consultar e controlar insumos</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('avaliacoes.html')">
+        <h2>Avaliações</h2>
+
+        <p>Avaliações dos clientes</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('dashboard.html')">
+        <h2>Dashboard</h2>
+
+        <p>Indicadores de negócio</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('../fornecedores.html')">
+        <h2>Fornecedores</h2>
+
+        <p>Cadastro de fornecedores</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('../relatorios.html')">
+        <h2>Relatórios</h2>
+
+        <p>Vendas e estoque</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('../configuracoes.html')">
+        <h2>Configurações</h2>
+
+        <p>Preferências do sistema</p>
+      </div>
+
+      <div class="card" onclick="abrirSetor('outrosServicos.html')">
+        <h2>Outros</h2>
+
+        <p>Outros Serviços</p>
+      </div>
+    </main>
+
+    <!-- RODAPÉ COM AVISO INFORMATIVO -->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- IMPORTA O SCRIPT DE ALERTAS DO SISTEMA -->
+    <script src="../js/alertas.js"></script>
+
+    <!-- IMPORTA O SCRIPT COM AS FUNÇÕES DO PAINEL ADMINISTRATIVO -->
+    <script src="../../js/admin/painel.js"></script>
+  </body>
+</html>

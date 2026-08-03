@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Histórico de Pedidos</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/historico.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- CABEÇALHO COM TITULO DA TELA E COMPONENTES DE SAIDA E RETORNO -->
+    <header>
+      <div class="titulo">
+        <h1>Histórico de Pedidos</h1>
+        <p>Pedidos Finalizados e Cancelados</p>
+      </div>
+
+      <button onclick="window.history.back()">Voltar</button>
+    </header>
+
+    <!-- CONTAINER DE LISTAGEM DOS FLUXOS DE COMPRA CONCLUIDOS -->
+    <main>
+      <section id="listaHistorico">
+        <!-- HISTÓRICO GERADO AUTOMATICAMENTE -->
+      </section>
+    </main>
+
+    <!-- RODAPE PADRÃO COM NOTA INFORMATIVA ACADEMICA -->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA INTEGRAÇÃO DOS SCRIPTS DE DADOS E EVENTOS PASSADOS -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/pedidos.js"></script>
+    <script src="../js/historico.js"></script>
+  </body>
+</html>

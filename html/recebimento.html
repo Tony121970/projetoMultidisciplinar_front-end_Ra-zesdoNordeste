@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recebimento do Pedido</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/recebimento.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO COM IDENTIFICAÇÃO DO PROCESSO E DIRECIONAMENTO DE TELAS -->
+    <header>
+      <h1 class="titulo">Recebimento do Pedido</h1>
+
+      <div class="acesso">
+        <a href="carrinho.html" class="btn-voltar">Voltar</a>
+        <a href="index.html" class="btn-sair"> Sair</a>
+      </div>
+    </header>
+
+    <!-- CONTEUDO PRINCIPAL QUE COMPORTA AS OPÇÕES DE LOGISTICA E VALORES -->
+    <main>
+      <div class="container">
+        <!-- SELEÇÃO DA MODALIDADE DE RETIRADA OU DESPACHO DOMICILIAR -->
+        <div class="card">
+          <h2>Como deseja receber seu pedido?</h2>
+
+          <label class="opcao">
+            <input type="radio" name="tipoEntrega" value="retirada" checked />
+            <i class="fa-solid fa-store"></i>
+            Retirar no Restaurante
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="tipoEntrega" value="entrega" />
+            <i class="fa-solid fa-motorcycle"></i>
+            Receber em Casa (Distância máxima de 10 km)
+          </label>
+
+          <!-- FORMULÁRIO DE LOCALIZAÇÃO DO ENDEREÇO COM FILTRO DE CEP -->
+          <div id="dadosEntrega" class="dados">
+            <h2>Endereço de Entrega</h2>
+
+            <input type="text" id="cep" placeholder="CEP" />
+
+            <input type="text" id="rua" placeholder="Rua" />
+
+            <input type="text" id="numero" placeholder="Número" />
+
+            <input type="text" id="bairro" placeholder="Bairro" />
+
+            <input type="text" id="cidade" placeholder="Cidade" readonly />
+
+            <input type="text" id="estado" placeholder="Estado" readonly />
+
+            <input
+              type="text"
+              id="complemento"
+              placeholder="Complemento (Opcional)"
+            />
+
+            <!-- CAMPO RESTRITO ONDE O JAVASCRIPT INSERE A KM CALCULADA -->
+            <p>
+              Distância calculada:
+              <strong id="distanciaCalculada">0 km</strong>
+            </p>
+
+            <button id="btnCalcular">Calcular Taxa</button>
+          </div>
+        </div>
+
+        <!-- EXIBIÇÃO EM DETALHES DE TAXAS E PREVISÃO FINAL DO PEDIDO -->
+        <div class="card">
+          <h2>Resumo da Entrega</h2>
+
+          <div class="linha">
+            <span>Taxa Fixa</span>
+            <strong>R$ 3,00</strong>
+          </div>
+
+          <div class="linha">
+            <span>Distância</span>
+            <strong id="txtDistancia">0 km</strong>
+          </div>
+
+          <div class="linha">
+            <span>Valor por Km</span>
+            <strong>R$ 2,00</strong>
+          </div>
+
+          <div class="linha">
+            <span>Taxa de Entrega</span>
+            <strong id="taxaEntrega">R$ 0,00</strong>
+          </div>
+
+          <hr />
+
+          <div class="linha total">
+            <span>Total do Pedido</span>
+            <strong id="totalPedido">R$ 0,00</strong>
+          </div>
+        </div>
+
+        <!-- DIRECIONADOR PARA AVANÇAR AO FLUXO DE LIQUIDAÇÃO FINANCEIRA -->
+        <button id="btnContinuar">Continuar para Pagamento</button>
+      </div>
+    </main>
+
+    <!-- RODAPE FIXO DO SISTEMA COM NOTA DE USO RESTRITO ACADEMICO -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA LOGICA COMPORTAMENTAL DE CONSUMO DE API DE CEP E CALCULOS -->
+    <script src="../js/alertas.js"></script>
+
+    <script src="../js/recebimento.js"></script>
+  </body>
+</html>

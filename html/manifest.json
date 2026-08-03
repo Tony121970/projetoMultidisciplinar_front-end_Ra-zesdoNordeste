@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Raízes do Nordeste",
+  "short_name": "Raízes",
+  "description": "Aplicativo acadêmico sobre a culinária nordestina.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fff8e7",
+  "theme_color": "#8b4513",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "../Imagens/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../Imagens/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

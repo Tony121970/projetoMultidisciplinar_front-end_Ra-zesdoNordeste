@@ -1,0 +1,467 @@
+/* REMOVE OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR, DEFINE O MODELO DE DIMENSIONAMENTO DOS ELEMENTOS E PADRONIZA A FONTE UTILIZADA EM TODA A PÁGINA. */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO PRINCIPAL UTILIZADA EM TODA A ÁREA VISÍVEL DO SISTEMA. */
+body{
+  background:#e5c482;
+}
+
+/* CRIA A BARRA SUPERIOR FIXA DA PÁGINA, MANTENDO O LOGO E O MENU SEMPRE VISÍVEIS DURANTE A NAVEGAÇÃO. */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background:#5f472c;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  z-index:999;
+}
+
+/* DEFINE A APARÊNCIA DO NOME DA EMPRESA EXIBIDO NO LADO ESQUERDO DO CABEÇALHO. */
+.logo{
+  color:#fff;
+  font-size:32px;
+  font-weight:bold;
+  margin-left:20px;
+}
+
+/* ORGANIZA OS LINKS DO CABEÇALHO LADO A LADO COM ESPAÇAMENTO ENTRE ELES. */
+nav{
+  display:flex;
+  gap:20px;
+  margin-right:20px;
+}
+
+/* DEFINE O VISUAL DOS LINKS PRINCIPAIS DO SISTEMA E SUA TRANSIÇÃO DURANTE A INTERAÇÃO. */
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  transition:.3s;
+  margin-top:6px;
+}
+
+/* DESTACA VISUALMENTE O ITEM ATUAL OU O LINK SOBRE O QUAL O USUÁRIO PASSA O MOUSE. */
+nav a:hover,
+nav a.ativo{
+  color:#ffd27d;
+}
+
+/* DEFINE O VISUAL DO BOTÃO RESPONSÁVEL POR RETORNAR À PÁGINA ANTERIOR DO NAVEGADOR. */
+.btn-voltar{
+  background:green;
+  color:white;
+  width:auto;
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  font-size:14px;
+  cursor:pointer;
+  transition:background-color .3s, transform .1s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ALTERA A COR DO BOTÃO AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background: white;
+  color: green;
+}
+
+/* ORGANIZA TODA A ÁREA DO CARRINHO, SEPARANDO A LISTA DE PRODUTOS DO RESUMO DO PEDIDO. */
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:120px auto 80px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+}
+
+/* DEFINE A APARÊNCIA DO TÍTULO EXIBIDO ACIMA DA ÁREA PRINCIPAL DO CARRINHO. */
+.container h1{
+  width:100%;
+  text-align:center;
+  color:#8b4513;
+  margin-bottom:20px;
+}
+
+/* ORGANIZA TODOS OS CARDS DOS PRODUTOS ADICIONADOS AO CARRINHO. */
+#listaCarrinho{
+  flex:2;
+  min-width:340px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* DEFINE A APARÊNCIA INDIVIDUAL DE CADA PRODUTO EXIBIDO NO CARRINHO. */
+.item-carrinho{
+  display:flex;
+  width:330px;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+/* PADRONIZA O TAMANHO, FORMATO E ENQUADRAMENTO DAS IMAGENS DOS PRODUTOS. */
+.item-carrinho img{
+  width:130px;
+  height:130px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* PERMITE QUE O BLOCO DE TEXTO OCUPE TODO O ESPAÇO DISPONÍVEL NO CARD. */
+.info-produto{
+  flex:1;
+}
+
+/* DEFINE A COR E O ESPAÇAMENTO DO TÍTULO DO PRODUTO EXIBIDO NO CARD. */
+.info-produto h3{
+  color:#8b4513;
+  margin-bottom:10px;
+}
+
+/* DEFINE O ESPAÇAMENTO E A COR DOS TEXTOS INFORMATIVOS DO PRODUTO. */
+.info-produto p{
+  color:#555;
+  margin-bottom:8px;
+}
+
+/* DESTACA O VALOR UNITÁRIO UTILIZANDO COR E TAMANHO MAIORES. */
+.preco{
+  font-size:20px;
+  color:#d32f2f;
+  font-weight:bold;
+}
+
+/* ORGANIZA OS BOTÕES DE ADICIONAR E REMOVER QUANTIDADE DO PRODUTO. */
+.controle{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+}
+
+/* DEFINE O FORMATO CIRCULAR DOS BOTÕES DE AUMENTAR E DIMINUIR A QUANTIDADE. */
+.controle button{
+  width:35px;
+  height:35px;
+  border:none;
+  border-radius:50%;
+  background:#8b4513;
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  transition:.3s;
+}
+
+/* ALTERA A COR DOS BOTÕES DURANTE A INTERAÇÃO DO USUÁRIO. */
+.controle button:hover{
+  background:#5f472c;
+}
+
+/* DEFINE O TAMANHO E O DESTAQUE DO NÚMERO QUE REPRESENTA A QUANTIDADE DO PRODUTO. */
+.quantidade{
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* DESTACA O VALOR TOTAL DE CADA PRODUTO CONSIDERANDO SUA QUANTIDADE. */
+.subtotal{
+  color:#c62828;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+/* DEFINE O ÍCONE UTILIZADO PARA EXCLUIR UM PRODUTO DO CARRINHO. */
+.btn-remover{
+  background:none;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
+  padding:5px;
+  align-self:flex-start;
+}
+
+/* DEFINE O PAINEL LATERAL RESPONSÁVEL POR EXIBIR OS VALORES TOTAIS E OS BOTÕES DE FINALIZAÇÃO DO PEDIDO. */
+.resumo{
+  flex:1;
+  min-width:330px;
+  background:#fff;
+  border-radius:15px;
+  padding:30px;
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+  position:sticky;
+  top:80px;
+  max-height:calc(100vh - 10px);
+  overflow-y:auto;
+  bottom:30px;
+}
+
+/* DEFINE A APARÊNCIA DO TÍTULO PRINCIPAL DO CARD DE RESUMO DO PEDIDO. */
+.resumo h2{
+  color:#8b4513;
+  margin-bottom:25px;
+}
+
+/* ORGANIZA CADA INFORMAÇÃO DO RESUMO EM DUAS COLUNAS ALINHADAS. */
+.linha{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* DESTACA O VALOR FINAL DA COMPRA UTILIZANDO TAMANHO E COR DIFERENCIADOS. */
+.total{
+  font-size:25px;
+  color:#d32f2f;
+  font-weight:bold;
+}
+
+/* ORGANIZA OS BOTÕES DE AÇÃO DO RESUMO EM FORMATO VERTICAL. */
+.cotainer-botoes{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* PADRONIZA O TAMANHO, FORMATO E ALINHAMENTO DOS BOTÕES DE AÇÃO DO CARRINHO. */
+.btn-limpar,
+.btn-finalizar,
+.btn-continuar{
+  width:60%;
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  cursor:pointer;
+  transition:background-color .3s, transform .1s ease;
+  text-decoration:none;
+  text-align:center;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto;
+}
+
+/* DEFINE A APARÊNCIA DO BOTÃO RESPONSÁVEL POR REMOVER TODOS OS PRODUTOS DO CARRINHO. */
+.btn-limpar{
+  background:#c62828;
+  color:#fff;
+}
+
+/* ALTERA A COR DO BOTÃO QUANDO O USUÁRIO PASSA O MOUSE SOBRE ELE. */
+.btn-limpar:hover{
+  background:#8e0000;
+}
+
+
+/* DEFINE A APARÊNCIA DO BOTÃO RESPONSÁVEL POR ENCAMINHAR O CLIENTE PARA A ETAPA DE PAGAMENTO. */
+.btn-finalizar{
+  background:#25D366;
+  color:#fff;
+}
+
+/* ALTERA A COR DO BOTÃO DURANTE A INTERAÇÃO DO USUÁRIO. */
+.btn-finalizar:hover{
+  background:#1da851;
+}
+
+
+/* DEFINE A APARÊNCIA DO BOTÃO QUE RETORNA O CLIENTE AO CARDÁPIO PARA ADICIONAR NOVOS PRODUTOS. */
+.btn-continuar{
+  background:#2805eb;
+  color:#fff;
+}
+
+/* ALTERA A COR DO BOTÃO AO PASSAR O MOUSE, DESTACANDO A INTERAÇÃO. */
+.btn-continuar:hover{
+  background:#395994;
+}
+
+
+/* DEFINE A ÁREA EXIBIDA QUANDO NÃO EXISTEM PRODUTOS ADICIONADOS AO CARRINHO. */
+.vazio{
+  text-align:center;
+  display:none;
+  width:100%;
+}
+
+
+/* DEFINE O TAMANHO DA ILUSTRAÇÃO EXIBIDA QUANDO O CARRINHO NÃO POSSUI PRODUTOS. */
+.vazio img{
+  width:220px;
+  margin-bottom:20px;
+}
+
+
+/* DEFINE A APARÊNCIA DA MENSAGEM INFORMANDO QUE O CARRINHO ESTÁ SEM PRODUTOS. */
+.vazio h2{
+  color:#8b4513;
+  margin-bottom:15px;
+}
+
+
+/* CRIA A BARRA FIXA INFERIOR DA PÁGINA CONTENDO A MENSAGEM INSTITUCIONAL DO PROJETO. */
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ab7d61;
+  color:black;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+  font-weight:bold;
+  z-index:999;
+}
+
+
+/* CENTRALIZA O TEXTO E O ÍCONE UTILIZANDO FLEXBOX. */
+footer p{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CONTAINER PRINCIPAL ADAPTADO NOTEBOOK MUDA O ALINHAMENTO PARA COLUNA PARA O RESUMO IR PARA BAIXO DOS PRODUTOS */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* LISTA DE PRODUTOS ADAPTADA NOTEBOOK EXPANDE A LISTA DE CARDS PARA OCUPAR TODA A LARGURA DA TELA */
+  #listaCarrinho {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* RESUMO RESPONSIVO NOTEBOOK FAZ O CARD DE RESUMO OCUPAR A LARGURA COMPLETA E DESATIVA O EFEITO GRUDADO */
+  .resumo {
+    width: 100%;
+    position: static;
+  }
+}
+
+/* RESPONSIVIDADE ADAPTA O LAYOUT PARA TABLETS E CELULARES MELHORANDO A DISTRIBUIÇÃO DOS ELEMENTOS EM TELAS MENORES */
+@media(max-width:900px){
+
+  /* CABEÇALHO RESPONSIVO EMPILHA OS ELEMENTOS DO CABEÇALHO PARA EVITAR SOBREPOSIÇÕES EM TELAS PEQUENAS */
+  header{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+  }
+
+  /* CONTAINER PRINCIPAL ADAPTADO TABLET COMPENSA O ESPAÇAMENTO DO TOPO JÁ QUE O CABEÇALHO MOBILE FICOU MAIOR */
+  .container {
+    margin-top: 150px;
+    margin-bottom: 120px;
+  }
+
+  /* BOTÕES RESPONSIVOS AUMENTA A LARGURA DOS BOTÕES DO RESUMO PARA AJUSTE CONFORTÁVEL EM TELAS MENORES */
+  .btn-limpar,
+  .btn-finalizar,
+  .btn-continuar{
+    width:100%;
+    font-size:16px;
+  }
+
+  /* MENU RESPONSIVO PERMITE A QUEBRA DE LINHA DOS LINKS DO MENU E CENTRALIZA SUA EXIBIÇÃO */
+  nav{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-right:0;
+  }
+
+  /* LISTA RESPONSIVA CENTRALIZA OS CARDS DOS PRODUTOS QUANDO HÁ MENOR ESPAÇO HORIZONTAL */
+  #listaCarrinho{
+    justify-content:center;
+  }
+
+  /* CARD RESPONSIVO ALTERA O LAYOUT DOS PRODUTOS PARA O FORMATO VERTICAL EM DISPOSITIVOS MÓVEIS */
+  .item-carrinho{
+    flex-direction:column;
+    text-align:center;
+    width:100%;
+    max-width:340px;
+  }
+
+  /* IMAGEM RESPONSIVA AUMENTA O TAMANHO DAS IMAGENS DOS PRODUTOS PARA MELHOR VISUALIZAÇÃO EM TELAS MENORES */
+  .item-carrinho img{
+    width:180px;
+    height:180px;
+  }
+
+  /* ÁREA DE INFORMAÇÕES RESPONSIVA PERMITE QUE AS INFORMAÇÕES DO PRODUTO UTILIZEM TODA A LARGURA DISPONÍVEL */
+  .info-produto{
+    width:100%;
+  }
+
+  /* CONTROLE RESPONSIVO CENTRALIZA OS BOTÕES DE QUANTIDADE NO CARD DO PRODUTO */
+  .controle{
+    justify-content:center;
+  }
+
+  /* BOTÃO REMOVER RESPONSIVO CENTRALIZA O BOTÃO DE EXCLUSÃO QUANDO O CARD PASSA PARA O FORMATO VERTICAL */
+  .btn-remover{
+    align-self:center;
+  }
+
+  /* RESUMO RESPONSIVO FAZ O PAINEL DE VALORES DO RESUMO FLUIDO E DESATIVA A POSIÇÃO GRUDADA PARA EVITAR SOBREPOSIÇÃO NO CELULAR */
+  .resumo {
+    width: 100%;
+    position: static;
+    padding: 20px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* LOGO ADAPTADA MINI REDUZ O TAMANHO DA LOGOMARCA NO CABEÇALHO DA TELA MAIS ESTREITA */
+  .logo {
+    font-size: 26px;
+  }
+
+  /* CONTAINER PRINCIPAL ADAPTADO MINI AJUSTA OS RECUOS GERAIS PARA GANHAR ESPAÇO NAS BORDAS DO CELULAR */
+  .container {
+    width: 95%;
+    margin-top: 140px;
+  }
+
+  /* CARD RESPONSIVO MINI PERMITE QUE O CARD DE PRODUTO SE COMDENSE SEM VAZAR NAS LATERAIS */
+  .item-carrinho {
+    padding: 15px;
+    gap: 15px;
+  }
+}

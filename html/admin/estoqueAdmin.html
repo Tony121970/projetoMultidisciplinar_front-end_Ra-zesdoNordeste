@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Estoque de Insumos</title>
+
+    <!-- IMPORTA O ARQUIVO CSS RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA O ARQUIVO CSS PRINCIPAL DA PÁGINA DE ESTOQUE -->
+    <link rel="stylesheet" href="../../css/estoque.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO PRINCIPAL DA PÁGINA -->
+
+    <header>
+      <!-- ÁREA RESPONSÁVEL POR APRESENTAR O TÍTULO E O SUBTÍTULO DO PAINEL -->
+      <div class="titulo">
+        <!-- TÍTULO PRINCIPAL DO PAINEL DE ESTOQUE -->
+        <h1>Estoque de Insumos</h1>
+
+        <!-- IDENTIFICAÇÃO DO SETOR RESPONSÁVEL PELO PAINEL -->
+        <h2>Setor Administrativo</h2>
+      </div>
+
+      <!-- ÁREA DOS BOTÕES DE ACESSO PARA RETORNAR AO PAINEL PRINCIPAL -->
+      <div class="acesso">
+        <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+    <main>
+      <!-- ÁREA SUPERIOR COM CAMPO DE PESQUISA E BOTÃO DE NOVO CADASTRO -->
+      <section class="topo">
+        <input type="text" id="pesquisa" placeholder="🔎 Pesquisar insumo..." />
+
+        <button id="btnNovo">Novo Insumo</button>
+      </section>
+
+      <!-- ÁREA DE RESUMO COM OS INDICADORES DO ESTOQUE -->
+      <section class="resumo">
+        <!-- CARD QUE APRESENTA A QUANTIDADE TOTAL DE INSUMOS -->
+        <div class="box">
+          <h3>Total</h3>
+
+          <!-- VALOR PREENCHIDO DINAMICAMENTE PELO JAVASCRIPT -->
+          <span id="totalInsumos"> 0 </span>
+        </div>
+
+        <!-- CARD QUE MOSTRA OS INSUMOS COM QUANTIDADE ABAIXO DO LIMITE -->
+        <div class="box">
+          <h3>Estoque Baixo</h3>
+
+          <!-- VALOR ATUALIZADO PELO JAVASCRIPT -->
+          <span id="estoqueBaixo"> 0 </span>
+        </div>
+
+        <!-- CARD QUE MOSTRA OS PRODUTOS SEM QUANTIDADE DISPONÍVEL -->
+        <div class="box">
+          <h3>Sem Estoque</h3>
+
+          <!-- VALOR ATUALIZADO PELO JAVASCRIPT -->
+          <span id="estoqueZero"> 0 </span>
+        </div>
+      </section>
+
+      <!-- ÁREA ONDE OS CARDS DE INSUMOS SERÃO INSERIDOS AUTOMATICAMENTE PELO JAVASCRIPT -->
+      <section id="listaEstoque" class="lista">
+        <!-- CARDS SERÃO CRIADOS PELO JAVASCRIPT -->
+      </section>
+    </main>
+
+    <!-- JANELA MODAL UTILIZADA PARA CADASTRAR OU EDITAR INSUMOS -->
+    <div id="modal" class="modal">
+      <!-- CONTEÚDO INTERNO DO MODAL -->
+      <div class="modal-conteudo">
+        <!-- TÍTULO DO MODAL ALTERADO PELO JAVASCRIPT CONFORME A AÇÃO -->
+        <h2 id="tituloModal">Novo Insumo</h2>
+
+        <!-- CAMPO PARA INFORMAR O NOME DO INSUMO -->
+        <input type="text" id="nome" placeholder="Nome do insumo" />
+
+        <!-- CAMPO PARA INFORMAR A CATEGORIA DO INSUMO -->
+        <input type="text" id="categoria" placeholder="Categoria" />
+
+        <!-- CAMPO PARA INFORMAR A QUANTIDADE DISPONÍVEL -->
+        <input type="number" id="quantidade" placeholder="Quantidade" />
+
+        <!-- CAMPO DE SELEÇÃO DA UNIDADE DE MEDIDA -->
+        <select id="unidade">
+          <option value="kg">Kg</option>
+
+          <option value="g">Gramas</option>
+
+          <option value="L">Litros</option>
+
+          <option value="un">Unidade</option>
+        </select>
+
+        <!-- CAMPO PARA DEFINIR O ESTOQUE MÍNIMO PERMITIDO -->
+        <input type="number" id="minimo" placeholder="Estoque mínimo" />
+
+        <!-- ÁREA DOS BOTÕES DE AÇÃO DO MODAL -->
+        <div class="acoes-modal">
+          <button id="salvar">Salvar</button>
+
+          <button id="cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ DA PÁGINA COM AVISO INFORMATIVO -->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <script src="../js/alertas.js"></script>
+
+    <!-- IMPORTA O SCRIPT DE CONEXÃO E GERENCIAMENTO DO BANCO DE ESTOQUE -->
+    <script src="../../js/estoqueDB.js"></script>
+
+    <!-- IMPORTA O SCRIPT PRINCIPAL DE FUNCIONAMENTO DO ESTOQUE -->
+    <script src="../../js/estoque.js"></script>
+  </body>
+</html>

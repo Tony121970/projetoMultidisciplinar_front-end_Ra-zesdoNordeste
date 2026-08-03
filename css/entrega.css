@@ -1,0 +1,387 @@
+/* REMOVE ESPAÇAMENTOS PADRÕES DO NAVEGADOR, DEFINE O MODELO DE TAMANHO DOS ELEMENTOS E PADRONIZA A FONTE DO SISTEMA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO PRINCIPAL DO SISTEMA DE ENTREGAS */
+body {
+  background: #e5c482; 
+}
+
+/* MANTÉM O MENU SEMPRE VISÍVEL NO TOPO DA TELA DURANTE A NAVEGAÇÃO */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; 
+  background: #5f472c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+}
+
+/* DEFINE O TAMANHO DO NOME EXIBIDO NO TOPO DA PÁGINA */
+.titulo h1 {
+  font-size: 28px;
+}
+
+/* ORGANIZA OS BOTÕES DO CABEÇALHO EM LINHA, CONTROLANDO ESPAÇAMENTO E QUEBRA DE LINHA QUANDO NECESSÁRIO. */
+.acoes {
+  display: flex;
+  justify-self: end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* DEFINE A APARÊNCIA PADRÃO DOS BOTÕES DO CABEÇALHO, INCLUINDO TAMANHO, CORES E EFEITO DE TRANSIÇÃO. */
+.acoes button {
+  padding:8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* LEVANTA LEVEMENTE O BOTÃO QUANDO O MOUSE PASSA SOBRE ELE */
+.acoes button:hover {
+  transform: translateY(-2px);
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO QUE UTILIZA O COMANDO DE RETORNO DO NAVEGADOR. */
+.btn-historico {
+  background-color: #f4c542;
+  color: white;
+}
+
+/* BOTÃO HISTÓRICO AO PASSAR O MOUSE: INVERTE AS CORES PARA DESTACAR A INTERAÇÃO. */
+.btn-historico:hover {
+  background-color: white;
+  color: #f4c542;
+}
+/* ALTERA A APARÊNCIA DO BOTÃO QUE UTILIZA O COMANDO DE RETORNO DO NAVEGADOR. */
+.btn-voltar {
+  background-color: green;
+  color: white;
+}
+
+/* BOTÃO VOLTAR AO PASSAR O MOUSE: INVERTE AS CORES PARA DESTACAR A INTERAÇÃO. */
+.btn-voltar:hover {
+  background-color: white;
+  color: green;
+}
+/* ALTERA A APARÊNCIA DO BOTÃO QUE UTILIZA O COMANDO DE RETORNO DO NAVEGADOR. */
+.btn-sair {
+  background-color: red;
+  color: white;
+}
+
+/* BOTÃO SAIR AO PASSAR O MOUSE: INVERTE AS CORES PARA DESTACAR A INTERAÇÃO. */
+.btn-sair:hover {
+  background-color: white;
+  color: red;
+}
+
+/* CRIA O BLOCO SUPERIOR QUE MOSTRA QUANTIDADE DE PEDIDOS PENDENTES E ENTREGUES */
+.resumo-entrega {
+  width: 100%;
+  max-width: 1500px;
+  margin: 110px auto 10px;
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  justify-content: center; 
+}
+
+/* CRIA A CAIXA VISUAL DE CADA CONTADOR */
+.card-resumo {
+  width: 100%;            
+  max-width: 320px;      
+  background: white;
+  border-radius: 12px;
+  padding: 16px 12px;     
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+
+/* FORMATA O TEXTO EXPLICATIVO DO CARD */
+.card-resumo h3 {
+  margin-bottom: 5px;
+  color: #5f472c;
+  font-size: 14px;
+}
+
+/* DESTACA A QUANTIDADE DE PEDIDOS */
+.card-resumo span {
+  font-size: 32px;
+  font-weight: bold;
+  color: #5f472c;
+}
+
+/* DEFINE O ESPAÇAMENTO ONDE OS CARDS DE PEDIDOS SERÃO EXIBIDOS */
+main {
+  width: 100%;
+  padding: 10px 20px 90px;
+}
+
+/* ORGANIZA OS PEDIDOS EM UMA GRADE RESPONSIVA */
+#listaEntrega {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-items: start;
+}
+
+/* CRIA O MODELO VISUAL INDIVIDUAL DE CADA ENTREGA */
+.card {
+  width: 100%;
+  background: white; 
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 5px 12px rgba(0,0,0,.15);
+  border-left: 8px solid #e67e22;
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LEVANTA O CARD QUANDO O USUÁRIO PASSA O MOUSE */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.20);
+}
+
+/* DEFINE COR E ESPAÇAMENTO DOS DADOS PRINCIPAIS DO PEDIDO */
+.card h2, .card h3 {
+  color: #8b4513;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+/* ALTERA O TEXTO PRINCIPAL DO PEDIDO PARA CHAMAR ATENÇÃO */
+.card h2, .card h3 {
+  color: #8b4513;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+/* DESTACA INFORMAÇÕES IMPORTANTES EM VERMELHO */
+h4{
+  color: red;
+}
+
+/* ORGANIZA AS INFORMAÇÕES COMO CLIENTE, ENDEREÇO, HORÁRIO E PAGAMENTO */
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.2; 
+}
+
+/* ALTERA A COR DOS RÓTULOS DOS DADOS */
+.card p strong {
+  color: #5f472c;
+}
+
+/* REMOVE MARCADORES PADRÕES E AJUSTA O ESPAÇAMENTO */
+.card ul {
+  margin: 8px 0;
+  padding-left: 0;
+  list-style-type: none; 
+}
+
+/* DEFINE O ESPAÇAMENTO ENTRE OS PRODUTOS */
+.card li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* COLOCA OS BOTÕES INTERNOS DOS CARDS EM COLUNA */
+.botoes-acao-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* PADRONIZA TAMANHO, FORMATO E COMPORTAMENTO DOS BOTÕES DE ENTREGA */
+.card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:13px;
+  margin:0;
+  transition:0.2s;
+  text-align:center;
+}
+
+/* DIMINUI LEVEMENTE A OPACIDADE E MOVE O BOTÃO PARA CIMA */
+.card button:hover {
+  opacity:0.9;
+  transform:translateY(-1px);
+}
+
+/* INDICA QUE O PEDIDO FOI FINALIZADO */
+.btn-delivered {
+  background:#28a745;
+  color:white;
+}
+
+/* REPRESENTA O CONTATO WITH O CLIENTE */
+.btn-whatsapp {
+  background:#25d366;
+  color:white;
+}
+
+/* REPRESENTA A LOCALIZAÇÃO DA ENTREGA */
+.btn-map {
+  background:#2196f3;
+  color:white;
+}
+
+/* MANTÉM A INFORMAÇÃO SEMPRE VISÍVEL NA PARTE INFERIOR */
+footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ab7d61;
+  color:black;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+  font-weight:bold;
+  z-index:999;
+}
+
+/* ORGANIZAÇÃO DO TEXTO DO RODAPÉ */
+footer p {
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+  /* LISTA DE ENTREGA RESPONSIVA AJUSTA A GRADE DE PEDIDOS PARA EXIBIR TRÊS COLUNAS EM TELAS INTERMEDIÁRIAS */
+  #listaEntrega {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 992px) {
+  /* CABEÇALHO RESPONSIVO REDUZ O ESPAÇAMENTO LATERAL INTERNO DO MENU SUPERIOR EM TELAS MÉDIAS */
+  header {
+    padding: 0 20px;
+  }
+  
+  /* LISTA DE ENTREGA RESPONSIVA AJUSTA A GRADE DE PEDIDOS PARA EXIBIR DUAS COLUNAS EM TABLETS */
+  #listaEntrega {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ADAPTAÇÃO PARA SMARTPHONES E TELAS MOBILE */
+@media (max-width: 768px) {
+  /* CABEÇALHO RESPONSIVO ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA E CENTRALIZA SEUS ELEMENTOS EM TELAS MENORES */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* BOTÕES DO HEADER MOBILE CENTRALIZA OS BOTÕES DE AÇÃO DO CABEÇALHO QUANDO O ESPAÇO HORIZONTAL FICA REDUZIDO */
+  .acoes {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE AJUSTA O ESPAÇO SUPERIOR PARA COMPENSAR A MUDANÇA DE ALTURA DO CABEÇALHO EM DISPOSITIVOS MÓVEIS */
+  main {
+    padding-top: 20px;
+  }
+
+  /* ÁREA DOS CONTADORES RESPONSIVA REDUZ AS MARGENS DOS CONTADORES E REMOVE O POSICIONAMENTO FIXO EM TELAS MENORES */
+  .resumo-entrega {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* LISTA DE ENTREGA RESPONSIVA ALTERA A GRADE PARA UMA ÚNICA COLUNA FACILITANDO A LEITURA DOS PEDIDOS NO CELULAR */
+  #listaEntrega {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+}
+
+/* ADAPTAÇÃO PARA SMARTPHONES INTERMEDIÁRIOS */
+@media (max-width: 600px) {
+  /* ÁREA DOS CONTADORES RESPONSIVA EMPILHA OS CARDS DE RESUMO VERTICALMENTE E CENTRALIZA SUA EXIBIÇÃO NA TELA */
+  .resumo-entrega {
+    flex-direction: column; 
+    align-items: center;    
+  }
+  
+  /* CARD DE RESUMO RESPONSIVO PERMITE QUE O CARD DE CONTADOR UTILIZE TODA A LARGURA DISPONÍVEL EM CELULARES */
+  .card-resumo {
+    max-width: 100%; 
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 480px) {
+  /* ÁREA DOS CONTADORES RESPONSIVA ALTERA O ALINHAMENTO DOS CONTADORES PARA O FORMATO VERTICAL EM TELAS MUITO ESTREITAS */
+  .resumo-entrega {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* BOTÕES DO HEADER MOBILE ALTERA A CONFIGURAÇÃO DOS BOTÕES DE AÇÃO PARA O FORMATO VERTICAL EM TELAS MINI */
+  .acoes {
+    flex-direction: column;
+  }
+
+  /* BOTÕES PRINCIPAIS RESPONSIVOS AUMENTA A LARGURA DOS BOTÕES DO CABEÇALHO PARA OCUPAREM TODO O ESPAÇO DISPONÍVEL */
+  .acoes button {
+    width: 100%;
+  }
+
+  /* BOTÕES DO MODAL RESPONSIVOS MODIFICA A EXIBIÇÃO DOS BOTÕES DE CONFIRMAÇÃO PARA O FORMATO VERTICAL */
+  .botoesModal {
+    width: 100%;
+    flex-direction: column; 
+  }
+
+  /* BOTÕES DE CONFIRMAÇÃO RESPONSIVOS ADAPTA OS BOTÕES DE CANCELAR E CONTINUAR PARA OCUPAREM LARGURA TOTAL */
+  #cancelarPedido,
+  #continuarPedido {
+    width: 100%;
+  }
+}

@@ -1,0 +1,210 @@
+/* GERAL: REMOVE OS ESPAÇAMENTOS PADRÃO DOS ELEMENTOS, DEFINE O MODELO DE DIMENSIONAMENTO DOS COMPONENTES E PADRONIZA A FONTE UTILIZADA EM TODA A PÁGINA. */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* CORPO: DEFINE A COR DE FUNDO PRINCIPAL DA PÁGINA ONDE SERÃO EXIBIDAS AS AVALIAÇÕES DOS CLIENTES. */
+body{
+  background:#e5c482;
+}
+
+/* CABEÇALHO: CRIA A ÁREA SUPERIOR DA PÁGINA RESPONSÁVEL POR EXIBIR O TÍTULO E O BOTÃO DE RETORNO. */
+header{
+  background:#5f472c;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+}
+
+/* DEFINE O TAMANHO DA FONTE DO NOME PRINCIPAL EXIBIDO NO TOPO DA PÁGINA. */
+header h1{
+  font-size:30px;
+}
+
+/* POSICIONA O BOTÃO DE VOLTAR NO CANTO DIREITO E DEFINE SUA APARÊNCIA VISUAL. */
+header button{
+  position:absolute;
+  right:40px;
+  top:20px;
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  background:red;
+  color:white;
+  font-weight:bold;
+  transition:.3s;
+}
+
+/* ALTERA AS CORES QUANDO O USUÁRIO PASSA O MOUSE PARA DESTACAR A INTERAÇÃO. */
+header button:hover{
+  background:white;
+  color:red;
+}
+
+/* DEFINE A LARGURA DO CONTEÚDO, CENTRALIZA OS ELEMENTOS E RESERVA ESPAÇO PARA O RODAPÉ FIXO. */
+.container{
+  width:85%;
+  margin:25px auto 110px auto;
+}
+
+/* ORGANIZA OS INDICADORES DAS AVALIAÇÕES EM UM SISTEMA DE GRID QUE SE ADAPTA AO TAMANHO DISPONÍVEL. */
+.resumo{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  margin-bottom:30px;
+}
+
+/* CRIA OS BLOCOS VISUAIS QUE APRESENTAM INFORMAÇÕES COMO QUANTIDADE DE AVALIAÇÕES E MÉDIAS. */
+.cardResumo{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,.15);
+  padding:15px;
+  text-align:center;
+  border-top:6px solid #ffc107;
+}
+
+/* DEFINE A COR, TAMANHO E ESPAÇAMENTO DO NOME DO INDICADOR. */
+.cardResumo h3{
+  color:#5f472c;
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+/* DESTACA OS NÚMEROS PRINCIPAIS DOS INDICADORES COM TAMANHO MAIOR E COR DE DESTAQUE. */
+.cardResumo span{
+  font-size:30px;
+  font-weight:bold;
+  color:#c57c00;
+}
+
+/* ORGANIZA OS CARDS DAS AVALIAÇÕES RECEBIDAS EM COLUNAS UTILIZANDO GRID RESPONSIVO. */
+#listaAvaliacoes{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:20px;
+}
+
+/* CRIA A ESTRUTURA VISUAL INDIVIDUAL DE CADA AVALIAÇÃO ENVIADA PELO CLIENTE. */
+.card-avaliacao{
+  background:#fff;
+  border-left:8px solid #ffc107;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  transition:.25s;
+}
+
+/* CRIA UMA PEQUENA ELEVAÇÃO VISUAL QUANDO O USUÁRIO PASSA O MOUSE SOBRE A AVALIAÇÃO. */
+.card-avaliacao:hover{
+  transform:translateY(-4px);
+}
+
+/* DEFINE A APARÊNCIA DO TÍTULO PRINCIPAL DA AVALIAÇÃO, COMO IDENTIFICAÇÃO DO PEDIDO OU CLIENTE. */
+.card-avaliacao h2{
+  color:#5f472c;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+/* CONTROLA O ESPAÇAMENTO E TAMANHO DOS TEXTOS EXIBIDOS DENTRO DA AVALIAÇÃO. */
+.card-avaliacao p{
+  margin:7px 0;
+  font-size:14px;
+}
+
+/* DEFINE O TAMANHO AND O ESPAÇAMENTO DAS ESTRELAS UTILIZADAS PARA REPRESENTAR A NOTA DO CLIENTE. */
+.estrelas{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+/* DEFINE A APARÊNCIA DO BOTÃO UTILIZADO PARA REMOVER UMA AVALIAÇÃO DO SISTEMA, OCUPANDO TODA A LARGURA DISPONÍVEL DO CARD. */
+.excluir{
+  margin-top:15px;
+  width:100%;
+  border:none;
+  background:#dc3545;
+  color:white;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
+}
+
+/* BOTÃO EXCLUIR AO PASSAR O MOUSE: ALTERA A TONALIDADE DO BOTÃO PARA INDICAR AO USUÁRIO QUE A AÇÃO ESTÁ SENDO DESTACADA. */
+.excluir:hover{
+  background:#bb2d3b;
+}
+
+/* MANTÉM A MENSAGEM INSTITUCIONAL FIXADA NA PARTE INFERIOR DA TELA, GARANTINDO SUA VISIBILIDADE DURANTE A NAVEGAÇÃO. */
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ab7d61;
+  color:black;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+  font-weight:bold;
+  z-index:999;
+}
+
+/* ORGANIZA O TEXTO E O ÍCONE DO AVISO UTILIZANDO FLEXBOX PARA MANTER O ALINHAMENTO CENTRALIZADO. */
+footer p{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+}
+
+/* AJUSTA A QUANTIDADE DE COLUNAS DOS CARDS DE AVALIAÇÕES CONFORME A REDUÇÃO DA LARGURA DA TELA. */
+@media(max-width:1200px){
+  .container{
+    width:90%;
+  }
+}
+
+/* REDUZ A QUANTIDADE DE COLUNAS DOS CARDS PARA FACILITAR A VISUALIZAÇÃO EM TELAS MENORES. */
+@media(max-width:900px){
+  .container{
+    width:92%;
+  }
+}
+
+/* ADAPTA OS CARDS PARA DUAS COLUNAS QUANDO O ESPAÇO DISPONÍVEL FICA MAIS LIMITADO. */
+@media(max-width:700px){
+  header h1{
+    font-size:26px;
+  }
+}
+
+/* ORGANIZA OS CARDS EM UMA ÚNICA COLUNA PARA MELHORAR A LEITURA E USABILIDADE EM TELAS PEQUENAS. */
+@media(max-width:550px){
+  header h1{
+    font-size:22px;
+    margin-bottom:5px;
+  }
+  header button{
+    position:static;
+    width:100%;
+    max-width:120px;
+  }
+  .container{
+    margin-bottom:130px;
+  }
+}

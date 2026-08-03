@@ -1,0 +1,316 @@
+/* ZERA O ESPAÇAMENTO PADRÃO DOS ELEMENTOS E DEFINE O MODELO DE TAMANHO DAS CAIXAS */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* CONFIGURA O FUNDO DA PÁGINA COM IMAGEM ESCURECIDA,
+CENTRALIZANDO O FORMULÁRIO E GARANTINDO ADAPTAÇÃO EM DIFERENTES TELAS */
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url("../Imagens/Imagem11.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height: 100vh;
+}
+
+/* MANTÉM A BARRA SUPERIOR VISÍVEL DURANTE A NAVEGAÇÃO */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:65px;
+  background:#5f472c;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 30px;
+}
+
+/* FORMATA O TÍTULO PRINCIPAL DENTRO DO CABEÇALHO */
+.titulo h1{
+  font-size:30px;
+  font-weight:normal;
+}
+
+/* FORMATA O TÍTULO PRINCIPAL DENTRO DO CABEÇALHO */
+.titulo h2{
+  font-size:16px;
+  font-weight:bold;
+}
+
+/* ESTILIZA O BOTÃO VERMELHO DO CABEÇALHO */
+.btn-header{
+  background:#d62828;
+  color:#fff;
+  border:none;
+  border-radius:20px;
+  padding:8px 16px;
+  cursor:pointer;
+  margin-right: 30px;
+  font-size:15px;
+  text-decoration: none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+/* ALTERA A COR DO BOTÃO DO CABEÇALHO AO PASSAR O MOUSE */
+.btn-header:hover {
+  background: white;
+  color: red;
+}
+
+
+/* ESTILIZA O CARTÃO BRANCO FLUTUANTE DA CAIXA DE LOGIN */
+.login-box{
+  width:380px;
+  max-width:100%;
+  background:#e5c482;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+/* AJUSTA O TAMANHO DO TÍTULO INTERNO MARROM DA CAIXA DE LOGIN */
+.login-box h2{
+  text-align:center;
+  color:#5f472c;
+  margin-bottom:25px;
+  font-size:30px;
+}
+
+/* FORMATA OS TEXTOS DE INDICAÇÃO DOS CAMPOS DE ENTRADA */
+label{
+  display:block;
+  margin-bottom:6px;
+  margin-top:15px;
+  font-weight:bold;
+  color:#444;
+}
+
+/* ESTILIZA AS CAIXAS DE DIGITAÇÃO DE TEXTO DO FORMULÁRIO */
+input{
+  width:100%;
+  padding:12px;
+  border:2px solid #ccc;
+  border-radius:8px;
+  font-size:15px;
+  transition:.3s;
+}
+/* ADICIONA EFEITO DE COR E BRILHO QUANDO O CAMPO É SELECIONADO */
+input:focus{
+  outline:none;
+  border: 2px solid rgba(171,125,97,.35);
+  border-color:#ab7d61;
+  box-shadow:0 0 8px rgba(171,125,97,.35);
+}
+
+/* CONFIGURA O BOTÃO MARROM PRINCIPAL DE ENVIO DO FORMULÁRIO */
+.login-box button{
+  width:100%;
+  margin-top:28px;
+  padding:14px;
+  border:none;
+  border-radius:8px;
+  background:#5f472c;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* ALTERA A COR DO BOTÃO PRINCIPAL AO PASSAR O MOUSE */
+.login-box button:hover{
+  background:#ab7d61;
+}
+
+/* RESERVA E ESTILIZA O ESPAÇO DA MENSAGEM DE ERRO VERMELHA */
+#erro{
+  margin-top:15px;
+  text-align:center;
+  color:#d62828;
+  font-weight:bold;
+  min-height:20px;
+}
+
+/* ORGANIZA OS LINKS AUXILIARES DO LOGIN */
+.links{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* FORMATA OS LINKS DE RECUPERAÇÃO E CADASTRO */
+.links a{
+  text-decoration:none;
+  color:#5f472c;
+  font-size:16px;
+}
+
+/* ALTERA A COR DOS LINKS AO PASSAR O MOUSE */
+.links a:hover{
+  color:black;
+}
+
+/* ÁREA DE MENSAGENS DO SISTEMA */
+#mensagem{
+  color:#d62828;
+  font-weight:bold;
+  text-align:center;
+  margin-top:15px;
+  min-height:20px;
+}
+
+/* FIXA O RODAPÉ NA PARTE INFERIOR DA TELA */
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ab7d61;
+  color:black;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+  font-weight:bold;
+  z-index:999;
+}
+
+/* CENTRALIZA AS INFORMAÇÕES DO RODAPÉ */
+footer p{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR PREVENINDO CHOQUES DE CONTEÚDO */
+  header {
+    padding: 0 20px;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO NOTEBOOK APERTA A MARGEM DIREITA EM MONITORES COMPACTOS */
+  .btn-header {
+    margin-right: 15px;
+  }
+}
+
+/* RESPONSIVIDADE PARA TABLETS EM MODO RETRATO E PAISAGEM INTERMEDIÁRIOS */
+@media (max-width: 1024px) {
+
+  /* CORPO DA PÁGINA ADAPTADO TABLET DESATIVA A ALTURA RÍGIDA PERMITINDO FLUXO VERTICAL DE SEGURANÇA */
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 70px;
+    align-items: flex-start;
+  }
+
+  /* CAIXA DE LOGIN ADAPTADA TABLET MANEJA A LARGURA MÁXIMA PARA APROVEITAMENTO DE ESPAÇO CONFORTÁVEL */
+  .login-box {
+    max-width: 450px;
+    padding: 35px;
+  }
+}
+
+/* RESPONSIVIDADE PARA CELULARES ATÉ 600PX */
+@media(max-width:600px){
+
+  /* ORGANIZA O CORPO PARA EVITAR CORTE DO FORMULÁRIO */
+  body{
+    align-items:flex-start;
+    padding-top:160px;
+    padding-bottom: 70px;
+    height: auto;
+  }
+
+  /* REDUZ O TAMANHO DA CAIXA DE LOGIN */
+  .login-box{
+    padding:25px;
+    max-width:95%;
+  }
+
+  /* DIMINUI O TÍTULO INTERNO NA CAIXA EM DISPOSITIVOS MÓVEIS */
+  .login-box h2{
+    font-size:24px;
+  }
+
+  /* ORGANIZA OS LINKS UM ABAIXO DO OUTRO */
+  .links{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+  }
+
+  /* DIMINUI A FONTE DO BOTÃO */
+  .login-box button{
+    font-size:16px;
+  }
+
+  /* AJUSTA O MENU SUPERIOR CONVERTENDO EM BLOCO EM LINHA VERTICAL SEM COLISÃO HORIZONTAL */
+  header{
+    flex-direction:column;
+    gap:10px;
+    padding:15px;
+    height: auto;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO MOBILE CENTRALIZA O BOTÃO VERMELHO NO TOPO DO CELULAR */
+  .btn-header {
+    margin-right: 0;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  /* REDUZ OS TEXTOS DA MARCA NO SMARTPHONE */
+  .titulo h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* REDUZ O ENUNCIADO COMPLEMENTAR DO TOPO */
+  .titulo h2 {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* CAIXA DE LOGIN ADAPTADA MINI REDUZ O RECUO DAS BORDAS BRANCAS INTERNAS PARA GANHAR ESPAÇO HORIZONTAL */
+  .login-box {
+    padding: 20px 15px;
+  }
+
+  /* COMPACTA OS COMPARTIMENTOS DE TEXTO DA MARCA NO CELULAR SMALL */
+  .titulo h1 {
+    font-size: 20px;
+  }
+
+  /* BARRA DE RODAPÉ ADAPTADA MOBILE REDUZ A TIPOGRAFIA DA MENSAGEM ACADÊMICA INSTITUCIONAL */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

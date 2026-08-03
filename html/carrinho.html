@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho | Raízes do Nordeste</title>
+    <!-- VINCULAÇÃO DA ESTILIZAÇÃO ESPECÍFICA DA PAGINA DO CARRINHO -->
+    <link rel="stylesheet" href="../css/carrinho.css" />
+  </head>
+
+  <body>
+    <!-- TOPO DA PÁGINA CONTENDO IDENTIFICAÇÃO E MENU DE NAVEGAÇÃO -->
+    <header>
+      <div class="logo">Raízes do Nordeste</div>
+      <h1>🛒 Meu Carrinho</h1>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="fidelidade.html" class="ativo">Clube Fiel</a>
+        <!-- BOTAO COM FUNÇÃO NATIVA DO NAVEGADOR PARA RETORNAR À PAGINA ANTERIOR -->
+        <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+      </nav>
+    </header>
+
+    <!-- ÁREA PRINCIPAL DO CARRINHO DE COMPRAS -->
+    <main class="container">
+      <!-- MENSAGEM PADRÃO QUE É EXIBIDA QUANDO NÃO HÁ ITENS SELECIONADOS -->
+      <div id="carrinhoVazio" class="vazio">
+        <img src="../Imagens/carrinho.Vazio.png" alt="Carrinho Vazio" />
+        <h2>Seu carrinho está vazio.</h2>
+      </div>
+
+      <!-- CONTAINER ONDE O JAVASCRIPT INSERIRÁ DINAMICAMENTE OS PRODUTOS ADICIONADOS -->
+      <div id="listaCarrinho"></div>
+
+      <!-- PAINEL DE VALORES E FECHAMENTO DA COMPRA -->
+      <div id="resumoPedido" class="resumo">
+        <h2>Resumo do Pedido</h2>
+        <div class="linha">
+          <span>Total de Itens</span>
+          <span id="totalItens">0</span>
+        </div>
+
+        <div class="linha">
+          <span>Subtotal</span>
+          <span id="subtotal">R$ 0,00</span>
+        </div>
+
+        <div class="linha">
+          <span>Entrega</span>
+          <span>Grátis</span>
+        </div>
+
+        <hr />
+
+        <div class="linha total">
+          <span>Total</span>
+          <span id="valorTotal"> R$ 0,00 </span>
+        </div>
+
+        <!-- AGRUPAMENTO DOS BOTOES DE AÇÃO DO USUARIO -->
+        <div class="cotainer-botoes">
+          <button id="btnLimpar" class="btn-limpar" style="text-align: center">
+            🗑️ Limpar Carrinho
+          </button>
+          <button id="btnPagamento" class="btn-finalizar">
+            💳 Finalizar Compra
+          </button>
+          <a href="cardapio.html" class="btn-continuar">
+            ✔ Continuar Comprando
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA COM AVISO RESTRITO -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- LOGICA EM JAVASCRIPT RESPONSÁVEL POR CONTROLAR OS ITENS E CALCULOS DO CARRINHO -->
+    <script src="../js/carrinho.js"></script>
+  </body>
+</html>

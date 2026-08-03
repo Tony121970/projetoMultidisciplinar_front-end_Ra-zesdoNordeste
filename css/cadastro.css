@@ -1,0 +1,291 @@
+/* REMOVE OS ESPAÇAMENTOS PADRÃO DOS ELEMENTOS, DEFINE O MODELO DE DIMENSIONAMENTO E PADRONIZA A FONTE UTILIZADA EM TODA A PÁGINA. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE O FUNDO COM IMAGEM ESCURECIDA POR UMA CAMADA TRANSPARENTE, CENTRALIZA O CONTEÚDO E GARANTE QUE A PÁGINA OCUPE TODA A ALTURA DA TELA. */
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Imagens/Imagem10.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* CRIA A BARRA SUPERIOR FIXA DA PÁGINA, ORGANIZANDO LOGO E LINKS DE NAVEGAÇÃO WITH FLEXBOX. */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+  background: #5f472c;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* DEFINE O DESTAQUE VISUAL DO NOME OU MARCA EXIBIDA NO CABEÇALHO. */
+.logo {
+  font-weight: bold;
+  font-size: 32px; 
+  margin-left: 30px;
+}
+
+/* ESTILIZA O BOTÃO VERMELHO DO CABEÇALHO */
+.btn-header {
+  margin-right: 30px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  padding:8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* ALTERA A COR DO BOTÃO DO CABEÇALHO AO PASSAR O MOUSE */
+.btn-header:hover {
+  background: #cc3636;
+}
+
+/* CENTRALIZA O FORMULÁRIO NA PÁGINA E DEFINE OS ESPAÇAMENTOS VERTICAL E HORIZONTAL DO CONTEÚDO. */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; 
+  margin-bottom: 40px; 
+}
+
+/* CRIA O BLOCO PRINCIPAL DE CADASTRO OU LOGIN, DEFININDO FUNDO, TAMANHO, SOMBRA E ARREDONDAMENTO DOS CANTOS. */
+.form-box {
+  background: rgb(224, 187, 118);
+  width: 100%;
+  max-width: 336px; 
+  padding: 20px; 
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* DEFINE O ESPAÇAMENTO, COR E TAMANHO DO TÍTULO PRINCIPAL DO FORMULÁRIO. */
+h1 {
+  margin-bottom: 15px; 
+  color: #5f472c;
+  font-size: 26px; 
+}
+
+/* ORGANIZA OS CAMPOS DE PREENCHIMENTO EM UMA COLUNA E DEFINE O ESPAÇAMENTO ENTRE ELES. */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+/* PADRONIZA A APARÊNCIA DOS INPUTS, INCLUINDO ESPAÇAMENTO INTERNO, BORDAS E TAMANHO DO TEXTO. */
+input {
+  padding: 9px; 
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 13px;
+}
+
+/* ALTERA A COR DA BORDA QUANDO O USUÁRIO SELECIONA UM CAMPO PARA DIGITAR. */
+input:focus {
+  border-color: #5f472c;
+}
+
+/* DEFINE A APARÊNCIA DOS BOTÕES DO FORMULÁRIO, CONTROLANDO TAMANHO, CORES, ARREDONDAMENTO E INTERAÇÃO WITH O USUÁRIO. */
+button {
+  padding: 9px; 
+  border: none;
+  background: #755d49;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px; 
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* ALTERA A COR DO BOTÃO QUANDO O USUÁRIO PASSA O MOUSE, CRIANDO UM RETORNO VISUAL DE INTERAÇÃO. */
+button:hover {
+  background: #256428;
+  color: black;
+}
+
+/* DEFINE A APARÊNCIA DAS MENSAGENS DE RETORNO AO USUÁRIO, COMO AVISOS DE ERRO OU CONFIRMAÇÃO. */
+#msg {
+  margin-top: 8px;
+  font-size: 12px; 
+  color: #d32f2f;
+}
+
+/* MANTÉM A MENSAGEM INSTITUCIONAL FIXADA NA PARTE INFERIOR DA TELA DURANTE A UTILIZAÇÃO DA PÁGINA. */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* ORGANIZA O TEXTO E O ÍCONE DO AVISO CENTRALIZANDO OS ELEMENTOS ATRAVÉS DO FLEXBOX. */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA DE NAVEGAÇÃO SUPERIOR */
+  .header {
+    padding: 4px 15px;
+  }
+
+  /* LOGO ADAPTADA NOTEBOOK DIMINUI A MARGEM ESQUERDA PARA EVITAR QUEBRAS HORIZONTAIS DE TEXTO */
+  .logo {
+    margin-left: 15px;
+    font-size: 28px;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO NOTEBOOK REDUZ A MARGEM DIREITA EM TELAS INTERMEDIÁRIAS */
+  .btn-header {
+    margin-right: 15px;
+  }
+}
+
+/* AJUSTES DE TABLET CONFIGURA O TAMANHO DO FORMULÁRIO PARA DISPOSITIVOS INTERMEDIÁRIOS COMO TABLETS */
+@media (max-width: 1024px) {
+
+  /* CORPO NO TABLET LIBERA A ALTURA SE O TABLET ESTIVER EM POSIÇÃO HORIZONTAL OBRIGANDO FLUXO SEGURO */
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 90px;
+    align-items: flex-start;
+  }
+
+  /* CONTAINER ADAPTADO TABLET REAJUSTA O ESPAÇAMENTO DO CONTAINER DO FORMULÁRIO NO TABLET PARA NÃO EMENDAR NO RODAPÉ */
+  .container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  /* FORMULÁRIO NO TABLET AUMENTA A LARGURA E O ESPAÇAMENTO INTERNO PARA APROVEITAR MELHOR O ESPAÇO DA TELA */
+  .form-box {
+    max-width: 360px; 
+    padding: 24px;
+  }
+
+  /* TÍTULO NO TABLET AJUSTA O TAMANHO DA FONTE PARA MANTER A HIERARQUIA VISUAL DO FORMULÁRIO */
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* AJUSTES DE CELULAR ADAPTA A PÁGINA PARA TELAS PEQUENAS MANTENDO O FORMULÁRIO WITH TAMANHO COMPACTO */
+@media (max-width: 600px) {
+
+  /* CORPO NO CELULAR AJUSTA O POSICIONAMENTO VERTICAL DO CONTEÚDO PARA EVITAR CONFLITO WITH O CABEÇALHO FIXO */
+  body {
+    align-items: flex-start; 
+    padding-top: 100px;
+    height: auto;
+  }
+
+  /* CABEÇALHO ADAPTADO MOBILE REORGANIZA E REDUZ AS MARGENS DO TOPO PARA NÃO VAZAR EM TELAS ESTREITAS */
+  .header {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* LOGO ADAPTADA MOBILE DIMINUI O TAMANHO DO TEXTO DA MARCA NO TOPO EM APARELHOS MOVEIS */
+  .logo {
+    font-size: 22px;
+    margin-left: 0;
+  }
+
+  /* BOTÃO DO CABEÇALHO ADAPTADO MOBILE COMPACTA O TAMANHO DO BOTÃO DO TOPO REDUZINDO SEU PREENCHIMENTO NO SMARTPHONE */
+  .btn-header {
+    margin-right: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  /* CONTAINER ADAPTADO MOBILE COMPENSA O ESPAÇAMENTO DO CONTAINER PARA NÃO EMENDAR NO RODAPÉ */
+  .container {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+
+  /* FORMULÁRIO NO CELULAR REDUZ A LARGURA MÁXIMA E O ESPAÇAMENTO INTERNO PARA ADEQUAR O CARD À TELA MENOR */
+  .form-box {
+    max-width: 290px; 
+    padding: 16px;
+  }
+
+  /* TÍTULO NO CELULAR DIMINUI O TAMANHO DO TEXTO PRINCIPAL PARA MANTER BOA PROPORÇÃO NA TELA */
+  h1 {
+    font-size: 20px;
+  }
+
+  /* INPUTS NO CELULAR REDUZ O TAMANHO DA FONTE DOS CAMPOS PARA FACILITAR O AJUSTE DO FORMULÁRIO */
+  input {
+    font-size: 12px;
+  }
+
+  /* BOTÃO NO CELULAR REDUZ O TAMANHO DO TEXTO PARA MANTER O BOTÃO PROPORCIONAL AO ESPAÇO DISPONÍVEL */
+  button {
+    font-size: 13px;
+  }
+
+  /* BARRA DE RODAPÉ ADAPTADA MOBILE REDUZ A FONTE DAS MENSAGENS INSTITUCIONAIS DO RODAPÉ */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* FORMULÁRIO NO CELULAR MINI READAPTA A LARGURA DA CAIXA FLUTUANTE PARA AJUSTE EM TELAS DE LARGURA EXTREMA */
+  .form-box {
+    max-width: 100%;
+    width: 100%;
+    padding: 15px 12px;
+  }
+
+  /* LOGO ADAPTADA MINI DIMINUI AINDA MAIS O ENUNCIADO DO CABEÇALHO EM DISPOSITIVOS DE EXIBIÇÃO MINI */
+  .logo {
+    font-size: 18px;
+  }
+}

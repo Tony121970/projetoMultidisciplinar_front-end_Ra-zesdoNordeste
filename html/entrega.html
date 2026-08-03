@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrega</title>
+    <link rel="stylesheet" href="../css/alertas.css">
+    <link rel="stylesheet" href="../css/entrega.css" />
+  </head>
+
+  <body>
+    <!-- TOPO DA PAGINA COM IDENTIFICAÇÃO DO SETOR E BOTOES DE CONTROLE INTERNO -->
+    <header>
+      <div class="titulo">
+        <h1>Painel de Entrega</h1>
+      </div>
+
+      <div class="acoes">
+        <button class="btn-historico" onclick="window.location.href='historico.html'">
+          Histórico
+        </button>
+
+        <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+
+        <button class="btn-sair" onclick="logoutColaborador()">Sair</button>
+
+      </div>
+    </header>
+
+    <!-- BLOCO SUPERIOR COM METRICAS E QUANTIDADES DO SETOR LOGISTICO -->
+    <section class="resumo-entrega">
+      <div class="card-resumo">
+        <h3>Pedidos Pendentes</h3>
+        <span id="pedidosPendentes">0</span>
+      </div>
+
+      <div class="card-resumo">
+        <h3>Pedidos Entregues</h3>
+        <span id="pedidosEntregues">0</span>
+      </div>
+    </section>
+
+    <!-- CONTAINER ONDE O JAVASCRIPT INSERE A FILA DE ENTREGAS EM ANDAMENTO -->
+    <main id="listaEntrega"></main>
+
+    <!-- RODAPE DA PAGINA COM OBSERVAÇÃO INSTITUCIONAL RESTRITA -->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA LOGICA COMPORTAMENTAL E CONFIGURAÇÕES DO FLUXO DE DESPACHO -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/fidelidade.js"></script>
+    <script src="../js/pedidos.js"></script>
+    <script src="../js/admin/auth.js"></script>
+    <script src="../js/entrega.js"></script>
+  </body>
+</html>

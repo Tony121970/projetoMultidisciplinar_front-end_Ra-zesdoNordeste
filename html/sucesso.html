@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagamento Confirmado</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/sucesso.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DO SITE CONTENDO A LOGOMARCA E O MENU DE NAVEGAÇÃO INICIAL -->
+    <header class="header">
+      <div class="logo">Raízes do Nordeste</div>
+
+      <nav class="menu">
+        <a href="index.html">Sair</a>
+
+      </nav>
+    </header>
+
+    <!-- BLOCO CENTRAL QUE COMPORTA TODAS AS INFORMAÇÕES DE SUCESSO DA COMPRA -->
+    <div class="caixa">
+      <h1>Pagamento Confirmado!</h1>
+
+      <!-- IDENTIFICADORES DO CODIGO E DO STATUS ATUALIZADOS VIA JAVASCRIPT -->
+      <h2>Pedido Nº:</h2>
+      <p id="numeroPedido"></p>
+
+      <h2>Status do Pedido:</h2>
+      <p id="statusPedido" class="status-pedido"></p>
+
+      <!-- PAINEL DE ALTERAÇÃO SIMULADA PARA CONTROLE VISUAL DAS ETAPAS -->
+      <div class="painel-status">
+        <h3>Painel de Status</h3>
+
+        <button onclick="atualizarStatusVisual('Preparando')">
+          PREPARANDO
+        </button>
+
+        <button onclick="atualizarStatusVisual('Pronto para retirada')">
+          PRONTO PARA RETIRADA
+        </button>
+
+        <button onclick="atualizarStatusVisual('Saiu para entrega')">
+          SAIU PARA ENTREGA
+        </button>
+
+        <button onclick="atualizarStatusVisual('Entregue')">ENTREGUE</button>
+      </div>
+
+      <h2>🛒 Resumo do Pedido</h2>
+
+      <!-- CONTAINER ONDE O SCRIPT INSERE A LISTA DE PRODUTOS COMPRADOS -->
+      <div id="listaPedido"></div>
+
+      <hr />
+
+      <!-- METRICAS DE VALORES DESCONTOS E DETALHAMENTO DE TAXAS -->
+      <div class="linha-resumo">
+        <span>Subtotal</span>
+        <span id="subtotalPedido"></span>
+      </div>
+
+      <div class="linha-resumo">
+        <span>Taxa de entrega</span>
+        <span id="taxaEntregaPedido"></span>
+      </div>
+
+      <div class="linha-resumo">
+        <span>Desconto</span>
+        <span id="descontoPedido"></span>
+      </div>
+
+      <hr />
+
+      <!-- EXIBIÇÃO EM DESTAQUE DO MONTANTE TOTAL FINAL LIQUIDADO -->
+      <div class="linha-total">
+        <span>Total Pago</span>
+        <span id="totalPedido"></span>
+      </div>
+
+      <p>
+        Obrigado por comprar no
+        <strong>Raízes do Nordeste</strong>
+      </p>
+
+      <!-- ESPAÇO RESERVADO PARA EXIBIR OS CREDITOS DE FIDELIDADE GERADOS -->
+      <h2>Você ganhou</h2>
+
+      <p id="cashback">0,00 moedas</p>
+
+      <p>Elas já estão disponíveis para a próxima compra.</p>
+
+      <!-- DISPARADOR PARA ENVIO DE COMPROVANTE ATRAVÉS DO WHATSAPP -->
+      <button id="btnWhatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        Enviar Pedido pelo WhatsApp
+      </button>
+    </div>
+
+    <!-- RODAPÉ INTEGRADO COM A NOTA DE RESTRICAO ACADÊMICA -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA LOGICA COMPORTAMENTAL E ATUALIZAÇÃO DOS FLUXOS DE SUCESSO -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/fidelidade.js"></script>
+    <script src="../js/sucesso.js"></script>
+  </body>
+</html>

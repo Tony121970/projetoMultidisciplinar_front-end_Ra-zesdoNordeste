@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="../css/alertas.css">
+    <link rel="stylesheet" href="../css/pagamento.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DO SITE COM IDENTIFICAÇÃO DA TELA E ATALHOS DE NAVEGAÇÃO -->
+    <header>
+      <div class="titulo">
+        <h1>Pagamento</h1>
+        <h2>Finalize seu pedido</h2>
+      </div>
+      
+      <div class="acesso">
+        <a href="fidelidade.html" class="btn-fidelidade">Fidelidade</a>
+
+        <button  onclick="window.history.back()" class="btn-voltar">Voltar</button>
+
+        <a href="index.html" class="btn-sair">Sair</a>
+
+      </div>
+    </header>
+
+    <!-- BLOCO PRINCIPAL QUE ENGLOBA AS INFORMAÇÕES DE FECHAMENTO DO PEDIDO -->
+    <div class="container">
+      <h1>Clube Raízes</h1>
+
+      <!-- AREA INFORMATIVA DO SALDO DE CASHBACK DO CLIENTE -->
+      <div class="card">
+        <h2>Bem-vindo!</h2>
+
+        <p class="texto">
+          Cada moeda vale <strong>R$ 1,00</strong> de desconto.
+        </p>
+
+        <h3>Saldo Atual</h3>
+
+        <p id="saldoMoedas" class="saldo">0,00</p>
+      </div>
+
+      <!-- DETALHAMENTO DE VALORES, TAXAS E SUBTOTAL DA COMPRA -->
+      <div class="card">
+        <h2>Resumo da Compra</h2>
+
+        <div class="linha">
+          <span>Subtotal</span>
+          <span id="valorCompra">R$ 0,00</span>
+        </div>
+
+        <div class="linha">
+          <span>Taxa de entrega</span>
+          <span id="valorEntrega">R$ 0,00</span>
+        </div>
+
+        <div class="linha">
+          <span>Desconto com moedas</span>
+          <span id="valorDesconto">R$ 0,00</span>
+        </div>
+
+        <hr />
+
+        <div class="linha total">
+          <span>Total a pagar</span>
+          <span id="valorTotal">R$ 0,00</span>
+        </div>
+      </div>
+
+      <!-- PROJEÇÃO DE MOEDAS QUE SERÃO GERADAS APÓS A COMPRA -->
+      <div class="card">
+        <h2>Cashback</h2>
+
+        <p>Após a confirmação do pagamento você ganhará</p>
+
+        <p id="cashback" class="cashback">0,00 moedas</p>
+      </div>
+
+      <!-- SELEÇÃO DA MODALIDADE DE LIQUIDAÇÃO FINANCEIRA DO PEDIDO -->
+      <div class="card">
+        <h2>Forma de Pagamento</h2>
+
+        <label>
+          <input type="radio" name="pagamento" value="Pix" checked />
+          Pix
+        </label>
+
+        <label>
+          <input type="radio" name="pagamento" value="Cartão" />
+          Cartão
+        </label>
+
+        <label>
+          <input type="radio" name="pagamento" value="Dinheiro" />
+          Dinheiro
+        </label>
+      </div>
+
+      <!-- BOTOES DE AÇÃO PARA ABATER SALDO, CONFIRMAR INTEGRADO OU VIA WHATSAPP -->
+      <button id="btnUsarMoedas" class="btn-moedas">Usar minhas moedas</button>
+
+      <button id="btnConfirmar" class="confirmar">Confirmar Pagamento</button>
+
+      <button id="btnWhatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        Finalizar no WhatsApp
+      </button>
+    </div>
+
+    <!-- RODAPÉ PADRÃO DO SISTEMA COM NOTA ACADÊMICA -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INTEGRAÇÃO DE SCRIPTS RESPONSÁVEIS PELOS CALCULOS E CONFIRMAÇÃO DE DADOS -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/fidelidade.js"></script>
+    <script src="../js/pedidos.js"></script>
+    <script src="../js/pagamento.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel da Cozinha</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/cozinha.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO COM TITULO DO SETOR E LINKS DE NAVEGAÇÃO INTERNA -->
+    <header>
+      <div class="titulo">
+        <h1>Painel da Cozinha</h1>
+        <p>Preparação dos Pedidos</p>
+      </div>
+
+      <!-- BOTOES DE CONTROLE PARA ACESSAR OUTRAS TELAS OPERACIONAIS -->
+      <div class="acoes">
+        <button onclick="window.location.href='produtos.html'">Produtos</button>
+
+        <button onclick="window.location.href='estoque.html'">Estoque</button>
+
+        <button onclick="window.location.href='historico.html'">
+          Histórico
+        </button>
+
+        <button onclick="window.history.back()">Voltar</button>
+
+        <button onclick="logoutColaborador()" class="btn-header">Sair</button>
+
+      </div>
+    </header>
+
+    <!-- AREA PRINCIPAL DA COZINHA CONTENDO AS GRILES DE PRODUTOS E FILAS -->
+    <main>
+      <!-- BLOCO QUE MOSTRA SE O PRATO ESTA DISPONIVEL OU INDISPONIVEL -->
+      <section id="painelDisponibilidade">
+        <h2>Disponibilidade dos Produtos</h2>
+        <div id="listaDisponibilidade"></div>
+      </section>
+
+      <!-- CONTAINER ONDE SÃO INSERIDOS OS CARDS DOS PEDIDOS EM ANDAMENTO -->
+      <section id="listaCozinha"></section>
+    </main>
+
+    <!-- RODAPE DA PAGINA COM INFORMAÇÃO COMPLEMENTAR -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- RECURSOS INTERNOS E SCRIPTS DE CONTROLE DAS FILAS DA COZINHA -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/fidelidade.js"></script>
+    <script src="../js/pedidos.js"></script>
+    <script src="../js/admin/auth.js"></script>
+    <script src="../js/cozinha.js"></script>
+  </body>
+</html>

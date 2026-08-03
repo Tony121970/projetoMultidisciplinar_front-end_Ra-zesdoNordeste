@@ -1,0 +1,614 @@
+/* RESET GERAL: REMOVE OS ESPAÇAMENTOS PADRÕES DOS ELEMENTOS, DEFINE O MODELO DE TAMAHO E PADRONIZA A FONTE PRINCIPAL DA PÁGINA. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+/* CORPO DA PÁGINA: DEFINE A COR DE FUNDO PRINCIPAL UTILIZADA NAS ÁREAS SEM IMAGEM OU CONTEÚDO ESPECÍFICO. */
+body {
+  background: #e5c482;
+}
+
+/* CABEÇALHO FIXO: CRIA A BARRA SUPERIOR DE NAVEGAÇÃO, MANTENDO O MENU SEMPRE VISÍVEL MESMO DURANTE A ROLAGEM DA PÁGINA. */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background: #5f472c;
+  color: white;
+}
+
+/* LOGO: DEFINE O TAMANHO, PESO E DESTAQUE VISUAL DO NOME DA MARCA NO CABEÇALHO. */
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* LINKS DE NAVEGAÇÃO: CONFIGURA A APARÊNCIA DOS LINKS DO MENU PRINCIPAL, CONTROLANDO COR, ESPAÇAMENTO E TAMANHO DO TEXTO. */
+nav a{
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* EFEITO DOS LINKS: ALTERA A COR DO MENU QUANDO O USUÁRIO PASSA O MOUSE SOBRE AS OPÇÕES. */
+nav a:hover{
+  text-decoration: none;
+  color:black;
+}
+
+/* ADICIONA UMA FAIXA DESLIZANTE NA TELA */ 
+.faixa {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: transparent; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none; 
+}
+
+.texto{
+  white-space: nowrap;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.8);
+  animation: deslizar 12s linear infinite;
+}
+
+@keyframes deslizar {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* ÁREA PRINCIPAL DE DESTAQUE: CRIA O BANNER INICIAL DA PÁGINA COM IMAGEM DE FUNDO, CENTRALIZAÇÃO E TEXTO SOBREPOSTO. */
+.hero {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(../Imagens/Imagem13.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #e5c482;
+  padding: 120px 20px 40px;
+}
+
+/* TÍTULO DO BANNER: DEFINE O TAMANHO E ESPAÇAMENTO DO TEXTO PRINCIPAL DA ÁREA DE DESTAQUE. */
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* TEXTO DO BANNER: CONFIGURA O TAMANHO E DISTÂNCIA DO TEXTO COMPLEMENTAR DA ÁREA INICIAL. */
+.hero p {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+/* SEÇÃO DE PRODUTOS: DEFINE O ESPAÇAMENTO INTERNO DA ÁREA ONDE OS PRODUTOS SERÃO EXIBIDOS. */
+.produtos {
+  padding: 70px 8%;
+}
+
+/* TÍTULO DOS PRODUTOS: CENTRALIZA O TÍTULO DA SEÇÃO E DEFINE SUA APARÊNCIA VISUAL. */
+.produtos h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #8b4513;
+}
+
+/* GRADE DOS CARDS: ORGANIZA OS PRODUTOS AUTOMATICAMENTE EM COLUNAS RESPONSIVAS CONFORME O TAMANHO DA TELA. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* CARD DE PRODUTO: CRIA O BLOCO VISUAL INDIVIDUAL DE CADA PRODUTO COM FUNDO, ARREDONDAMENTO, SOMBRA E ANIMAÇÃO. */
+.card {
+  background: rgb(190, 190, 165);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+/* EFEITO DO CARD: ELEVA O CARD QUANDO O MOUSE PASSA SOBRE ELE, CRIANDO UM EFEITO DE INTERAÇÃO. */
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGEM DO CARD: PADRONIZA O TAMANHO DAS IMAGENS DOS PRODUTOS MANTENDO O CORTE PROPORCIONAL. */
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* TÍTULO DO PRODUTO: DEFINE O ESPAÇAMENTO, CENTRALIZAÇÃO E COR DO NOME DO PRODUTO. */
+.card h3 {
+  padding: 15px;
+  text-align: center;
+  color: #8b4513;
+}
+
+/* DESCRIÇÃO DO PRODUTO: CONFIGURA O ESPAÇAMENTO, TAMANHO E COR DO TEXTO DESCRITIVO DOS PRODUTOS. */
+.card p {
+  padding: 0 15px 10px;
+  text-align: left;
+  font-size: 18px;
+  color:black;
+}
+
+/* GRADE DE IGUARIAS: ORGANIZA OS ELEMENTOS DE DESTAQUE EM UMA GRADE RESPONSIVA, AJUSTANDO AUTOMATICAMENTE A QUANTIDADE DE COLUNAS CONFORME O ESPAÇO DISPONÍVEL. */
+.grade-iguarias{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* MENU SUSPENSO: DEFINE A POSIÇÃO DE REFERÊNCIA PARA O MENU E PERMITE O POSICIONAMENTO CORRETO DO CONTEÚDO INTERNO. */
+.dropdown{
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  background: transparent
+}
+
+/* CONTEÚDO DO MENU SUSPENSO: CRIA A CAIXA OCULTA QUE SERÁ EXIBIDA QUANDO O USUÁRIO INTERAGIR COM O MENU. */
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background: #e5c482;
+  min-width: 220px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* ABERTURA DO MENU: MOSTRA AS OPÇÕES ESCONDIDAS QUANDO O CURSOR PASSA SOBRE O MENU PRINCIPAL. */
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+/* BOTÃO DO MENU: CONFIGURA A APARÊNCIA DO BOTÃO RESPONSÁVEL POR ABRIR AS OPÇÕES DO MENU SUSPENSO. */
+.dropbtn{
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* EFEITO DO BOTÃO DO MENU: ALTERA A COR DO TEXTO QUANDO O USUÁRIO PASSA O MOUSE SOBRE O BOTÃO. */
+.dropbtn:hover{
+  color: black;
+}
+
+/* SUBMENU INTERNO: DEFINE A ESTRUTURA DE UM SEGUNDO NÍVEL DE OPÇÕES DENTRO DO MENU PRINCIPAL. */
+.submenu{
+  position: relative;
+}
+
+/* CONTEÚDO DO SUBMENU: CRIA A ÁREA OCULTA QUE SERÁ ABERTA AO INTERAGIR COM UMA OPÇÃO ESPECÍFICA. */
+.submenu-content{
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: #e5c482;
+  min-width: 220px;
+  border-radius: 8px;
+}
+
+/* ABERTURA DO SUBMENU: EXIBE AS OPÇÕES INTERNAS QUANDO O CURSOR ESTÁ SOBRE O ITEM PRINCIPAL DO SUBMENU. */
+.submenu:hover .submenu-content{
+  display: block;
+}
+
+/* LINKS DOS MENUS: PADRONIZA A APARÊNCIA DOS LINKS EXISTENTES NO MENU SUSPENSO E NO SUBMENU. */
+.dropdown-content a,
+.submenu-content a{
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #971010;
+}
+
+/* EFEITO DOS LINKS DOS MENUS: DESTACA VISUALMENTE A OPÇÃO SELECIONADA PELO USUÁRIO ATRAVÉS DO MOUSE. */
+.dropdown-content a:hover,
+.submenu-content a:hover{
+  background: #f2f2f2;
+}
+
+/* PESQUISA DO CARDÁPIO: CRIA O CAMPO DE BUSCA COM FORMATO ARREDONDADO, CENTRALIZADO E DESTACADO PARA FACILITAR A LOCALIZAÇÃO DOS PRODUTOS. */
+.pesquisa-cardapio{
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #8b4513;
+  border-radius: 30px;
+  padding: 4px 12px;
+}
+
+/* ÍCONE DE PESQUISA: DEFINE A APARÊNCIA DO ÍCONE UTILIZADO DENTRO DA BARRA DE BUSCA. */
+.pesquisa-cardapio i{
+  color: #8b4513;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+/* CAMPO DE PESQUISA: CONFIGURA O INPUT RESPONSÁVEL PELA DIGITAÇÃO DA BUSCA DOS PRODUTOS. */
+.pesquisa-cardapio input{
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* ÁREA DO CARDÁPIO: DEFINE O ESPAÇAMENTO E O FUNDO DA SEÇÃO PRINCIPAL DE PRODUTOS. */
+.cardapio{
+  padding: 70px 8%;
+  background: #e5c482;
+}
+
+/* TÍTULO DO CARDÁPIO: CENTRALIZA E DESTACA O TÍTULO PRINCIPAL DA LISTA DE PRODUTOS. */
+.cardapio h2{
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #8b4513;
+}
+
+/* CATEGORIA DE PRODUTOS: DEFINE O ESPAÇAMENTO ENTRE OS GRUPOS DE PRODUTOS DO CARDÁPIO. */
+.categoria{
+  margin-top: 50px;
+}
+
+/* TÍTULO DA CATEGORIA: ORGANIZA E DESTACA OS NOMES DAS CATEGORIAS COM LINHA INFERIOR DECORATIVA. */
+.categoria h3{
+  color: #5f472c;
+  margin-bottom: 25px;
+  font-size: 28px;
+  border-bottom: 3px solid #e8d3b0;
+  padding-bottom: 10px;
+}
+
+/* PREÇO PRINCIPAL: DESTACA O VALOR DOS PRODUTOS COM TAMANHO MAIOR, PESO DA FONTE E COR DE DESTAQUE. */
+.preco{
+  display: block;
+  margin: 0  20px  10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+/* BOTÃO PEDIR: CRIA O BOTÃO UTILIZADO PELO CLIENTE PARA ADICIONAR UM PRODUTO AO PEDIDO, DEFININDO COR, FORMATO E POSICIONAMENTO. */
+.btn-pedir{
+  display: block;
+  background: #8b4513;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 20px auto;
+}
+
+/* EFEITO DO BOTÃO PEDIR: ALTERA A COR DO BOTÃO QUANDO O USUÁRIO PASSA O MOUSE SOBRE ELE, GERANDO UM FEEDBACK VISUAL. */
+.btn-pedir:hover{
+  background: #5f472c;
+}
+
+/* ITENS EXTRAS: DEFINE UMA ÁREA OCULTA PARA PRODUTOS ADICIONAIS QUE PODEM SER MOSTRADOS CONFORME A INTERAÇÃO DO USUÁRIO. */
+.itens-extras{
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* BOTÃO MAIS OPÇÕES: ESTILIZA O BOTÃO RESPONSÁVEL POR MOSTRAR MAIS PRODUTOS OU OPÇÕES DO CARDÁPIO. */
+.btn-mais{
+  background: #8b4513;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* EFEITO DO BOTÃO MAIS OPÇÕES: ALTERA A COR DO BOTÃO AO PASSAR O MOUSE PARA INDICAR INTERAÇÃO. */
+.btn-mais:hover{
+  background: #5f472c;
+}
+
+/* BOTÃO DE PESQUISA: DEFINE A APARÊNCIA DO BOTÃO QUE ACIONA A BUSCA DOS PRODUTOS NO CARDÁPIO. */
+#btnPesquisar{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 22px;
+  color: #8b4513;
+}
+
+/* MAIS OPÇÕES: CENTRALIZA O BOTÃO E DEFINE O ESPAÇAMENTO DA ÁREA DE EXPANSÃO DO CARDÁPIO. */
+.mais-opcoes{
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* ITEM DO MENU: DEFINE QUE O ELEMENTO TERÁ COMPORTAMENTO DE INTERAÇÃO COM O USUÁRIO. */
+.menu-item{
+  cursor: pointer;
+}
+
+/* ITENS EXTRAS REDUZIDOS: ORGANIZA PRODUTOS ADICIONAIS EM CARDS MENORES, AJUSTANDO AUTOMATICAMENTE A QUANTIDADE DE COLUNAS. */
+.itens-extras{
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+/* CARD DOS ITENS EXTRAS: REDUZ O ESPAÇAMENTO INTERNO DOS CARDS SECUNDÁRIOS PARA OCUPAR MENOS ESPAÇO. */
+.itens-extras .card{
+  padding: 8px;
+}
+
+/* IMAGEM DOS ITENS EXTRAS: DIMINUI A ALTURA DAS IMAGENS DOS PRODUTOS SECUNDÁRIOS. */
+.itens-extras .card img{
+  height: 90px;
+}
+
+/* DESCRIÇÃO DOS ITENS EXTRAS: ESCONDE A DESCRIÇÃO DOS PRODUTOS SECUNDÁRIOS PARA DEIXAR O CARD MAIS COMPACTO. */
+.itens-extras .card p{
+  display: none;
+}
+
+/* BOTÃO DOS ITENS EXTRAS: ESCONDE O BOTÃO DE PEDIDO NOS CARDS COMPACTOS. */
+.itens-extras .btn-pedir{
+  display: none;
+}
+
+/* EFEITO DO CARD OPÇÃO: MOVIMENTA LEVEMENTE O CARD QUANDO O USUÁRIO PASSA O MOUSE SOBRE ELE. */
+.card-opcao:hover{
+  transform:translateY(-5px);
+}
+
+/* IMAGEM DO CARD OPÇÃO: PADRONIZA AS IMAGENS DAS OPÇÕES EXTRAS MANTENDO PROPORÇÃO E ARREDONDAMENTO. */
+.card-opcao img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* TÍTULO DO CARD OPÇÃO: DEFINE O TAMANHO, ALINHAMENTO E COR DO NOME DOS PRODUTOS EXTRAS. */
+.card-opcao h4{
+  font-size:15px;
+  text-align:center;
+  margin:8px 0 5px;
+  color:#5f472c;
+}
+
+/* DESCRIÇÃO DO CARD OPÇÃO: CONFIGURA O TEXTO COMPLEMENTAR DOS PRODUTOS EXTRAS, LIMITANDO SUA ALTURA. */
+.card-opcao p{
+  font-size:12px;
+  color:#666;
+  margin-bottom:8px;
+  min-height:34px;
+}
+
+/* PREÇO MINI: DESTACA O VALOR DOS PRODUTOS MENORES COM FOCO NA VISUALIZAÇÃO DO CLIENTE. */
+.preco-mini{
+  display:block;
+  font-size:15px;
+  text-align:center;
+  font-weight:bold;
+  color:red;
+  margin-bottom:8px;
+}
+
+/* BOTÃO MINI: CRIA UM BOTÃO COMPACTO PARA AÇÕES DOS CARDS MENORES DO CARDÁPIO. */
+.btn-mini{
+  display:block;
+  margin:0 auto;
+  background:#8b4513;
+  color:#fff;
+  border:none;
+  border-radius:20px;
+  padding:7px;
+  font-size:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* EFEITO BOTÃO MINI: ALTERA A COR DO BOTÃO COMPACTO AO PASSAR O MOUSE. */
+.btn-mini:hover{
+  background:#6d3410;
+}
+
+/* RODAPÉ: MANTÉM A MENSAGEM INSTITUCIONAL FIXADA NA PARTE INFERIOR DA PÁGINA, GARANTINDO QUE O AVISO FIQUE SEMPRE VISÍVEL AO USUÁRIO. */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CONTEÚDO DO RODAPÉ: ORGANIZA O TEXTO E O ÍCONE DO AVISO UTILIZANDO FLEXBOX PARA MANTER O ALINHAMENTO CENTRALIZADO. */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS INTERNOS DO TOPO EM TELAS INTERMEDIÁRIAS */
+  header {
+    padding: 10px 25px;
+  }
+
+  /* TÍTULO DO BANNER ADAPTADO NOTEBOOK REDUZ A FONTE PRINCIPAL DA ÁREA HERO PREVENINDO QUEBRAS */
+  .hero h1 {
+    font-size: 48px;
+  }
+}
+
+/* RESPONSIVIDADE PRINCIPAL ADAPTAR A ESTRUTURA DA PÁGINA PARA DISPOSITIVOS MENORES COMO TABLETS E CELULARES */
+@media (max-width: 768px) {
+
+  /* CABEÇALHO MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA */
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+
+  /* MENU MOBILE ORGANIZA OS LINKS EM LINHAS FLEXÍVEIS E CENTRALIZA AS OPÇÕES */
+  nav {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* LINKS MOBILE AJUSTA O ESPAÇAMENTO ENTRE OS LINKS PARA FACILITAR O TOQUE */
+  nav a {
+    margin: 10px;
+  }
+
+  /* TÍTULO DO BANNER MOBILE REDUZ O TAMANHO DO TEXTO PRINCIPAL DA ÁREA HERO */
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  /* TEXTO DO BANNER MOBILE DIMINUI O TAMANHO DO TEXTO COMPLEMENTAR PARA MELHORAR A LEITURA */
+  .hero p {
+    font-size: 20px;
+  }
+
+  /* MENU SUSPENSO MOBILE CENTRALIZA O MENU ABERTO EM RELAÇÃO À TELA */
+  .dropdown-content{
+    left: 50%;
+    transform: translateX(-50%);
+    position: static;
+    width: 100%;
+  }
+
+  /* SUBMENU ADAPTADO REAJUSTA AS SUB-ABAS DO MENU SUSPENSO PARA QUE ELAS EMPILHEM VERTICALMENTE */
+  .submenu-content {
+    position: static;
+    left: 0;
+    width: 100%;
+    padding-left: 15px;
+    background: rgba(229, 196, 130, 0.5);
+  }
+
+  /* TÍTULO DAS CATEGORIAS MOBILE CENTRALIZA OS TÍTULOS DAS CATEGORIAS */
+  .categoria h3{
+    text-align: center;
+  }
+}
+
+/* RESPONSIVIDADE ADICIONAL DIRECIONADA PARA APARELHOS DE TELAS CURTAS OU CELULARES FINOS */
+@media (max-width: 500px) {
+  
+  /* ÁREA HERO ADAPTADA MOBILE AUMENTA O RECUO SUPERIOR EVITANDO SOBREPOSIÇÃO COM O CABEÇALHO EM EXTENSÃO */
+  .hero {
+    padding-top: 160px;
+  }
+
+  /* SEÇÕES ADAPTADAS MOBILE READAPTA OS RECUOS INTERNOS PERMITINDO GANHO DE ESPAÇO NAS LATERAIS */
+  .produtos,
+  .cardapio {
+    padding: 50px 5% 90px;
+  }
+
+  /* PESQUISA DO CARDÁPIO ADAPTADA MOBILE EXPANDE A BARRA DE BUSCA EM APARELHOS MÓVEIS */
+  .pesquisa-cardapio {
+    width: 95%;
+  }
+
+  /* BARRA DE RODAPÉ ADAPTADA MOBILE REDUZ A FONTE E O PREENCHIMENTO DO AVISO INSTITUCIONAL */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* TÍTULO DO BANNER ADAPTADO MINI REDUZ EXPRESSIVAMENTE A FONTE DO HERO EM DISPOSITIVOS BASTANTE ESTREITOS */
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  /* TEXTO DO BANNER ADAPTADO MINI COMPACTA O TEXTO AUXILIAR EM TELAS MINI */
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* MALHA DE CARDS ADAPTADA MINI FORÇA TODOS OS CARDS SECUNDÁRIOS E EXTRAS A ASSUMIREM UMA ÚNICA COLUNA */
+  .cards, .grade-iguarias, .itens-extras {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* FAZ A MENSAGEM SURGIR DESLIZANDO DA LATERAL DIREITA DA TELA */
+@keyframes slideIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* REDUZ GRADUALMENTE A OPACIDADE ATÉ REMOVER VISUALMENTE A MENSAGEM */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

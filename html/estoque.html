@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estoque de Insumos</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/estoque.css" />
+  </head>
+
+  <body>
+    <!-- TOPO DA PAGINA COM INDICAÇÃO DA AREA DO COLABORADOR E NAVEGAÇÃO -->
+    <header>
+      <div class="titulo">
+        <h1>Estoque de Insumos</h1>
+        <h2>Área do Colaborador</h2>
+      </div>
+
+      <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+    </header>
+
+    <!-- CONTEUDO PRINCIPAL DA PAGINA CONTENDO OS FILTROS E METRICAS -->
+    <main>
+      <!-- CAMPO PARA FILTRAR OS MATERIAIS NA BUSCA RAPIDA -->
+      <section class="topo">
+        <input type="text" id="pesquisa" placeholder="🔎 Pesquisar insumo..." />
+      </section>
+
+      <!-- INDICADORES RESUMIDOS DO STATUS ATUAL DOS INSUMOS -->
+      <section class="resumo">
+        <div class="box">
+          <h3>Total</h3>
+
+          <span id="totalInsumos"> 0 </span>
+        </div>
+
+        <div class="box">
+          <h3>Estoque Baixo</h3>
+
+          <span id="estoqueBaixo"> 0 </span>
+        </div>
+
+        <div class="box">
+          <h3>Sem Estoque</h3>
+
+          <span id="estoqueZero"> 0 </span>
+        </div>
+      </section>
+
+      <!-- GRADE ONDE OS CARDS DOS PRODUTOS SERÃO INJETADOS VIA SCRIPT -->
+      <section id="listaEstoque" class="lista">
+        <!-- CARDS SERÃO CRIADOS PELO JAVASCRIPT -->
+      </section>
+    </main>
+
+    <!-- JANELA FLUTUANTE PARA CADASTRO OU EDICAO DE ITENS -->
+    <div id="modal" class="modal">
+      <div class="modal-conteudo">
+        <h2 id="tituloModal">Novo Insumo</h2>
+
+        <!-- FORMULARIO INTERNO DO MODAL COM DADOS E UNIDADES DE MEDIDA -->
+        <input type="text" id="nome" placeholder="Nome do insumo" />
+
+        <input type="text" id="categoria" placeholder="Categoria" />
+
+        <input type="number" id="quantidade" placeholder="Quantidade" />
+
+        <select id="unidade">
+          <option value="kg">Kg</option>
+
+          <option value="g">Gramas</option>
+
+          <option value="L">Litros</option>
+
+          <option value="un">Unidade</option>
+        </select>
+
+        <input type="number" id="minimo" placeholder="Estoque mínimo" />
+
+        <!-- CONTROLES PARA CONFIRMAR OU FECHAR A JANELA POPUP -->
+        <div class="acoes-modal">
+          <button id="salvar">Salvar</button>
+
+          <button id="cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTA DE RODAPE RESTRITA DO AMBIENTE ACADEMICO -->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA BASE DE DADOS SIMULADA E LOGICA DE MANIPULAÇÃO -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/estoqueDB.js"></script>
+    <script src="../js/estoque.js"></script>
+  </body>
+</html>

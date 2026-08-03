@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/recuperar-senha.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO DA PÁGINA CONTENDO LOGO E LINKS DO MENU PRINCIPAL -->
+    <header class="header">
+      <div class="logo">Raízes do Nordeste</div>
+
+      <nav class="menu">
+        
+        <a href="cadastro.html">Cadastro</a>
+        <a href="index.html">Início</a>
+     
+      </nav>
+    </header>
+
+    <h1>Recuperar Senha&nbsp;&nbsp;&nbsp;</h1>
+
+    <!-- FORMULÁRIO DE REDEFINIÇÃO QUE DISPARA A FUNÇÃO JAVASCRIPT AO ENVIAR -->
+    <form onsubmit="redefinirSenha(event)" autocomplete="off">
+      <!-- INPUTS DE CREDENCIAIS OBRIGATÓRIAS COM PREVENÇÃO DE PREENCHIMENTO AUTOMÁTICO -->
+      <input
+        type="email"
+        id="email"
+        placeholder="E-mail"
+        required
+        autocomplete="off"
+      />
+      <input
+        type="password"
+        id="novaSenha"
+        placeholder="Nova senha"
+        required
+        autocomplete="new-password"
+      />
+
+      <!-- DISPARADOR DO ENVIO DOS NOVOS DADOS DE ACESSO -->
+      <button type="submit">Redefinir senha</button>
+
+      <!-- ESPAÇO RESERVADO PARA EXIBIÇÃO DE MENSAGENS DE NOTIFICAÇÃO -->
+      <p id="mensagem"></p>
+    </form>
+
+    <!-- RODAPÉ INTEGRADO COM AVISO RESTRITO ACADÊMICO -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- INCLUSÃO DA LÓGICA DE COMPORTAMENTO E TRATAMENTO DA ALTERAÇÃO DE SENHA -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/recuperar-senha.js"></script>
+  </body>
+</html>

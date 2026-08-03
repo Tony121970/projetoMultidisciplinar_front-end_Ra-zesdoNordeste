@@ -1,0 +1,268 @@
+/* CONFIGURAÇÃO GERAL: REMOVE ESPAÇAMENTOS PADRÕES DO NAVEGADOR, DEFINE O MODELO DE TAMANHO DOS ELEMENTOS E PADRONIZA A FONTE DA PÁGINA */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* CORPO DA PÁGINA: DEFINE A COR DE FUNDO PRINCIPAL DO SISTEMA */
+body{
+  background:#e5c482;
+}
+
+/* CABEÇALHO: CRIA A ÁREA SUPERIOR DA PÁGINA COM COR, TEXTO CENTRALIZADO E ESPAÇAMENTO INTERNO */
+header{
+  background:#5f472c;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* BOTÃO VOLTAR: CONFIGURA O BOTÃO DE RETORNO PARA TER FORMATO DE CÁPSULA E MAIOR DESTAQUE */
+header button{
+  position:absolute;
+  right:40px;
+  top:20px;
+  background-color: green;
+  color: white;
+  width: auto;          
+  padding: 10px 16px;
+  border-radius: 20px; 
+  cursor: pointer;
+  transition:.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* EFEITO DO BOTÃO VOLTAR: INVERTE AS CORES AO PASSAR O MOUSE */
+header button:hover {
+  background-color: white;
+  color: green;
+}
+
+/* CONTAINER PRINCIPAL: CENTRALIZA O CONTEÚDO E DEFINE O ESPAÇAMENTO EXTERNO */
+.container{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+/* CARD DE FEEDBACK: CRIA O BLOCO BRANCO ONDE FICAM ESTRELAS, COMENTÁRIO E BOTÃO */
+.card-feedback{
+  background:#fff;
+  width:100%;
+  max-width:500px;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+/* TÍTULO DO CARD: CENTRALIZA E DEFINE A COR E O ESPAÇAMENTO DO TÍTULO */
+.card-feedback h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#5f472c;
+}
+
+/* ÁREA DAS ESTRELAS: ORGANIZA AS ESTRELAS NO CENTRO COM ESPAÇAMENTO ENTRE ELAS */
+.estrelas{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+/* ESTRELA PADRÃO: DEFINE TAMANHO, COR INICIAL E CURSOR DE CLIQUE */
+.estrela{
+  font-size:40px;
+  cursor:pointer;
+  color:#bbb;
+  transition:.2s;
+}
+
+/* EFEITO NAS ESTRELAS: AUMENTA LEVEMENTE A ESTRELA AO PASSAR O MOUSE */
+.estrela:hover{
+  transform:scale(1.15);
+}
+
+/* ESTRELA ATIVA: ALTERA A COR DAS ESTRELAS ESCOLHIDAS PELO CLIENTE */
+.estrela.ativa{
+  color:#ffc107;
+}
+
+/* TEXTOS DOS CAMPOS: DEFINE COMO OS RÓTULOS DOS CAMPOS SERÃO EXIBIDOS */
+label{
+  display:block;
+  margin-bottom:10px;
+  font-weight:bold;
+  color:#5f472c;
+}
+
+/* ÁREA DE COMENTÁRIO: CONFIGURA TAMANHO, BORDA E ESPAÇAMENTO DO CAMPO DE TEXTO */
+textarea{
+  width:100%;
+  resize:none;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  margin-bottom:25px;
+}
+
+/* BOTÕES GERAIS: PADRONIZA TODOS OS BOTÕES DA PÁGINA */
+button{
+  width:100%;
+  border:none;
+  background:#28a745;
+  color:#fff;
+  padding:15px;
+  font-size:16px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* EFEITO DOS BOTÕES: ALTERA A COR QUANDO O USUÁRIO PASSA O MOUSE */
+button:hover{
+  background:#218838;
+}
+
+/* BOTÃO AVALIAR: CONFIGURA O BOTÃO PRINCIPAL DE ENVIO DA AVALIAÇÃO */
+.btn-avaliar{
+  width:100%;
+  margin-top:18px;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#ffc107;
+  color:#5f472c;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 3px 8px rgba(0,0,0,.20);
+}
+
+/* EFEITO DO BOTÃO AVALIAR: CRIA ANIMAÇÃO E ALTERA A COR AO PASSAR O MOUSE */
+.btn-avaliar:hover{
+  background:#ffb300;
+  transform:translateY(-2px);
+}
+
+/* RODAPÉ FIXO: MANTÉM A INFORMAÇÃO ACADÊMICA SEMPRE VISÍVEL NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* ORGANIZAÇÃO DO TEXTO DO RODAPÉ: CENTRALIZA TEXTO E ÍCONE */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK APROXIMA O BOTÃO DE VOLTAR DA BORDA DIREITA PARA EVITAR CHOQUE COM O TÍTULO */
+  header button {
+    right: 20px;
+  }
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 900px) {
+
+  /* CABEÇALHO ADAPTADO TABLET DESATIVA A POSIÇÃO ABSOLUTA DO BOTÃO PREVENINDO QUEBRAS HORIZONTAIS */
+  header button {
+    position: static;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  /* CABEÇALHO ADAPTADO TABLET CONVERTE A BARRA SUPERIOR EM UM BLOCO VERTICAL REUNIDO */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+/* RESPONSIVIDADE AJUSTA A PÁGINA PARA CELULARES E TELAS MENORES */
+@media(max-width:600px){
+
+  /* CABEÇALHO REDUZ O ESPAÇAMENTO PARA NÃO OCUPAR MUITO ESPAÇO */
+  header{
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* BOTÃO VOLTAR ALTERA O DESIGN PARA OCUPAR A LARGURA TOTAL DISPONÍVEL NO TOPO DO CELULAR */
+  header button{
+    position: static;
+    transform: none;
+    margin-top: 12px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  /* CARD REDUZ O ESPAÇAMENTO INTERNO PARA CABER MELHOR NO CELULAR */
+  .card-feedback{
+    padding:20px;
+  }
+
+  /* CONTAINER PRINCIPAL ADAPTADO MOBILE REDUZ O RECUO LATERAL PARA APROVEITAR A TELA DO SMARTPHONE */
+  .container {
+    padding: 25px 10px 80px;
+  }
+
+  /* ESTRELAS DIMINUI O TAMANHO PARA EVITAR QUEBRAS DE LINHA */
+  .estrela{
+    font-size:32px;
+  }
+
+  /* RODAPÉ REDUZ O TAMANHO DA FONTE EM TELAS PEQUENAS */
+  footer{
+    font-size:12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* ESTRELAS ADAPTADAS MINI COMPACTA O TAMANHO DOS ÍCONES EVITANDO QUE ELES SE ESPALHEM EM DUAS LINHAS */
+  .estrela {
+    font-size: 26px;
+    gap: 6px;
+  }
+
+  /* CARD DE FEEDBACK ADAPTADO MINI COMPACTA O RECUO DAS BORDAS BRANCAS INTERNAS */
+  .card-feedback {
+    padding: 15px;
+  }
+
+  /* DIMINUI O TAMANHO DO TÍTULO INTERNO DO FORMULÁRIO EM DISPOSITIVOS MINI */
+  .card-feedback h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}

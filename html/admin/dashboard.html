@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard Administrativo</title>
+
+    <link rel="stylesheet" href="../../css/alertas.css" />
+
+    <!-- IMPORTA O CSS ESPECÍFICO DO DASHBOARD ADMINISTRATIVO -->
+    <link rel="stylesheet" href="../../css/admin/dashboard.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- BLOCO RESPONSÁVEL PELOS TÍTULOS DA PÁGINA -->
+      <div class="titulo">
+        <!-- TÍTULO PRINCIPAL DO PAINEL -->
+        <h1>Dashboard</h1>
+
+        <!-- IDENTIFICAÇÃO DO SETOR RESPONSÁVEL -->
+        <h2>Indicadores Administrativos</h2>
+      </div>
+
+      <!--GRUPO DE BOTÕES DO CABEÇALHO.-->
+      <div class="btn-header">
+        <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+
+        <button class="btn-sair" onclick="sair()">Sair</button>
+      </div>
+    </header>
+
+    <!--ÁREA PRINCIPAL DO DASHBOARD.CONTÉM OS INDICADORES E INFORMAÇÕES GERENCIAIS.-->
+    <main>
+      <!--
+      SEÇÃO DOS INDICADORES PRINCIPAIS.EXIBE INFORMAÇÕES RESUMIDAS DO SISTEMA.-->
+      <section class="indicadores">
+        <div class="card-indicador pedidos">
+          <h3>Total de Pedidos</h3>
+
+          <p id="totalPedidos">0</p>
+        </div>
+
+        <div class="card-indicador faturamento">
+          <h3>Faturamento</h3>
+
+          <!-- VALOR CALCULADO PELO DASHBOARD.JS -->
+          <p id="faturamento">R$ 0,00</p>
+        </div>
+
+        <!-- CARD RESPONSÁVEL PELO VALOR MÉDIO DOS PEDIDOS -->
+        <div class="card-indicador ticket">
+          <h3>Ticket Médio</h3>
+
+          <!-- VALOR MÉDIO CALCULADO PELO SISTEMA -->
+          <p id="ticketMedio">R$ 0,00</p>
+        </div>
+
+        <div class="card-indicador cancelamentos">
+          <h3>Cancelamentos</h3>
+
+          <p id="cancelamentos">0</p>
+        </div>
+      </section>
+      <!--SEÇÃO DE INFORMAÇÕES COMPLEMENTARES.-->
+      <section class="informacoes">
+        <div class="painel-info produto">
+          <h2>Produto mais vendido</h2>
+
+          <!-- PREENCHIDO PELO JAVASCRIPT -->
+          <p id="produtoMaisVendido">Nenhum dado encontrado</p>
+        </div>
+
+        <div class="painel-info status">
+          <h2>Status dos pedidos</h2>
+
+          <!-- MOSTRA A QUANTIDADE POR STATUS -->
+          <p id="statusPedidos">Nenhum dado encontrado</p>
+        </div>
+
+        <!-- MOSTRA O CLIENTE COM MAIOR NÚMERO DE PEDIDOS -->
+        <div class="painel-info cliente">
+          <h2>Cliente destaque</h2>
+
+          <!-- PREENCHIDO PELO JAVASCRIPT -->
+          <p id="clienteDestaque">Nenhum dado encontrado</p>
+        </div>
+
+        <!-- MOSTRA O PEDIDO MAIS RECENTE REGISTRADO -->
+        <div class="painel-info ultimo">
+          <h2>Último pedido</h2>
+
+          <!-- PREENCHIDO PELO JAVASCRIPT -->
+          <p id="ultimoPedido">Nenhum dado encontrado</p>
+        </div>
+      </section>
+    </main>
+
+    <!--RODAPÉ FIXO DO SISTEMA. APRESENTA O AVISO DE USO ACADÊMICO.-->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- SCRIPT RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <script src="../../js/alertas.js"></script>
+
+    <!-- SCRIPT RESPONSÁVEL PELO FUNCIONAMENTO DO DASHBOARD -->
+    <script src="../../js/admin/dashboard.js"></script>
+  </body>
+</html>

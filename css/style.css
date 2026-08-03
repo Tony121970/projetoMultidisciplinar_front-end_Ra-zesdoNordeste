@@ -1,0 +1,679 @@
+/* ZERA ESPAÇAMENTOS PADRÃO, DEFINE O MODELO DE CAIXAS E A FONTE PRINCIPAL DO SITE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO GERAL DA PÁGINA */
+body {
+  background: #e5c482;
+}
+
+/* CRIA A BARRA SUPERIOR FIXA COM ELEMENTOS DISTRIBUÍDOS ENTRE OS DOIS LADOS */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(77, 60, 60); 
+  padding: 4px 20px;
+  font-size: 14px;
+  
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+/* ORGANIZA OS ÍCONES DAS REDES SOCIAIS NO LADO ESQUERDO DA BARRA */
+.top-bar-social {
+  display: flex;
+  gap: 15px; 
+}
+
+/* DEFINE TAMANHO E FORMATO DOS ÍCONES SOCIAIS */
+.top-bar-social img {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+/* MOVE LEVEMENTE OS ÍCONES AO PASSAR O MOUSE */
+.top-bar-social img:hover {
+  transform: translateY(-2px);
+}
+
+/* ORGANIZA O LADO DIREITO COM WHATSAPP E PESQUISA */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* FORMATA O LINK DO WHATSAPP COM TEXTO E ÍCONE ALINHADOS */
+.whatsapp-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* ALTERA A COR DO LINK DO WHATSAPP NO EFEITO HOVER */
+.whatsapp-link:hover {
+  color: rgb(80, 240, 75);
+}
+
+/* DEFINE O TAMANHO DO ÍCONE DO WHATSAPP */
+.whatsapp-link img {
+  width: 20px;
+  border-radius: 5px;
+}
+
+/* ORGANIZA O CAMPO DE PESQUISA COM INPUT E BOTÃO LADO A LADO */
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* CONFIGURA O CAMPO DE TEXTO DA PESQUISA */
+.search-form input {
+  border: none;
+  padding: 4px 10px;
+  outline: none;
+  background: transparent;
+}
+
+/* CONFIGURA O BOTÃO DA PESQUISA SEM FUNDO PADRÃO */
+.search-form button {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+/* CRIA O CABEÇALHO PRINCIPAL FIXO COM LOGO, LINKS E ÁREA DE ACESSO */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 6%;
+  background: #ab7d61;
+  color: white;
+  position: fixed;
+  width: 100%;
+  margin-top: 35px;
+  z-index: 999;
+}
+
+/* DEFINE O TAMANHO DO TÍTULO PRINCIPAL DO CABEÇALHO */
+header h1 {
+  font-size: 30px;
+}
+
+/* AJUSTA O TAMANHO DO SUBTÍTULO DO CABEÇALHO */
+header h2 {
+  font-size: 15px;
+}
+
+/* CONFIGURA O TEXTO DE APOIO DENTRO DO CABEÇALHO */
+header p {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* ORGANIZA OS BOTÕES E LINKS DE ACESSO DO USUÁRIO */
+.acesso {
+  display: flex;
+  gap: 20px;
+}
+
+/* DEFINE A ÁREA DO MENU SUSPENSO */
+.dropdown{
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  margin-right: 80px;
+}
+
+/* CONFIGURA O CONTEÚDO OCULTO DO MENU DROPDOWN */
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background: #e5c482;
+  border-radius: 8px;
+}
+
+/* EXIBE O MENU SUSPENSO QUANDO O MOUSE PASSA SOBRE ELE */
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+/* ESTILIZA O BOTÃO QUE ABRE O MENU DROPDOWN */
+.dropbtn{
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ALTERA A COR DO BOTÃO DO MENU AO PASSAR O MOUSE */
+.dropbtn:hover{
+  color: black;
+}
+
+/* MOSTRA O SUBMENU QUANDO O CURSOR ESTÁ SOBRE ELE */
+.submenu:hover .submenu-content{
+  display: block;
+}
+
+/* FORMATA OS LINKS DOS MENUS E SUBMENUS */
+.dropdown-content a,
+.submenu-content a{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #971010;
+  text-align: left;
+  width: 150px;
+}
+
+/* ALTERA O FUNDO DOS LINKS DO MENU AO PASSAR O MOUSE */
+.dropdown-content a:hover,
+.submenu-content a:hover{
+  background: #f2f2f2;
+}
+
+/* AJUSTA O TAMANHO DOS TEXTOS INFORMATIVOS DO MENU */
+.dropdown-content p,
+.submenu-content p {
+  font-size: 12px;
+}
+
+/* CONFIGURA OS BOTÕES DE LOGIN E CADASTRO */
+.btn-login,
+.btn-cadastro {
+  padding:8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* DEFINE A APARÊNCIA DO BOTÃO LOGIN */
+.btn-login {
+  background: white;
+  color: #c43509;
+}
+
+/* ALTERA O BOTÃO LOGIN AO PASSAR O MOUSE */
+.btn-login:hover {
+  background-color: rgb(11, 63, 37);
+  color: white;
+}
+
+/* DEFINE A APARÊNCIA DO BOTÃO CADASTRO */
+.btn-cadastro {
+  background: #c43509;
+  color: white;
+}
+
+/* ALTERA O BOTÃO CADASTRO AO PASSAR O MOUSE */
+.btn-cadastro:hover {
+  background-color: rgb(11, 63, 37);
+}
+
+/* CONFIGURA O CONTADOR DE QUANTIDADE DE PRODUTOS NO CARRINHO */
+#contadorCarrinho{
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  line-height: 22px;
+  text-align: center;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* ESTILIZA O ÍCONE DO CARRINHO NA ÁREA DE ACESSO */
+.acesso a[href="carrinho.html"]{
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* PERSONALIZA O BOTÃO DE VOLTAR COM FUNDO VERMELHO E FORMATO ARREDONDADO */
+.btn-voltar {
+  background-color: green;
+  color: white;
+  width: auto;          
+  padding: 6px 16px;   
+  border: none;
+  border-radius: 20px;  
+  cursor:pointer;
+  transition:.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO VOLTAR AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background-color: white;
+  color: green;
+}
+
+/* CRIA A BARRA DE NAVEGAÇÃO FIXA ABAIXO DO CABEÇALHO */
+nav {
+  background: rgb(77, 60, 60);
+  padding: 10px;
+  text-align: center;
+  margin-top: 115px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+/* ESTILIZA OS LINKS PRINCIPAIS DA NAVEGAÇÃO */
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 80px;
+}
+
+/* ALTERA A COR DOS LINKS DO MENU AO PASSAR O MOUSE */
+nav a:hover {
+  color: black;
+}
+
+/* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO */
+.banner {
+  height: 800px;
+  background-image: url("../Imagens/Imagem12.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e5c482;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 3px 3px 8px black;
+}
+
+/* ADICIONA UMA FAIXA DESLIZANTE NA TELA */ 
+.faixa {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: transparent; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none; 
+}
+
+.texto{
+  white-space: nowrap;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.8);
+  animation: deslizar 12s linear infinite;
+}
+
+@keyframes deslizar {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* DEFINE O ESPAÇAMENTO INTERNO DAS SEÇÕES DA PÁGINA */
+section {
+  padding: 40px;
+}
+
+/* FORMATA O TÍTULO DAS SEÇÕES DO SITE */
+.titulo {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: #8b4513;
+}
+
+/* ORGANIZA OS CARDS DO CARDÁPIO EM LINHAS FLEXÍVEIS */
+.cardapio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* CONFIGURA O CARTÃO INDIVIDUAL DOS PRODUTOS */
+.card {
+  width: 280px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px gray;
+  transition: 0.4s;
+}
+
+/* APLICA EFEITO DE ELEVAÇÃO AO PASSAR O MOUSE NO CARD */
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* DEFINE O TAMANHO E AJUSTE DAS IMAGENS DOS PRODUTOS */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* FORMATA O NOME DOS PRODUTOS DENTRO DOS CARDS */
+.card h3 {
+  text-align: center;
+  margin-top: 15px;
+  color: #8b4513;
+}
+
+/* ORGANIZA A DESCRIÇÃO DOS PRODUTOS */
+.card p {
+  padding: 15px;
+  text-align: center;
+}
+
+/* DESTACA O PREÇO DOS PRODUTOS */
+.preco {
+  font-size: 22px;
+  font-weight: bold;
+  color: red;
+}
+
+/* CONFIGURA O RODAPÉ PADRÃO DA PÁGINA COM ESPAÇAMENTO E ALINHAMENTO CENTRAL */
+footer {
+  padding: 05px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* DEFINE O ESTILO DOS RODAPÉS NORMAIS COM FUNDO ESCURO E TEXTO BRANCO */
+footer:not(.aviso) {
+  background-color: #4d3425;
+  color: white;
+}
+
+/* CONFIGURA O RODAPÉ FIXO DE AVISO NA PARTE INFERIOR DA TELA */
+footer.aviso {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* BARRA DE TOPO ADAPTADA NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR */
+  .top-bar {
+    padding: 4px 15px;
+  }
+
+  /* BARRA DE TOPO ADAPTADA NOTEBOOK REDUZ OS ESPAÇAMENTOS LATERAIS NO TOPO DIREITO */
+  .top-bar-right {
+    gap: 15px;
+  }
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA O PREENCHIMENTO INTERNO DO HEADER EM MONITORES COMPACTOS */
+  header {
+    padding: 0 4%;
+  }
+
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS NOTEBOOK REDUZ A MARGEM DIREITA EXCESVAL DOS ATALHOS PARA EVITAR QUEBRAS ANTECIPADAS */
+  nav a {
+    margin-right: 30px;
+  }
+
+  /* MENU SUSPENSO ADAPTADO NOTEBOOK REAJUSTA A MARGEM DIREITA DO DROPDOWN EM TELAS INTERMEDIÁRIAS */
+  .dropdown {
+    margin-right: 30px;
+  }
+}
+
+/* ADAPTA O LAYOUT PARA TELAS MENORES COMO TABLETS */
+@media (max-width: 1024px) {
+
+  /* BARRA DE TOPO ADAPTADA TABLET DESATIVA A BARRA DE PESQUISA E WHATSAPP DO TOPO REORGANIZANDO EM COLUNA VERTICAL */
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    position: static;
+  }
+
+  /* CABEÇALHO ADAPTADO TABLET DESFAZ AS MARGENS FIXAS DO TOPO COMPENSANDO A MUDANÇA DA BARRA SUPERIOR */
+  header {
+    margin-top: 0;
+    position: static;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* MENU SUSPENSO ADAPTADO TABLET REMOVE A MARGEM DIREITA EM EXIBIÇÃO DE TABLET */
+  .dropdown {
+    margin-right: 0;
+  }
+
+  /* BARRA DE NAVEGAÇÃO ADAPTADA TABLET REAJUSTA AS MARGENS DO TOPO DO MENU FIXO SECUNDÁRIO */
+  nav {
+    margin-top: 0;
+    position: static;
+    padding: 15px;
+  }
+
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS TABLET REDUZ AS MARGENS DIREITAS SUBSTITUINDO POR GANHO HORIZONTAL FLEXÍVEL */
+  nav a {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  /* REDUZ A ALTURA DO BANNER E AJUSTA O TEXTO PARA TABLETS */
+  .banner {
+    height: 350px;
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* CENTRALIZA OS CARDS DO CARDÁPIO EM TELAS MENORES */
+  .cardapio {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* REDUZ A LARGURA DOS CARDS PARA CABEREM DOIS POR LINHA */
+  .card {
+    width: 45%;
+  }
+}
+
+/* ADAPTA O SITE PARA DISPOSITIVOS COM ATÉ 768PX DE LARGURA */
+@media (max-width: 768px) {
+
+  /* ORGANIZA O CABEÇALHO EM COLUNA PARA TELAS MENORES */
+  header{
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  /* REDUZ O TAMANHO DO TÍTULO DO CABEÇALHO */
+  header h1 {
+    font-size: 32px;
+  }
+
+  /* AJUSTA O TAMANHO DOS TEXTOS DO CABEÇALHO */
+  header p {
+    font-size: 16px;
+  }
+
+  /* TRANSFORMA A NAVEGAÇÃO EM MENU VERTICAL */
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* AJUSTA ESPAÇAMENTO E TAMANHO DOS LINKS DO MENU */
+  nav a {
+    margin: 8px 0;
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  /* BARRA DE TOPO ADAPTADA MOBILE EMPILHA OS COMPONENTES DA BARRA DIREITA DO TOPO EM FORMATO VERTICAL */
+  .top-bar-right {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* CAMPO DE PESQUISA ADAPTADO MOBILE EXPANDRE A BARRA DE BUSCA EM APARELHOS MOVEIS */
+  .search-form {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR */
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    background: rgba(0,0,0,0.05);
+  }
+
+  /* LINKS DOS MENUS ADAPTADOS MOBILE AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO */
+  .dropdown-content a, .submenu-content a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* REDUZ O TAMANHO DO BANNER PARA CELULARES E TABLETS */
+  .banner {
+    height: 280px;
+    font-size: 32px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* AJUSTA A ÁREA DE LOGIN PARA OCUPAR MAIS ESPAÇO NA TELA */
+  .login {
+    width: 95%;
+  }
+
+  /* ORGANIZA O CARDÁPIO EM UMA ÚNICA COLUNA */
+  .cardapio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* DEFINE TAMANHO MÁXIMO DOS CARDS EM DISPOSITIVOS MENORES */
+  .card {
+    width: 95%;
+    max-width: 400px;
+  }
+
+  /* REDUZ O TAMANHO DOS TÍTULOS DAS SEÇÕES */
+  .titulo {
+    font-size: 28px;
+  }
+
+  /* DIMINUI O ESPAÇAMENTO DAS SEÇÕES */
+  section {
+    padding: 20px;
+  }
+
+  /* AJUSTA O ESPAÇAMENTO DO RODAPÉ PARA TELAS MENORES */
+  footer {
+    padding: 20px;
+    font-size: 15px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* FAIXA DESLIZANTE ADAPTADA MINI REAJUSTA O POSICIONAMENTO DA FAIXA NAS TELAS MAIS ESTREITAS */
+  .faixa {
+    top: 25%;
+  }
+
+  /* DIMINUI O TAMANHO DO TÍTULO DO CABEÇALHO EM CELULARES MINI */
+  header h1 {
+    font-size: 26px;
+  }
+
+  /* REDUZ O TEXTO PRINCIPAL DO BANNER EM APARELHOS MINI PREVENINDO QUEBRAS */
+  .banner {
+    font-size: 24px;
+    height: 220px;
+  }
+
+  /* ORGANIZA OS BOTÕES DE ACESSO ADAPTADOS MINI EMPILHA OS BOTOES DE LOGIN E CADASTRO VERTICALMENTE */
+  .acesso {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* CONFIGURA OS BOTÕES ADAPTADOS MINI EXPANDE OS BOTOES DO HEADER PARA LARGURA TOTAL NO SMARTPHONE SMALL */
+  .btn-login, .btn-cadastro, .btn-voltar {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* FAZ A MENSAGEM SURGIR DESLIZANDO DA LATERAL DIREITA DA TELA */
+@keyframes deslizar {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}

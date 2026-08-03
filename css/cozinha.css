@@ -1,0 +1,335 @@
+/* REMOVE ESPAÇAMENTOS PADRÕES DOS ELEMENTOS, DEFINE O MODELO DE CAIXA E PADRONIZA A FONTE UTILIZADA EM TODA A PÁGINA. */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO PRINCIPAL DA ÁREA DE TRABALHO DO SISTEMA. */
+body{
+  background:#e5c482;
+}
+
+/* CRIA A BARRA SUPERIOR DO PAINEL, MANTENDO TÍTULO E BOTÕES SEMPRE VISÍVEIS DURANTE A NAVEGAÇÃO. */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:90px;
+  background:#5f472c;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 35px;
+  color:#fff;
+  box-shadow:0 3px 10px rgba(0,0,0,.3);
+  z-index:999;
+}
+
+/* DEFINE O TAMANHO DO NOME OU IDENTIFICAÇÃO DO PAINEL. */
+.titulo h1{
+  font-size:28px;
+}
+
+/* CONTROLA O ESPAÇAMENTO, TAMANHO E TRANSPARÊNCIA DO TEXTO COMPLEMENTAR. */
+.titulo p{
+  margin-top:5px;
+  font-size:16px;
+  opacity:.9;
+}
+
+/* ORGANIZA OS BOTÕES DO CABEÇALHO EM LINHA, CONTROLANDO ESPAÇAMENTO E QUEBRA DE LINHA QUANDO NECESSÁRIO. */
+.acoes {
+  display: flex;
+  justify-self: end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* PADRONIZA TAMANHO, CORES, FORMATO E COMPORTAMENTO DOS BOTÕES PRINCIPAIS. */
+.acoes button{
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  background:#f4c542;
+  color:#333;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* CRIA UMA ANIMAÇÃO DE MOVIMENTO E ALTERAÇÃO DE COR AO PASSAR O MOUSE. */
+.acoes button:hover{
+  background:#ffd95e;
+  transform:translateY(-2px);
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO QUE UTILIZA O COMANDO DE RETORNO DO NAVEGADOR. */
+button[onclick="window.history.back()"], button[onclick="logoutColaborador()"] {
+  background-color: red;
+  color: white;
+}
+
+/* INVERTE AS CORES PARA DESTACAR A INTERAÇÃO. */
+button[onclick="window.history.back()"]:hover,button[onclick="logoutColaborador()"]:hover {
+  background-color: white;
+  color: red;
+}
+
+/* DEFINE OS ESPAÇAMENTOS NECESSÁRIOS PARA COMPENSAR O HEADER FIXO E ORGANIZAR O CONTEÚDO CENTRAL. */
+main{
+  margin-top:105px;
+  margin-bottom:70px;
+  padding:20px;
+}
+
+/* CRIA O BLOCO VISUAL ONDE O USUÁRIO ADMINISTRADOR OU FUNCIONÁRIO ACOMPANHA A SITUAÇÃO DOS PRODUTOS. */
+#painelDisponibilidade{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  margin-bottom:25px;
+}
+
+/* CENTRALIZA E DESTACA O NOME DA ÁREA DE CONTROLE DE PRODUTOS. */
+#painelDisponibilidade h2{
+  color:#5f472c;
+  margin-bottom:18px;
+  text-align:center;
+}
+
+/* ORGANIZA OS PRODUTOS EM UMA GRADE RESPONSIVA, AJUSTANDO AUTOMATICAMENTE A QUANTIDADE DE COLUNAS CONFORME O ESPAÇO DISPONÍVEL. */
+#listaDisponibilidade{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
+}
+
+/* CRIA O CARD INDIVIDUAL DE CADA PRODUTO COM NOME, STATUS E BOTÃO DE ALTERAÇÃO. */
+.produtoDisponibilidade{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#f8f8f8;
+  border-radius:10px;
+  padding:12px 15px;
+  border-left:6px solid #5f472c;
+}
+
+/* DESTACA O TEXTO PRINCIPAL DO ITEM DE DISPONIBILIDADE. */
+.produtoDisponibilidade span{
+  font-weight:bold;
+  color:#333;
+}
+
+/* CONFIGURA O BOTÃO RESPONSÁVEL POR ALTERAR OU CONTROLAR O STATUS DO PRODUTO. */
+.produtoDisponibilidade button{
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
+}
+
+/* APLICA UM PEQUENO ZOOM PARA INDICAR INTERAÇÃO AO PASSAR O MOUSE. */
+.produtoDisponibilidade button:hover{
+  transform:scale(1.05);
+}
+
+/* DEFINE A GRADE ONDE OS CARDS DOS PEDIDOS RECEBIDOS SERÃO EXIBIDOS. */
+#listaCozinha{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;
+}
+
+/* PADRONIZA A APRESENTAÇÃO DOS PEDIDOS CRIADOS DINAMICAMENTE PELO SISTEMA. */
+.card,
+.card-pedido{
+  background:white;
+  width: 370px;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+/* LEVANTA LEVEMENTE O CARD QUANDO O USUÁRIO PASSA O MOUSE, CRIANDO SENSAÇÃO DE PROFUNDIDADE. */
+.card:hover,
+.card-pedido:hover{
+  transform:translateY(-4px);
+}
+
+/* DEFINE A COR E O ESPAÇAMENTO DOS TÍTULOS PRINCIPAIS DOS PEDIDOS. */
+.card h2,
+.card h3,
+.card-pedido h2,
+.card-pedido h3{
+  color:#5f472c;
+  margin-bottom:12px;
+}
+
+/* ALTERA A COR DOS TÍTULOS DOS PEDIDOS PARA FACILITAR A IDENTIFICAÇÃO VISUAL. */
+.card h3,
+.card-pedido h3{
+  color:red;
+  margin-bottom:12px;
+}
+
+/* ORGANIZA INFORMAÇÕES COMO CLIENTE, ITENS, STATUS E HORÁRIOS DENTRO DO PEDIDO. */
+.card p,
+.card-pedido p{
+  margin:6px 0;
+  line-height:1.2;
+}
+
+/* DEFINE O ESPAÇAMENTO INTERNO DA LISTA DE ITENS DO PEDIDO. */
+.card ul,
+.card-pedido ul{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+/* CONTROLA O ESPAÇAMENTO ENTRE OS PRODUTOS EXIBIDOS NO CARD. */
+.card li,
+.card-pedido li{
+  margin-bottom:6px;
+}
+
+/* PADRONIZA OS BOTÕES EXISTENTES DENTRO DOS PEDIDOS, COMO ALTERAÇÃO DE STATUS OU AÇÕES DA COZINHA. */
+.card button,
+.card-pedido button{
+  width:160px;
+  margin-top:10px;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#2e80cc;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* ALTERA A COR DO BOTÃO DURANTE A INTERAÇÃO DO USUÁRIO PARA INDICAR CLIQUE OU PASSAGEM DO MOUSE. */
+.card button:hover,
+.card-pedido button:hover{
+  background:#2169aa;
+}
+
+/* MANTÉM A INFORMAÇÃO INSTITUCIONAL SEMPRE VISÍVEL NA PARTE INFERIOR DA TELA. */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* ORGANIZA O TEXTO E O ÍCONE DO AVISO, CENTRALIZANDO OS ELEMENTOS HORIZONTALMENTE. */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA O PREENCHIMENTO INTERNO DA BARRA SUPERIOR EM TELAS DE NOTEBOOK */
+  header {
+    padding: 15px 25px;
+  }
+
+  /* LISTA DE DISPONIBILIDADE ADAPTADA NOTEBOOK REAJUSTA AS COLUNAS DA GRADE RESPONSIVA PARA PREVENIR APERTOS */
+  #listaDisponibilidade {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* RESPONSIVIDADE PRINCIPAL ADAPTA A INTERFACE PARA TELAS MENORES EVITANDO QUE HEADER E CONTEÚDO FIQUEM COMPRIMIDOS */
+@media(max-width:1000px){
+
+  /* HEADER MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA QUANDO A TELA DIMINUI */
+  header{
+      flex-direction:column;
+      height:auto;
+      padding:15px;
+      gap:15px;
+  }
+
+  /* ÁREA PRINCIPAL MOBILE AUMENTA O ESPAÇO SUPERIOR PARA COMPENSAR A MUDANÇA DE ALTURA DO CABEÇALHO */
+  main{
+      margin-top:150px;
+      margin-bottom: 80px;
+  }
+}
+
+/* RESPONSIVIDADE PARA CELULARES AJUSTA A DISTRIBUIÇÃO DOS BOTÕES E DOS CARDS EM TELAS MAIS ESTREITAS */
+@media(max-width:700px){
+
+  /* BOTÕES DO HEADER MOBILE CENTRALIZA OS BOTÕES DE AÇÃO QUANDO O ESPAÇO HORIZONTAL FICA REDUZIDO */
+  .acoes{
+      justify-content:center;
+      width: 100%;
+  }
+
+  /* CARDS DA COZINHA MOBILE ALTERA A GRADE PARA UMA ÚNICA COLUNA FACILITANDO A LEITURA DOS PEDIDOS */
+  #listaCozinha{
+      grid-template-columns:1fr;
+  }
+
+  /* CARDS MOBILE ADAPTA A LARGURA DOS CARDS DO JAVASCRIPT PARA QUE NÃO ESTOUREM EM CELULARES PEQUENOS */
+  .card,
+  .card-pedido{
+      width:100%;
+      max-width:100%;
+  }
+
+  /* BOTÕES DOS CARDS MOBILE AJUSTA A LARGURA DOS BOTÕES DOS CARDS PARA OCUPAREM TODO O ESPAÇO DISPONÍVEL */
+  .card button,
+  .card-pedido button{
+      width:100%;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO EM CELULARES MINI */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* BOTÕES DO HEADER MOBILE ALTERA OS BOTÕES DE AÇÃO PARA FORMATO VERTICAL EM TELAS MINI */
+  .acoes {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* BOTÕES PRINCIPAIS RESPONSIVOS EXPANDE OS BOTÕES DO TOPO PARA ASSUMIREM LARGURA TOTAL NO SMARTPHONE SMALL */
+  .acoes button {
+    width: 100%;
+  }
+
+  /* ITEM DE DISPONIBILIDADE ADAPTADO MINI ALTERA O LAYOUT DO CARD PARA COLUNA EVITANDO QUE O BOTÃO SE CHOQUE COM O TEXTO */
+  .produtoDisponibilidade {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

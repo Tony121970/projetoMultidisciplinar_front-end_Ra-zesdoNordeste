@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Avaliação do Pedido</title>
+    <link rel="stylesheet" href="../css/alertas.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+</head>
+
+<body>
+
+    <!-- TOPO DA PAGINA COM TITULO DA AREA DE FEEDBACK E BOTAO RETORNAR -->
+    <header>
+        <h1>⭐ Avaliação do Pedido</h1>
+        
+        <button onclick="window.history.back()">Voltar</button>
+      </header>
+
+    <!-- CONTAINER COMPORTANDO O FORMULARIO DE INTERAÇÃO COM O CLIENTE -->
+    <main class="container">
+
+        <div class="card-feedback">
+
+            <h2>Como foi sua experiência?</h2>
+
+            <!-- SISTEMA DE CLASSIFICAÇÃO POR NOTAS USANDO ATRIBUTOS DATA -->
+            <div class="estrelas">
+
+                <span class="estrela" data-valor="1">☆</span>
+                <span class="estrela" data-valor="2">☆</span>
+                <span class="estrela" data-valor="3">☆</span>
+                <span class="estrela" data-valor="4">☆</span>
+                <span class="estrela" data-valor="5">☆</span>
+
+            </div>
+
+            <!-- CAMPO RESTRITO PARA OBSERVAÇÕES EXTRAS TEXTUAIS DO CLIENTE -->
+            <label for="comentario">
+                Comentário (opcional)
+            </label>
+
+            <textarea
+                id="comentario"
+                rows="6"
+                placeholder="Conte para nós como foi sua experiência..."
+            ></textarea>
+
+
+            <!-- DISPARADOR QUE SALVA A CLASSIFICAÇÃO INFORMADA -->
+            <button id="btnEnviar">
+                Enviar Avaliação
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPE DA PAGINA COM IDENTIFICAÇÃO ESCOLAR OU ACADEMICA -->
+    <footer>
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- LOGICA QUE GERENCIA A SELEÇÃO DAS ESTRELAS E ENVIO DO FORMULARIO -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/feedback.js"></script>
+
+</body>
+</html>

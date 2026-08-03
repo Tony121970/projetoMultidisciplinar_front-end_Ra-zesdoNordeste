@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tb.UNINTER.FrontEnd</title>
+    <!-- CONFIGURAÇÕES DE PWA PROGRESIVO E CORES DO TEMA DO APLICATIVO -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#8b4513" />
+    <link rel="apple-touch-icon" href="imagens/icon-192.png" />
+    <link rel="stylesheet" href="../css/alertas.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- BARRA SUPERIOR COM LINKS DE MIDIAS SOCIAIS E SISTEMA DE BUSCA RAPIDA -->
+    <div class="top-bar">
+      <div class="top-bar-social">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="../Imagens/logo.facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="../Imagens/logo.instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <img src="../Imagens/logo.youtube.png" alt="YouTube" />
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="../Imagens/logo.twitter.png" alt="Twitter" />
+        </a>
+      </div>
+
+      <div class="top-bar-right">
+        <a
+          href="https://wa.me"
+          target="_blank"
+          aria-label="WhatsApp"
+          class="whatsapp-link"
+        >
+          <img src="../Imagens/logo.whatsapp.png" alt="WhatsApp" />
+          <span>Fale conosco</span>
+        </a>
+
+        <form action="/buscar" method="GET" class="search-form">
+          <input
+            type="text"
+            placeholder="Pesquisar..."
+            name="s"
+            aria-label="Pesquisar no site"
+          />
+          <button type="submit" aria-label="Buscar">🔍</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CABEÇALHO DO SITE COM LOGO TITULO E RECURSOS DE CONTA DO USUARIO -->
+    <header>
+      <img
+        src="../Imagens/imagem19.png"
+        style="width: 60px; height: 80px; vertical-align: middle"
+      />
+
+      <h1>
+        Raízes do Nordeste <br />
+        <p>&nbsp;&nbsp;&nbsp;&nbsp&nbspCulinária Que Transcende Gerações</p>
+      </h1>
+
+      <div class="acesso">
+        <a href="../html/login.html" class="btn-login">Entrar</a>
+        <a href="../html/cadastro.html" class="btn-cadastro">Criar Conta</a>
+        <a href="carrinho.html"> 🛒 <span id="contadorCarrinho">0</span> </a>
+        <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+      </div>
+    </header>
+
+    <!-- MENU PRINCIPAL DE NAVEGAÇÃO INTERNA COM SELEÇÃO DE SUBMENUS DROPDOWN -->
+    <nav>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="meusPedidos.html">Meus Pedidos</a>
+      <a href="fidelidade.html">Club Fiel</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Serviços</button>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="admin/login.html">Área Administrativa</a>
+            <a href="admin/colab.login.html">Área do Colaborador</a>
+            <a href="recuperar-senha.html">Recuperar Senha</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Nossas Filiais</button>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="../Imagens/restRecife.png" alt="Descrição"
+              >Recife-PE<br />
+              <p>Rua 1, s/n</p></a
+            >
+            <a href="../Imagens/restMaceio.png"
+              >Maceió-AL<br />
+              <p>Rua 2, s/n</p></a
+            >
+            <a href="../Imagens/restFortaleza.png"
+              >Fortaleza-CE<br />
+              <p>Rua 3, s/n</p></a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ELEMENTOS VISUAIS E DE TEXTO DE BOAS VINDAS DO BANNER -->
+    <div class="banner">Sabores da Nossa Terra</div>
+
+    <!-- ADICIONA UMA FAIXA DESLIZANTE NA TELA -->
+    <div class="faixa">
+      <div class="texto">
+        SEJA BEM VINDO! ESTAMOS 24 HORAS À SUA DISPOSIÇÃO • "SÃO 24 HORAS NO AR"
+      </div>
+    </div>
+
+    <!-- SEÇÃO CONTENDO A EXIBIÇÃO EM GRADE DAS OFERTAS DO DIA -->
+    <section>
+      <h2 class="titulo">Nossas Promoções do Dia...</h2>
+
+      <div class="cardapio">
+        <div class="card">
+          <img src="../Imagens/Tapioca.jpg" />
+          <h3>Tapioca Tradicional</h3>
+          <p>Recheada com coco, queijo coalho e leite condensado .</p>
+          <p class="preco">R$ 99,99</p>
+        </div>
+
+        <div class="card">
+          <img src="../Imagens/CuscuzRecheado.jpg" />
+          <h3>Cuscuz Recheado</h3>
+          <p>Cuscuz recheado com carne, ovos e legumes.</p>
+          <p class="preco">R$ 99,99</p>
+        </div>
+
+        <div class="card">
+          <img src="../Imagens/Pamonha.jpg" />
+          <h3>Pamonha</h3>
+          <p>Pamonha tradicional preparada com milho verde.</p>
+          <p class="preco">R$ 99,99</p>
+        </div>
+
+        <div class="card">
+          <img src="../Imagens/Canjica.jpg" />
+          <h3>Canjica</h3>
+          <p>Canjica cremosa com leite de coco e canela.</p>
+          <p class="preco">R$ 99,99</p>
+        </div>
+
+        <div class="card">
+          <img src="../Imagens/BoloDeMilho.jpg" />
+          <h3>Bolo de Milho</h3>
+          <p>Bolo preparado com milho verde e coco.</p>
+          <p class="preco">R$ 99,99</p>
+        </div>
+
+        <div class="card">
+          <img src="../Imagens/arrozDoce.jpg" />
+          <h3>Arroz doce</h3>
+          <p>Preparado com leite de coco e canela.</p>
+          <p class="preco">R$ 99,99</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DESCRITIVA DA HISTORIA DO RESTAURANTE REGIONAL -->
+    <section>
+      <h2 class="titulo">Sobre o Raízes do Nordeste</h2>
+
+      <p
+        style="
+          text-align: center;
+          max-width: 900px;
+          margin: auto;
+          font-size: 18px;
+          line-height: 1.8;
+        "
+      >
+        Esse sonho arretado de bom começou com a força, união e muito trabalho
+        de uma família modesta nordestina.Com a missão de preservar a riqueza da
+        culinária nordestina, valorizando ingredientes regionais e receitas
+        transmitidas de geração em geração, aqui, cada prato traz um pouco da
+        cultura, da tradição e da hospitalidade do povo nordestino.
+      </p>
+    </section>
+
+    <!-- RODAPÉS DO SISTEMA COM CONTATO ENDEREÇO E AVISO ACADEMICO -->
+    <footer>
+      <p>
+        Comida típica • Cultura • Tradição<br />
+        Rua Rosa Clara, 70 - Cohab<br />
+        Recife - PE<br />
+        <img
+          src="../Imagens/logo.whatsapp.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        (81) 99999-9999
+      </p>
+    </footer>
+
+    <footer class="aviso">
+      <p>
+        <img
+          src="../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- EXECUÇÃO DE INTERAÇÕES EM JAVASCRIPT E REGISTRO DE SERVICE WORKER DA PWA -->
+    <script src="../js/alertas.js"></script>
+    <script src="../js/carrinho.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((registro) => {
+              console.log("APP Raízes instalado com sucesso!", registro);
+            })
+            .catch((erro) => {
+              console.error("Erro ao instalar APP Raízes:", erro);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

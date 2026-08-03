@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Setor Administrativo</title>
+
+    <!-- IMPORTA O CSS RESPONSÁVEL PELOS ALERTAS DO SISTEMA -->
+    <link rel="stylesheet" href="../css/alertas.css" />
+
+    <!-- IMPORTA O CSS ESPECÍFICO DA TELA DE LOGIN ADMINISTRATIVO -->
+    <link rel="stylesheet" href="../../css/admin/login.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- ÁREA RESPONSÁVEL PELO TÍTULO DA PÁGINA -->
+      <div class="titulo">
+        <!-- IDENTIFICAÇÃO DO SETOR ACESSADO -->
+        <h1>Setor Administrativo</h1>
+      </div>
+
+      <!-- ÁREA DOS BOTÕES LOCALIZADOS NO CABEÇALHO -->
+      <div class="botoes-header">
+        <!-- LINK PARA SAIR DA ÁREA ADMINISTRATIVA E RETORNAR À PÁGINA INICIAL -->
+        <a href="../index.html" class="btn-header"> Sair </a>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+    <main>
+      <!-- CAIXA CENTRAL RESPONSÁVEL PELO FORMULÁRIO DE LOGIN -->
+      <div class="login-box">
+        <!-- TÍTULO DO FORMULÁRIO -->
+        <h2>Fazer Login</h2>
+
+        <!-- FORMULÁRIO RESPONSÁVEL PELO ENVIO DOS DADOS DE ACESSO -->
+        <!-- O EVENTO ONSUBMIT IMPEDE O RECARREGAMENTO DA PÁGINA E EXECUTA A FUNÇÃO DE LOGIN -->
+        <form
+          onsubmit="event.
+        
+        preventDefault(); logar();"
+        >
+          <!-- IDENTIFICAÇÃO DO CAMPO DE USUÁRIO -->
+          <label for="usuario">Usuário</label>
+
+          <!-- CAMPO PARA DIGITAÇÃO DO NOME DE USUÁRIO -->
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Digite seu usuário"
+            required
+          />
+
+          <label for="senha">Senha</label>
+
+          <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            required
+          />
+
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- RODAPÉ COM INFORMAÇÃO INSTITUCIONAL DA PÁGINA -->
+    <footer>
+      <p>
+        <img
+          src="../../Imagens/aviso.png"
+          style="width: 24px; height: 24px; vertical-align: middle"
+        />
+
+        Esta página foi criada apenas para fins acadêmicos.
+      </p>
+    </footer>
+
+    <!-- IMPORTA O SCRIPT DE ALERTAS UTILIZADO PELO SISTEMA -->
+    <script src="../js/alertas.js"></script>
+
+    <!-- IMPORTA O SCRIPT RESPONSÁVEL PELA VALIDAÇÃO DO LOGIN ADMINISTRATIVO -->
+    <script src="../../js/admin/login.js"></script>
+  </body>
+</html>

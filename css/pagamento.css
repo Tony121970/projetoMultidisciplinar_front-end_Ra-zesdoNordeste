@@ -1,0 +1,459 @@
+/* ZERA OS ESPAÇAMENTOS PADRÕES DO NAVEGADOR E DEFINE O MODELO DE CAIXAS DO SISTEMA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE O FUNDO PRINCIPAL DA PÁGINA E ORGANIZA A ESTRUTURA VERTICAL DO CONTEÚDO */
+body {
+  background: #e5c482;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CRIA O CABEÇALHO SUPERIOR COM AS INFORMAÇÕES PRINCIPAIS E MANTÉM A NAVEGAÇÃO FIXA DURANTE A ROLAGEM */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  background: #5f472c;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 60px;
+}
+
+/* AJUSTA O TAMANHO DO TÍTULO PRINCIPAL NO CABEÇALHO */
+.titulo h1 {
+  font-size: 34px;
+  color: white;
+  margin-top: 4px;
+}
+
+/* ESTILIZA O SUBTÍTULO AMARELO DO CABEÇALHO */
+.titulo h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #f7d08a;
+  font-weight: bold;
+}
+
+/* ORGANIZA OS BOTÕES DE NAVEGAÇÃO LADO A LADO */
+.acesso {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* DEFINE AS PROPRIEDADES COMUNS DE FORMATO E ANIMAÇÃO DOS BOTÕES DO TOPO */
+.btn-fidelidade,
+.btn-voltar,
+.btn-sair {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+/* CONFIGURA O BOTÃO DE ACESSO AO PROGRAMA DE FIDELIDADE */
+.btn-fidelidade {
+  background: white;
+  color: green;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO FIDELIDADE AO PASSAR O MOUSE */
+.btn-fidelidade:hover {
+  background-color: green;
+  color: white;
+}
+
+/* CONFIGURA O BOTÃO VOLTAR */
+.btn-voltar {
+  background: green;
+  color: white;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO VOLTAR AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background-color: white;
+  color: green;
+}
+
+.btn-sair {
+  background: red;
+  color: white;
+}
+
+.btn-sair:hover {
+  background-color: white;
+  color: red;
+}
+
+/* CRIA O CONTAINER CENTRAL RESPONSÁVEL POR AGRUPAR AS INFORMAÇÕES DO PAGAMENTO */
+.container {
+  width: 95%;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.15);
+  margin: 0px auto 100px;
+}
+
+/* CENTRALIZA O TÍTULO PRINCIPAL DA PÁGINA */
+h1 {
+  text-align: center;
+  color: #8b4513;
+  margin-bottom: 0px;
+}
+
+/* DEFINE O VISUAL DOS BLOCOS INTERNOS DE INFORMAÇÕES */
+.card {
+  background: #fffdf8;
+  border: 1px solid #e5d6c3;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* DESTACA O TÍTULO DOS CARDS COM A COR DO SISTEMA */
+.card h2 {
+  color: green;
+  margin-bottom: 15px;
+}
+
+/* CONFIGURA SUBTÍTULOS INTERNOS DOS CARDS */
+.card h3 {
+  margin-top: 20px;
+  color: #444;
+}
+
+/* DESTACA TEXTOS IMPORTANTES COM COR DE ALERTA */
+p.texto strong {
+  color: #dc3545;
+}
+
+/* FORMATA OS TEXTOS DESCRITIVOS DOS CARDS */
+.texto {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* DESTACA O VALOR DO SALDO DE MOEDAS DO CLIENTE */
+.saldo {
+  font-size: 34px;
+  text-align: center;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+/* ORGANIZA LINHAS DE VALORES E INFORMAÇÕES LADO A LADO */
+.linha {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+/* DESTACA O VALOR TOTAL DA COMPRA */
+.total {
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+
+/* DESTACA O VALOR DE CASHBACK GERADO NO PEDIDO */
+.cashback {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 28px;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+/* CONFIGURA OS CAMPOS DE ESCOLHA DO FORMULÁRIO */
+label {
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* AJUSTA O ESPAÇAMENTO DOS BOTÕES DE SELEÇÃO */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* BOTÃO PARA UTILIZAÇÃO DAS MOEDAS DE FIDELIDADE */
+.btn-moedas {
+  display: block;
+  width: 52%;
+  padding: 15px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 auto 15px;
+  transition: .3s;
+}
+
+/* ALTERA A COR DO BOTÃO DE MOEDAS AO PASSAR O MOUSE */
+.btn-moedas:hover {
+  background: #f57c00;
+}
+
+/* BOTÃO PRINCIPAL DE CONFIRMAÇÃO DO PEDIDO */
+.confirmar {
+  display: block;
+  width: 52%;
+  padding: 18px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: .3s;
+}
+
+/* ALTERA A COR DO BOTÃO CONFIRMAR AO PASSAR O MOUSE */
+.confirmar:hover {
+  background: #1b5e20;
+}
+
+/* CONFIGURA O BOTÃO DE ENVIO DO PEDIDO PELO WHATSAPP */
+#btnWhatsapp {
+  display: flex;
+  width: 52%;
+  padding: 18px;
+  margin: 15px auto 0;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* APLICA EFEITO VISUAL NO BOTÃO WHATSAPP */
+#btnWhatsapp:hover {
+  background: #1ebe5d;
+  transform: scale(1.02);
+}
+
+/* CRIA UMA LINHA DIVISÓRIA ENTRE SEÇÕES DE CONTEÚDO */
+hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* FIXA O RODAPÉ NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CENTRALIZA OS ELEMENTOS INTERNOS DO RODAPÉ */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ADAPTA O LAYOUT PARA NOTEBOOKS E TABLETS COM TELAS MENORES */
+@media (max-width: 992px) {
+
+  /* ORGANIZA O CABEÇALHO EM COLUNA PARA EVITAR QUE OS ELEMENTOS FIQUEM APERTADOS */
+  header {
+    padding: 15px 4%;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    height: auto;
+  }
+
+  /* TÍTULO DO CABEÇALHO ADAPTADO NOTEBOOK AJUSTA A TIPOGRAFIA DA LOGOMARCA */
+  .titulo h1 {
+    font-size: 28px;
+  }
+
+  /* PERMITE QUE OS BOTÕES DO MENU QUEBREM LINHA QUANDO NECESSÁRIO */
+  .acesso {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* AJUSTA O TAMANHO DO CONTAINER PRINCIPAL PARA TELAS MENORES COMPENSANDO O HEADER */
+  .container {
+    width: 92%;
+    max-width: 700px;
+    margin: 180px auto 90px;
+    padding: 25px;
+  }
+
+  /* AUMENTA A LARGURA DOS BOTÕES PRINCIPAIS PARA MELHOR USABILIDADE */
+  .btn-moedas,
+  .confirmar,
+  #btnWhatsapp {
+    width: 70%;
+  }
+}
+
+/* ADAPTA O SISTEMA PARA TABLETS EM MODO RETRATO */
+@media (max-width: 768px) {
+
+  /* BARRA DE TOPO ADAPTADA TABLET REAJUSTA O PREENCHIMENTO INTERNO DO TOPO VERTICAL */
+  header {
+    padding: 15px;
+  }
+
+  /* TÍTULO DO CABEÇALHO ADAPTADO TABLET REDUZ A FONTE PRINCIPAL DO PAINEL */
+  .titulo h1 {
+    font-size: 24px;
+  }
+
+  /* SUBTÍTULO DO CABEÇALHO ADAPTADO TABLET ENCOLHE O TEXTO COMPLEMENTAR DO TOPO */
+  .titulo h2 {
+    font-size: 13px;
+  }
+
+  /* TRANSFORMA O MENU DE BOTÕES EM COLUNA */
+  .acesso {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* FAZ OS BOTÕES OCUPAREM TODA A LARGURA DISPONÍVEL DO MENU */
+  .btn-fidelidade,
+  .btn-voltar,
+  .btn-sair {
+    width: 100%;
+    text-align: center;
+    max-width: 250px;
+  }
+
+  /* AJUSTA O ESPAÇAMENTO DO CONTAINER CENTRAL CONTRA SOBREPOSIÇÃO */
+  .container {
+    width: 95%;
+    margin: 220px auto 90px;
+    padding: 20px;
+  }
+
+  /* REDUZ O TAMANHO DOS VALORES PRINCIPAIS */
+  .saldo {
+    font-size: 28px;
+  }
+
+  /* REDUZ O TAMANHO DO TEXTO DE CASHBACK */
+  .cashback {
+    font-size: 24px;
+  }
+
+  /* AJUSTA AS LINHAS DE INFORMAÇÃO */
+  .linha {
+    font-size: 16px;
+  }
+
+  /* DIMINUI O TAMANHO DO TOTAL DA COMPRA */
+  .total {
+    font-size: 20px;
+  }
+
+  /* EXPANDE OS BOTÕES PARA FACILITAR O TOQUE EM TELAS MENORES */
+  .btn-moedas,
+  .confirmar,
+  #btnWhatsapp {
+    width: 100%;
+  }
+
+  /* REDUZ O TAMANHO DO RODAPÉ */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTA O SISTEMA PARA CELULARES PEQUENOS */
+@media (max-width: 480px) {
+
+  /* TÍTULO DO CABEÇALHO ADAPTADO MOBILE COMPACTA O TÍTULO EM APARELHOS MÓVEIS */
+  .titulo h1 {
+    font-size: 20px;
+  }
+
+  /* SUBTÍTULO DO CABEÇALHO ADAPTADO MOBILE COMPACTA O SUBTÍTULO EM APARELHOS MÓVEIS */
+  .titulo h2 {
+    font-size: 12px;
+  }
+
+  /* DIMINUI ESPAÇAMENTOS LATERAIS E COMPENSA O ENCOLHIMENTO DO HEADER VERTICAL */
+  .container {
+    margin: 240px auto 85px;
+    padding: 15px;
+  }
+
+  /* AJUSTA O TAMANHO DOS TÍTULOS DO CONTEÚDO */
+  h1 {
+    font-size: 24px;
+  }
+
+  /* REDUZ TÍTULOS INTERNOS DOS CARDS */
+  .card h2 {
+    font-size: 18px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* CONTAINER PRINCIPAL ADAPTADO MINI AJUSTA A MARGEM SUPERIOR JÁ QUE OS BOTÕES EMPILHARAM COESAMENTE */
+  .container {
+    margin-top: 260px;
+    padding: 12px;
+  }
+
+  /* ORGANIZA LINHAS DE VALORES ADAPTADAS CONVERTE AS COLUNAS LADO A LADO EM COLUNA VERTICAL ÚNICA IMPEDINDO QUEBRAS FEIAS DO TEXTO */
+  .linha {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+
+  /* SELEÇÃO DO FORMULÁRIO ADAPTADA MINI REORGANIZA AS ESTRUTURAS DE CAMPOS DE ESCOLHA PARA MELHOR ÁREA DE TOQUE */
+  label {
+    text-align: left;
+    font-size: 16px;
+  }
+}

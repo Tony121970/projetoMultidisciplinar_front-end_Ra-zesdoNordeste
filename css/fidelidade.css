@@ -1,0 +1,411 @@
+/* REMOVE ESPAÇAMENTOS PADRÕES, DEFINE O TAMANHO DOS ELEMENTOS E PADRONIZA A FONTE DA PÁGINA */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* DEFINE A COR DE FUNDO E A COR PADRÃO DOS TEXTOS */
+body{
+  background:rgb(238, 204, 131);
+  color:#333;
+}
+
+/* CRIA A BARRA SUPERIOR COM MENU, LOGO E POSICIONAMENTO FIXO NA TELA */
+header{
+  position:fixed;
+  width:100%;
+  height:60px;
+  align-items:center;
+  background:#5f472c;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:0 40px;
+  z-index:999;
+}
+
+/* DEFINE O TAMANHO, COR E DESTAQUE DO NOME DA MARCA */
+.logo{
+  color:#fff;
+  font-size:32px;
+  font-weight:bold;
+}
+
+/* ORGANIZA OS LINKS DO CABEÇALHO EM LINHA COM ESPAÇAMENTO */
+nav{
+  display:flex;
+  gap:20px;
+  align-items: center;
+}
+
+/* DEFINE APARÊNCIA DOS LINKS DE NAVEGAÇÃO */
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  transition:.3s;
+}
+  
+/* DESTACA A PÁGINA ATUAL E A INTERAÇÃO DO USUÁRIO */
+nav a:hover,
+nav .ativo{
+   color:#ffd700;
+}
+
+/* CRIA O CÍRCULO DE NOTIFICAÇÃO COM A QUANTIDADE DE PRODUTOS */
+#contadorCarrinho{
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  line-height: 23px;
+  text-align: center;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: #ffd700;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* CRIA O ESPAÇO DE APRESENTAÇÃO DO PROGRAMA DE FIDELIDADE */
+.titulo{
+  text-align:center;
+  padding:50px 20px;
+}
+
+/* DEFINE TAMANHO, COR E ESPAÇAMENTO */
+.titulo h1{
+  font-size:32px;
+  color:w;
+  margin-bottom:0px;
+  margin-top: 20px;
+}
+
+/* DEFINE A EXPLICAÇÃO ABAIXO DO TÍTULO */
+.titulo p{
+  font-size:20px;
+  margin-bottom: 0px;
+  color:#555;
+}
+
+/* CENTRALIZA O CARD DE MOEDAS */
+.saldo{
+  display:flex;
+  justify-content:center;
+  margin-top: 0px;
+  margin-bottom:20px;
+}
+
+/* EXIBE A QUANTIDADE DE MOEDAS DO CLIENTE EM UM BLOCO DE DESTAQUE */
+.card-saldo{
+  width:420px;
+  background:white;
+  border-radius:20px;
+  padding:10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  text-align:center;
+  box-shadow:0 30px 25px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+/* MOVE LEVEMENTE O CARD AO PASSAR O MOUSE */
+.card-saldo:hover{
+  transform:translateY(-6px);
+}
+
+/* DESTACA O NOME DO BENEFÍCIO */
+.card-saldo h2{
+  color:green;
+  margin-top: 10px;
+  margin-bottom:20px;
+}
+
+/* MOSTRA O SALDO EM DESTAQUE COM COR DE ALERTA */
+.valor{
+  font-size:38px;
+  font-weight:bold;
+  color:red;
+  margin:20px 0;
+}
+
+/* PADRONIZA AS INFORMAÇÕES EXPLICATIVAS */
+.card-saldo p{
+  color:black;
+  font-size:18px;
+  margin-bottom:10px;
+  font-weight:bold;
+}
+
+/* DEFINE A ÁREA ONDE É EXPLICADO COMO FUNCIONA */
+.funciona{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  margin-bottom:60px;
+}
+
+/* CENTRALIZA E DESTACA O TEXTO */
+.funciona h2{
+  text-align:center;
+  color:#8b4513;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* ORGANIZA OS BLOCOS AUTOMATICAMENTE CONFORME O TAMANHO DA TELA */
+.cards-info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+/* CRIA OS BLOCOS COM EXPLICAÇÕES DO PROGRAMA */
+.info{
+  background:white;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  transition:.3s;
+}
+
+/* LEVANTA O CARD AO PASSAR O MOUSE */
+.info:hover{
+  transform:translateY(-5px);
+}
+
+/* DEFINE TAMANHO E COR DOS ÍCONES EXPLICATIVOS */
+.info i{
+  font-size:40px;
+  color:#d4a017;
+  margin-bottom:15px;
+}
+
+/* DESTACA OS NOMES DAS INFORMAÇÕES */
+.info h3{
+  color:#8b4513;
+  margin-bottom:12px;
+}
+
+/* DEFINE A APRESENTAÇÃO DAS EXPLICAÇÕES */
+.info p{
+  color: black;
+  font-weight:bold;
+}
+
+/* ORGANIZA A LISTA DE MOVIMENTAÇÕES */
+.historico{
+  width:90%;
+  max-width:900px;
+  margin:auto;
+  margin-bottom:60px;
+}
+
+/* CENTRALIZA O NOME DA SEÇÃO */
+.historico h2{
+  text-align:center;
+  color:#8b4513;
+  margin-bottom:25px;
+}
+
+/* CRIA O BLOCO VISUAL ONDE APARECEM OS REGISTROS */
+#listaMovimentos{
+  width: 60%;
+  max-width: 700px;
+  margin: 0 auto;  
+  background:white;
+  border-radius:15px;
+  padding:30px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+/* MOSTRA AVISO QUANDO NÃO EXISTEM REGISTROS */
+.vazio{
+  text-align:center;
+  color:#888;
+  font-size:18px;
+}
+
+/* DEFINE O TAMANHO DA ÁREA COM AS REGRAS */
+.regras{
+  width:40%;
+  max-width:900px;
+  margin:auto;
+  margin-bottom:60px;
+}
+
+/* CENTRALIZA E DESTACA A SEÇÃO */
+.regras h2{
+  text-align:center;
+  color:#8b4513;
+  margin-bottom:25px;
+}
+
+/* CRIA O BLOCO VISUAL COM FUNDO E SOMBRA */
+.regras ul{
+  background-color:white;
+  border-radius:15px;
+  padding:30px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+/* DEFINE ESPAÇAMENTO E TAMANHO DOS TEXTOS */
+.regras li{
+  margin-bottom:15px;
+  font-size:18px;
+}
+
+/* MANTÉM A INFORMAÇÃO ACADÊMICA VISÍVEL NA PARTE INFERIOR DA TELA */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* CENTRALIZA TEXTO E ÍCONE */
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
+
+  /* BARRA DE TOPO ADAPTADA NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA DE NAVEGAÇÃO */
+  header {
+    padding: 0 20px;
+  }
+
+  /* LISTA DE MOVIMENTAÇÕES ADAPTADA NOTEBOOK EXPANDE O COMPARTIMENTO DA LISTA PARA MELHOR LEITURA EM MONITORES COMPACTOS */
+  #listaMovimentos {
+    width: 80%;
+  }
+
+  /* BLOCO DE REGRAS ADAPTADO NOTEBOOK REAJUSTA A PROPORÇÃO HORIZONTAL DO BLOCO INFORMATIVO */
+  .regras {
+    width: 60%;
+  }
+}
+
+/* ADAPTA O CABEÇALHO E ELEMENTOS PRINCIPAIS PARA TELAS MENORES */
+@media(max-width:768px){
+
+  /* CABEÇALHO MOBILE ORGANIZA OS ELEMENTOS EM COLUNA E PROMOVE EXTENSÃO DE ALTURA FLUIDA PREVENINDO VAZAMENTOS */
+  header{
+      flex-direction:column;
+      gap:15px;
+      height: auto;
+      padding: 15px;
+      position: static;
+  }
+
+  /* MENU MOBILE PERMITE QUE OS LINKS QUEBREM LINHA E CENTRALIZA AS OPÇÕES */
+  nav{
+      flex-wrap:wrap;
+      justify-content:center;
+      gap: 15px;
+  }
+
+  /* TÍTULO MOBILE MANTÉM BOA LEITURA EM CELULARES E REDUZ AS MARGENS DO TOPO COMPENSANDO O HEADER ESTÁTICO */
+  .titulo {
+      padding: 30px 15px;
+  }
+
+  /* TÍTULO MOBILE AJUSTA O TAMANHO DO ENUNCIADO PRINCIPAL NO TABLET */
+  .titulo h1{
+      font-size:28px;
+  }
+
+  /* VALOR MOBILE AJUSTA O TAMANHO DO SALDO */
+  .valor{
+      font-size:34px;
+  }
+
+  /* LISTA DE MOVIMENTAÇÕES ADAPTADA TABLET EXPANDE O CONTAINER BRANCO PARA OCUPAR TODA A LARGURA ÚTIL DO PAINEL */
+  #listaMovimentos {
+      width: 100%;
+      padding: 20px;
+  }
+
+  /* BLOCO DE REGRAS ADAPTADO TABLET PERMITE EXTENSÃO INTEGRAL PARA COMPOR O FLUXO DA TELA */
+  .regras {
+      width: 100%;
+  }
+
+  /* BLOCO DE REGRAS ADAPTADO TABLET COMPACTA OS RECUOS INTERNOS DA LISTA DE DIRETRIZES */
+  .regras ul {
+      padding: 20px;
+  }
+}
+
+/* ADAPTAÇÃO ADICIONAL DIRECIONADA PARA SMARTPHONES EM GERAL */
+@media (max-width: 500px) {
+
+  /* EXIBIÇÃO DO SALDO ADAPTADA MOBILE REDUZ A LARGURA DO CARD DE MOEDAS PREVENINDO ESTOUROS NAS LATERAIS */
+  .card-saldo {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  /* EXPLICAÇÃO DO BENEFÍCIO ADAPTADA MOBILE REDUZ O PREENCHIMENTO INTERNO DA AREA DE INFORMAÇÕES */
+  .info {
+    padding: 20px 15px;
+  }
+
+  /* BARRA DE RODAPÉ ADAPTADA MOBILE REDUZ A FONTE E O PREENCHIMENTO DA MENSAGEM ACADÊMICA */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* LOGO ADAPTADA MINI DIMINUI A TIPOGRAFIA DA LOGOMARCA NO CELULAR SMALL */
+  .logo {
+    font-size: 26px;
+  }
+
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS MINI COMPACTA OS NOMES DOS MENUS EM EXIBIÇÃO EXTREMAMENTE ESTREITA */
+  nav a {
+    font-size: 15px;
+  }
+
+  /* MOSTRADOR DO SALDO ADAPTADO MINI COMPACTA O TAMANHO DO VALOR DE MOEDAS NO CELULAR PEQUENO */
+  .valor {
+    font-size: 28px;
+    margin: 15px 0;
+  }
+
+  /* EXPLICAÇÃO DO BENEFÍCIO ADAPTADA MINI AJUSTA A GRADE DAS INFORMAÇÕES DO PROGRAMA PARA COLUNA ÚNICA VERTICAL */
+  .cards-info {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* BLOCO DE REGRAS ADAPTADO MINI ENCOLHE A FONTE DOS ITENS DA LISTA EM APARELHOS MINI */
+  .regras li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
