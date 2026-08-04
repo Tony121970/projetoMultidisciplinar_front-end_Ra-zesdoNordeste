@@ -64,7 +64,7 @@ function validarLogin(event) {
 
     // AGUARDA A EXIBICAO DA MENSAGEM VISUAL ANTES DE EXECUTAR O DIRECIONAMENTO DE PAGINA
     setTimeout(() => {
-      window.location.href = "../html/index.html";
+      window.location.href = "../../html/index.html";
     }, 1000);
   } else {
     // TRATAMENTO EXCLUSIVO DE ERRO CASO AS CREDENCIAIS DIGITADAS ESTEJAM INCORRETAS
