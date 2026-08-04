@@ -145,7 +145,7 @@ header p {
 .dropdown-content{
   display: none;
   position: absolute;
-  background: #e5c482;
+  background: white;
   border-radius: 8px;
 }
 
