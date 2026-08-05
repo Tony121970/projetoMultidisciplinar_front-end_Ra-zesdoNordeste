@@ -320,20 +320,18 @@ nav a:hover {
 
 /* ADICIONA UMA FAIXA DESLIZANTE NA TELA */ 
 .faixa {
-  position: fixed;
-  top: 20%;
-  left: 0;
+  position: relative;    
   width: 100%;
   height: 45px;
-  background: transparent; 
+  background: #5f472c;    
   overflow: hidden;
   display: flex;
   align-items: center;
-  z-index: 9999;
-  pointer-events: none; 
+  z-index: 10;            
+  margin-top: 0;          
 }
 
-.texto{
+.texto {
   white-space: nowrap;
   color: white;
   font-size: 22px;
@@ -341,6 +339,7 @@ nav a:hover {
   text-shadow: 2px 2px 6px rgba(0,0,0,.8);
   animation: deslizar 12s linear infinite;
 }
+
 
 @keyframes deslizar {
   0% {
@@ -552,40 +551,34 @@ footer.aviso {
     font-size: 16px;
   }
 
-  /* ========================================================
-     👉 CORREÇÃO DOS BOTÕES DE ACESSO (ENTRAR, CADASTRO, VOLTAR)
-     ======================================================== */
   .acesso {
     display: flex;
-    flex-direction: row;       /* Garante que os botões fiquem lado a lado no celular */
-    justify-content: center;   /* Centraliza o bloco inteiro no meio da tela */
-    align-items: center;       /* Alinha a altura de todos verticalmente */
-    gap: 12px;                 /* Cria um espaçamento perfeito e igual entre eles */
+    flex-direction: row;       
+    justify-content: center;   
+    align-items: center;       
+    gap: 12px;                 
     width: 100%;
   }
 
   .btn-login, .btn-cadastro, .btn-voltar {
-    display: inline-flex;      /* Corrige o bug do botão esticado e torto */
+    display: inline-flex;      
     align-items: center;
     justify-content: center;
-    padding: 10px 16px !important; /* Padroniza o tamanho interno de todos */
+    padding: 10px 16px !important; 
     font-size: 14px;
     border-radius: 20px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    height: 40px;              /* Deixa todos os botões com a mesma altura */
+    height: 40px;              
   }
 
-  /* ========================================================
-     👉 CORREÇÃO DO ICONE DO CARRINHO EM CIMA DO DÍGITO
-     ======================================================== */
   .acesso a[href*="carrinho"] {
     display: inline-flex !important;
-    align-items: center;       /* Centraliza o carrinho e o número lado a lado */
+    align-items: center;       
     justify-content: center;
     text-decoration: none;
-    font-size: 22px;           /* Tamanho equilibrado para o emoji */
+    font-size: 22px;          
     color: white;
   }
 
@@ -593,9 +586,9 @@ footer.aviso {
     display: inline-block;
     min-width: 20px;
     height: 20px;
-    line-height: 16px;         /* Alinha o número perfeitamente no meio do círculo */
-    font-size: 12px;           /* Tamanho compacto e legível */
-    margin-left: 5px;          /* Afasta o número para a direita do emoji, eliminando o efeito encavalado */
+    line-height: 16px;         
+    font-size: 12px;          
+    margin-left: 5px;         
     background: white;
     color: black;
     border-radius: 50%;
@@ -618,6 +611,17 @@ footer.aviso {
     margin-right: 0;
   }
 
+  .faixa {
+  position: relative;
+  top: auto;        /* Cancela qualquer comportamento antigo de topo */
+  height: 40px;     /* Altura mais compacta para a barra no celular */
+  margin-top: 0;
+}
+.texto {
+  font-size: 18px;  /* Letra um pouco menor para caber melhor na tela do celular */
+}
+
+  
   /* BARRA DE TOPO ADAPTADA MOBILE EMPILHA OS COMPONENTES DA BARRA DIREITA DO TOPO EM FORMATO VERTICAL */
   .top-bar-right {
     flex-direction: column;
