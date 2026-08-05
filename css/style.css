@@ -305,6 +305,7 @@ nav a:hover {
 
 /* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO */
 .banner {
+  position: relative;
   height: 100vh;
   background-image: url("../Imagens/Imagem12.jpg");
   background-size: cover;
@@ -320,8 +321,8 @@ nav a:hover {
 
 /* ADICIONA UMA FAIXA DESLIZANTE NA TELA */
 .faixa{
-    position: fixed;
-    top: 155px;   /* ajuste este valor */
+    position: absolute;
+    top: 0;  
     left: 0;
     width: 100%;
     height: 45px;
