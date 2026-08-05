@@ -347,42 +347,40 @@ nav a:hover{
   text-shadow: 3px 3px 8px black;
 }
 
-/* FAIXA DESLIZANTE CORRIGIDA */
+/* CONTEÚDO CORRIGIDO PARA O SEU ARQUIVO CSS */
+
 .faixa {
   position: absolute;
-  bottom: 0; /* Mudado de top para bottom para fugir do menu fixo */
+  bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 45px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: rgba(77, 60, 60, 0.8); /* Fundo escuro semi-transparente para dar leitura */
+  display: block;
+  line-height: 45px;
+  background: rgba(77, 60, 60, 0.9);
   z-index: 10;
 }
 
-/* TEXTO DA FAIXA */
 .texto {
   display: inline-block;
   white-space: nowrap;
-  width: max-content;
-  padding-left: 100%; /* Força o texto a começar fora da tela à direita */
-  color: #e5c482; /* Cor amarela do seu tema para combinar com o site */
+  color: #e5c482;
   font-size: clamp(14px, 3vw, 22px);
   font-weight: bold;
   text-shadow: 2px 2px 6px black;
-  animation: deslizar 15s linear infinite; /* 15 segundos para uma leitura mais confortável */
+  animation: deslizar 15s linear infinite;
 }
 
-/* ANIMAÇÃO LIMPA E SEM BUG DE 100VW */
 @keyframes deslizar {
   0% {
-    transform: translateX(0%);
+    transform: translateX(100vw);
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
 
 
 /* ÁREA DAS SEÇÕES */
