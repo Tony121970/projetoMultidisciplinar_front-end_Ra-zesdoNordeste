@@ -321,7 +321,7 @@ nav a:hover {
 
 /* ADICIONA UMA FAIXA DESLIZANTE NA TELA */
 .faixa{
-    position: absolute;
+    position: fixed;
     top: 0;  
     left: 0;
     width: 100%;
@@ -334,9 +334,8 @@ nav a:hover {
 /* TEXTO DA FAIXA */
 .texto{
     display: inline-block;
-    width: max-content;
     white-space: nowrap;
-    line-height: 55px;
+    width: max-content;
     color: white;
     font-size: 22px;
     font-weight: bold;
