@@ -333,6 +333,16 @@ nav a:hover {
   pointer-events: none; 
 }
 
+@keyframes deslizar {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -100%;
+  }
+}
+
 /* DEFINE O ESPAÇAMENTO INTERNO DAS SEÇÕES DA PÁGINA */
 section {
   padding: 40px;
