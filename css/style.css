@@ -335,8 +335,9 @@ nav a:hover {
 /* TEXTO DA FAIXA */
 .texto{
     display: inline-block;
-    white-space: nowrap;
     width: max-content;
+    white-space: nowrap;
+    line-height: 55px;
     color: white;
     font-size: 22px;
     font-weight: bold;
