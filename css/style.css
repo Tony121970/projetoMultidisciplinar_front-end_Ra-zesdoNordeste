@@ -111,21 +111,40 @@ header {
   z-index: 999;
 }
 
-/* DEFINE O TAMANHO DO TÍTULO PRINCIPAL DO CABEÇALHO */
+/* ALINHA O MAPA E O TEXTO DO LADO ESQUERDO */
+.header-brand {
+  display: flex;
+  align-items: center;  
+  gap: 15px;            
+}
+
+/* CONTROLA O TAMANHO DO MAPA DO NORDESTE */
+.header-logo {
+  width: 50px;          
+  height: auto;
+  object-fit: contain;
+}
+
+/* AGRUPA OS TÍTULOS VERTICALMENTE */
+.header-titles {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    
+}
+
+/* COMPACTA OS TAMANHOS DO TÍTULO PADRÃO */
 header h1 {
-  font-size: 30px;
+  font-size: 24px !important;
+  margin: 0 !important;
+  line-height: 1.2;
 }
 
-/* AJUSTA O TAMANHO DO SUBTÍTULO DO CABEÇALHO */
-header h2 {
-  font-size: 15px;
-}
-
-/* CONFIGURA O TEXTO DE APOIO DENTRO DO CABEÇALHO */
 header p {
-  font-size: 14px;
-  margin-top: 0;
+  font-size: 13px !important;
+  margin: 2px 0 0 0 !important;
+  color: #f1e2c3;
 }
+
 
 /* ORGANIZA OS BOTÕES E LINKS DE ACESSO DO USUÁRIO */
 .acesso {
@@ -540,27 +559,31 @@ footer.aviso {
   /* ORGANIZA O CABEÇALHO EM COLUNA PARA TELAS MENORES */
   header {
     flex-direction: column;
-    gap: 15px;
-    padding: 20px 15px;
+    gap: 10px;
+    padding: 10px 15px;    
   }
 
-  /* REDUZ O TAMANHO DO TÍTULO DO CABEÇALHO */
-  header h1 {
-    font-size: 32px;
-  }
-
-  /* AJUSTA O TAMANHO DOS TEXTOS DO CABEÇALHO */
-  header p {
-    font-size: 16px;
-  }
-
-  .acesso {
+  /* FORÇA O MAPA E TÍTULO A FICAREM LADO A LADO SEMPRE */
+  .header-brand {
     display: flex;
-    flex-direction: row;       
-    justify-content: center;   
-    align-items: center;       
-    gap: 12px;                 
+    flex-direction: row !important; 
+    align-items: center;
+    justify-content: center;
     width: 100%;
+  }
+
+  /* DIMINUI AS LETRAS EXCLUSIVAMENTE NO MOBILE PARA ENXUGAR O ESPAÇO */
+  header h1 {
+    font-size: 22px !important;
+  }
+
+  header p {
+    font-size: 12px !important;
+  }
+  
+ /*DEIXA OS BOTÕES BEM JUNTOS */
+  .acesso {
+    margin-top: 5px;      
   }
 
   .btn-login, .btn-cadastro, .btn-voltar {
