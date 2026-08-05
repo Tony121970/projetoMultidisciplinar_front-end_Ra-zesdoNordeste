@@ -6,7 +6,6 @@
   font-family:Verdana,Geneva,Tahoma,sans-serif;
 }
 
-
 /* CONFIGURAÇÃO DA PÁGINA */
 html{
   width:100%;
@@ -20,13 +19,11 @@ body{
   overflow-x:hidden;
 }
 
-
 /* IMAGENS RESPONSIVAS */
 img{
   max-width:100%;
   height:auto;
 }
-
 
 /* BARRA SUPERIOR FIXA */
 .top-bar{
@@ -45,7 +42,6 @@ img{
   z-index:999;
 }
 
-
 /* ÍCONES SOCIAIS */
 .top-bar-social{
   display:flex;
@@ -58,12 +54,10 @@ img{
   border-radius:5px;
 }
 
-
 /* EFEITO ÍCONES */
 .top-bar-social img:hover{
   transform:translateY(-2px);
 }
-
 
 /* ÁREA DIREITA DO TOPO */
 .top-bar-right{
@@ -72,7 +66,6 @@ img{
   flex-wrap:wrap;
   gap:25px;
 }
-
 
 /* LINK WHATSAPP */
 .whatsapp-link{
@@ -84,19 +77,16 @@ img{
   font-weight:bold;
 }
 
-
 /* EFEITO WHATSAPP */
 .whatsapp-link:hover{
   color:#50f04b;
 }
-
 
 /* ÍCONE WHATSAPP */
 .whatsapp-link img{
   width:20px;
   border-radius:5px;
 }
-
 
 /* CAMPO DE PESQUISA */
 .search-form{
@@ -107,7 +97,6 @@ img{
   border-radius:5px;
 }
 
-
 /* TEXTO DA PESQUISA */
 .search-form input{
   border:none;
@@ -115,7 +104,6 @@ img{
   padding:4px 10px;
   background:transparent;
 }
-
 
 /* BOTÃO PESQUISA */
 .search-form button{
@@ -141,7 +129,6 @@ header{
   z-index:998;
 }
 
-
 /* TÍTULO HEADER */
 header h1{
   font-size:30px;
@@ -155,7 +142,6 @@ header p{
   font-size:14px;
 }
 
-
 /* ÁREA DE ACESSO */
 .acesso{
   display:flex;
@@ -164,7 +150,6 @@ header p{
   flex-wrap:wrap;
   gap:20px;
 }
-
 
 /* BOTÕES LOGIN E CADASTRO */
 .btn-login,
@@ -178,13 +163,11 @@ header p{
   justify-content:center;
 }
 
-
 /* BOTÃO LOGIN */
 .btn-login{
   background:white;
   color:#c43509;
 }
-
 
 /* EFEITO LOGIN */
 .btn-login:hover{
@@ -192,19 +175,16 @@ header p{
   color:white;
 }
 
-
 /* BOTÃO CADASTRO */
 .btn-cadastro{
   background:#c43509;
   color:white;
 }
 
-
 /* EFEITO CADASTRO */
 .btn-cadastro:hover{
   background:#0b3f25;
 }
-
 
 /* BOTÃO VOLTAR */
 .btn-voltar{
@@ -221,13 +201,11 @@ header p{
   justify-content:center;
 }
 
-
 /* EFEITO VOLTAR */
 .btn-voltar:hover{
   background:white;
   color:green;
 }
-
 
 /* CONTADOR DO CARRINHO */
 #contadorCarrinho{
@@ -244,7 +222,6 @@ header p{
   font-weight:bold;
   border:2px solid white;
 }
-
 
 /* ÍCONE CARRINHO */
 .acesso a[href="html/carrinho.html"]{
@@ -264,7 +241,6 @@ nav{
   z-index:997;
 }
 
-
 /* LINKS DO MENU */
 nav a{
   color:white;
@@ -274,12 +250,10 @@ nav a{
   margin-right:80px;
 }
 
-
 /* EFEITO LINKS MENU */
 nav a:hover{
   color:#e5c482;
 }
-
 
 /* MENU DROPDOWN */
 .dropdown{
@@ -287,7 +261,6 @@ nav a:hover{
   display:inline-block;
   margin-right:80px;
 }
-
 
 /* CONTEÚDO DROPDOWN */
 .dropdown-content,
@@ -298,13 +271,11 @@ nav a:hover{
   border-radius:8px;
 }
 
-
 /* EXIBIÇÃO DROPDOWN */
 .dropdown:hover .dropdown-content,
 .submenu:hover .submenu-content{
   display:block;
 }
-
 
 /* BOTÃO DROPDOWN */
 .dropbtn{
@@ -316,12 +287,10 @@ nav a:hover{
   cursor:pointer;
 }
 
-
 /* EFEITO BOTÃO DROPDOWN */
 .dropbtn:hover{
   color:white;
 }
-
 
 /* LINKS DROPDOWN */
 .dropdown-content a,
@@ -334,13 +303,11 @@ nav a:hover{
   text-align:left;
 }
 
-
 /* EFEITO DROPDOWN */
 .dropdown-content a:hover,
 .submenu-content a:hover{
   background:#f2f2f2;
 }
-
 
 /* TEXTO DROPDOWN */
 .dropdown-content p,
@@ -348,12 +315,11 @@ nav a:hover{
   font-size:12px;
 }
 
-
 /* BANNER PRINCIPAL */
 .banner{
   position:relative;
   width:100%;
-  min-height:500px;
+  min-height:100vh;
   background:url("../Imagens/Imagem12.jpg") center/cover no-repeat;
   display:flex;
   justify-content:center;
@@ -364,7 +330,6 @@ nav a:hover{
   font-weight:bold;
   text-shadow:3px 3px 8px black;
 }
-
 
 /* FAIXA DESLIZANTE */
 .faixa{
@@ -378,7 +343,6 @@ nav a:hover{
   align-items:center;
 }
 
-
 /* TEXTO DA FAIXA */
 .texto{
   white-space:nowrap;
@@ -388,7 +352,6 @@ nav a:hover{
   text-shadow:2px 2px 6px black;
   animation:deslizar 12s linear infinite;
 }
-
 
 /* ANIMAÇÃO DA FAIXA */
 @keyframes deslizar{
@@ -407,7 +370,6 @@ section{
   padding:40px;
 }
 
-
 /* TÍTULO DAS SEÇÕES */
 .titulo{
   text-align:center;
@@ -416,7 +378,6 @@ section{
   color:#8b4513;
 }
 
-
 /* LISTA DO CARDÁPIO */
 .cardapio{
   display:grid;
@@ -424,7 +385,6 @@ section{
   justify-content:center;
   gap:30px;
 }
-
 
 /* CARD DE PRODUTO */
 .card{
@@ -436,12 +396,10 @@ section{
   transition:.4s;
 }
 
-
 /* EFEITO CARD */
 .card:hover{
   transform:translateY(-8px);
 }
-
 
 /* IMAGEM DO CARD */
 .card img{
@@ -450,14 +408,12 @@ section{
   object-fit:cover;
 }
 
-
 /* NOME DO PRODUTO */
 .card h3{
   text-align:center;
   margin-top:15px;
   color:#8b4513;
 }
-
 
 /* DESCRIÇÃO DO PRODUTO */
 .card p{
@@ -473,7 +429,6 @@ section{
   color:red;
 }
 
-
 /* RODAPÉ NORMAL */
 footer{
   padding:10px;
@@ -482,13 +437,11 @@ footer{
   margin-bottom:40px;
 }
 
-
 /* FUNDO RODAPÉ */
 footer:not(.aviso){
   background:#4d3425;
   color:white;
 }
-
 
 /* RODAPÉ FIXO DE AVISO */
 footer.aviso{
@@ -513,7 +466,6 @@ footer.aviso{
     margin-top:0;
   }
 
-
   /* ORGANIZA CABEÇALHOS */
   .top-bar,
   header{
@@ -522,13 +474,11 @@ footer.aviso{
     padding:15px;
   }
 
-
   /* ÁREA DIREITA DO TOPO */
   .top-bar-right{
     justify-content:center;
     width:100%;
   }
-
 
   /* MENU MOBILE */
   nav{
@@ -541,19 +491,16 @@ footer.aviso{
     padding:10px;
   }
 
-
   /* LINKS MENU */
   nav a{
     margin:5px;
     font-size:15px;
   }
 
-
   /* DROPDOWN MOBILE */
   .dropdown{
     margin-right:0;
   }
-
 
   .dropdown-content,
   .submenu-content{
@@ -561,19 +508,16 @@ footer.aviso{
     width:100%;
   }
 
-
   .dropdown-content a,
   .submenu-content a{
     width:100%;
     text-align:center;
   }
 
-
   /* BANNER TABLET */
   .banner{
     min-height:350px;
   }
-
 
   /* CARDS TABLET */
   .cardapio{
@@ -593,7 +537,6 @@ footer.aviso{
     gap:10px;
   }
 
-
   .btn-login,
   .btn-cadastro,
   .btn-voltar{
@@ -601,23 +544,19 @@ footer.aviso{
     font-size:14px;
   }
 
-
   /* PESQUISA MOBILE */
   .search-form{
     width:95%;
   }
 
-
   .search-form input{
     width:100%;
   }
-
 
   /* MENU MOBILE */
   nav a{
     font-size:13px;
   }
-
 
   /* BANNER MOBILE */
   .banner{
@@ -625,28 +564,23 @@ footer.aviso{
     padding:20px;
   }
 
-
   /* FAIXA MOBILE */
   .faixa{
     height:35px;
   }
 
-
   .texto{
     font-size:14px;
   }
-
 
   /* SEÇÕES MOBILE */
   section{
     padding:20px;
   }
 
-
   .titulo{
     font-size:28px;
   }
-
 
   /* CARDS MOBILE */
   .cardapio{
@@ -654,27 +588,22 @@ footer.aviso{
     gap:12px;
   }
 
-
   .card img{
     height:130px;
   }
 
-
   .card h3{
     font-size:15px;
   }
-
 
   .card p{
     font-size:12px;
     padding:8px;
   }
 
-
   .preco{
     font-size:16px;
   }
-
 
   /* RODAPÉ MOBILE */
   footer.aviso{
@@ -682,7 +611,6 @@ footer.aviso{
   }
 
 }
-
 
 /* CELULARES PEQUENOS */
 @media(max-width:360px){
@@ -692,13 +620,11 @@ footer.aviso{
     font-size:24px;
   }
 
-
   /* BANNER PEQUENO */
   .banner{
     min-height:200px;
     font-size:22px;
   }
-
 
   /* BOTÕES PEQUENOS */
   .btn-login,
@@ -707,7 +633,6 @@ footer.aviso{
     font-size:12px;
     padding:8px 10px;
   }
-
 
   /* CARD ÚNICO */
   .cardapio{
