@@ -305,7 +305,7 @@ nav a:hover {
 
 /* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO */
 .banner {
-  height: 800px;
+  height: 100vh;
   background-image: url("../Imagens/Imagem12.jpg");
   background-size: cover;
   background-position: center;
