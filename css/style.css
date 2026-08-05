@@ -356,11 +356,11 @@ nav a:hover{
 
 /* ANIMAÇÃO DA FAIXA */
 @keyframes deslizar{
-  0%{
-    transform:translateX(100%);
+  from{
+    transform:translateX(100vw);
   }
 
-  100%{
+ to{
     transform:translateX(-100%);
   }
 }
