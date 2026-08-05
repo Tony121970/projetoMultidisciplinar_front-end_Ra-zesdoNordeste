@@ -277,7 +277,7 @@ nav a{
 
 /* EFEITO LINKS MENU */
 nav a:hover{
-  color:black;
+  color:#e5c482;
 }
 
 
@@ -310,7 +310,7 @@ nav a:hover{
 .dropbtn{
   background:transparent;
   border:none;
-  color:white;
+  color:#e5c482;
   font-size:18px;
   font-weight:bold;
   cursor:pointer;
@@ -319,7 +319,7 @@ nav a:hover{
 
 /* EFEITO BOTÃO DROPDOWN */
 .dropbtn:hover{
-  color:black;
+  color:white;
 }
 
 
