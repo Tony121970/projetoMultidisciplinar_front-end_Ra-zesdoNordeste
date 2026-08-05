@@ -325,7 +325,7 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 45px;
-  background: transparent; 
+  background: rgb(77, 60, 60); 
   overflow: hidden;
   display: flex;
   align-items: center;
