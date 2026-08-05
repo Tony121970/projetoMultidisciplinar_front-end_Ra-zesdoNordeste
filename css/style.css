@@ -319,31 +319,6 @@ nav a:hover {
   text-shadow: 3px 3px 8px black;
 }
 
-/* ADICIONA UMA FAIXA DESLIZANTE NA TELA *
-.faixa{
-    position: fixed;
-    top: 20%;
-    left: 0;
-    width: 100%;
-    height: 45px;
-    overflow: hidden;
-    z-index: 9999;
-    pointer-events: none;
-}
-
-/* TEXTO DA FAIXA *
-.texto{
-    display: inline-block;
-    white-space: nowrap;
-    min-width: max-content;
-    padding-left: 100%;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(0,0,0,.8);
-    animation: deslizar 12s linear infinite;
-}*/
-
 /* ADICIONA UMA FAIXA DESLIZANTE NA TELA */
 .faixa{
     position: fixed;
@@ -370,7 +345,6 @@ nav a:hover {
     padding-bottom: 10px;
     animation: deslizar 18s linear infinite;
 }
-
 
 
 @keyframes deslizar{
@@ -544,14 +518,6 @@ footer.aviso {
     font-size: 16px;
   }
 
-  /* REDUZ A ALTURA DO BANNER E AJUSTA O TEXTO PARA TABLETS *
-  .banner {
-    height: 350px;
-    font-size: 40px;
-    text-align: center;
-    padding: 20px;
-  }*/
-
 /* RESPONSIVIDADE PARA TABLETS */
 @media (max-width: 1024px) {
 
@@ -576,9 +542,8 @@ footer.aviso {
   }
 
 }
-
  
-  /* 👉 CORREÇÃO DO CARDÁPIO EM TABLETS (DUAS COLUNAS LINDAS COM GRID) */
+  /*  CORREÇÃO DO CARDÁPIO EM TABLETS (DUAS COLUNAS LINDAS COM GRID) */
   .cardapio {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -588,7 +553,7 @@ footer.aviso {
   }
 
   .card {
-    width: 100% !important; /* Remove os 45% que quebravam a estrutura */
+    width: 100% !important; 
     max-width: none !important;
   }
 }
@@ -701,30 +666,17 @@ footer.aviso {
     max-width: 300px;
   }
 
-  /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR *
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    width: 100%;
-    background: rgba(0,0,0,0.05);
-  }
-
-  /* LINKS DOS MENUS ADAPTADOS MOBILE AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO *
-  .dropdown-content a, .submenu-content a {
-    width: 100%;
-    text-align: center;
-  }*/
   /* LINKS DOS MENUS E SUBMENUS ADAPTADOS MOBILE */
   .dropdown-content a, 
   .submenu-content a {
     width: 100% !important;
-    display: block !important;       /* Força um item a ficar embaixo do outro na caixinha */
-    text-align: left !important;     /* Alinha o texto à esquerda (fica mais legível em caixas pequenas) */
-    padding: 12px 14px !important;   /* Espaçamento confortável para o toque do dedo */
+    display: block !important;       
+    text-align: left !important;     
+    padding: 12px 14px !important;  
     font-size: 13px !important;
     color: #971010 !important;
     text-decoration: none !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; /* Linha sutil separando uma opção da outra */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; 
   }
 
   /* REMOVE A LINHA DIVISÓRIA APENAS DO ÚLTIMO ITEM DO MENU */
@@ -733,9 +685,6 @@ footer.aviso {
     border-bottom: none !important;
   }
 
-
-
-  
   /* REDUZ O TAMANHO DO BANNER PARA CELULARES E TABLETS */
   .banner {
     height: 280px;
