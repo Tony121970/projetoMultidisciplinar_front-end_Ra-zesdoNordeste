@@ -1,695 +1,821 @@
-/* RESET GERAL */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Verdana,Geneva,Tahoma,sans-serif;
+/* ZERA ESPAÇAMENTOS PADRÃO, DEFINE O MODELO DE CAIXAS E A FONTE PRINCIPAL DO SITE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* CONFIGURAÇÃO DA PÁGINA */
-html{
-  width:100%;
-  overflow-x:hidden;
+/* DEFINE A COR DE FUNDO GERAL DA PÁGINA */
+body {
+  background: #e5c482;
 }
 
-body{
-  width:100%;
-  min-height:100vh;
-  background:#e5c482;
-  overflow-x:hidden;
+/* CRIA A BARRA SUPERIOR FIXA COM ELEMENTOS DISTRIBUÍDOS ENTRE OS DOIS LADOS */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(77, 60, 60); 
+  padding: 4px 20px;
+  font-size: 14px;
+  
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 
-/* IMAGENS RESPONSIVAS */
-img{
-  max-width:100%;
-  height:auto;
+/* ORGANIZA OS ÍCONES DAS REDES SOCIAIS NO LADO ESQUERDO DA BARRA */
+.top-bar-social {
+  display: flex;
+  gap: 15px; 
 }
 
-/* BARRA SUPERIOR FIXA */
-.top-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-  width:100%;
-  padding:4px 20px;
-  background:#4d3c3c;
-  font-size:14px;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:999;
+/* DEFINE TAMANHO E FORMATO DOS ÍCONES SOCIAIS */
+.top-bar-social img {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
 }
 
-/* ÍCONES SOCIAIS */
-.top-bar-social{
-  display:flex;
-  gap:15px;
+/* MOVE LEVEMENTE OS ÍCONES AO PASSAR O MOUSE */
+.top-bar-social img:hover {
+  transform: translateY(-2px);
 }
 
-.top-bar-social img{
-  width:20px;
-  height:20px;
-  border-radius:5px;
+/* ORGANIZA O LADO DIREITO COM WHATSAPP E PESQUISA */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
-/* EFEITO ÍCONES */
-.top-bar-social img:hover{
-  transform:translateY(-2px);
+/* FORMATA O LINK DO WHATSAPP COM TEXTO E ÍCONE ALINHADOS */
+.whatsapp-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
-/* ÁREA DIREITA DO TOPO */
-.top-bar-right{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:25px;
+/* ALTERA A COR DO LINK DO WHATSAPP NO EFEITO HOVER */
+.whatsapp-link:hover {
+  color: rgb(80, 240, 75);
 }
 
-/* LINK WHATSAPP */
-.whatsapp-link{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+/* DEFINE O TAMANHO DO ÍCONE DO WHATSAPP */
+.whatsapp-link img {
+  width: 20px;
+  border-radius: 5px;
 }
 
-/* EFEITO WHATSAPP */
-.whatsapp-link:hover{
-  color:#50f04b;
+/* ORGANIZA O CAMPO DE PESQUISA COM INPUT E BOTÃO LADO A LADO */
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
 }
 
-/* ÍCONE WHATSAPP */
-.whatsapp-link img{
-  width:20px;
-  border-radius:5px;
+/* CONFIGURA O CAMPO DE TEXTO DA PESQUISA */
+.search-form input {
+  border: none;
+  padding: 4px 10px;
+  outline: none;
+  background: transparent;
 }
 
-/* CAMPO DE PESQUISA */
-.search-form{
-  display:flex;
-  align-items:center;
-  background:white;
-  border:1px solid #ccc;
-  border-radius:5px;
+/* CONFIGURA O BOTÃO DA PESQUISA SEM FUNDO PADRÃO */
+.search-form button {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  cursor: pointer;
 }
 
-/* TEXTO DA PESQUISA */
-.search-form input{
-  border:none;
-  outline:none;
-  padding:4px 10px;
-  background:transparent;
+/* CRIA O CABEÇALHO PRINCIPAL FIXO COM LOGO, LINKS E ÁREA DE ACESSO */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 6%;
+  background: #ab7d61;
+  color: white;
+  position: fixed;
+  width: 100%;
+  margin-top: 35px;
+  z-index: 999;
 }
 
-/* BOTÃO PESQUISA */
-.search-form button{
-  border:none;
-  background:transparent;
-  padding:4px 10px;
-  cursor:pointer;
+/* DEFINE O TAMANHO DO TÍTULO PRINCIPAL DO CABEÇALHO */
+header h1 {
+  font-size: 30px;
 }
 
-/* HEADER PRINCIPAL */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:20px;
-  padding:0 6%;
-  margin-top:35px;
-  width:100%;
-  background:#ab7d61;
-  color:white;
-  position:fixed;
-  z-index:998;
+/* AJUSTA O TAMANHO DO SUBTÍTULO DO CABEÇALHO */
+header h2 {
+  font-size: 15px;
 }
 
-/* TÍTULO HEADER */
-header h1{
-  font-size:30px;
+/* CONFIGURA O TEXTO DE APOIO DENTRO DO CABEÇALHO */
+header p {
+  font-size: 14px;
+  margin-top: 0;
 }
 
-header h2{
-  font-size:15px;
+/* ORGANIZA OS BOTÕES E LINKS DE ACESSO DO USUÁRIO */
+.acesso {
+  display: flex;
+  gap: 20px;
 }
 
-header p{
-  font-size:14px;
-}
-
-/* ÁREA DE ACESSO */
-.acesso{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-/* BOTÕES LOGIN E CADASTRO */
-.btn-login,
-.btn-cadastro{
-  padding:8px 16px;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:bold;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* BOTÃO LOGIN */
-.btn-login{
-  background:white;
-  color:#c43509;
-}
-
-/* EFEITO LOGIN */
-.btn-login:hover{
-  background:#0b3f25;
-  color:white;
-}
-
-/* BOTÃO CADASTRO */
-.btn-cadastro{
-  background:#c43509;
-  color:white;
-}
-
-/* EFEITO CADASTRO */
-.btn-cadastro:hover{
-  background:#0b3f25;
-}
-
-/* BOTÃO VOLTAR */
-.btn-voltar{
-  background:green;
-  color:white;
-  padding:6px 16px;
-  border-radius:20px;
-  border:none;
-  cursor:pointer;
-  font-size:14px;
-  font-weight:bold;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* EFEITO VOLTAR */
-.btn-voltar:hover{
-  background:white;
-  color:green;
-}
-
-/* CONTADOR DO CARRINHO */
-#contadorCarrinho{
-  display:inline-block;
-  min-width:24px;
-  height:24px;
-  line-height:22px;
-  text-align:center;
-  margin-left:6px;
-  border-radius:50%;
-  background:white;
-  color:black;
-  font-size:16px;
-  font-weight:bold;
-  border:2px solid white;
-}
-
-/* ÍCONE CARRINHO */
-.acesso a[href="html/carrinho.html"]{
-  font-size:24px;
-  color:white;
-  text-decoration:none;
-}
-
-/* MENU PRINCIPAL */
-nav{
-  width:100%;
-  padding:10px;
-  margin-top:115px;
-  background:rgb(77, 60, 60);
-  text-align:center;
-  position:fixed;
-  z-index:997;
-}
-
-/* LINKS DO MENU */
-nav a{
-  color:white;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:bold;
-  margin-right:80px;
-}
-
-/* EFEITO LINKS MENU */
-nav a:hover{
-  color:#e5c482;
-}
-
-/* MENU DROPDOWN */
+/* DEFINE A ÁREA DO MENU SUSPENSO */
 .dropdown{
-  position:relative;
-  display:inline-block;
-  margin-right:80px;
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  margin-right: 80px;
 }
 
-/* CONTEÚDO DROPDOWN */
-.dropdown-content,
-.submenu-content{
-  display:none;
-  position:absolute;
-  background:white;
-  border-radius:8px;
+/* CONFIGURA O CONTEÚDO OCULTO DO MENU DROPDOWN */
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
 }
 
-/* EXIBIÇÃO DROPDOWN */
-.dropdown:hover .dropdown-content,
-.submenu:hover .submenu-content{
-  display:block;
+/* EXIBE O MENU SUSPENSO QUANDO O MOUSE PASSA SOBRE ELE */
+.dropdown:hover .dropdown-content{
+  display: block;
 }
 
-/* BOTÃO DROPDOWN */
+/* ESTILIZA O BOTÃO QUE ABRE O MENU DROPDOWN */
 .dropbtn{
-  background:transparent;
-  border:none;
-  color:#e5c482;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* EFEITO BOTÃO DROPDOWN */
+/* ALTERA A COR DO BOTÃO DO MENU AO PASSAR O MOUSE */
 .dropbtn:hover{
-  color:white;
+  color: black;
 }
 
-/* LINKS DROPDOWN */
+/* MOSTRA O SUBMENU QUANDO O CURSOR ESTÁ SOBRE ELE */
+.submenu:hover .submenu-content{
+  display: block;
+}
+
+/* FORMATA OS LINKS DOS MENUS E SUBMENUS */
 .dropdown-content a,
 .submenu-content a{
-  display:block;
-  width:150px;
-  padding:10px;
-  color:#971010;
-  text-decoration:none;
-  text-align:left;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #971010;
+  text-align: left;
+  width: 150px;
 }
 
-/* EFEITO DROPDOWN */
+/* ALTERA O FUNDO DOS LINKS DO MENU AO PASSAR O MOUSE */
 .dropdown-content a:hover,
 .submenu-content a:hover{
-  background:#f2f2f2;
+  background: #f2f2f2;
 }
 
-/* TEXTO DROPDOWN */
+/* AJUSTA O TAMANHO DOS TEXTOS INFORMATIVOS DO MENU */
 .dropdown-content p,
-.submenu-content p{
-  font-size:12px;
+.submenu-content p {
+  font-size: 12px;
 }
 
-/* BANNER PRINCIPAL */
-.banner{
-  position:relative;
-  width:100%;
-  min-height: calc(100vh - 150px);
-  background:url("../Imagens/Imagem12.jpg") center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#e5c482;
-  font-size:clamp(1.8rem,5vw,3.1rem);
-  font-weight:bold;
-  text-shadow:3px 3px 8px black;
+/* CONFIGURA OS BOTÕES DE LOGIN E CADASTRO */
+.btn-login,
+.btn-cadastro {
+  padding:8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  align-items: center;
 }
 
-.banner {
-  position: relative;
+/* DEFINE A APARÊNCIA DO BOTÃO LOGIN */
+.btn-login {
+  background: white;
+  color: #c43509;
+}
+
+/* ALTERA O BOTÃO LOGIN AO PASSAR O MOUSE */
+.btn-login:hover {
+  background-color: rgb(11, 63, 37);
+  color: white;
+}
+
+/* DEFINE A APARÊNCIA DO BOTÃO CADASTRO */
+.btn-cadastro {
+  background: #c43509;
+  color: white;
+}
+
+/* ALTERA O BOTÃO CADASTRO AO PASSAR O MOUSE */
+.btn-cadastro:hover {
+  background-color: rgb(11, 63, 37);
+}
+
+/* CONFIGURA O CONTADOR DE QUANTIDADE DE PRODUTOS NO CARRINHO */
+#contadorCarrinho{
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  line-height: 22px;
+  text-align: center;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* ESTILIZA O ÍCONE DO CARRINHO NA ÁREA DE ACESSO */
+.acesso a[href="html/carrinho.html"]{
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* PERSONALIZA O BOTÃO DE VOLTAR COM FUNDO VERMELHO E FORMATO ARREDONDADO */
+.btn-voltar {
+  background-color: green;
+  color: white;
+  width: auto;          
+  padding: 6px 16px;   
+  border: none;
+  border-radius: 20px;  
+  cursor:pointer;
+  transition:.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ALTERA A APARÊNCIA DO BOTÃO VOLTAR AO PASSAR O MOUSE */
+.btn-voltar:hover {
+  background-color: white;
+  color: green;
+}
+
+/* CRIA A BARRA DE NAVEGAÇÃO FIXA ABAIXO DO CABEÇALHO */
+nav {
+  background: rgb(77, 60, 60);
+  padding: 10px;
+  text-align: center;
+  margin-top: 115px;
+  position: fixed;
   width: 100%;
-  margin-top: 175px; 
-  min-height: calc(100vh - 175px);
-  background: url("../Imagens/Imagem12.jpg") center/cover no-repeat;
+  z-index: 999;
+}
+
+/* ESTILIZA OS LINKS PRINCIPAIS DA NAVEGAÇÃO */
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 80px;
+}
+
+/* ALTERA A COR DOS LINKS DO MENU AO PASSAR O MOUSE */
+nav a:hover {
+  color: black;
+}
+
+/* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO *
+.banner {
+  height: 800px;
+  background-image: url("../Imagens/Imagem12.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: #e5c482;
-  font-size: clamp(1.8rem, 5vw, 3.1rem);
+  font-size: 50px;
   font-weight: bold;
   text-shadow: 3px 3px 8px black;
 }
 
-/*.faixa {
-  position: absolute;
-  top: 0;
+/* ADICIONA UMA FAIXA DESLIZANTE NA TELA *
+.faixa {
+  position: fixed;
+  top: 20%;
   left: 0;
   width: 100%;
   height: 45px;
+  background: transparent; 
   overflow: hidden;
-  display: block;
-  line-height: 45px;
-  background: rgba(77, 60, 60, 0.9);
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none; 
+}*/
+.banner{
+    position: relative;
+    height: 500px; /* exemplo */
+    background: url("../Imagens/banner.jpg") center/cover no-repeat;
 }
 
-/* Força o título do banner a não empurrar a faixa para baixo *
-.banner h1 {
-  width: 100%;
-  margin-top: 45px; /* Abre espaço idêntico ao tamanho da faixa no topo *
+.faixa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.texto {
-  display: inline-block;
+.texto{
   white-space: nowrap;
-  color: #e5c482;
-  font-size: clamp(14px, 3vw, 22px);
+  color: white;
+  font-size: 22px;
   font-weight: bold;
-  text-shadow: 2px 2px 6px black;
-  animation: deslizar 15s linear infinite;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.8);
+  animation: deslizar 12s linear infinite;
 }
 
 @keyframes deslizar {
   0% {
-    transform: translateX(100%);
+      transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+      transform: translateX(-100%);
   }
-}*/
+}
 
+/* DEFINE O ESPAÇAMENTO INTERNO DAS SEÇÕES DA PÁGINA */
+section {
+  padding: 40px;
+}
 
-/* O CSS controla o palco e a animação */
-.faixa {
-  overflow: hidden; /* Esconde o texto que sai da caixa */
-  white-space: nowrap; /* Impede o texto de quebrar a linha */
-  background: #0f172a;
-  color: #38bdf8;
+/* FORMATA O TÍTULO DAS SEÇÕES DO SITE */
+.titulo {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: #8b4513;
+}
+
+/* ORGANIZA OS CARDS DO CARDÁPIO EM LINHAS FLEXÍVEIS */
+.cardapio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* CONFIGURA O CARTÃO INDIVIDUAL DOS PRODUTOS */
+.card {
+  width: 280px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px gray;
+  transition: 0.4s;
+}
+
+/* APLICA EFEITO DE ELEVAÇÃO AO PASSAR O MOUSE NO CARD */
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* DEFINE O TAMANHO E AJUSTE DAS IMAGENS DOS PRODUTOS */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* FORMATA O NOME DOS PRODUTOS DENTRO DOS CARDS */
+.card h3 {
+  text-align: center;
+  margin-top: 15px;
+  color: #8b4513;
+}
+
+/* ORGANIZA A DESCRIÇÃO DOS PRODUTOS */
+.card p {
+  padding: 15px;
+  text-align: center;
+}
+
+/* DESTACA O PREÇO DOS PRODUTOS */
+.preco {
+  font-size: 22px;
+  font-weight: bold;
+  color: red;
+}
+
+/* CONFIGURA O RODAPÉ PADRÃO DA PÁGINA COM ESPAÇAMENTO E ALINHAMENTO CENTRAL */
+footer {
+  padding: 05px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* DEFINE O ESTILO DOS RODAPÉS NORMAIS COM FUNDO ESCURO E TEXTO BRANCO */
+footer:not(.aviso) {
+  background-color: #4d3425;
+  color: white;
+}
+
+/* CONFIGURA O RODAPÉ FIXO DE AVISO NA PARTE INFERIOR DA TELA */
+footer.aviso {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ab7d61;
+  color: black;
   padding: 10px;
-  border-radius: 5px;
-}
-
-.texto {
-  display: inline-block;
-  /* Chama a animação chamada 'rolar', dura 10s, ritmo constante (linear) e repete ao infinito */
-  animation: rolar 10s linear infinite; 
-}
-
-/* Criando o quadro a quadro da animação */
-@keyframes rolar {
-  0% { transform: translateX(100%); } /* Começa totalmente à direita */
-  100% { transform: translateX(-100%); } /* Termina totalmente à esquerda */
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 
+/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+@media (max-width: 1200px) {
 
-/* ÁREA DAS SEÇÕES */
-section{
-  width:100%;
-  padding:40px;
-}
-
-/* TÍTULO DAS SEÇÕES */
-.titulo{
-  text-align:center;
-  font-size:35px;
-  margin-bottom:30px;
-  color:#8b4513;
-}
-
-/* LISTA DO CARDÁPIO */
-.cardapio{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  justify-content:center;
-  gap:30px;
-}
-
-/* CARD DE PRODUTO */
-.card{
-  width:100%;
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 0 10px gray;
-  transition:.4s;
-}
-
-/* EFEITO CARD */
-.card:hover{
-  transform:translateY(-8px);
-}
-
-/* IMAGEM DO CARD */
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-/* NOME DO PRODUTO */
-.card h3{
-  text-align:center;
-  margin-top:15px;
-  color:#8b4513;
-}
-
-/* DESCRIÇÃO DO PRODUTO */
-.card p{
-  padding:15px;
-  text-align:center;
-}
-
-
-/* PREÇO DO PRODUTO */
-.preco{
-  font-size:22px;
-  font-weight:bold;
-  color:red;
-}
-
-/* RODAPÉ NORMAL */
-footer{
-  padding:10px;
-  text-align:center;
-  margin-top:40px;
-  margin-bottom:40px;
-}
-
-/* FUNDO RODAPÉ */
-footer:not(.aviso){
-  background:#4d3425;
-  color:white;
-}
-
-/* RODAPÉ FIXO DE AVISO */
-footer.aviso{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  background:#ab7d61;
-  color:black;
-  padding:10px;
-  font-size:14px;
-  font-weight:bold;
-  margin-bottom:0;
-}
-
-/* RESPONSIVIDADE GERAL */
-@media(max-width:1000px){
-
-  /* TOPO MOBILE/TABLET */
-  .top-bar,
-  header{
-    position:relative;
-    margin-top:0;
+  /* BARRA DE TOPO ADAPTADA NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR */
+  .top-bar {
+    padding: 4px 15px;
   }
 
-  /* ORGANIZA CABEÇALHOS */
-  .top-bar,
-  header{
-    flex-direction:column;
-    text-align:center;
-    padding:15px;
+  /* BARRA DE TOPO ADAPTADA NOTEBOOK REDUZ OS ESPAÇAMENTOS LATERAIS NO TOPO DIREITO */
+  .top-bar-right {
+    gap: 15px;
   }
 
-  /* ÁREA DIREITA DO TOPO */
-  .top-bar-right{
-    justify-content:center;
-    width:100%;
+  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA O PREENCHIMENTO INTERNO DO HEADER EM MONITORES COMPACTOS */
+  header {
+    padding: 0 4%;
   }
 
-  /* MENU MOBILE */
-  nav{
-    position:relative;
-    margin-top:0;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    padding:10px;
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS NOTEBOOK REDUZ A MARGEM DIREITA EXCESVAL DOS ATALHOS PARA EVITAR QUEBRAS ANTECIPADAS */
+  nav a {
+    margin-right: 30px;
   }
 
-  /* LINKS MENU */
-  nav a{
-    margin:5px;
-    font-size:15px;
+  /* MENU SUSPENSO ADAPTADO NOTEBOOK REAJUSTA A MARGEM DIREITA DO DROPDOWN EM TELAS INTERMEDIÁRIAS */
+  .dropdown {
+    margin-right: 30px;
   }
-
-  /* DROPDOWN MOBILE */
-  .dropdown{
-    margin-right:0;
-  }
-
-  .dropdown-content,
-  .submenu-content{
-    position:static;
-    width:100%;
-  }
-
-  .dropdown-content a,
-  .submenu-content a{
-    width:100%;
-    text-align:center;
-  }
-
-  /* BANNER TABLET */
-  .banner{
-    min-height:350px;
-  }
-
-  /* CARDS TABLET */
-  .cardapio{
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  }
-
 }
 
- @media (max-width: 768px) {
+/* ADAPTA O LAYOUT PARA TELAS MENORES COMO TABLETS */
+@media (max-width: 1024px) {
+
+  /* BARRA DE TOPO ADAPTADA TABLET DESATIVA A BARRA DE PESQUISA E WHATSAPP DO TOPO REORGANIZANDO EM COLUNA VERTICAL */
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    position: static;
+  }
+
+  /* CABEÇALHO ADAPTADO TABLET DESFAZ AS MARGENS FIXAS DO TOPO COMPENSANDO A MUDANÇA DA BARRA SUPERIOR */
+  header {
+    margin-top: 0;
+    position: static;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* MENU SUSPENSO ADAPTADO TABLET REMOVE A MARGEM DIREITA EM EXIBIÇÃO DE TABLET */
+  .dropdown {
+    margin-right: 0;
+  }
+
+  /* BARRA DE NAVEGAÇÃO ADAPTADA TABLET REAJUSTA AS MARGENS DO TOPO DO MENU FIXO SECUNDÁRIO */
+  nav {
+    margin-top: 0;
+    position: static;
+    padding: 15px;
+  }
+
+  /* LINKS DE NAVEGAÇÃO ADAPTADOS TABLET REDUZ AS MARGENS DIREITAS SUBSTITUINDO POR GANHO HORIZONTAL FLEXÍVEL */
+  nav a {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  /* REDUZ A ALTURA DO BANNER E AJUSTA O TEXTO PARA TABLETS *
   .banner {
-    height: 500px;
-    min-height: 500px;
-  }
-}
+    height: 350px;
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+  }*/
 
-/* RESPONSIVIDADE CELULAR */
-@media(max-width:600px){
+/* RESPONSIVIDADE PARA TABLETS */
+@media (max-width: 1024px) {
 
-  /* BOTÕES MOBILE */
-  .acesso{
-    width:100%;
-    justify-content:center;
-    gap:10px;
-  }
-
-  .btn-login,
-  .btn-cadastro,
-  .btn-voltar{
-    padding:10px 14px;
-    font-size:14px;
-  }
-
-  /* PESQUISA MOBILE */
-  .search-form{
-    width:95%;
-  }
-
-  .search-form input{
-    width:100%;
-  }
-
-  /* MENU MOBILE */
-  nav a{
-    font-size:13px;
-  }
-
-  /* BANNER MOBILE */
   .banner{
-    min-height:250px;
-    padding:20px;
+    position: relative;
+    height: 350px;
+    padding-top: 40px; /* espaço para a faixa */
+    font-size: 40px;
+    text-align: center;
   }
 
-  /* FAIXA MOBILE */
   .faixa{
-    height:35px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
   }
 
   .texto{
-    font-size:14px;
-  }
-
-  /* SEÇÕES MOBILE */
-  section{
-    padding:20px;
-  }
-
-  .titulo{
-    font-size:28px;
-  }
-
-  /* CARDS MOBILE */
-  .cardapio{
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:12px;
-  }
-
-  .card img{
-    height:130px;
-  }
-
-  .card h3{
-    font-size:15px;
-  }
-
-  .card p{
-    font-size:12px;
-    padding:8px;
-  }
-
-  .preco{
-    font-size:16px;
-  }
-
-  /* RODAPÉ MOBILE */
-  footer.aviso{
-    font-size:12px;
+    font-size: 14px;
   }
 
 }
 
-/* CELULARES PEQUENOS */
-@media(max-width:360px){
-
-  /* TÍTULO HEADER */
-  header h1{
-    font-size:24px;
+ 
+  /* 👉 CORREÇÃO DO CARDÁPIO EM TABLETS (DUAS COLUNAS LINDAS COM GRID) */
+  .cardapio {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 10px;
+    width: 100%;
   }
 
-  /* BANNER PEQUENO */
-  .banner{
-    min-height:200px;
-    font-size:22px;
+  .card {
+    width: 100% !important; /* Remove os 45% que quebravam a estrutura */
+    max-width: none !important;
   }
-
-  /* BOTÕES PEQUENOS */
-  .btn-login,
-  .btn-cadastro,
-  .btn-voltar{
-    font-size:12px;
-    padding:8px 10px;
-  }
-
-  /* CARD ÚNICO */
-  .cardapio{
-    grid-template-columns:1fr;
-  }
-
 }
 
+/* ADAPTA O SITE PARA DISPOSITIVOS COM ATÉ 768PX DE LARGURA */
+@media (max-width: 768px) {
+
+  /* ORGANIZA O CABEÇALHO EM COLUNA PARA TELAS MENORES */
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  /* REDUZ O TAMANHO DO TÍTULO DO CABEÇALHO */
+  header h1 {
+    font-size: 32px;
+  }
+
+  /* AJUSTA O TAMANHO DOS TEXTOS DO CABEÇALHO */
+  header p {
+    font-size: 16px;
+  }
+
+  .acesso {
+    display: flex;
+    flex-direction: row;       
+    justify-content: center;   
+    align-items: center;       
+    gap: 12px;                 
+    width: 100%;
+  }
+
+  .btn-login, .btn-cadastro, .btn-voltar {
+    display: inline-flex;      
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px !important; 
+    font-size: 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    height: 40px;              
+  }
+
+  .acesso a[href*="carrinho"] {
+    display: inline-flex !important;
+    align-items: center;       
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;          
+    color: white;
+  }
+
+  #contadorCarrinho {
+    display: inline-block;
+    min-width: 20px;
+    height: 20px;
+    line-height: 16px;         
+    font-size: 12px;          
+    margin-left: 5px;         
+    background: white;
+    color: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    font-weight: bold;
+  }
+
+  /* ALTERADO PARA LINHA PARA CABER LADO A LADO */
+  nav {
+    display: flex;
+    flex-direction: row;       
+    flex-wrap: wrap;           
+    justify-content: center;   
+    align-items: center;
+    gap: 8px;                  
+    padding: 10px 5px;         
+    width: 100%;
+  }
+
+  /* LINKS DO MENU MOBILE COM FONTES E MARGENS REDUZIDAS */
+  nav a {
+    font-size: 13px !important; 
+    margin: 4px 6px !important; 
+    white-space: nowrap;        
+  }
+
+  .faixa {
+    position: absolute;
+    top: auto;        
+    height: 40px;    
+    margin-top: 0;
+  }
+
+  .texto {
+    font-size: 18px;  
+  }
+  
+  /* BARRA DE TOPO ADAPTADA MOBILE EMPILHA OS COMPONENTES DA BARRA DIREITA DO TOPO EM FORMATO VERTICAL */
+  .top-bar-right {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* CAMPO DE PESQUISA ADAPTADO MOBILE EXPANDRE A BARRA DE BUSCA EM APARELHOS MOVEIS */
+  .search-form {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR *
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    background: rgba(0,0,0,0.05);
+  }
+
+  /* LINKS DOS MENUS ADAPTADOS MOBILE AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO *
+  .dropdown-content a, .submenu-content a {
+    width: 100%;
+    text-align: center;
+  }*/
+  /* LINKS DOS MENUS E SUBMENUS ADAPTADOS MOBILE */
+  .dropdown-content a, 
+  .submenu-content a {
+    width: 100% !important;
+    display: block !important;       /* Força um item a ficar embaixo do outro na caixinha */
+    text-align: left !important;     /* Alinha o texto à esquerda (fica mais legível em caixas pequenas) */
+    padding: 12px 14px !important;   /* Espaçamento confortável para o toque do dedo */
+    font-size: 13px !important;
+    color: #971010 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; /* Linha sutil separando uma opção da outra */
+  }
+
+  /* REMOVE A LINHA DIVISÓRIA APENAS DO ÚLTIMO ITEM DO MENU */
+  .dropdown-content a:last-child,
+  .submenu-content a:last-child {
+    border-bottom: none !important;
+  }
+
+
+
+  
+  /* REDUZ O TAMANHO DO BANNER PARA CELULARES E TABLETS */
+  .banner {
+    height: 280px;
+    font-size: 32px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* AJUSTA A ÁREA DE LOGIN PARA OCUPAR MAIS ESPAÇO NA TELA */
+  .login {
+    width: 95%;
+  }
+
+  /* CONTAINER DO CARDÁPIO NO MOBILE: HERDA AS DUAS COLUNAS COM AJUSTES */
+  .cardapio {
+    display: grid !important;      
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 12px !important;                      
+    padding: 10px;                  
+    width: 100%;
+  }
+
+  /* CARDS INDIVIDUAIS COM LARGURA AUTOMÁTICA ADAPTÁVEL */
+  .card {
+    width: 100% !important;         
+    max-width: none !important;    
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); 
+  }
+
+  /* AJUSTE DAS IMAGENS DOS CARDS NO MOBILE */
+  .card img {
+    height: 120px !important;      
+  }
+
+  /* AJUSTE DOS TEXTOS DOS CARDS NO MOBILE */
+  .card h3 {
+    font-size: 15px !important;    
+    padding: 8px 5px 4px !important;
+  }
+
+  .card p {
+    font-size: 11px !important;     
+    padding: 0 8px 8px !important;
+    line-height: 1.3;
+  }
+
+  .preco {
+    font-size: 15px !important;    
+    margin-bottom: 8px;
+  }
+
+  /* REDUZ O TAMANHO DOS TÍTULOS DAS SEÇÕES */
+  .titulo {
+    font-size: 28px;
+  }
+
+  /* DIMINUI O ESPAÇAMENTO DAS SEÇÕES */
+  section {
+    padding: 20px;
+  }
+
+  /* AJUSTA O ESPAÇAMENTO DO RODAPÉ PARA TELAS MENORES */
+  footer {
+    padding: 20px;
+    font-size: 15px;
+  }
+}
+
+/* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
+@media (max-width: 360px) {
+
+  /* REMOVIDO O TOP 25% QUE CAUSAVA COMPORTAMENTO ESTRANHO NA FAIXA */
+  .faixa {
+    height: 35px;
+  }
+
+  /* DIMINUI O TAMANHO DO TÍTULO DO CABEÇALHO EM CELULARES MINI */
+  header h1 {
+    font-size: 24px;
+  }
+
+  /* REDUZ O TEXTO PRINCIPAL DO BANNER EM APARELHOS MINI PREVENINDO QUEBRAS */
+  .banner {
+    font-size: 22px;
+    height: 200px;
+  }
+
+  /* CONFIGURA OS BOTÕES ADAPTADOS MINI EXPANDE OS BOTOES PARA OCUPAR MELHOR O ESPAÇO SEM ESCAPAR */
+  .btn-login, .btn-cadastro, .btn-voltar {
+    font-size: 12px;
+    padding: 8px 10px !important;
+  }
+}
+
+/* FAZ A MENSAGEM SURGIR DESLIZANDO DA LATERAL DIREITA DA TELA */
+@keyframes deslizar {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
