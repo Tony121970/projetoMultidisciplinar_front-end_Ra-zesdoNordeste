@@ -643,7 +643,7 @@ footer.aviso {
     max-width: 300px;
   }
 
-  /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR */
+  /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR *
   .dropdown-content {
     position: static;
     box-shadow: none;
@@ -651,12 +651,39 @@ footer.aviso {
     background: rgba(0,0,0,0.05);
   }
 
-  /* LINKS DOS MENUS ADAPTADOS MOBILE AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO */
+  /* LINKS DOS MENUS ADAPTADOS MOBILE AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO *
   .dropdown-content a, .submenu-content a {
     width: 100%;
     text-align: center;
+  }*/
+
+     /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR */
+  .dropdown-content {
+    position: static !important; /* Força o comportamento estático no mobile */
+    box-shadow: none !important;
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    display: none; /* Mantém oculto até receber a interação do clique/hover */
   }
 
+  /* SUBMENU ADAPTADO MOBILE (ÁREA ADM, COLABORADOR, ETC.) */
+  .submenu-content {
+    position: static !important; /* Garante que o segundo nível também seja estático */
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.08) !important; /* Um tom ligeiramente diferente para destacar */
+  }
+
+  /* LINKS DOS MENUS ADAPTADOS MOBILE: AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO */
+  .dropdown-content a, 
+  .submenu-content a {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important; /* Garante que o link ocupe a linha inteira para aceitar o toque */
+    padding: 12px 10px !important; /* Aumenta a área de clique para facilitar o uso no celular */
+  }
+
+
+  
   /* REDUZ O TAMANHO DO BANNER PARA CELULARES E TABLETS */
   .banner {
     height: 280px;
