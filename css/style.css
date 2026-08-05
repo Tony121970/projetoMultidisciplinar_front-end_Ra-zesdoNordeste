@@ -145,7 +145,7 @@ header p {
 .dropdown-content{
   display: none;
   position: absolute;
-  background: #e5c482;
+  background: white;
   border-radius: 8px;
 }
 
@@ -204,6 +204,7 @@ header p {
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
+  align-items: center;
 }
 
 /* DEFINE A APARÊNCIA DO BOTÃO LOGIN */
