@@ -685,6 +685,29 @@ footer.aviso {
     border-bottom: none !important;
   }
 
+/* CORREÇÃO DO EMPILHAMENTO E VISIBILIDADE DO SUBMENU NO DISPOSITIVO MÓVEL */
+  nav {
+    overflow: visible !important;
+  }
+
+  header {
+    overflow: visible !important;
+    z-index: 99999 !important;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* FORÇA O SUBMENU A FICAR POR CIMA DE TODO O CONTEÚDO DA PÁGINA */
+  nav ul, .submenu, header ul {
+    position: absolute !important;
+    z-index: 999999 !important;
+    display: block !important;
+  }
+
+  
   /* REDUZ O TAMANHO DO BANNER PARA CELULARES E TABLETS */
   .banner {
     height: 280px;
