@@ -333,6 +333,17 @@ nav a:hover {
   pointer-events: none; 
 }
 
+.texto{
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.8);
+  animation: deslizar 12s linear infinite;
+}
+
 @keyframes deslizar {
   from {
     left: 100%;
