@@ -334,8 +334,8 @@ nav a:hover{
 .banner {
   position: relative;
   width: 100%;
-  margin-top: 180px;
-  min-height: calc(100vh - 180px);
+  margin-top: 175px; 
+  min-height: calc(100vh - 175px); /* O banner vai ocupar o espaço restante até o rodapé */
   background: url("../Imagens/Imagem12.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -349,7 +349,7 @@ nav a:hover{
 
 .faixa {
   position: absolute;
-  top: 0; /* Alinha no topo do banner */
+  top: 10px; /* Posiciona a faixa logo abaixo do menu fixo, no topo visível do banner */
   left: 0;
   width: 100%;
   height: 45px;
