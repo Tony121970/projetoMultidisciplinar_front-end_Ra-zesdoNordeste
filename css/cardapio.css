@@ -391,17 +391,17 @@ footer p {
   }
 }
 
-/* RESPONSIVIDADE PRINCIPAL ADAPTAR A ESTRUTURA DA PÁGINA PARA DISPOSITIVOS MENORES COMO TABLETS E CELULARES */
+/* RESPONSIVIDADE PRINCIPAL ADAPTAR A ESTRUTURA DA PÁGINA PARA DISPOSITIVOS MENORES COMO TABLETS E CELULARES *
 @media (max-width: 768px) {
 
-  /* CABEÇALHO MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA */
+  /* CABEÇALHO MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA *
   header {
     flex-direction: column;
     height: auto;
     padding: 15px;
   }
 
-  /* MENU MOBILE ORGANIZA OS LINKS EM LINHAS FLEXÍVEIS E CENTRALIZA AS OPÇÕES */
+  /* MENU MOBILE ORGANIZA OS LINKS EM LINHAS FLEXÍVEIS E CENTRALIZA AS OPÇÕES *
   nav {
     margin-top: 15px;
     display: flex;
@@ -410,26 +410,93 @@ footer p {
     width: 100%;
   }
 
-  /* LINKS MOBILE AJUSTA O ESPAÇAMENTO ENTRE OS LINKS PARA FACILITAR O TOQUE */
+  /* LINKS MOBILE AJUSTA O ESPAÇAMENTO ENTRE OS LINKS PARA FACILITAR O TOQUE *
   nav a {
     margin: 10px;
   }
 
-  /* TÍTULO DO BANNER MOBILE REDUZ O TAMANHO DO TEXTO PRINCIPAL DA ÁREA HERO */
+  /* TÍTULO DO BANNER MOBILE REDUZ O TAMANHO DO TEXTO PRINCIPAL DA ÁREA HERO *
   .hero h1 {
     font-size: 38px;
   }
 
-  /* TEXTO DO BANNER MOBILE DIMINUI O TAMANHO DO TEXTO COMPLEMENTAR PARA MELHORAR A LEITURA */
+  /* TEXTO DO BANNER MOBILE DIMINUI O TAMANHO DO TEXTO COMPLEMENTAR PARA MELHORAR A LEITURA *
   .hero p {
     font-size: 20px;
   }
 
-  /* TÍTULO DAS CATEGORIAS MOBILE CENTRALIZA OS TÍTULOS DAS CATEGORIAS */
+  /* TÍTULO DAS CATEGORIAS MOBILE CENTRALIZA OS TÍTULOS DAS CATEGORIAS *
   .categoria h3 {
     text-align: center;
   }
+}*/
+
+/* REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS COM REORGANIZAÇÃO COMPLETA DO MENU SUPERIOR E DA GRADE DE EXIBIÇÃO DE PRODUTOS EM DUAS COLUNAS */
+@media (max-width: 768px) {
+  header {
+    position: relative;
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 0 4px;
+  }
+
+  .hero, .produtos, .cardapio {
+    padding-top: 20px !important; 
+  }
+
+  .produtos {
+    padding: 40px 4%;
+  }
+
+  .cards, .grade-iguarias {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+
+  .card p {
+    font-size: 13px;
+    padding: 0 10px 10px;
+  }
+
+  .preco {
+    font-size: 18px;
+    margin: 0 10px 5px;
+  }
+
+  .btn-pedir {
+    padding: 8px 14px;
+    font-size: 14px;
+    margin: 10px auto;
+  }
 }
+
+
 
 /* RESPONSIVIDADE ADICIONAL DIRECIONADA PARA APARELHOS DE TELAS CURTAS OU CELULARES FINOS */
 @media (max-width: 500px) {
