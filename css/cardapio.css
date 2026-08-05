@@ -391,46 +391,6 @@ footer p {
   }
 }
 
-/* RESPONSIVIDADE PRINCIPAL ADAPTAR A ESTRUTURA DA PÁGINA PARA DISPOSITIVOS MENORES COMO TABLETS E CELULARES *
-@media (max-width: 768px) {
-
-  /* CABEÇALHO MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA *
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-  }
-
-  /* MENU MOBILE ORGANIZA OS LINKS EM LINHAS FLEXÍVEIS E CENTRALIZA AS OPÇÕES *
-  nav {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  /* LINKS MOBILE AJUSTA O ESPAÇAMENTO ENTRE OS LINKS PARA FACILITAR O TOQUE *
-  nav a {
-    margin: 10px;
-  }
-
-  /* TÍTULO DO BANNER MOBILE REDUZ O TAMANHO DO TEXTO PRINCIPAL DA ÁREA HERO *
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  /* TEXTO DO BANNER MOBILE DIMINUI O TAMANHO DO TEXTO COMPLEMENTAR PARA MELHORAR A LEITURA *
-  .hero p {
-    font-size: 20px;
-  }
-
-  /* TÍTULO DAS CATEGORIAS MOBILE CENTRALIZA OS TÍTULOS DAS CATEGORIAS *
-  .categoria h3 {
-    text-align: center;
-  }
-}*/
-
 /* REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS COM REORGANIZAÇÃO COMPLETA DO MENU SUPERIOR E DA GRADE DE EXIBIÇÃO DE PRODUTOS EM DUAS COLUNAS */
 @media (max-width: 768px) {
   header {
