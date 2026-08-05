@@ -657,31 +657,25 @@ footer.aviso {
     width: 100%;
     text-align: center;
   }*/
-
-     /* CONTEÚDO DO MENU SUSPENSO ADAPTADO MOBILE CONVERTE O DROPDOWN FLUTUANTE EM UM BLOCO ESTÁTICO DO MENU NO CELULAR */
-  .dropdown-content {
-    position: static !important; 
-    box-shadow: none !important;
-    width: 100% !important;
-    background: rgba(0, 0, 0, 0.05) !important;
-    display: none; 
-  }
-
-  /* SUBMENU ADAPTADO MOBILE (ÁREA ADM, COLABORADOR, ETC.) */
-  .submenu-content {
-    position: static !important; 
-    width: 100% !important;
-    background: rgba(0, 0, 0, 0.08) !important; 
-  }
-
-  /* LINKS DOS MENUS ADAPTADOS MOBILE: AJUSTA A LARGURA DOS LINKS INTERNOS DO DROPDOWN PARA MODELO FLUIDO */
+  /* LINKS DOS MENUS E SUBMENUS ADAPTADOS MOBILE */
   .dropdown-content a, 
   .submenu-content a {
     width: 100% !important;
-    text-align: center !important;
-    display: block !important; /
-    padding: 12px 10px !important; 
+    display: block !important;       /* Força um item a ficar embaixo do outro na caixinha */
+    text-align: left !important;     /* Alinha o texto à esquerda (fica mais legível em caixas pequenas) */
+    padding: 12px 14px !important;   /* Espaçamento confortável para o toque do dedo */
+    font-size: 13px !important;
+    color: #971010 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; /* Linha sutil separando uma opção da outra */
   }
+
+  /* REMOVE A LINHA DIVISÓRIA APENAS DO ÚLTIMO ITEM DO MENU */
+  .dropdown-content a:last-child,
+  .submenu-content a:last-child {
+    border-bottom: none !important;
+  }
+
 
 
   
