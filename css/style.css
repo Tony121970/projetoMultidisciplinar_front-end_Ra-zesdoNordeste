@@ -355,13 +355,13 @@ nav a:hover{
 }
 
 /* ANIMAÇÃO DA FAIXA */
-@keyframes deslizar{
-  from{
-    transform:translateX(100vw);
+@keyframes deslizar {
+  0% {
+    transform: translateX(100vw);
   }
 
- to{
-    transform:translateX(-100%);
+  100% {
+    transform: translateX(-120%);
   }
 }
 
