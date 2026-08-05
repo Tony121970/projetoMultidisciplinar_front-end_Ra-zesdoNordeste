@@ -319,7 +319,7 @@ nav a:hover{
 .banner{
   position:relative;
   width:100%;
-  min-height:100vh;
+  min-height: calc(100vh - 150px);
   background:url("../Imagens/Imagem12.jpg") center/cover no-repeat;
   display:flex;
   justify-content:center;
@@ -526,6 +526,12 @@ footer.aviso{
 
 }
 
+ @media (max-width: 768px) {
+  .banner {
+    height: 500px;
+    min-height: 500px;
+  }
+}
 
 /* RESPONSIVIDADE CELULAR */
 @media(max-width:600px){
