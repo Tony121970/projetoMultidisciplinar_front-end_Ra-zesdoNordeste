@@ -248,7 +248,7 @@ header p {
 }
 
 /* ESTILIZA O ÍCONE DO CARRINHO NA ÁREA DE ACESSO */
-.acesso a[href="carrinho.html"]{
+.acesso a[href="html/carrinho.html"]{
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
