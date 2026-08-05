@@ -536,9 +536,10 @@ footer.aviso {
 @media (max-width: 768px) {
 
   /* ORGANIZA O CABEÇALHO EM COLUNA PARA TELAS MENORES */
-  header{
-      flex-direction: column;
-      gap: 15px;
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 15px;
   }
 
   /* REDUZ O TAMANHO DO TÍTULO DO CABEÇALHO */
@@ -549,6 +550,57 @@ footer.aviso {
   /* AJUSTA O TAMANHO DOS TEXTOS DO CABEÇALHO */
   header p {
     font-size: 16px;
+  }
+
+  /* ========================================================
+     👉 CORREÇÃO DOS BOTÕES DE ACESSO (ENTRAR, CADASTRO, VOLTAR)
+     ======================================================== */
+  .acesso {
+    display: flex;
+    flex-direction: row;       /* Garante que os botões fiquem lado a lado no celular */
+    justify-content: center;   /* Centraliza o bloco inteiro no meio da tela */
+    align-items: center;       /* Alinha a altura de todos verticalmente */
+    gap: 12px;                 /* Cria um espaçamento perfeito e igual entre eles */
+    width: 100%;
+  }
+
+  .btn-login, .btn-cadastro, .btn-voltar {
+    display: inline-flex;      /* Corrige o bug do botão esticado e torto */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px !important; /* Padroniza o tamanho interno de todos */
+    font-size: 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    height: 40px;              /* Deixa todos os botões com a mesma altura */
+  }
+
+  /* ========================================================
+     👉 CORREÇÃO DO ICONE DO CARRINHO EM CIMA DO DÍGITO
+     ======================================================== */
+  .acesso a[href*="carrinho"] {
+    display: inline-flex !important;
+    align-items: center;       /* Centraliza o carrinho e o número lado a lado */
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;           /* Tamanho equilibrado para o emoji */
+    color: white;
+  }
+
+  #contadorCarrinho {
+    display: inline-block;
+    min-width: 20px;
+    height: 20px;
+    line-height: 16px;         /* Alinha o número perfeitamente no meio do círculo */
+    font-size: 12px;           /* Tamanho compacto e legível */
+    margin-left: 5px;          /* Afasta o número para a direita do emoji, eliminando o efeito encavalado */
+    background: white;
+    color: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    font-weight: bold;
   }
 
   /* TRANSFORMA A NAVEGAÇÃO EM MENU VERTICAL */
