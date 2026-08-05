@@ -519,15 +519,18 @@ footer.aviso {
     padding: 20px;
   }
 
-  /* CENTRALIZA OS CARDS DO CARDÁPIO EM TELAS MENORES */
+  /* 👉 CORREÇÃO DO CARDÁPIO EM TABLETS (DUAS COLUNAS LINDAS COM GRID) */
   .cardapio {
-    justify-content: center;
-    gap: 20px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 10px;
+    width: 100%;
   }
 
-  /* REDUZ A LARGURA DOS CARDS PARA CABEREM DOIS POR LINHA */
   .card {
-    width: 45%;
+    width: 100% !important; /* Remove os 45% que quebravam a estrutura */
+    max-width: none !important;
   }
 }
 
@@ -596,7 +599,7 @@ footer.aviso {
     font-weight: bold;
   }
 
-  /*  ALTERADO PARA LINHA PARA CABER LADO A LADO */
+  /* ALTERADO PARA LINHA PARA CABER LADO A LADO */
   nav {
     display: flex;
     flex-direction: row;       
@@ -616,15 +619,15 @@ footer.aviso {
   }
 
   .faixa {
-  position: relative;
-  top: auto;        
-  height: 40px;    
-  margin-top: 0;
-}
+    position: relative;
+    top: auto;        
+    height: 40px;    
+    margin-top: 0;
+  }
 
   .texto {
-  font-size: 18px;  
-}
+    font-size: 18px;  
+  }
   
   /* BARRA DE TOPO ADAPTADA MOBILE EMPILHA OS COMPONENTES DA BARRA DIREITA DO TOPO EM FORMATO VERTICAL */
   .top-bar-right {
@@ -666,11 +669,11 @@ footer.aviso {
     width: 95%;
   }
 
-    /* CONTAINER DO CARDÁPIO: ATIVADO GRID COM DUAS COLUNAS */
+  /* CONTAINER DO CARDÁPIO NO MOBILE: HERDA AS DUAS COLUNAS COM AJUSTES */
   .cardapio {
     display: grid !important;      
-    grid-template-columns: 1fr 1fr; 
-    gap: 12px;                      
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 12px !important;                      
     padding: 10px;                  
     width: 100%;
   }
@@ -689,21 +692,20 @@ footer.aviso {
 
   /* AJUSTE DOS TEXTOS DOS CARDS NO MOBILE */
   .card h3 {
-    font-size: 16px !important;    
+    font-size: 15px !important;    
     padding: 8px 5px 4px !important;
   }
 
   .card p {
-    font-size: 12px !important;     
+    font-size: 11px !important;     
     padding: 0 8px 8px !important;
     line-height: 1.3;
   }
 
   .preco {
-    font-size: 16px !important;    
+    font-size: 15px !important;    
     margin-bottom: 8px;
   }
-
 
   /* REDUZ O TAMANHO DOS TÍTULOS DAS SEÇÕES */
   .titulo {
@@ -725,33 +727,26 @@ footer.aviso {
 /* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
 @media (max-width: 360px) {
 
-  /* FAIXA DESLIZANTE ADAPTADA MINI REAJUSTA O POSICIONAMENTO DA FAIXA NAS TELAS MAIS ESTREITAS */
+  /* REMOVIDO O TOP 25% QUE CAUSAVA COMPORTAMENTO ESTRANHO NA FAIXA */
   .faixa {
-    top: 25%;
+    height: 35px;
   }
 
   /* DIMINUI O TAMANHO DO TÍTULO DO CABEÇALHO EM CELULARES MINI */
   header h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   /* REDUZ O TEXTO PRINCIPAL DO BANNER EM APARELHOS MINI PREVENINDO QUEBRAS */
   .banner {
-    font-size: 24px;
-    height: 220px;
+    font-size: 22px;
+    height: 200px;
   }
 
-  /* ORGANIZA OS BOTÕES DE ACESSO ADAPTADOS MINI EMPILHA OS BOTOES DE LOGIN E CADASTRO VERTICALMENTE */
-  .acesso {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  /* CONFIGURA OS BOTÕES ADAPTADOS MINI EXPANDE OS BOTOES DO HEADER PARA LARGURA TOTAL NO SMARTPHONE SMALL */
+  /* CONFIGURA OS BOTÕES ADAPTADOS MINI EXPANDE OS BOTOES PARA OCUPAR MELHOR O ESPAÇO SEM ESCAPAR */
   .btn-login, .btn-cadastro, .btn-voltar {
-    width: 100%;
-    text-align: center;
+    font-size: 12px;
+    padding: 8px 10px !important;
   }
 }
 
@@ -764,3 +759,4 @@ footer.aviso {
       transform: translateX(-100%);
   }
 }
+
