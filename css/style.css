@@ -596,31 +596,35 @@ footer.aviso {
     font-weight: bold;
   }
 
-  /* TRANSFORMA A NAVEGAÇÃO EM MENU VERTICAL */
+  /* MENU MOBILE: ALTERADO PARA LINHA PARA CABER LADO A LADO */
   nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;       
+    flex-wrap: wrap;           
+    justify-content: center;   
     align-items: center;
-    gap: 10px;
+    gap: 8px;                  
+    padding: 10px 5px;         
+    width: 100%;
   }
 
-  /* AJUSTA ESPAÇAMENTO E TAMANHO DOS LINKS DO MENU */
+  /* LINKS DO MENU MOBILE: FONTES E MARGENS REDUZIDAS */
   nav a {
-    margin: 8px 0;
-    font-size: 18px;
-    margin-right: 0;
+    font-size: 13px !important; 
+    margin: 4px 6px !important; 
+    white-space: nowrap;        
   }
 
   .faixa {
   position: relative;
-  top: auto;        /* Cancela qualquer comportamento antigo de topo */
-  height: 40px;     /* Altura mais compacta para a barra no celular */
+  top: auto;        
+  height: 40px;    
   margin-top: 0;
 }
-.texto {
-  font-size: 18px;  /* Letra um pouco menor para caber melhor na tela do celular */
-}
 
+  .texto {
+  font-size: 18px;  
+}
   
   /* BARRA DE TOPO ADAPTADA MOBILE EMPILHA OS COMPONENTES DA BARRA DIREITA DO TOPO EM FORMATO VERTICAL */
   .top-bar-right {
