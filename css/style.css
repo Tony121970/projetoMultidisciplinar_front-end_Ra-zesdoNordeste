@@ -350,7 +350,6 @@ nav a:hover {
     top: 20%;
     left: 0;
     width: 100%;
-    /* 1. Remova a altura fixa ou aumente para dar margem ao texto */
     height: auto; 
     overflow: hidden;
     z-index: 9999;
@@ -367,10 +366,9 @@ nav a:hover {
     font-size: 22px;
     font-weight: bold;
     text-shadow: 2px 2px 6px rgba(0,0,0,.8);
-    /* 2. Adicione um padding vertical para o text-shadow não cortar nas bordas */
     padding-top: 10px;
     padding-bottom: 10px;
-    animation: deslizar 12s linear infinite;
+    animation: deslizar 18s linear infinite;
 }
 
 
