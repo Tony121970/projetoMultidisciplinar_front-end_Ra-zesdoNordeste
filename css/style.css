@@ -334,8 +334,8 @@ nav a:hover{
 .banner {
   position: relative;
   width: 100%;
-  margin-top: 170px; /* Empurra o banner para baixo para não sumir sob o menu fixo */
-  min-height: calc(100vh - 170px);
+  margin-top: 180px;
+  min-height: calc(100vh - 180px);
   background: url("../Imagens/Imagem12.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -347,13 +347,11 @@ nav a:hover{
   text-shadow: 3px 3px 8px black;
 }
 
-/* CONTEÚDO CORRIGIDO PARA O SEU ARQUIVO CSS */
-
 .faixa {
   position: absolute;
-  bottom: 0;
+  top: 0; /* Alinha no topo do banner */
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 45px;
   overflow: hidden;
   display: block;
@@ -374,12 +372,13 @@ nav a:hover{
 
 @keyframes deslizar {
   0% {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
 
 
 
