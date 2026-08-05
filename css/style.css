@@ -345,6 +345,7 @@ nav a:hover{
 
 /* TEXTO DA FAIXA */
 .texto{
+  display: inline-block;
   white-space:nowrap;
   color:white;
   font-size:clamp(14px,3vw,22px);
