@@ -600,16 +600,21 @@ footer.aviso {
   /* TRANSFORMA A NAVEGAÇÃO EM MENU VERTICAL */
   nav {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
     flex-direction: column;
+    justify-content: center; 
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 10px 5px;
+    width: 100%;
   }
 
   /* AJUSTA ESPAÇAMENTO E TAMANHO DOS LINKS DO MENU */
   nav a {
-    margin: 8px 0;
-    font-size: 18px;
-    margin-right: 0;
+     font-size: 13px !important;
+    margin: 4px 6px !important;
+    white-space: nowrap;
   }
 
   /* BARRA DE TOPO ADAPTADA MOBILE EMPILHA OS COMPONENTES DA BARRA DIREITA DO TOPO EM FORMATO VERTICAL */
