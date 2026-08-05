@@ -532,25 +532,44 @@ footer p {
     font-size: 20px;
   }
 
-  /* MENU SUSPENSO MOBILE CENTRALIZA O MENU ABERTO EM RELAÇÃO À TELA */
-  .dropdown-content{
-    left: 50%;
-    transform: translateX(-50%);
-    position: static;
-    width: 100%;
+  /* MENU SUSPENSO MOBILE: FAZ COMPORTAR COMO CAIXA FLUTUANTE QUE OCUPA A LARGURA DA TELA */
+  .dropdown-content {
+    position: absolute;   /* Devolve a flutuação para não empurrar os links de baixo */
+    left: 0;              /* Alinha na borda esquerda da tela do celular */
+    transform: none;      /* Remove o efeito antigo de centralização por translação */
+    width: 100vw;         /* Faz o menu ter a largura exata da tela do celular */
+    z-index: 100000;      /* Garante que fique NA FRENTE da faixa deslizante de texto */
+    box-sizing: border-box;
+    background: #e5c482;
+    border-radius: 0 0 8px 8px; /* Arredonda apenas as pontas de baixo no mobile */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Dá um efeito de sombra sobre o fundo */
   }
 
-  /* SUBMENU ADAPTADO REAJUSTA AS SUB-ABAS DO MENU SUSPENSO PARA QUE ELAS EMPILHEM VERTICALMENTE */
+  /* AJUSTE DOS LINKS DO MENU NO CELULAR */
+  .dropdown-content a {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;   /* Deixa os botões maiores para facilitar o clique com o dedo */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separação sutil entre as opções */
+  }
+
+  /* SUBMENU ADAPTADO: EMPILHA AS OPÇÕES (CAFÉ, ALMOÇO...) VERTICALMENTE ABAIXO DO CARDÁPIO */
   .submenu-content {
-    position: static;
+    position: relative;   /* Faz ele abrir logo abaixo do botão pai de forma organizada */
     left: 0;
     width: 100%;
     padding-left: 15px;
-    background: rgba(229, 196, 130, 0.5);
+    background: rgba(95, 71, 44, 0.1); /* Cria um fundo sutil para diferenciar o sub-nível */
+    display: none;        /* Garante que obedeça o hover */
+  }
+
+  /* ATIVA O DISPLAY BLOCK NO HOVER DO MOBILE */
+  .submenu:hover .submenu-content {
+    display: block;
   }
 
   /* TÍTULO DAS CATEGORIAS MOBILE CENTRALIZA OS TÍTULOS DAS CATEGORIAS */
-  .categoria h3{
+  .categoria h3 {
     text-align: center;
   }
 }
