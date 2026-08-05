@@ -325,7 +325,7 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 45px;
-  background: rgb(77, 60, 60); 
+  background: transparent; 
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -620,7 +620,6 @@ footer.aviso {
   }
 
   .faixa {
-    backgroud-color: rgb(77, 60, 60);
     position: relative;
     top: auto;        
     height: 40px;    
