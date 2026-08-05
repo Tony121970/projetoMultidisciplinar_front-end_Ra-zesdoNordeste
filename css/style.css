@@ -347,7 +347,7 @@ nav a:hover{
   text-shadow: 3px 3px 8px black;
 }
 
-.faixa {
+/*.faixa {
   position: absolute;
   top: 0;
   left: 0;
@@ -360,10 +360,10 @@ nav a:hover{
   z-index: 10;
 }
 
-/* Força o título do banner a não empurrar a faixa para baixo */
+/* Força o título do banner a não empurrar a faixa para baixo *
 .banner h1 {
   width: 100%;
-  margin-top: 45px; /* Abre espaço idêntico ao tamanho da faixa no topo */
+  margin-top: 45px; /* Abre espaço idêntico ao tamanho da faixa no topo *
 }
 
 .texto {
@@ -383,10 +383,30 @@ nav a:hover{
   100% {
     transform: translateX(-100%);
   }
+}*/
+
+
+/* O CSS controla o palco e a animação */
+.faixa {
+  overflow: hidden; /* Esconde o texto que sai da caixa */
+  white-space: nowrap; /* Impede o texto de quebrar a linha */
+  background: #0f172a;
+  color: #38bdf8;
+  padding: 10px;
+  border-radius: 5px;
 }
 
+.texto {
+  display: inline-block;
+  /* Chama a animação chamada 'rolar', dura 10s, ritmo constante (linear) e repete ao infinito */
+  animation: rolar 10s linear infinite; 
+}
 
-
+/* Criando o quadro a quadro da animação */
+@keyframes rolar {
+  0% { transform: translateX(100%); } /* Começa totalmente à direita */
+  100% { transform: translateX(-100%); } /* Termina totalmente à esquerda */
+}
 
 
 
