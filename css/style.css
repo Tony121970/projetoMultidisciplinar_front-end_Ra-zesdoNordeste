@@ -303,7 +303,7 @@ nav a:hover {
   color: black;
 }
 
-/* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO *
+/* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO */
 .banner {
   height: 800px;
   background-image: url("../Imagens/Imagem12.jpg");
@@ -318,7 +318,7 @@ nav a:hover {
   text-shadow: 3px 3px 8px black;
 }
 
-/* ADICIONA UMA FAIXA DESLIZANTE NA TELA *
+/* ADICIONA UMA FAIXA DESLIZANTE NA TELA */
 .faixa {
   position: fixed;
   top: 20%;
@@ -331,36 +331,6 @@ nav a:hover {
   align-items: center;
   z-index: 9999;
   pointer-events: none; 
-}*/
-.banner{
-    position: relative;
-    height: 500px; /* exemplo */
-    background: url("../Imagens/banner.jpg") center/cover no-repeat;
-}
-
-.faixa{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.texto{
-  white-space: nowrap;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0,0,0,.8);
-  animation: deslizar 12s linear infinite;
-}
-
-@keyframes deslizar {
-  0% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
 }
 
 /* DEFINE O ESPAÇAMENTO INTERNO DAS SEÇÕES DA PÁGINA */
