@@ -705,10 +705,9 @@ footer.aviso {
     position: absolute !important;
     z-index: 999999 !important;
     display: block !important;
+    background-color: #FFFFFF !important;
   }
 
-
-  
   /* REDUZ O TAMANHO DO BANNER PARA CELULARES E TABLETS */
   .banner {
     height: 280px;
