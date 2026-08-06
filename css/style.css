@@ -133,70 +133,6 @@ header p {
   gap: 20px;
 }
 
-/* DEFINE A ÁREA DO MENU SUSPENSO */
-.dropdown{
-  position: relative;
-  display: inline-block;
-  background: transparent;
-  margin-right: 80px;
-}
-
-/* CONFIGURA O CONTEÚDO OCULTO DO MENU DROPDOWN */
-.dropdown-content{
-  display: none;
-  position: absolute;
-  background: white;
-  border-radius: 8px;
-}
-
-/* EXIBE O MENU SUSPENSO QUANDO O MOUSE PASSA SOBRE ELE */
-.dropdown:hover .dropdown-content{
-  display: block;
-}
-
-/* ESTILIZA O BOTÃO QUE ABRE O MENU DROPDOWN */
-.dropbtn{
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ALTERA A COR DO BOTÃO DO MENU AO PASSAR O MOUSE */
-.dropbtn:hover{
-  color: black;
-}
-
-/* MOSTRA O SUBMENU QUANDO O CURSOR ESTÁ SOBRE ELE */
-.submenu:hover .submenu-content{
-  display: block;
-}
-
-/* FORMATA OS LINKS DOS MENUS E SUBMENUS */
-.dropdown-content a,
-.submenu-content a{
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #971010;
-  text-align: left;
-  width: 150px;
-}
-
-/* ALTERA O FUNDO DOS LINKS DO MENU AO PASSAR O MOUSE */
-.dropdown-content a:hover,
-.submenu-content a:hover{
-  background: #f2f2f2;
-}
-
-/* AJUSTA O TAMANHO DOS TEXTOS INFORMATIVOS DO MENU */
-.dropdown-content p,
-.submenu-content p {
-  font-size: 12px;
-}
-
 /* CONFIGURA OS BOTÕES DE LOGIN E CADASTRO */
 .btn-login,
 .btn-cadastro {
@@ -248,7 +184,7 @@ header p {
 }
 
 /* ESTILIZA O ÍCONE DO CARRINHO NA ÁREA DE ACESSO */
-.acesso a[href="carrinho.html"]{
+.acesso a[href="html/carrinho.html"]{
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
@@ -300,7 +236,71 @@ nav a {
 
 /* ALTERA A COR DOS LINKS DO MENU AO PASSAR O MOUSE */
 nav a:hover {
-  color: black;
+  color: #e5c482;
+}
+
+/* DEFINE A ÁREA DO MENU SUSPENSO */
+.dropdown{
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  margin-right: 80px;
+}
+
+/* CONFIGURA O CONTEÚDO OCULTO DO MENU DROPDOWN */
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+}
+
+/* EXIBE O MENU SUSPENSO QUANDO O MOUSE PASSA SOBRE ELE */
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+/* ESTILIZA O BOTÃO QUE ABRE O MENU DROPDOWN */
+.dropbtn{
+  background: transparent;
+  border: none;
+  color: #e5c482;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ALTERA A COR DO BOTÃO DO MENU AO PASSAR O MOUSE */
+.dropbtn:hover{
+  color: white;
+}
+
+/* MOSTRA O SUBMENU QUANDO O CURSOR ESTÁ SOBRE ELE */
+.submenu:hover .submenu-content{
+  display: block;
+}
+
+/* FORMATA OS LINKS DOS MENUS E SUBMENUS */
+.dropdown-content a,
+.submenu-content a{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #971010;
+  text-align: left;
+  width: 150px;
+}
+
+/* ALTERA O FUNDO DOS LINKS DO MENU AO PASSAR O MOUSE */
+.dropdown-content a:hover,
+.submenu-content a:hover{
+  background: #f2f2f2;
+}
+
+/* AJUSTA O TAMANHO DOS TEXTOS INFORMATIVOS DO MENU */
+.dropdown-content p,
+.submenu-content p {
+  font-size: 12px;
 }
 
 /* CRIA O BANNER PRINCIPAL COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO */
@@ -318,7 +318,7 @@ nav a:hover {
   text-shadow: 3px 3px 8px black;
 }
 
-/* ADICIONA UMA FAIXA DESLIZANTE NA TELA */ 
+/* ADICIONA UMA FAIXA DESLIZANTE NA TELA */
 .faixa {
   position: fixed;
   top: 20%;
