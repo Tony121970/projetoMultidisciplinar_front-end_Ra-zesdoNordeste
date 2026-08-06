@@ -337,7 +337,7 @@ footer p {
     width: 100% !important;
     height: auto !important;
     flex-direction: column !important;
-    padding: 15px 10px !important;
+    padding: 12px 10px !important;
     gap: 12px !important;
     text-align: center !important;
     margin: 0 !important;
@@ -358,27 +358,25 @@ footer p {
     margin-bottom: 0 !important;
   }
 
-  /* .ACESSO - CONSERVA E CONSOLIDA OS BOTÕES DE CONTROLE EM FILAS FLEXÍVEIS ORGANIZADAS HORIZONTALMENTE LADO A LADO */
+  /* .ACESSO - CONFIGURA O CONTAINER DE ACESSO PARA MOSTRAR OS TRÊS BOTÕES TOTALMENTE ALINHADOS LADO A LADO NA MESMA LINHA */
   .acesso {
     display: flex !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    width: 100% !important;
-    flex-wrap: wrap !important;
     flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    width: 100% !important;
     margin: 0 auto !important;
+    padding: 0 4px !important;
   }
 
-  /* .ACESSO A, .ACESSO BUTTON - RECONFIGURA OS TRÊS ATALHOS DO TOPO PARA TRABALHAREM COMO BOTÕES PARALELOS EQUILIBRADOS */
+  /* .ACESSO A, .ACESSO BUTTON - DIVIDE O ESPAÇO IGUALMENTE EM TRÊS PARTES E COMPACTA O TEXTO INTERNO */
   .acesso a,
   .acesso button {
-    padding: 6px 12px !important;
-    font-size: 13px !important;
-    flex: 1 1 calc(50% - 8px) !important;
-    max-width: 100% !important;
+    flex: 1 !important;
+    padding: 6px 4px !important;
+    font-size: 12px !important;
     text-align: center !important;
-    width: auto !important;
-    margin: 0 !important;
     border-radius: 20px !important;
     border: none !important;
     font-weight: bold !important;
@@ -387,32 +385,32 @@ footer p {
     justify-content: center !important;
     height: 34px !important;
     text-decoration: none !important;
+    white-space: nowrap !important;
   }
 
-  /* .BTN-FIDELIDADE - ESTILIZA EXPLICITAMENTE O LINK DO CLUBE COM COR DE DESTAQUE PADRONIZADA IDENTICA AOS DEMAIS */
+  /* .BTN-FIDELIDADE - ANULA REGRAS ANTIGAS DE LARGURA INTEGRAL E ESTILIZA O BOTÃO BRANCO NA GRADE DE TRÊS COLUNAS */
   .btn-fidelidade {
-    flex: 1 1 100% !important;
     background-color: white !important;
     color: green !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 0 !important;
   }
 
-  /* .BTN-VOLTAR - AJUSTA A COR DO BOTÃO VERDE NO FLUXO MÓVEL */
+  /* .BTN-VOLTAR - AJUSTA A COR DO BOTÃO VERDE NO FLUXO MÓVEL LADO A LADO */
   .btn-voltar {
     background: green !important;
     color: white !important;
   }
 
-  /* .BTN-SAIR - AJUSTA A COR DO LINK VERMELHO NO FLUXO MÓVEL */
+  /* .BTN-SAIR - AJUSTA A COR DO LINK VERMELHO NO FLUXO MÓVEL LADO A LADO */
   .btn-sair {
     background: red !important;
     color: white !important;
   }
 
-  /* .CONTAINER - AMPLIA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO O CRESCIMENTO DO CABEÇALHO ACUMULADO DO SMARTPHONE */
+  /* .CONTAINER - REAJUSTA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO A NOVA ALTURA COMPACTADA DO CABEÇALHO MÓVEL */
   .container {
     width: 95% !important;
-    margin: 195px auto 90px !important;
+    margin: 165px auto 90px !important;
     padding: 20px !important;
     border-radius: 15px !important;
   }
@@ -459,7 +457,7 @@ footer p {
     width: 100% !important;
   }
 
-  /* .TOTAL - AJUSTA O TAMANHO DA NOTA DO MONTANTE TOTAL A PAGAR NO CARD COMPACTO */
+  /* .TOTAL - AJUSTA O TAMANHO DO NOTA DO MONTANTE TOTAL A PAGAR NO CARD COMPACTO */
   .total {
     font-size: 18px !important;
   }
@@ -503,6 +501,7 @@ footer p {
     padding: 10px !important;
   }
 }
+
 
 /* ADAPTA O SISTEMA PARA CELULARES PEQUENOS */
 @media (max-width: 480px) {
