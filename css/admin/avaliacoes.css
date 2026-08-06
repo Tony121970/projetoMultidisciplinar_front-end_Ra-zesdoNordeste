@@ -39,7 +39,7 @@ header button{
   border:none;
   border-radius:20px;
   cursor:pointer;
-  background:red;
+  background:green;
   color:white;
   font-weight:bold;
   transition:.3s;
@@ -48,7 +48,7 @@ header button{
 /* ALTERA AS CORES QUANDO O USUÁRIO PASSA O MOUSE PARA DESTACAR A INTERAÇÃO. */
 header button:hover{
   background:white;
-  color:red;
+  color:green;
 }
 
 /* DEFINE A LARGURA DO CONTEÚDO, CENTRALIZA OS ELEMENTOS E RESERVA ESPAÇO PARA O RODAPÉ FIXO. */
