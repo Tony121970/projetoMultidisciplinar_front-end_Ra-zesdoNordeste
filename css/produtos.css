@@ -373,6 +373,151 @@ footer p {
   }
 }
 
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+    text-align: center;
+    position: fixed !important;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DE CONTROLE DE MATERIAIS EM TELAS DE SMARTPHONES */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SETOR ADMINISTRATIVO COOPERANDO COM TELAS MENORES */
+  .titulo h2 {
+    font-size: 13px;
+  }
+
+  /* .BTN-HEADER - DISTRIBUI OS BOTÕES DE RETORNO E LOGOUT EM FLUXO CENTRALIZADO OCUPANDO TODO O ESPAÇO HORIZONTAL */
+  .btn-header {
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* .BTN-HEADER BUTTON - COMPACTA O PREENCHIMENTO INTERNO E DETERMINA QUE CADA BOTÃO DO TOPO OCUPE METADE DA LINHA INFERIOR */
+  .btn-header button {
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(50% - 8px);
+    max-width: 100%;
+  }
+
+  /* MAIN - AMPLIA O RECUO SUPERIOR COMPENSANDO A ALTURA MAIOR DO NOVO CABEÇALHO ACUMULADO E AJUSTA AS MARGENS LATERAIS */
+  main {
+    padding-top: 170px;
+    margin-bottom: 70px;
+    width: 95%;
+  }
+
+  /* .TOPO - REORGANIZA A BARRA DE PESQUISA E O BOTÃO DE CADASTRO ADICIONANDO EMPILHAMENTO VERTICAL */
+  .topo {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* #PESQUISA - AJUSTA O PREENCHIMENTO INTERNO E A TIPOGRAFIA DA BARRA DE PROCURA DE MERCADORIAS */
+  #pesquisa {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* #BTNNOVO - COMPACTA A ALTURA DO BOTÃO DE REGISTRO E FORÇA O COMPONENTE A TRABALHAR COM LARGURA COMPLETA */
+  #btnNovo {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* .RESUMO - ADAPTA O CONTAINER DE MÉTRICAS DO ESTOQUE PARA EXIBIÇÃO DE COLUNAS PARALELAS RESPONSIVAS */
+  .resumo {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-bottom: 20px;
+  }
+
+  /* .BOX - ANULA QUALQUER RESTRIÇÃO HORIZONTAL MÍNIMA GARANTINDO ADAPTAÇÃO E REDUZ RECUOS INTERNOS */
+  .box {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 12px 8px;
+  }
+
+  /* .BOX:NTH-CHILD(1) - DETECTA O PRIMEIRO CONTADOR DE TOTALIZADOR DE PRODUTOS E EXPANDI O BLOCO PARA OCUPAR TODA A LARGURA */
+  .box:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  /* .BOX H3 - REDUZ A TIPOGRAFIA DOS RÓTULOS DE PRODUTOS ATIVOS OU INATIVOS NO MOBILE */
+  .box h3 {
+    font-size: 12px;
+  }
+
+  /* .BOX SPAN - DIMINUI O TAMANHO DOS CONTADORES NUMÉRICOS GRANDES DE QUANTIDADES DO ESTOQUE */
+  .box span {
+    font-size: 24px;
+    margin-top: 6px;
+  }
+
+  /* .LISTA - MODIFICA A ESTRUTURA GLOBAL DA GRADE PARA EXIBIR EXATAMENTE DOIS CARDS DE MERCADORIAS LADO A LADO */
+  .lista {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 2px;
+  }
+
+  /* .CARD-PRODUTO - REDUZ OS ESPAÇAMENTOS INTERNOS DE CADA BLOCO INFORMATIVO DE PRODUTO */
+  .card-produto {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  /* .CARD-PRODUTO H2 - DIMINUI O TAMANHO DA FONTE DO NOME DO ITEM IMPEDINDO QUEBRAS DE LINHA DESALINHADAS */
+  .card-produto h2 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* .INFO - REDUZ O TAMANHO DA LETRA DOS METADADOS DE CATEGORIA, QUANTIDADES E STATUS DO PRODUTO */
+  .info {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .PRECO - AJUSTA O DESTAQUE VISUAL E DIMINUI O TAMANHO DO ENUNCIADO DE VALOR MONETÁRIO NO CARD COMPACTO */
+  .preco {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+
+  /* .BOTOES - COMPACTA A DISTÂNCIA ENTRE AS OPÇÕES DE MANUTENÇÃO DE CADA CARD */
+  .botoes {
+    gap: 6px;
+    margin-top: 10px;
+    flex-direction: column !important;
+  }
+
+  /* .BOTOES BUTTON - REDUZ O PREENCHIMENTO INTERNO E COMPACTA A FONTE DOS COMANDOS DE EDIÇÃO E EXCLUSÃO DO ESTOQUE */
+  .botoes button {
+    padding: 8px;
+    font-size: 12px;
+    width: 100% !important;
+  }
+}
+
+
 /* REGRAS DE ADAPTAÇÃO DIRECIONADAS PARA SMARTPHONES E TABLETS */
 @media (max-width: 700px) {
 
