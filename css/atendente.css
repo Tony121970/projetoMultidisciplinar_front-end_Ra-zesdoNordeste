@@ -495,6 +495,193 @@ footer p {
   }
 }
 
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+
+  /* HEADER - ALTERA O TOPO PARA REORGANIZAR O CONTEÚDO EM COLUNA VERTICAL COM ALTURA AUTOMÁTICA E CENTRALIZAÇÃO */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DO TEXTO DO TÍTULO PRINCIPAL NO CABEÇALHO PARA ADAPTAÇÃO EM TELAS PEQUENAS */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* .TITULO P - DIMINUI O TAMANHO DO SUBTÍTULO DO CABEÇALHO E CORRIGE A MARGEM INFERIOR DE DISTANCIAMENTO */
+  .titulo p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  /* .ACOES - DISTRIBUI O GRUPO DE BOTÕES DE MANEIRA CENTRALIZADA E OCUPANDO TODA A LARGURA DA TELA DO CELULAR */
+  .acoes {
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* .ACOES BUTTON - COMPACTA O TAMANHO DOS BOTÕES E FIXA EXATAMENTE DOIS BOTÕES POR LINHA NA ÁREA DE AÇÕES */
+  .acoes button {
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(50% - 8px);
+    max-width: 100%;
+  }
+
+  /* MAIN - AUMENTA O ESPAÇAMENTO DO TOPO DA ÁREA CENTRAL PARA EVITAR QUE O NOVO CABEÇALHO EMPILHADO COBRA O CONTEÚDO */
+  main {
+    padding-top: 190px;
+  }
+
+  /* .PAINEL-RESUMO - REORGANIZA OS INDICADORES DE QUANTIDADE PARA EXIBIR EXATAMENTE DUAS COLUNAS LADO A LADO */
+  .painel-resumo {
+    grid-template-columns: repeat(2, 1fr);
+    top: 175px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  /* .PAINEL-RESUMO .INFO - COMPACTA O PREENCHIMENTO INTERNO DOS CARDS CONTADORES DE PEDIDOS */
+  .painel-resumo .info {
+    padding: 8px;
+  }
+
+  /* .PAINEL-RESUMO SPAN - DIMINUI O TAMANHO DOS NÚMEROS DE DESTAQUE DOS INDICADORES FLUTUANTES */
+  .painel-resumo span {
+    font-size: 20px;
+  }
+
+  /* .PAINEL-RESUMO SMALL - REDUZ A LETRA DOS TEXTOS AUXILIARES ABAIXO DOS NÚMEROS CONTADORES DO PAINEL */
+  .painel-resumo small {
+    font-size: 11px;
+  }
+
+  /* #LISTAPEDIDOS - MODIFICA A ESTRUTURA DOS CARDS DE PEDIDOS PARA EXIBIÇÃO DE DUAS COLUNAS LADO A LADO NO MOBILE */
+  #listaPedidos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 0 5px;
+  }
+
+  /* .CARD-PEDIDO - DIMINUI OS ESPAÇAMENTOS INTERNOS E A ESPESSURA DA BORDA DE DESTAQUE LATERAL DE CADA CARD */
+  .card-pedido {
+    padding: 10px;
+    border-left-width: 4px;
+  }
+
+  /* .CARD-PEDIDO H3 - REDUZ O TAMANHO DO IDENTIFICADOR DO NÚMERO DO PEDIDO PARA EVITAR QUEBRAS BRUSCAS DE TEXTO */
+  .card-pedido h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARD-PEDIDO P - DIMINUI A FONTE E REDUZ A DISTÂNCIA ENTRE AS LINHAS DE DADOS DO CLIENTE E ENDEREÇO */
+  .card-pedido p {
+    font-size: 11px;
+    margin: 2px 0;
+  }
+}
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+
+  /* .CARD-PEDIDO LI - AJUSTA O ESPAÇAMENTO E TAMANHO DOS NOMES DOS PRODUTOS DENTRO DO PEDIDO NO MOBILE */
+  .card-pedido li {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  /* .CARD-PEDIDO H2 - REDUZ O TAMANHO DO VALOR TOTAL EXIBIDO NO CARD PARA ADAPTAÇÃO EM TELAS MENORES */
+  .card-pedido h2 {
+    font-size: 16px;
+  }
+
+  /* .BOTOES-ACAO-CARD - DIMINUI O ESPAÇAMENTO ENTRE AS OPÇÕES DE BOTÕES DE AÇÃO DOS PEDIDOS NO CELULAR */
+  .botoes-acao-card {
+    gap: 4px;
+    padding-top: 8px;
+  }
+
+  /* .CARD-PEDIDO BUTTON - COMPACTA A ALTURA, FONTE E CURVATURA DOS BOTÕES INTERNOS DE CADA PEDIDO */
+  .card-pedido button {
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  /* .MODAL-CONTEUDO - EXPANDE A LARGURA E REDUZ OS ESPAÇAMENTOS E ALTURA MÁXIMA DA JANELA DE CADASTRO */
+  .modal-conteudo {
+    width: 98%;
+    padding: 15px;
+    max-height: 85vh;
+  }
+
+  /* .MODAL-TOPO - DIMINUI O ESPAÇAMENTO INFERIOR DO CABEÇALHO DO MODAL NO MOBILE */
+  .modal-topo {
+    margin-bottom: 15px;
+  }
+
+  /* .MODAL-TOPO H2 - REDUZ O TAMANHO DO TÍTULO PRINCIPAL DA JANELA SUSPENSA */
+  .modal-topo h2 {
+    font-size: 18px;
+  }
+
+  /* #FECHARMODAL - DIMINUI O TAMANHO DO ÍCONE DE FECHAMENTO DO FORMULÁRIO */
+  #fecharModal {
+    font-size: 30px;
+  }
+
+  /* .MODAL-BODY - COMPACTA A DISTÂNCIA ENTRE OS CAMPOS DO FORMULÁRIO DE CADASTRO */
+  .modal-body {
+    gap: 10px;
+  }
+
+  /* .MODAL-BODY INPUT, .MODAL-BODY SELECT - DIMINUI O PREENCHIMENTO E A FONTE DOS CAMPOS DE ENTRADA DO MOBILE */
+  .modal-body input,
+  .modal-body select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* .BOTOESMODAL - AJUSTA O ESPAÇAMENTO ENTRE OS BOTÕES DE FECHAMENTO E AVANÇO DO FORMULÁRIO */
+  .botoesModal {
+    gap: 10px;
+  }
+
+  /* #CANCELARPEDIDO, #CONTINUARPEDIDO - REDUZ O TAMANHO VISUAL E A FONTE DOS BOTÕES PRINCIPAIS DO FORMULÁRIO */
+  #cancelarPedido,
+  #continuarPedido {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* .PRODUTO-ITEM - AJUSTA O ESPAÇAMENTO E A MARGEM DA LISTA DE PRODUTOS DISPONÍVEIS NO MOBILE */
+  .produto-item {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* .PRODUTO-ITEM DIV - DIMINUI A LETRA DOS PREÇOS E NOMES DOS ITENS SELECIONÁVEIS */
+  .produto-item div {
+    font-size: 13px;
+  }
+
+  /* #TOTALPRESENCIAL - REDUZ O DESTAQUE VISUAL DO VALOR DA SOMA NO ENCERRAMENTO DO FORMULÁRIO */
+  #totalPresencial {
+    font-size: 18px;
+  }
+
+  /* .BTNADICIONAR - DIMINUI O TAMANHO DO BOTÃO CIRCULAR E AJUSTA O ÍCONE INTERNO DE ADIÇÃO */
+  .btnAdicionar {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
 /* ORGANIZA OS ELEMENTOS EM UMA ÚNICA COLUNA PARA MELHORAR A LEITURA EM TELAS PEQUENAS */
 @media (max-width: 600px) {
   
