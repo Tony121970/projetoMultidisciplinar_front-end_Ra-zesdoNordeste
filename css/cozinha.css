@@ -67,17 +67,28 @@ header{
   transform:translateY(-2px);
 }
 
-/* ALTERA A APARÊNCIA DO BOTÃO QUE UTILIZA O COMANDO DE RETORNO DO NAVEGADOR. */
-button[onclick="window.history.back()"], button[onclick="logoutColaborador()"] {
-  background-color: red;
-  color: white;
+/* SELECIONA O BOTÃO DE VOLTAR PELO ATRIBUTO DE SEU CLIQUE E FORÇA A COR VERDE NO DESKTOP */
+.acoes button[onclick="window.history.back()"] {
+  background-color: green !important;
+  color: white !important;
 }
 
-/* INVERTE AS CORES PARA DESTACAR A INTERAÇÃO. */
-button[onclick="window.history.back()"]:hover,button[onclick="logoutColaborador()"]:hover {
-  background-color: white;
-  color: red;
+.acoes button[onclick="window.history.back()"]:hover {
+  background-color: white !important;
+  color: green !important;
 }
+
+/* SELECIONA O BOTÃO DE SAIR PELO ATRIBUTO DE SEU CLIQUE E FORÇA A COR VERMELHA NO DESKTOP */
+.acoes button[onclick="logoutColaborador()"] {
+  background-color: red !important;
+  color: white !important;
+}
+
+.acoes button[onclick="logoutColaborador()"]:hover {
+  background-color: white !important;
+  color: red !important;
+}
+
 
 /* DEFINE OS ESPAÇAMENTOS NECESSÁRIOS PARA COMPENSAR O HEADER FIXO E ORGANIZAR O CONTEÚDO CENTRAL. */
 main{
