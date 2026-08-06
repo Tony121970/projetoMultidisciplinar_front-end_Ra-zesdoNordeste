@@ -240,45 +240,121 @@ footer p {
   gap: 8px;
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+/* @MEDIA (MAX-WIDTH: 1200PX) - AJUSTA O ESPAÇAMENTO LATERAL INTERNO DO CABEÇALHO PARA EXIBIÇÃO EM NOTEBOOKS OU MONITORES PEQUENOS */
 @media (max-width: 1200px) {
-
-  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR EM TELAS INTERMEDIÁRIAS */
   header {
     padding: 0 4%;
   }
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
 @media (max-width: 768px) {
 
-  /* EMPILHA OS ELEMENTOS DO TOPO SE VISUALIZADO EM DISPOSITIVOS MENORES */
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RETIRADA DE COMPORTAMENTOS FLUTUANTES */
   header {
     height: auto;
     flex-direction: column;
-    padding: 15px;
-    gap: 15px;
+    padding: 15px 10px;
+    gap: 12px;
     text-align: center;
+    position: fixed !important;
   }
 
-  /* TRANSFORMA OS LINKS DO MENU EM COLUNA EXPANDIDA */
+  /* H1.TITULO - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DE RECEBIMENTO DO PEDIDO NO MOBILE */
+  h1.titulo {
+    font-size: 22px;
+  }
+
+  /* .ACESSO - CONSERVA E CONSOLIDA OS BOTÕES DE CONTROLE EM FLUXO CENTRALIZADO HORIZONTAL EVITANDO O EMPILHAMENTO VERTICAL */
   .acesso {
+    justify-content: center;
+    gap: 8px;
     width: 100%;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row !important;
   }
 
-  /* LINKS DE NAVEGAÇÃO ADAPTADOS TABLET EXPANDE OS ATALHOS PARA LARGURA TOTAL PREVENINDO APERTOS */
+  /* .ACESSO A - RECONFIGURA OS LINKS PARA SE COMPORTAREM COMO ABAS PARALELAS OCUPANDO EXATAMENTE METADE DA LINHA INFERIOR */
   .acesso a {
-    width: 100%;
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(50% - 8px);
+    max-width: 150px;
     text-align: center;
-    max-width: 250px;
+    width: auto !important;
+    margin: 0 !important;
+    display: inline-block;
   }
 
-  /* REAJUSTA O ESPAÇAMENTO DO CONTAINER COMPENSANDO A ALTURA MAIOR DO NOVO CABEÇALHO EM COLUNA */
+  /* .CONTAINER - AMPLIA A DISTÂNCIA DO TOPO DA ÁREA CENTRAL DO PROCESSO COMPENSANDO O CRESCIMENTO DO CABEÇALHO ACUMULADO */
   .container {
-    width: 92%;
-    margin: 180px auto 90px;
+    width: 96%;
+    margin: 175px auto 90px !important;
+    gap: 15px;
+  }
+
+  /* .CARD - COMPACTA OS RECUOS INTERNOS DOS BLOCOS INFORMATIVOS DE ENTREGA E RESUMO */
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  /* .CARD H2 - DIMINUI A FONTE DA SELEÇÃO DE MODALIDADES OU MANCHETES OPERACIONAIS NO MOBILE */
+  .card h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  /* .OPCAO - COMPACTA O PREENCHIMENTO DAS CÁPSULAS DE RADIOS DA RETIRADA OU DESPACHO DOMICILIAR */
+  .opcao {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* .DADOS INPUT[TYPE="TEXT"] - DIMINUI O PREENCHIMENTO INTERNO E A FONTE DOS CAMPOS DE DIGITAÇÃO DE CEP E RUA */
+  .dados input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* #BTNCALCULAR - COMPACTA A ALTURA DO BOTÃO DE CÁLCULO DE FRETE DEIXANDO-O ACESSÍVEL PARA O TOQUE NO CELULAR */
+  #btnCalcular {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* .LINHA - COMPACTA A DISTÂNCIA DAS LINHAS DE PREÇO POR KM E TAXAS FIXAS NO CARD EVITANDO QUEBRAS VERTICAIS DESALINHADAS */
+  .linha {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    font-size: 14px;
+    margin: 8px 0;
+    gap: 0 !important;
+  }
+
+  /* .TOTAL - AJUSTA O TAMANHO DA NOTA DO MONTANTE TOTAL DO PEDIDO CONSOLIDADO NO MOBILE */
+  .total {
+    font-size: 18px;
+  }
+
+  /* #BTNCONTINUAR - EXPANDE O COMANDO DE PROSSEGUIMENTO PARA OCUPAR TODA A LARGURA DA ÁREA ÚTIL DO CONTAINER */
+  #btnContinuar {
+    width: 100% !important;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DO CELULAR */
+  footer {
+    padding: 10px;
+    font-size: 11px;
   }
 }
 
