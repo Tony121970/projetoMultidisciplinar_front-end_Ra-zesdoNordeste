@@ -178,45 +178,21 @@ footer p {
   gap: 8px;
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+/* @MEDIA (MAX-WIDTH: 1200PX) - AJUSTA O ESPAÇAMENTO LATERAL INTERNO DO CABEÇALHO PARA EXIBIÇÃO EM NOTEBOOKS */
 @media (max-width: 1200px) {
-
-  /* BARRA DE TOPO ADAPTADA NOTEBOOK REDUZ O ESPAÇAMENTO LATERAL INTERNO DO MENU SUPERIOR */
   header {
     padding: 0 4%;
   }
 
-  /* BOTÃO DO CABEÇALHO ADAPTADO NOTEBOOK REAJUSTA O POSICIONAMENTO PARA EVITAR CONFLITOS COM O TEXTO */
   header button {
     right: 20px;
   }
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
-@media (max-width: 900px) {
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
 
-  /* BARRA DE TOPO ADAPTADA TABLET REMOVE O POSICIONAMENTO FIXO ABSOLUTO DO BOTÃO PARA PREVENIR SOBREPOSIÇÕES FEIAS */
-  header button {
-    position: static;
-    transform: none;
-    margin-right: 0;
-  }
-
-  /* BARRA DE TOPO ADAPTADA TABLET MODIFICA O ALINHAMENTO DO CABEÇALHO PARA ACOMODAR O BOTÃO LADO A LADO SEM COLISÃO */
-  header {
-    padding: 10px 4%;
-  }
-
-  /* CRIA A MALHA DE CARTÕES ADAPTADA TABLET REAJUSTA A DISTRIBUIÇÃO DO GRID PARA EXIBIR DUAS COLUNAS NAS TELAS INTERMEDIÁRIAS */
-  main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* REGRAS DE ADAPTAÇÃO PARA TELAS DE DISPOSITIVOS MÓVEIS */
-@media (max-width: 600px) {
-  
-  /* REDUZ O ESPAÇAMENTO INTERNO DO CABEÇALHO E EMPILHA OS ELEMENTOS */
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RECUOS INTERNOS COMPACTOS */
   header {
     padding: 15px 10px;
     display: flex;
@@ -224,36 +200,65 @@ footer p {
     gap: 12px;
     align-items: center;
     height: auto;
+    position: sticky !important;
   }
 
-  /* CENTRALIZA VISUALMENTE OS TEXTOS DO TITULO NO MOBILE */
+  /* .TITULO - CENTRALIZA VISUALMENTE TODO O CONTEÚDO DOS TEXTOS IDENTIFICADORES DO CABEÇALHO ADMINISTRATIVO */
   .titulo {
     text-align: center;
   }
 
-  /* REMOVE O POSICIONAMENTO ABSOLUTO DO BOTÃO PARA ELE NÃO CORTAR O TEXTO */
+  /* .TITULO H1 - REDUZ O TAMANHO DO TÍTULO PRINCIPAL NO TOPO DO SISTEMA PARA COOPERAR COM EXIBIÇÕES ESTREITAS */
+  .titulo h1 {
+    font-size: 26px;
+  }
+
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SETOR ADMINISTRATIVO COM AJUSTE DE MARGENS */
+  .titulo h2 {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  /* HEADER BUTTON - ANULA O POSICIONAMENTO ABSOLUTO EVITANDO QUEBRAS E SOBREPOSIÇÕES E LIMITA A LARGURA DO BOTÃO DE SAÍDA */
   header button {
     position: static;
     transform: none;
     width: 100%;
     max-width: 200px;
+    padding: 6px 12px;
+    font-size: 14px;
   }
 
-  /* MUDA A GRADE DOS CARTÕES PARA OCUPAR APENAS UMA COLUNA POR LINHA */
+  /* MAIN - SUBSTITUI A REGRA PADRÃO PARA EXIBIR EXATAMENTE DOIS CARDS DE MÓDULOS LADO A LADO NO MOBILE */
   main {
-    grid-template-columns: 1fr;
-    margin: 20px auto 100px;
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 95%;
+    gap: 12px !important;
+    margin: 20px auto 90px !important;
   }
 
-  /* REDUZ LEVEMENTE O PREENCHIMENTO INTERNO DO CARTÃO */
+  /* .CARD - COMPACTA OS RECUOS INTERNOS DOS BLOCOS COLORIDOS E DIMINUI A ESPESSURA DA BORDA LATERAL DE CONTROLE */
   .card {
-    padding: 15px;
+    padding: 12px;
+    border-left-width: 5px;
+    border-radius: 10px;
   }
 
-  /* ENCOLHE A FONTE DA BARRA DE RODAPÉ */
+  /* .CARD H2 - REDUZ A TIPOGRAFIA DOS TÍTULOS DOS MÓDULOS COMO COZINHA OU PRODUTOS INTERNOS */
+  .card h2 {
+    font-size: 16px;
+    margin-top: 4px;
+  }
+
+  /* .CARD P - DIMINUI O TAMANHO DA DESCRIÇÃO AUXILIAR DE CADA COMPONENTE DE SELEÇÃO */
+  .card p {
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DO CELULAR */
   footer {
-    font-size: 12px;
+    font-size: 11px;
     padding: 10px;
   }
 }
