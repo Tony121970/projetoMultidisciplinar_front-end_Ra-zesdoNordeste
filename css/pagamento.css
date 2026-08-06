@@ -357,6 +357,16 @@ footer p {
     margin-bottom: 0 !important;
   }
 
+    /* .BTN-FIDELIDADE - FORÇA O COMPONENTE AZUL A OCUPAR UMA LINHA ISOLADA ACIMA DOS OUTROS BOTÕES CONSERVANDO LEITURA NO FUNDO ESCURO */
+  .btn-fidelidade {
+    flex: 1 1 100% !important;
+    background: transparent !important;
+    color: #ffd27d !important;
+    font-size: 14px !important;
+    text-decoration: underline !important;
+    height: auto !important;
+  }
+  
   /* .ACESSO - CONSERVA E CONSOLIDA OS BOTÕES DE CONTROLE EM FILAS FLEXÍVEIS ORGANIZADAS HORIZONTALMENTE LADO A LADO */
   .acesso {
     justify-content: center !important;
