@@ -11,6 +11,13 @@ const arquivos = [
   "js/carrinho.js",
 
   "Imagens/appRaizes1.png",
+  "Imagens/Imagem10.png",
+  "Imagens/Imagem11.jpg",
+  "Imagens/Imagem12.jpg",
+  "Imagens/Imagem13.jpg",
+  "Imagens/Imagem16.jpg",
+  "Imagens/nossoArtesanato.jpg",
+  "Imagens/nossoNordeste.jpg",
 ];
 
 self.addEventListener("install", (evento) => {
