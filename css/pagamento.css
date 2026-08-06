@@ -341,34 +341,26 @@ footer p {
     gap: 12px !important;
     text-align: center !important;
     margin: 0 !important;
+    z-index: 1000 !important;
   }
 
   /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DO PAGAMENTO NO MOBILE */
   .titulo h1 {
-    font-size: 24px !important;
+    font-size: 22px !important;
     width: 100% !important;
     text-align: center !important;
   }
 
-  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DE FINALIZAÇÃO OPERACIONAL COOPERANDO COM TELAS MENORES */
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DE FINALIZAÇÃO OPERACIONAL COOPERANDO WITH TELAS MENORES */
   .titulo h2 {
     font-size: 13px !important;
     margin-top: 4px !important;
     margin-bottom: 0 !important;
   }
 
-    /* .BTN-FIDELIDADE - FORÇA O COMPONENTE AZUL A OCUPAR UMA LINHA ISOLADA ACIMA DOS OUTROS BOTÕES CONSERVANDO LEITURA NO FUNDO ESCURO */
-  .btn-fidelidade {
-    flex: 1 1 100% !important;
-    background: transparent !important;
-    color: #ffd27d !important;
-    font-size: 14px !important;
-    text-decoration: underline !important;
-    height: auto !important;
-  }
-  
   /* .ACESSO - CONSERVA E CONSOLIDA OS BOTÕES DE CONTROLE EM FILAS FLEXÍVEIS ORGANIZADAS HORIZONTALMENTE LADO A LADO */
   .acesso {
+    display: flex !important;
     justify-content: center !important;
     gap: 8px !important;
     width: 100% !important;
@@ -393,17 +385,28 @@ footer p {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    height: 32px !important;
+    height: 34px !important;
+    text-decoration: none !important;
   }
 
-  /* .BTN-FIDELIDADE - FORÇA O COMPONENTE AZUL A OCUPAR UMA LINHA ISOLADA ACIMA DOS OUTROS BOTÕES CONSERVANDO LEITURA NO FUNDO ESCURO */
+  /* .BTN-FIDELIDADE - ESTILIZA EXPLICITAMENTE O LINK DO CLUBE COM COR DE DESTAQUE PADRONIZADA IDENTICA AOS DEMAIS */
   .btn-fidelidade {
     flex: 1 1 100% !important;
-    background: transparent !important;
-    color: #ffd27d !important;
-    font-size: 14px !important;
-    text-decoration: underline !important;
-    height: auto !important;
+    background-color: white !important;
+    color: green !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* .BTN-VOLTAR - AJUSTA A COR DO BOTÃO VERDE NO FLUXO MÓVEL */
+  .btn-voltar {
+    background: green !important;
+    color: white !important;
+  }
+
+  /* .BTN-SAIR - AJUSTA A COR DO LINK VERMELHO NO FLUXO MÓVEL */
+  .btn-sair {
+    background: red !important;
+    color: white !important;
   }
 
   /* .CONTAINER - AMPLIA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO O CRESCIMENTO DO CABEÇALHO ACUMULADO DO SMARTPHONE */
@@ -414,7 +417,7 @@ footer p {
     border-radius: 15px !important;
   }
 
-  /* .CONTAINER H1 - RECONFIGURA O TAMANHO DO TEXTO CENTRAL DE MARCAÇÃO DA LOJA DENTRO DO CARD */
+  /* CONTAINER H1 - AJUSTA O TAMANHO DO TÍTULO INTERNO DE CONTEÚDO DENTRO DA ÁREA DO CARD */
   .container h1 {
     font-size: 22px !important;
     margin-bottom: 10px !important;
@@ -444,7 +447,7 @@ footer p {
     font-size: 26px !important;
   }
 
-  /* .LINHA - COMPACTA A DISTÂNCIA E ASSEGURA QUE AS LINHAS DE DADOS SE MANTENHAM PARALELAS LADO A LADO */
+  /* .LINHA - COMPACTA A DISTÂNCIA E ASSEGURA QUE AS LINHAS DE DADOS SE MANTENHAM PARALELAS LADO A LADO SEM QUEBRAS VERTICAIS */
   .linha {
     display: flex !important;
     flex-direction: row !important;
@@ -453,6 +456,7 @@ footer p {
     margin: 8px 0 !important;
     text-align: left !important;
     gap: 0 !important;
+    width: 100% !important;
   }
 
   /* .TOTAL - AJUSTA O TAMANHO DA NOTA DO MONTANTE TOTAL A PAGAR NO CARD COMPACTO */
@@ -466,7 +470,7 @@ footer p {
     margin-top: 8px !important;
   }
 
-  /* LABEL - REORGANIZA AS OPÇÕES DE ESCOLHA DE MARCAÇÃO DE RADIOS COM FONTES COMPACTAS */
+  /* LABEL - REORGANIZA AS OPÇÕES DE ESCOLHA DE MARCAÇÃO DE RADIOS WITH FONTES COMPACTAS */
   label {
     font-size: 15px !important;
     padding: 8px 0 !important;
