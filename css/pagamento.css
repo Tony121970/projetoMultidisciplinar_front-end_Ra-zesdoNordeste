@@ -52,7 +52,6 @@ header {
 }
 
 /* DEFINE AS PROPRIEDADES COMUNS DE FORMATO E ANIMAÇÃO DOS BOTÕES DO TOPO */
-.btn-fidelidade,
 .btn-voltar,
 .btn-sair {
   padding: 8px 16px;
@@ -60,18 +59,6 @@ header {
   text-decoration: none;
   font-weight: bold;
   transition: .3s;
-}
-
-/* CONFIGURA O BOTÃO DE ACESSO AO PROGRAMA DE FIDELIDADE */
-.btn-fidelidade {
-  background: white;
-  color: green;
-}
-
-/* ALTERA A APARÊNCIA DO BOTÃO FIDELIDADE AO PASSAR O MOUSE */
-.btn-fidelidade:hover {
-  background-color: green;
-  color: white;
 }
 
 /* CONFIGURA O BOTÃO VOLTAR */
@@ -330,39 +317,50 @@ footer p {
   }
 }
 
-/* ADAPTA O SISTEMA PARA TABLETS EM MODO RETRATO */
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
 @media (max-width: 768px) {
 
-  /* BARRA DE TOPO ADAPTADA TABLET REAJUSTA O PREENCHIMENTO INTERNO DO TOPO VERTICAL */
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RETIRADA DE COMPORTAMENTOS FLUTUANTES */
   header {
-    padding: 15px;
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+    text-align: center;
+    position: relative !important;
   }
 
-  /* TÍTULO DO CABEÇALHO ADAPTADO TABLET REDUZ A FONTE PRINCIPAL DO PAINEL */
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DO RECEBIMENTO DO PEDIDO NO MOBILE */
   .titulo h1 {
     font-size: 24px;
   }
 
-  /* SUBTÍTULO DO CABEÇALHO ADAPTADO TABLET ENCOLHE O TEXTO COMPLEMENTAR DO TOPO */
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DA ÁREA DO COLABORADOR COOPERANDO COM TELAS MENORES */
   .titulo h2 {
     font-size: 13px;
+    margin-bottom: 0;
   }
 
-  /* TRANSFORMA O MENU DE BOTÕES EM COLUNA */
+  /* .ACESSO - DISTRIBUI OS BOTÕES DE VOLTAR E SAIR EM FLUXO CENTRALIZADO INTEGRAL HORIZONTAL POR TODO O ESPAÇO */
   .acesso {
+    justify-content: center;
+    gap: 8px;
     width: 100%;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row !important;
   }
 
-  /* FAZ OS BOTÕES OCUPAREM TODA A LARGURA DISPONÍVEL DO MENU */
-  .btn-fidelidade,
+  /* .BTN-VOLTAR, .BTN-SAIR - COMPACTA O PREENCHIMENTO INTERNO E DETERMINA QUE CADA COMANDO DO TOPO OCUPE METADE DA LINHA INFERIOR */
   .btn-voltar,
   .btn-sair {
-    width: 100%;
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(50% - 8px);
+    max-width: 100%;
     text-align: center;
-    max-width: 250px;
+    width: auto !important;
+    margin: 0 !important;
   }
+}
 
   /* AJUSTA O ESPAÇAMENTO DO CONTAINER CENTRAL CONTRA SOBREPOSIÇÃO */
   .container {
