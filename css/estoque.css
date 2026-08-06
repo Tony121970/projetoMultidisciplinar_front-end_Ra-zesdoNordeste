@@ -304,7 +304,7 @@ footer p {
   margin: 0;
 }
 
-/* @MEDIA (MAX-WIDTH: 1024PX) - AJUSTA O ESPAÇAMENTO LATERAL INTERNO DO CABEÇALHO PARA EXIBIÇÃO EM NOTEBOOKS OU TABLETS DEITADOS */
+/* @MEDIA (MAX-WIDTH: 1024PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
 @media (max-width: 1024px) {
   header {
     padding: 0 4%;
@@ -322,42 +322,86 @@ footer p {
   header {
     height: auto;
     flex-direction: column;
-    padding: 15px 10px;
-    gap: 15px;
+    padding: 12px 10px;
+    gap: 12px;
     text-align: center;
-    position: sticky !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* .TITULO - CENTRALIZA VISUALMENTE TODO O CONTEÚDO DOS TEXTOS IDENTIFICADORES DO CABEÇALHO */
+  .titulo {
+    text-align: center;
+    width: 100%;
   }
 
   /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DE CONTROLE DE INSUMOS EM TELAS DE SMARTPHONES */
   .titulo h1 {
     font-size: 22px;
+    margin: 0 !important;
   }
 
-  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SETOR ADMINISTRATIVO COOPERANDO COM TELAS MENORES */
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SUBTÍTULO RESTRITO COOPERANDO COM TELAS MENORES */
   .titulo h2 {
     font-size: 13px;
-    margin-bottom: 0;
+    margin: 4px 0 0 !important;
   }
 
-  /* .BTN-VOLTAR - AJUSTA O BOTÃO DE RETORNO DO CABEÇALHO PARA SE ADAPTAR COMO UM COMPONENTE CENTRAL DE LARGURA INTEGRAL */
+  /* .BTN-HEADER, .ACESSO, HEADER BUTTON, .BTN-VOLTAR - CONFIGURA O CONTAINER DE BOTÕES PARA MOSTRAR OS COMANDOS TOTALMENTE ALINHADOS LADO A LADO NA MESMA LINHA HORIZONTAL */
+  .btn-header, .acesso, header button, header .btn-voltar, header .btn-sair {
+    margin-right: 0 !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    padding: 0 4px !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* HEADER BUTTON, .BTN-VOLTAR - DIVIDE O ESPAÇO IGUALMENTE, AJUSTANDO PREENCHIMENTO E ALTURA PARA O CELULAR */
+  header button, .btn-voltar, .btn-sair {
+    flex: 1 !important;
+    padding: 6px 4px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: bold !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 34px !important;
+    max-width: 150px !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* .BTN-VOLTAR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERDE LADO A LADO DO MOBILE */
   .btn-voltar {
-    padding: 6px 20px;
-    font-size: 13px;
-    width: 100%;
-    max-width: 200px;
-    margin: 5px auto 0;
-    text-align: center;
-    position: static;
-    transform: none;
+    background: green !important;
+    color: white !important;
   }
 
-  /* MAIN - AJUSTA AS MARGENS LATERAIS E COMPACTA O RECUO SUPERIOR DA ÁREA CENTRAL DO PAINEL */
+  /* .BTN-SAIR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERMELHO LADO A LADO DO MOBILE CASO EXISTA NO HTML */
+  .btn-sair {
+    background: red !important;
+    color: white !important;
+  }
+
+  /* MAIN - REAJUSTA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO A ALTURA MAIS ENXUTA DO CABEÇALHO COM BOTÕES LADO A LADO */
   main {
+    padding-top: 165px !important;
     margin: 20px auto 80px !important;
     width: 95%;
   }
 
-  /* .TOPO - REORGANIZA A BARRA DE PESQUISA ADICIONANDO ALINHAMENTO COMPACTO E VERTICAL PARA SMARTPHONES */
+  /* .TOPO - REORGANIZA A BARRA DE PESQUISA ADICIONANDO EMPILHAMENTO VERTICAL NO MOBILE */
   .topo {
     flex-direction: column;
     margin-bottom: 20px;
@@ -370,7 +414,7 @@ footer p {
     width: 100%;
   }
 
-  /* #BTNNOVO - COMPACTA A ALTURA DO BOTÃO DE REGISTRO CASO ELE SEJA EXIBIDO E FORÇA O COMPONENTE A TRABALHAR COM LARGURA COMPLETA */
+  /* #BTNNOVO - COMPACTA A ALTURA DO BOTÃO DE REGISTRO E FORÇA O COMPONENTE A TRABALHAR COM LARGURA COMPLETA */
   #btnNovo {
     padding: 10px;
     font-size: 14px;
@@ -378,7 +422,7 @@ footer p {
     text-align: center;
   }
 
-  /* .RESUMO - ADAPTA O CONTAINER DE MÉTRICAS DO ESTOQUE PARA EXIBIÇÃO DE COLUNAS PARALELAS RESPONSIVAS EM VEZ DE COLUNA ÚNICA */
+  /* .RESUMO - ADAPTA O CONTAINER DE MÉTRICAS DO ESTOQUE PARA EXIBIÇÃO DE COLUNAS PARALELAS RESPONSIVAS */
   .resumo {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -474,8 +518,6 @@ footer p {
   }
 }
 
-
-/* DISPOSITIVOS MOBILE INTERMEDIÁRIOS OU SMARTPHONES */
 @media(max-width: 700px) {
 
   /* CABEÇALHO ADAPTADO REORGANIZA OS TEXTOS EM COLUNA EVITANDO QUEBRAS */
