@@ -305,54 +305,121 @@ footer p {
   }
 }
 
-/* ADAPTA O CABEÇALHO E ELEMENTOS PRINCIPAIS PARA TELAS MENORES */
-@media(max-width:768px){
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
 
-  /* CABEÇALHO MOBILE ORGANIZA OS ELEMENTOS EM COLUNA E PROMOVE EXTENSÃO DE ALTURA FLUIDA PREVENINDO VAZAMENTOS */
-  header{
-      flex-direction:column;
-      gap:15px;
-      height: auto;
-      padding: 15px;
-      position: static;
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA DE LINKS */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 12px;
+    position: relative !important;
   }
 
-  /* MENU MOBILE PERMITE QUE OS LINKS QUEBREM LINHA E CENTRALIZA AS OPÇÕES */
-  nav{
-      flex-wrap:wrap;
-      justify-content:center;
-      gap: 15px;
+  /* .LOGO - REDUZ O TAMANHO DA TIPOGRAFIA DO NOME DA MARCA PARA ADAPTAÇÃO VISUAL NO MOBILE */
+  .logo {
+    font-size: 24px;
   }
 
-  /* TÍTULO MOBILE MANTÉM BOA LEITURA EM CELULARES E REDUZ AS MARGENS DO TOPO COMPENSANDO O HEADER ESTÁTICO */
+  /* NAV - DISTRIBUI OS LINKS DE NAVEGAÇÃO LADO A LADO COM ALINHAMENTO CENTRALIZADO EM TODA A LARGURA */
+  nav {
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* NAV A - DIMINUI O TAMANHO DA FONTE DOS LINKS PARA EVITAR QUEBRAS DESALINHADAS DE INTERFACE */
+  nav a {
+    font-size: 14px;
+  }
+
+  /* #CONTADORCARRINHO - AJUSTA A ESCALA E O TAMANHO DA NOTIFICAÇÃO CIRCULAR DO SELETOR DE COMPRAS */
+  #contadorCarrinho {
+    min-width: 18px;
+    height: 18px;
+    line-height: 16px;
+    font-size: 13px;
+  }
+
+  /* .TITULO - COMPACTA OS RECUOS INTERNOS DO TOPO EXPLICATIVO DO PROGRAMA DE FIDELIDADE */
   .titulo {
-      padding: 30px 15px;
+    padding: 25px 15px;
   }
 
-  /* TÍTULO MOBILE AJUSTA O TAMANHO DO ENUNCIADO PRINCIPAL NO TABLET */
-  .titulo h1{
-      font-size:28px;
+  /* .TITULO H1 - REDUZ A TIPOGRAFIA DO TÍTULO PRINCIPAL DO CLUBE DE BENEFÍCIOS DO RESTAURANTE */
+  .titulo h1 {
+    font-size: 24px;
+    margin-top: 10px;
   }
 
-  /* VALOR MOBILE AJUSTA O TAMANHO DO SALDO */
-  .valor{
-      font-size:34px;
+  /* .TITULO P - DIMINUI A FONTE E REDUZ A DISTÂNCIA DO ENUNCIADO COMPLEMENTAR DE MOEDAS */
+  .titulo p {
+    font-size: 15px;
   }
 
-  /* LISTA DE MOVIMENTAÇÕES ADAPTADA TABLET EXPANDE O CONTAINER BRANCO PARA OCUPAR TODA A LARGURA ÚTIL DO PAINEL */
+  /* .CARD-SALDO - COMPACTA A LARGURA MÁXIMA DA CAIXA DE CRÉDITO VISUAL DE CASHBACK */
+  .card-saldo {
+    width: 95%;
+    padding: 15px 10px;
+  }
+
+  /* .CARD-SALDO H2 - DIMINUI O TAMANHO DA FONTE DA MARCAÇÃO DE SALDO DISPONÍVEL NO CARD */
+  .card-saldo h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* .VALOR - REDUZ O TAMANHO DO ENUNCIADO DE VALOR MONETÁRIO DE MOEDAS NO MOBILE */
+  .valor {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+
+  /* .CARD-SALDO P - DIMINUI O TEXTO AUXILIAR DE DESCONTOS DA BASE DO CARD */
+  .card-saldo p {
+    font-size: 13px;
+  }
+
+  /* .CARDS-INFO - MODIFICA A GRADE DO PASSO A PASSO PARA FORÇAR EXATAMENTE DOIS CARDS INFORMATIVOS LADO A LADO */
+  .cards-info {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* .INFO - REDUZ OS ESPAÇAMENTOS INTERNOS DE CADA BLOCO EXPLICATIVO DE RECOMPENSA */
+  .info {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  /* .INFO I - COMPACTA O TAMANHO VISUAL DOS ÍCONES DA CESTA DE COMPRAS, NOTAS OU MOEDAS */
+  .info i {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  /* .INFO H3 - DIMINUI A TIPOGRAFIA DOS ENUNCIADOS DE AÇÕES COMO PAGAMENTOS OU DESCONTOS FUTURE */
+  .info h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  /* .INFO P - DIMINUI A FONTE DA INSTRUÇÃO DOS CARDÁPIOS FAVORITOS DOS CLIENTES */
+  .info p {
+    font-size: 11px;
+  }
+
+  /* #LISTAMOVIMENTOS - REDUZ AS MARGENS DE LARGURA E O PREENCHIMENTO INTERNO DA AREA DE REGISTROS */
   #listaMovimentos {
-      width: 100%;
-      padding: 20px;
+    width: 95%;
+    padding: 15px;
   }
 
-  /* BLOCO DE REGRAS ADAPTADO TABLET PERMITE EXTENSÃO INTEGRAL PARA COMPOR O FLUXO DA TELA */
-  .regras {
-      width: 100%;
-  }
-
-  /* BLOCO DE REGRAS ADAPTADO TABLET COMPACTA OS RECUOS INTERNOS DA LISTA DE DIRETRIZES */
-  .regras ul {
-      padding: 20px;
+  /* .HISTORICO H2 - DIMINUI O TAMANHO DA FONTE DA SEÇÃO DE ÚLTIMAS MOVIMENTAÇÕES DE EXTRATO */
+  .historico h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
   }
 }
 
