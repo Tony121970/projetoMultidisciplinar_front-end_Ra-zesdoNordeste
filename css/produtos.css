@@ -378,43 +378,76 @@ footer p {
 
   /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
   header {
-    height: auto;
-    flex-direction: column;
-    padding: 15px 10px;
-    gap: 15px;
-    text-align: center;
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 12px 10px !important;
+    gap: 12px !important;
+    text-align: center !important;
     position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
   /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DE CONTROLE DE MATERIAIS EM TELAS DE SMARTPHONES */
   .titulo h1 {
-    font-size: 22px;
+    font-size: 22px !important;
+    margin: 0 !important;
   }
 
   /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SETOR ADMINISTRATIVO COOPERANDO COM TELAS MENORES */
   .titulo h2 {
-    font-size: 13px;
+    font-size: 13px !important;
+    margin: 4px 0 0 !important;
   }
 
-  /* .BTN-HEADER - DISTRIBUI OS BOTÕES DE RETORNO E LOGOUT EM FLUXO CENTRALIZADO OCUPANDO TODO O ESPAÇO HORIZONTAL */
+  /* .BTN-HEADER - CONFIGURA O CONTAINER DE BOTÕES PARA MOSTRAR OS DOIS COMANDOS TOTALMENTE ALINHADOS LADO A LADO NA MESMA LINHA HORIZONTAL */
   .btn-header {
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
+    margin-right: 0 !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    padding: 0 4px !important;
   }
 
-  /* .BTN-HEADER BUTTON - COMPACTA O PREENCHIMENTO INTERNO E DETERMINA QUE CADA BOTÃO DO TOPO OCUPE METADE DA LINHA INFERIOR */
+  /* .BTN-HEADER BUTTON - DIVIDE O ESPAÇO IGUALMENTE EM DUAS PARTES, AJUSTANDO PREENCHIMENTO E ALTURA PARA O CELULAR */
   .btn-header button {
-    padding: 6px 12px;
-    font-size: 13px;
-    flex: 1 1 calc(50% - 8px);
-    max-width: 100%;
+    flex: 1 !important;
+    padding: 6px 4px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: bold !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 34px !important;
+    max-width: 150px !important;
+    width: auto !important;
+    margin: 0 !important;
   }
 
-  /* MAIN - AMPLIA O RECUO SUPERIOR COMPENSANDO A ALTURA MAIOR DO NOVO CABEÇALHO ACUMULADO E AJUSTA AS MARGENS LATERAIS */
+  /* .BTN-VOLTAR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERDE LADO A LADO DO MOBILE */
+  .btn-voltar {
+    background: green !important;
+    color: white !important;
+  }
+
+  /* .BTN-SAIR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERMELHO LADO A LADO DO MOBILE */
+  .btn-sair {
+    background: red !important;
+    color: white !important;
+  }
+
+  /* MAIN - REAJUSTA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO A ALTURA MAIS ENXUTA DO CABEÇALHO COM BOTÕES LADO A LADO */
   main {
-    padding-top: 170px;
-    margin-bottom: 70px;
+    padding-top: 165px !important;
+    margin-bottom: 80px !important;
     width: 95%;
   }
 
@@ -446,12 +479,15 @@ footer p {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
     margin-bottom: 20px;
+    flex-direction: row !important;
+    align-items: stretch !important;
   }
 
   /* .BOX - ANULA QUALQUER RESTRIÇÃO HORIZONTAL MÍNIMA GARANTINDO ADAPTAÇÃO E REDUZ RECUOS INTERNOS */
   .box {
     width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
     padding: 12px 8px;
   }
 
@@ -515,8 +551,23 @@ footer p {
     font-size: 12px;
     width: 100% !important;
   }
-}
 
+  /* .MODAL-CONTEUDO - DIMINUI O RECUO INTERNO DA CAIXA FLUTUANTE PARA GANHAR ÁREA ÚTIL EM DISPOSITIVOS MINI */
+  .modal-conteudo {
+    padding: 15px !important;
+  }
+
+  /* .ACOES-MODAL - EMPILHA OS BOTÕES DE SALVAR E CANCELAR VERTICALMENTE PREVENINDO APERTOS */
+  .acoes-modal {
+    flex-direction: column !important;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA DO CELULAR */
+  footer {
+    padding: 10px !important;
+    font-size: 11px !important;
+  }
+}
 
 /* REGRAS DE ADAPTAÇÃO DIRECIONADAS PARA SMARTPHONES E TABLETS */
 @media (max-width: 700px) {
