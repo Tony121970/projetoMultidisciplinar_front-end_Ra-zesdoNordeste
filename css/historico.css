@@ -231,6 +231,102 @@ footer p {
   }
 }
 
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+
+  /* HEADER - ALTERA O TOPO PARA REORGANIZAR O CONTEÚDO EM COLUNA VERTICAL COM ALTURA AUTOMÁTICA E CENTRALIZAÇÃO */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: center;
+    gap: 15px;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DO TEXTO DO TÍTULO PRINCIPAL NO CABEÇALHO PARA ADAPTAÇÃO EM TELAS PEQUENAS */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* .TITULO P - DIMINUI O TAMANHO DO SUBTÍTULO DO CABEÇALHO E CORRIGE A MARGEM INFERIOR DE DISTANCIAMENTO */
+  .titulo p {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  /* HEADER BUTTON - COMPACTA O TAMANHO, MARGEM E PREENCHIMENTO INTERNO DO BOTÃO VOLTAR NO MOBILE */
+  header button {
+    padding: 6px 20px;
+    font-size: 14px;
+    width: auto;
+    margin: 5px auto 0;
+  }
+
+  /* .BTN-HEADER - PERMITE QUE OS BOTÕES DO TOPO QUEBREM LINHA E SE ALINHEM NO CENTRO DO MOBILE */
+  .btn-header {
+      margin-top: 5px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-right: 0;
+      gap: 10px;
+  }
+
+  /* MAIN - AUMENTA O ESPAÇAMENTO DO TOPO DA ÁREA CENTRAL PARA EVITAR QUE O NOVO CABEÇALHO EMPILHADO COBRA O CONTEÚDO */
+  main {
+    margin-top: 150px;
+    margin-bottom: 70px;
+    padding: 10px;
+  }
+
+  /* #LISTAHISTORICO, #LISTAENTREGA - MODIFICA A ESTRUTURA DOS GRIDS PARA EXIBIÇÃO DE DUAS COLUNAS LADO A LADO NO MOBILE */
+  #listaHistorico, #listaEntrega {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 5px;
+  }
+
+  /* .CARD - DIMINUI OS ESPAÇAMENTOS INTERNOS DE CADA BLOCO DE PEDIDO DO HISTÓRICO */
+  .card {
+    padding: 12px;
+  }
+
+  /* .CARD H1 - DIMINUI O TAMANHO DO TEXTO DE SITUAÇÃO OU ALERTAS INTERNOS DO CARD */
+  .card h1 {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .CARD H2, .CARD H3 - REDUZ O TAMANHO DO IDENTIFICADOR DO NÚMERO DO PEDIDO PARA EVITAR QUEBRAS BRUSCAS DE TEXTO */
+  .card h2, .card h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARD P - DIMINUI A FONTE E REDUZ A DISTÂNCIA ENTRE AS LINHAS DE DADOS DO CLIENTE E ENDEREÇO */
+  .card p {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .CARD LI - AJUSTA O ESPAÇAMENTO E TAMANHO DOS NOMES DOS PRODUTOS DENTRO DO HISTÓRICO NO MOBILE */
+  .card li {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  /* .SEMPEDIDOS - AJUSTA O TAMANHO DA FONTE DA MENSAGEM DE ALERTA QUANDO NÃO HÁ REGISTROS */
+  .semPedidos {
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  /* FOOTER - DIMINUI A FONTE DA INFORMAÇÃO ACADÊMICA FIXADA NO RODAPÉ */
+  footer {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
 /* ADAPTAÇÃO DIRECIONADA PARA SMARTPHONES EM GERAL */
 @media(max-width: 600px) {
 
