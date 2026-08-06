@@ -14,18 +14,17 @@
       <div class="logo">Raízes do Nordeste</div>
 
       <nav class="menu">
-        
-        <a href="cadastro.html">Cadastro</a>
+        <a href="../cadastro.html">Cadastro</a>
         <a href="../index.html">Início</a>
-     
       </nav>
     </header>
 
-    <h1>Recuperar Senha&nbsp;&nbsp;&nbsp;</h1>
-
     <!-- FORMULÁRIO DE REDEFINIÇÃO QUE DISPARA A FUNÇÃO JAVASCRIPT AO ENVIAR -->
     <form onsubmit="redefinirSenha(event)" autocomplete="off">
-      <!-- INPUTS DE CREDENCIAIS OBRIGATÓRIAS COM PREVENÇÃO DE PREENCHIMENTO AUTOMÁTICO -->
+      <!-- O TEXTO AGORA FICA AQUI DENTRO DO FORMULÁRIO NO TOPO -->
+      <h1>Recuperar Senha</h1>
+
+      <!-- INPUTS DE CREDENCIAIS OBRIGATÓRIAS -->
       <input
         type="email"
         id="email"
@@ -42,7 +41,7 @@
       />
 
       <!-- DISPARADOR DO ENVIO DOS NOVOS DADOS DE ACESSO -->
-      <button type="submit">Redefinir senha</button>
+      <button type="submit">Redefinir</button>
 
       <!-- ESPAÇO RESERVADO PARA EXIBIÇÃO DE MENSAGENS DE NOTIFICAÇÃO -->
       <p id="mensagem"></p>
@@ -59,7 +58,7 @@
       </p>
     </footer>
 
-    <!-- INCLUSÃO DA LÓGICA DE COMPORTAMENTO E TRATAMENTO DA ALTERAÇÃO DE SENHA -->
+    <!-- INCLUSÃO DA LÓGICA DE COMPORTAMENTO -->
     <script src="../js/alertas.js"></script>
     <script src="../js/recuperar-senha.js"></script>
   </body>
