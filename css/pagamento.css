@@ -314,34 +314,42 @@ footer p {
 /* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
 @media (max-width: 768px) {
 
-  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RETIRADA DE COMPORTAMENTOS FLUTUANTES */
+  /* HEADER - FORÇA O COMPONENTE A FICAR FIXADO COM LARGURA TOTAL ABSOLUTA E ABAS ZERADAS COBRINDO DE PONTA A PONTA */
   header {
-    height: auto;
-    flex-direction: column;
-    padding: 15px 10px;
-    gap: 15px;
-    text-align: center;
     position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 15px 10px !important;
+    gap: 12px !important;
+    text-align: center !important;
+    margin: 0 !important;
   }
 
   /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DO PAGAMENTO NO MOBILE */
   .titulo h1 {
-    font-size: 24px;
+    font-size: 24px !important;
+    width: 100% !important;
+    text-align: center !important;
   }
 
-  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DE FINALIZAÇÃO OPERACIONAL COOPERANDO WITH TELAS MENORES */
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DE FINALIZAÇÃO OPERACIONAL COOPERANDO COM TELAS MENORES */
   .titulo h2 {
-    font-size: 13px;
-    margin-bottom: 0;
+    font-size: 13px !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
   }
 
-  /* .ACESSO - DISTRIBUI OS BOTÕES DE FORMA TOTALMENTE LADO A LADO E EM FILAS FLEXÍVEIS ORGANIZADAS HORIZONTALMENTE */
+  /* .ACESSO - CONSERVA E CONSOLIDA OS BOTÕES DE CONTROLE EM FILAS FLEXÍVEIS ORGANIZADAS HORIZONTALMENTE LADO A LADO */
   .acesso {
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
     flex-wrap: wrap !important;
     flex-direction: row !important;
+    margin: 0 auto !important;
   }
 
   /* .ACESSO A, .ACESSO BUTTON - RECONFIGURA OS TRÊS ATALHOS DO TOPO PARA TRABALHAREM COMO BOTÕES PARALELOS EQUILIBRADOS */
@@ -350,17 +358,17 @@ footer p {
     padding: 6px 12px !important;
     font-size: 13px !important;
     flex: 1 1 calc(50% - 8px) !important;
-    max-width: 100%;
-    text-align: center;
+    max-width: 100% !important;
+    text-align: center !important;
     width: auto !important;
     margin: 0 !important;
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 32px;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: bold !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 32px !important;
   }
 
   /* .BTN-FIDELIDADE - FORÇA O COMPONENTE AZUL A OCUPAR UMA LINHA ISOLADA ACIMA DOS OUTROS BOTÕES CONSERVANDO LEITURA NO FUNDO ESCURO */
@@ -375,34 +383,40 @@ footer p {
 
   /* .CONTAINER - AMPLIA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO O CRESCIMENTO DO CABEÇALHO ACUMULADO DO SMARTPHONE */
   .container {
-    width: 95%;
+    width: 95% !important;
     margin: 195px auto 90px !important;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 20px !important;
+    border-radius: 15px !important;
+  }
+
+  /* .CONTAINER H1 - RECONFIGURA O TAMANHO DO TEXTO CENTRAL DE MARCAÇÃO DA LOJA DENTRO DO CARD */
+  .container h1 {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
   }
 
   /* .CARD - COMPACTA OS RECUOS INTERNOS DOS BLOCOS INFORMATIVOS DE VALORES E CASHBACK */
   .card {
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    padding: 15px !important;
+    border-radius: 12px !important;
+    margin-bottom: 15px !important;
   }
 
   /* .CARD H2 - DIMINUI O TAMANHO DA MANCHETE DAS SEÇÕES DE FORMA DE PAGAMENTO OU RESUMOS */
   .card h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
   }
 
   /* .CARD H3 - REDUZ OS SUBTÍTULOS INTERNOS DE TEXTOS DE SALDO ATUAL DO CLIENTE */
   .card h3 {
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 14px !important;
+    margin-top: 10px !important;
   }
 
   /* .SALDO - REDUZ A FONTE DO MONTANTE NUMÉRICO DE MOEDAS ACUMULADAS NO CARD */
   .saldo {
-    font-size: 26px;
+    font-size: 26px !important;
   }
 
   /* .LINHA - COMPACTA A DISTÂNCIA E ASSEGURA QUE AS LINHAS DE DADOS SE MANTENHAM PARALELAS LADO A LADO */
@@ -410,27 +424,27 @@ footer p {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
-    font-size: 14px;
-    margin: 8px 0;
+    font-size: 14px !important;
+    margin: 8px 0 !important;
     text-align: left !important;
     gap: 0 !important;
   }
 
   /* .TOTAL - AJUSTA O TAMANHO DA NOTA DO MONTANTE TOTAL A PAGAR NO CARD COMPACTO */
   .total {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 
   /* .CASHBACK - REDUZ A TIPOGRAFIA DA EXIBIÇÃO DE RETORNO FUTURO DE CRÉDITOS DO PEDIDO */
   .cashback {
-    font-size: 20px;
-    margin-top: 8px;
+    font-size: 20px !important;
+    margin-top: 8px !important;
   }
 
   /* LABEL - REORGANIZA AS OPÇÕES DE ESCOLHA DE MARCAÇÃO DE RADIOS COM FONTES COMPACTAS */
   label {
-    font-size: 15px;
-    padding: 8px 0;
+    font-size: 15px !important;
+    padding: 8px 0 !important;
     text-align: left !important;
   }
 
@@ -456,8 +470,8 @@ footer p {
 
   /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DO CELULAR */
   footer {
-    font-size: 11px;
-    padding: 10px;
+    font-size: 11px !important;
+    padding: 10px !important;
   }
 }
 
