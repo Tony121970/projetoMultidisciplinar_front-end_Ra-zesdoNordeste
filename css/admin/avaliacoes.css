@@ -172,12 +172,115 @@ footer p{
   gap:8px;
 }
 
-/* AJUSTA A QUANTIDADE DE COLUNAS DOS CARDS DE AVALIAÇÕES CONFORME A REDUÇÃO DA LARGURA DA TELA. */
-@media(max-width:1200px){
-  .container{
-    width:90%;
+/* @MEDIA (MAX-WIDTH: 1200PX) - AJUSTA O ESPAÇAMENTO LATERAL INTERNO DO CONTÊINER PRINCIPAL PARA TELAS DE NOTEBOOKS */
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
   }
 }
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RETIRADA DE COMPORTAMENTOS ABSOLUTOS */
+  header {
+    padding: 15px 10px;
+    height: auto;
+    gap: 12px;
+  }
+
+  /* HEADER H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DE FEEDBACKS NO SMARTPHONE */
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+
+  /* HEADER BUTTON - ANULA O POSICIONAMENTO ABSOLUTO DE CANTO EVITANDO QUEBRAS E CENTRALIZA O BOTÃO DE RETORNO COM LARGURA FIXA */
+  header button {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 150px;
+    padding: 6px 12px;
+    font-size: 13px;
+    margin: 0 auto;
+  }
+
+  /* .CONTAINER - AJUSTA AS MARGENS LATERAIS DA ÁREA CENTRAL E AMPLIA O ESPAÇAMENTO INFERIOR PREVENINDO ENCOBRIMENTO PELO RODAPÉ */
+  .container {
+    width: 96%;
+    margin: 15px auto 100px auto;
+  }
+
+  /* .RESUMO - MODIFICA A GRADE DE ESTRELAS SUPERIORES PARA EXIBIR EXATAMENTE DOIS BLOCOS DE NOTAS LADO A LADO */
+  .resumo {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 20px;
+  }
+
+  /* .CARDRESUMO - COMPACTA OS RECUOS INTERNOS E A ESPESSURA DA BORDA SUPERIOR DE DESTAQUE DOS INDICADORES DE NOTAS */
+  .cardResumo {
+    padding: 10px 6px;
+    border-top-width: 4px;
+  }
+
+  /* .CARDRESUMO H3 - DIMINUI A TIPOGRAFIA DOS ENUNCIADOS DE QUANTIDADES DE ESTRELAS NO MOBILE */
+  .cardResumo h3 {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARDRESUMO SPAN - DIMINUI O TAMANHO DOS CONTADORES NUMÉRICOS GRANDES DE QUANTIDADES DE NOTAS DETECTADAS */
+  .cardResumo span {
+    font-size: 20px;
+  }
+
+  /* #LISTAAVALIACOES - SUBSTITUI A REGRA PADRÃO PARA FORÇAR EXATAMENTE DOIS CARDS DE COMENTÁRIOS DOS CLIENTES LADO A LADO */
+  #listaAvaliacoes {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* .CARD-AVALIACAO - REDUZ OS ESPAÇAMENTOS INTERNOS DE CADA BLOCO DE DEPOIMENTO E LIMITA A ESPESSURA DA BORDA LATERAL */
+  .card-avaliacao {
+    padding: 10px;
+    border-left-width: 5px;
+    border-radius: 10px;
+  }
+
+  /* .CARD-AVALIACAO H2 - DIMINUI O TAMANHO DO TEXTO DE IDENTIFICAÇÃO DO CÓDIGO DO PEDIDO EVITANDO QUEBRAS DESALINHADAS */
+  .card-avaliacao h2 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARD-AVALIACAO P - DIMINUI A FONTE E REDUZ A DISTÂNCIA ENTRE AS LINHAS DE COMENTÁRIOS E DADOS DE HORÁRIOS */
+  .card-avaliacao p {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .ESTRELAS - COMPACTA O TAMANHO VISUAL E REDUZ O ESPAÇAMENTO INFERIOR DOS SÍMBOLOS DE ESTRELAS DE NOTAS */
+  .estrelas {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  /* .EXCLUIR - RECONFIGURA O PREENCHIMENTO INTERNO E COMPACTA A FONTE DO COMANDO DE REMOÇÃO DE REGISTRO DO CARD */
+  .excluir {
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DO CELULAR */
+  footer {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
 
 /* REDUZ A QUANTIDADE DE COLUNAS DOS CARDS PARA FACILITAR A VISUALIZAÇÃO EM TELAS MENORES. */
 @media(max-width:900px){
