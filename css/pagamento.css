@@ -277,10 +277,8 @@ footer p {
 }
 
 
-/* ADAPTA O LAYOUT PARA NOTEBOOKS E TABLETS COM TELAS MENORES */
+/* @MEDIA (MAX-WIDTH: 992PX) - AJUSTA OS RECUOS E ESPAÇAMENTOS DO CONTAINER PRINCIPAL PARA TELAS DE NOTEBOOKS OU COMPUTADORES */
 @media (max-width: 992px) {
-
-  /* ORGANIZA O CABEÇALHO EM COLUNA PARA EVITAR QUE OS ELEMENTOS FIQUEM APERTADOS */
   header {
     padding: 15px 4%;
     flex-direction: column;
@@ -289,19 +287,16 @@ footer p {
     height: auto;
   }
 
-  /* TÍTULO DO CABEÇALHO ADAPTADO NOTEBOOK AJUSTA A TIPOGRAFIA DA LOGOMARCA */
   .titulo h1 {
     font-size: 28px;
   }
 
-  /* PERMITE QUE OS BOTÕES DO MENU QUEBREM LINHA QUANDO NECESSÁRIO */
   .acesso {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
   }
 
-  /* AJUSTA O TAMANHO DO CONTAINER PRINCIPAL PARA TELAS MENORES COMPENSANDO O HEADER */
   .container {
     width: 92%;
     max-width: 700px;
@@ -309,7 +304,6 @@ footer p {
     padding: 25px;
   }
 
-  /* AUMENTA A LARGURA DOS BOTÕES PRINCIPAIS PARA MELHOR USABILIDADE */
   .btn-moedas,
   .confirmar,
   #btnWhatsapp {
@@ -327,78 +321,142 @@ footer p {
     padding: 15px 10px;
     gap: 15px;
     text-align: center;
-    position: relative !important;
+    position: fixed !important;
   }
 
-  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DO RECEBIMENTO DO PEDIDO NO MOBILE */
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DO PAGAMENTO NO MOBILE */
   .titulo h1 {
     font-size: 24px;
   }
 
-  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DA ÁREA DO COLABORADOR COOPERANDO COM TELAS MENORES */
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO SUBTÍTULO DE FINALIZAÇÃO OPERACIONAL COOPERANDO WITH TELAS MENORES */
   .titulo h2 {
     font-size: 13px;
     margin-bottom: 0;
   }
 
-  /* .ACESSO - DISTRIBUI OS BOTÕES DE VOLTAR E SAIR EM FLUXO CENTRALIZADO INTEGRAL HORIZONTAL POR TODO O ESPAÇO */
+  /* .ACESSO - DISTRIBUI OS BOTÕES DE FORMA TOTALMENTE LADO A LADO E EM FILAS FLEXÍVEIS ORGANIZADAS HORIZONTALMENTE */
   .acesso {
     justify-content: center;
     gap: 8px;
     width: 100%;
+    flex-wrap: wrap !important;
     flex-direction: row !important;
   }
 
-  /* .BTN-VOLTAR, .BTN-SAIR - COMPACTA O PREENCHIMENTO INTERNO E DETERMINA QUE CADA COMANDO DO TOPO OCUPE METADE DA LINHA INFERIOR */
-  .btn-voltar,
-  .btn-sair {
-    padding: 6px 12px;
-    font-size: 13px;
-    flex: 1 1 calc(50% - 8px);
+  /* .ACESSO A, .ACESSO BUTTON - RECONFIGURA OS TRÊS ATALHOS DO TOPO PARA TRABALHAREM COMO BOTÕES PARALELOS EQUILIBRADOS */
+  .acesso a,
+  .acesso button {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    flex: 1 1 calc(50% - 8px) !important;
     max-width: 100%;
     text-align: center;
     width: auto !important;
     margin: 0 !important;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
   }
-}
 
-  /* AJUSTA O ESPAÇAMENTO DO CONTAINER CENTRAL CONTRA SOBREPOSIÇÃO */
+  /* .BTN-FIDELIDADE - FORÇA O COMPONENTE AZUL A OCUPAR UMA LINHA ISOLADA ACIMA DOS OUTROS BOTÕES CONSERVANDO LEITURA NO FUNDO ESCURO */
+  .btn-fidelidade {
+    flex: 1 1 100% !important;
+    background: transparent !important;
+    color: #ffd27d !important;
+    font-size: 14px !important;
+    text-decoration: underline !important;
+    height: auto !important;
+  }
+
+  /* .CONTAINER - AMPLIA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO O CRESCIMENTO DO CABEÇALHO ACUMULADO DO SMARTPHONE */
   .container {
     width: 95%;
-    margin: 220px auto 90px;
+    margin: 195px auto 90px !important;
     padding: 20px;
+    border-radius: 15px;
   }
 
-  /* REDUZ O TAMANHO DOS VALORES PRINCIPAIS */
-  .saldo {
-    font-size: 28px;
+  /* .CARD - COMPACTA OS RECUOS INTERNOS DOS BLOCOS INFORMATIVOS DE VALORES E CASHBACK */
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
   }
 
-  /* REDUZ O TAMANHO DO TEXTO DE CASHBACK */
-  .cashback {
-    font-size: 24px;
-  }
-
-  /* AJUSTA AS LINHAS DE INFORMAÇÃO */
-  .linha {
+  /* .CARD H2 - DIMINUI O TAMANHO DA MANCHETE DAS SEÇÕES DE FORMA DE PAGAMENTO OU RESUMOS */
+  .card h2 {
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
-  /* DIMINUI O TAMANHO DO TOTAL DA COMPRA */
+  /* .CARD H3 - REDUZ OS SUBTÍTULOS INTERNOS DE TEXTOS DE SALDO ATUAL DO CLIENTE */
+  .card h3 {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* .SALDO - REDUZ A FONTE DO MONTANTE NUMÉRICO DE MOEDAS ACUMULADAS NO CARD */
+  .saldo {
+    font-size: 26px;
+  }
+
+  /* .LINHA - COMPACTA A DISTÂNCIA E ASSEGURA QUE AS LINHAS DE DADOS SE MANTENHAM PARALELAS LADO A LADO */
+  .linha {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    font-size: 14px;
+    margin: 8px 0;
+    text-align: left !important;
+    gap: 0 !important;
+  }
+
+  /* .TOTAL - AJUSTA O TAMANHO DA NOTA DO MONTANTE TOTAL A PAGAR NO CARD COMPACTO */
   .total {
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  /* EXPANDE OS BOTÕES PARA FACILITAR O TOQUE EM TELAS MENORES */
+  /* .CASHBACK - REDUZ A TIPOGRAFIA DA EXIBIÇÃO DE RETORNO FUTURO DE CRÉDITOS DO PEDIDO */
+  .cashback {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+  /* LABEL - REORGANIZA AS OPÇÕES DE ESCOLHA DE MARCAÇÃO DE RADIOS COM FONTES COMPACTAS */
+  label {
+    font-size: 15px;
+    padding: 8px 0;
+    text-align: left !important;
+  }
+
+  /* .BTN-MOEDAS, .CONFIRMAR, #BTNWHATSAPP - EXPANDE OS TRÊS BOTÕES DE FINALIZAÇÃO PARA ASSUMIREM LARGURA INTEGRAL */
   .btn-moedas,
   .confirmar,
   #btnWhatsapp {
-    width: 100%;
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 15px !important;
+    border-radius: 8px !important;
+    margin: 0 auto 10px !important;
+    display: block !important;
   }
 
-  /* REDUZ O TAMANHO DO RODAPÉ */
+  /* #BTNWHATSAPP - CONFIGURAÇÃO ADICIONAL DE CENTRALIZAÇÃO DO CONTEÚDO E ÍCONE DO WHATSAPP NO MOBILE */
+  #btnWhatsapp {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DO CELULAR */
   footer {
-    font-size: 12px;
+    font-size: 11px;
     padding: 10px;
   }
 }
