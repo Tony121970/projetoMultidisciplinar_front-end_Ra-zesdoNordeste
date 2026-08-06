@@ -16,6 +16,7 @@ const arquivos = [
   "Imagens/Imagem12.jpg",
   "Imagens/Imagem13.jpg",
   "Imagens/Imagem16.jpg",
+  "Imagens/Imagem19.png",
   "Imagens/nossoArtesanato.jpg",
   "Imagens/nossoNordeste.jpg",
 ];
