@@ -318,6 +318,104 @@ footer p {
   }
 }
 
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+
+  /* HEADER - ALTERA O TOPO PARA REORGANIZAR O CONTEÚDO EM COLUNA VERTICAL COM ALTURA AUTOMÁTICA E CENTRALIZAÇÃO */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: center;
+    gap: 15px;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DO TEXTO DO TÍTULO PRINCIPAL NO CABEÇALHO PARA ADAPTAÇÃO EM TELAS PEQUENAS */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* .TITULO P - DIMINUI O TAMANHO DO SUBTÍTULO DO CABEÇALHO E CORRIGE A MARGEM INFERIOR DE DISTANCIAMENTO */
+  .titulo p {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  /* HEADER BUTTON - COMPACTA O TAMANHO, MARGEM E PREENCHIMENTO INTERNO DO BOTÃO VOLTAR NO MOBILE */
+  header button {
+    padding: 6px 20px;
+    font-size: 14px;
+    width: auto;
+    margin: 5px auto 0;
+  }
+
+  /* MAIN - AUMENTA O ESPAÇAMENTO DO TOPO DA ÁREA CENTRAL PARA EVITAR QUE O NOVO CABEÇALHO EMPILHADO COBRA O CONTEÚDO */
+  main {
+    padding: 20px 10px 80px;
+  }
+
+  /* #LISTAMEUSPEDIDOS - MODIFICA A ESTRUTURA DA GRADE PARA EXIBIÇÃO DE DUAS COLUNAS LADO A LADO NO MOBILE */
+  #listaMeusPedidos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 5px;
+  }
+
+  /* .CARD-PEDIDO - DIMINUI OS ESPAÇAMENTOS INTERNOS E A ESPESSURA DA BORDA DE DESTAQUE LATERAL DE CADA CARD */
+  .card-pedido {
+    padding: 12px;
+    border-left-width: 4px;
+  }
+
+  /* .CARD-PEDIDO H3 - REDUZ O TAMANHO DO IDENTIFICADOR DO NÚMERO DO PEDIDO PARA EVITAR QUEBRAS BRUSCAS DE TEXTO */
+  .card-pedido h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  /* H4 - REDUZ O TAMANHO DOS TEXTOS DE ALERTA OU TÍTULOS SECUNDÁRIOS DENTRO DO CARD */
+  h4 {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+
+  /* .CARD-PEDIDO P - DIMINUI A FONTE E REDUZ A DISTÂNCIA ENTRE AS LINHAS DE DADOS DO CLIENTE E ITENS */
+  .card-pedido p {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .PROGRESSO - REDUZ O ESPAÇAMENTO ENTRE AS CÁPSULAS DE STATUS DO PEDIDO NO MOBILE */
+  .progresso {
+    gap: 4px;
+    margin-top: 10px;
+  }
+
+  /* .ETAPA - COMPACTA O PREENCHIMENTO E REDUZ A FONTE DAS CÁPSULAS DE STATUS PARA CABEREM EM DUAS COLUNAS DO CARD */
+  .etapa {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+
+  /* .BARRA-PROGRESSO - DIMINUI O ESPAÇAMENTO SUPERIOR DA LINHA HORIZONTAL DE RASTREIO */
+  .barra-progresso {
+    margin-top: 15px;
+  }
+
+  /* .PONTO SPAN - REDUZ O DIÂMETRO DOS CÍRCULOS DE PROGRESSO PARA SE ADEQUAREM AO TAMANHO DO CARD */
+  .ponto span {
+    width: 12px;
+    height: 12px;
+    margin: 0 auto 4px;
+  }
+
+  /* .PONTO SMALL - REDUZ A TIPOGRAFIA DAS LEGENDAS ABAIXO DOS CÍRCULOS DE PROGRESSO */
+  .ponto small {
+    font-size: 9px;
+  }
+}
+
+
 /* TRANSFORMA A LISTA EM UMA COLUNA ÚNICA E ESTICA OS BOTÕES PARA CELULARES */
 @media (max-width: 600px) {
   
