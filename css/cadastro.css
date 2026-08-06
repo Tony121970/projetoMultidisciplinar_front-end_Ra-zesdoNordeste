@@ -207,6 +207,121 @@ footer p {
   }
 }
 
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* BODY - DESATIVA O ALINHAMENTO FLEXBOX ABSOLUTO RECONFIGURANDO O FLUXO VERTICAL DA TELA MÓVEL */
+  body {
+    display: block !important;
+    height: auto !important;
+    min-height: 100vh;
+    padding: 130px 15px 80px !important;
+  }
+
+  /* .HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 12px 10px;
+    gap: 10px;
+    text-align: center;
+    position: fixed !important;
+    width: 100%;
+  }
+
+  /* .LOGO - REDUZ O TAMANHO DA TIPOGRAFIA DO NOME DA MARCA NO CABEÇALHO E REMOVE MARGENS LATERAIS */
+  .logo {
+    font-size: 24px;
+    margin-left: 0 !important;
+  }
+
+  /* .BOTOES-HEADER - DISTRIBUI O GRUPO DE BOTÕES DE MANEIRA HORIZONTAL INTEGRAL POR TODO O ESPAÇO DISPONÍVEL */
+  .botoes-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* .BTN-HEADER - COMPACTA O PREENCHIMENTO INTERNO DO BOTÃO DE SAÍDA E CENTRALIZA SUA LARGURA MÁXIMA NO TOPO */
+  .btn-header {
+    padding: 6px 20px !important;
+    font-size: 13px !important;
+    margin-right: 0 !important;
+    width: auto;
+    max-width: 150px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  /* .CONTAINER - AJUSTA O ESPAÇAMENTO EXTERNO DESTA SEÇÃO COMPENSANDO O ENCOLHIMENTO DO HEADER VERTICAL */
+  .container {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* .FORM-BOX - ADAPTA A LARGURA DA CAIXA DO FORMULÁRIO ÀS BORDAS DA TELA DO CELULAR E COMPACTA O PREENCHIMENTO */
+  .form-box {
+    width: 100% !important;
+    max-width: 360px !important;
+    padding: 20px 15px !important;
+    border-radius: 12px;
+    margin: 0 auto;
+  }
+
+  /* H1 - REDUZ A TIPOGRAFIA DO TEXTO DO ENUNCIADO DE CADASTRO DO MÓDULO DO CLIENTE */
+  h1 {
+    font-size: 22px !important;
+    margin-bottom: 12px;
+  }
+
+  /* FORM - COMPACTA A DISTÂNCIA ENTRE OS CAMPOS DO FORMULÁRIO DE CADASTRO */
+  form {
+    gap: 8px;
+  }
+
+  /* INPUT - COMPACTA OS ESPAÇAMENTOS DE PREENCHIMENTO INTERNO DAS CAIXAS DE DIGITAÇÃO DOS CLIENTES */
+  input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* .LGPD-CONTAINER - AJUSTA O RECUO DAS OPÇÕES DA CAIXA DE SELEÇÃO DA LGPD NO MÓDULO COMPACTO */
+  .lgpd-container {
+    margin: 10px 0 !important;
+    gap: 6px !important;
+  }
+
+  /* .LGPD-CONTAINER LABEL - DIMINUI O TAMANHO DA LETRA DA NOTIFICAÇÃO DA POLÍTICA DE PRIVACIDADE DO CLIENTE */
+  .lgpd-container label {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* BUTTON - RECONFIGURA O COMPONENTE PRINCIPAL DE ENVIO COM PREENCHIMENTO E FONTES ADEQUADAS AO TOQUE */
+  button {
+    padding: 10px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+  }
+
+  /* #MSG - REDUZ O ESPAÇAMENTO DA MENSAGEM VERMELHA DE REJEIÇÃO OU SUCESSO DO CADASTRO */
+  #msg {
+    margin-top: 6px;
+    font-size: 11px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA */
+  footer {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
+
 /* AJUSTES DE CELULAR ADAPTA A PÁGINA PARA TELAS PEQUENAS MANTENDO O FORMULÁRIO WITH TAMANHO COMPACTO */
 @media (max-width: 600px) {
 

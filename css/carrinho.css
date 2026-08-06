@@ -348,23 +348,19 @@ footer p{
 }
 
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+/* @MEDIA (MAX-WIDTH: 1200PX) - AJUSTA O ALINHAMENTO PARA COLUNA PARA O RESUMO IR PARA BAIXO DOS PRODUTOS EM NOTEBOOKS */
 @media (max-width: 1200px) {
-
-  /* CONTAINER PRINCIPAL ADAPTADO NOTEBOOK MUDA O ALINHAMENTO PARA COLUNA PARA O RESUMO IR PARA BAIXO DOS PRODUTOS */
   .container {
     flex-direction: column;
     align-items: center;
     gap: 30px;
   }
 
-  /* LISTA DE PRODUTOS ADAPTADA NOTEBOOK EXPANDE A LISTA DE CARDS PARA OCUPAR TODA A LARGURA DA TELA */
   #listaCarrinho {
     width: 100%;
     justify-content: center;
   }
 
-  /* RESUMO RESPONSIVO NOTEBOOK FAZ O CARD DE RESUMO OCUPAR A LARGURA COMPLETA E DESATIVA O EFEITO GRUDADO */
   .resumo {
     width: 100%;
     position: static;
@@ -444,6 +440,187 @@ footer p{
     padding: 20px;
   }
 }
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RECUOS INTERNOS COMPACTOS */
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 10px;
+    gap: 10px;
+    position: fixed !important;
+  }
+
+  /* .LOGO - REDUZ O TAMANHO DA TIPOGRAFIA DO NOME DA MARCA PARA ADAPTAÇÃO VISUAL NO MOBILE */
+  .logo {
+    font-size: 24px;
+    margin-left: 0;
+  }
+
+  /* HEADER H1 - DIMINUI A TIPOGRAFIA DO TÍTULO DO MEU CARRINHO COOPERANDO COM TELAS MENORES */
+  header h1 {
+    font-size: 20px;
+  }
+
+  /* NAV - DISTRIBUI OS LINKS DE NAVEGAÇÃO LADO A LADO COM ALINHAMENTO CENTRALIZADO EM TODA A LARGURA */
+  nav {
+    margin-top: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 0;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* NAV A - DIMINUI O TAMANHO DA FONTE DOS LINKS PARA EVITAR QUEBRAS DESALINHADAS DE INTERFACE */
+  nav a {
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  /* .BTN-VOLTAR - COMPACTA O PREENCHIMENTO INTERNO E REDUZ A MARGEM DO BOTÃO DE RETORNO DO MOBILE */
+  .btn-voltar {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+
+  /* .CONTAINER - COMPENSA O ESPAÇAMENTO DO TOPO JÁ QUE O CABEÇALHO MOBILE FICOU MAIOR E REDUZ AS MARGENS BORDAS */
+  .container {
+    width: 96%;
+    margin-top: 175px;
+    margin-bottom: 100px;
+    gap: 15px;
+  }
+
+  /* .CONTAINER H1 - ANULA A EXIBIÇÃO DUPLICADA DO ENUNCIADO CASO ELE COMPOR O FLUXO INFERIOR */
+  .container h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* #LISTACARRINHO - MODIFICA A ESTRUTURA PARA MANTER EXATAMENTE DOIS CARDS DE PRODUTOS SELECIONADOS LADO A LADO */
+  #listaCarrinho {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+
+  /* .ITEM-CARRINHO - ADAPTA O LAYOUT PARA FORMATO VERTICAL COMPACTO PARA CABER NO GRID E REDUZ RECUOS */
+  .item-carrinho {
+    flex-direction: column !important;
+    text-align: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  /* .ITEM-CARRINHO IMG - CONFIGURA A IMAGEM DO PRODUTO COMO ENQUADRAMENTO QUADRADO PROPORCIONAL AO CARD */
+  .item-carrinho img {
+    width: 100% !important;
+    height: 110px !important;
+    border-radius: 8px;
+  }
+
+  /* .INFO-PRODUTO - EXPANDE O BLOCO DE TEXTO PARA OCUPAR TODA A LARGURA UTIL DO CARD COMPACTO */
+  .info-produto {
+    width: 100%;
+  }
+
+  /* .INFO-PRODUTO H3 - DIMINUI A TIPOGRAFIA DOS NOMES DOS PRATOS COMO TAPIOCA OU CUSCUZ */
+  .info-produto h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  /* .PRECO - REDUZ O TAMANHO DA LETRA DO VALOR UNITÁRIO DO PRODUTO */
+  .preco {
+    font-size: 14px;
+  }
+
+  /* .CONTROLE - CENTRALIZA OS BOTÕES DE QUANTIDADE E DIMINUI O ESPAÇAMENTO INTERNO DO CARD */
+  .controle {
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  /* .CONTROLE BUTTON - COMPACTA O DIÂMETRO DOS BOTÕES CIRCULARES DE MAIS E MENOS QUANTIDADE */
+  .controle button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  /* .QUANTIDADE - DIMINUI O TAMANHO DO TEXTO DO NÚMERO DO CONTADOR DE ITENS */
+  .quantidade {
+    font-size: 14px;
+  }
+
+  /* .SUBTOTAL - AJUSTA O DESTAQUE VISUAL DO VALOR DA SOMA DO ITEM NO MOBILE */
+  .subtotal {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  /* .BTN-REMOVER - CENTRALIZA O BOTÃO DE EXCLUSÃO DA LIXEIRA NA BASE DO CARD VERTICALIZADO */
+  .btn-remover {
+    align-self: center;
+    font-size: 16px;
+    padding: 2px;
+  }
+
+  /* .RESUMO - ANULA A POSIÇÃO GRUDADA E FORCE O PAINEL DE VALORES DO RESUMO A TRABALHAR COM LARGURA COMPLETA */
+  .resumo {
+    width: 100% !important;
+    position: static !important;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  /* .RESUMO H2 - REDUZ O TAMANHO DA MANCHETE DO CARD DE RESUMO DO PEDIDO */
+  .resumo h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  /* .LINHA - DIMINUI A TIPOGRAFIA DAS LINHAS DE TAXAS E SUBTOTAIS DO CONTEÚDO */
+  .linha {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* .TOTAL - AJUSTA O TAMANHO DO TEXTO DO ENUNCIADO DE SOMA FINAL DE FECHAMENTO */
+  .total {
+    font-size: 18px;
+  }
+
+  /* .BTN-LIMPAR, .BTN-FINALIZAR, .BTN-CONTINUAR - EXPANDE OS BOTÕES DE AÇÃO DO RESUMO PARA TRABALHAR COM LARGURA TOTAL DO CELULAR */
+  .btn-limpar,
+  .btn-finalizar,
+  .btn-continuar {
+    width: 100% !important;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* .VAZIO IMG - DIMINUI O TAMANHO DA ILUSTRAÇÃO CASO O CARRINHO NÃO POSSUA PRODUTOS */
+  .vazio img {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICA NA BASE DA TELA */
+  footer {
+    padding: 10px !important;
+    font-size: 11px !important;
+  }
+}
+
 
 /* ADAPTAÇÃO FINAL PARA TELAS DE CELULARES MUITO PEQUENAS */
 @media (max-width: 360px) {

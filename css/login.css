@@ -199,24 +199,19 @@ footer p{
 }
 
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+/* @MEDIA (MAX-WIDTH: 1200PX) - AJUSTA O ESPAÇAMENTO LATERAL INTERNO DO CABEÇALHO PARA EXIBIÇÃO EM NOTEBOOKS */
 @media (max-width: 1200px) {
-
-  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA OS RECUOS LATERAIS DA BARRA SUPERIOR PREVENINDO CHOQUES DE CONTEÚDO */
   header {
     padding: 0 20px;
   }
 
-  /* BOTÃO DO CABEÇALHO ADAPTADO NOTEBOOK APERTA A MARGEM DIREITA EM MONITORES COMPACTOS */
   .btn-header {
     margin-right: 15px;
   }
 }
 
-/* RESPONSIVIDADE PARA TABLETS EM MODO RETRATO E PAISAGEM INTERMEDIÁRIOS */
+/* @MEDIA (MAX-WIDTH: 1024PX) - DESATIVA A ALTURA RÍGIDA PERMITINDO FLUXO VERTICAL DE SEGURANÇA EM TABLETS */
 @media (max-width: 1024px) {
-
-  /* CORPO DA PÁGINA ADAPTADO TABLET DESATIVA A ALTURA RÍGIDA PERMITINDO FLUXO VERTICAL DE SEGURANÇA */
   body {
     height: auto;
     min-height: 100vh;
@@ -225,10 +220,137 @@ footer p{
     align-items: flex-start;
   }
 
-  /* CAIXA DE LOGIN ADAPTADA TABLET MANEJA A LARGURA MÁXIMA PARA APROVEITAMENTO DE ESPAÇO CONFORTÁVEL */
   .login-box {
     max-width: 450px;
     padding: 35px;
+  }
+}
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* BODY - DESATIVA O ALINHAMENTO FLEXBOX ABSOLUTO RECONFIGURANDO O FLUXO VERTICAL DA TELA MÓVEL */
+  body {
+    display: block !important;
+    height: auto !important;
+    min-height: 100vh;
+    padding: 140px 15px 80px !important;
+  }
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 12px;
+    text-align: center;
+    position: fixed !important;
+  }
+
+  /* .TITULO - CENTRALIZA VISUALMENTE TODO O CONTEÚDO DOS TEXTOS IDENTIFICADORES DO CABEÇALHO */
+  .titulo {
+    text-align: center;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DA ÁREA DO CLIENTE NO MOBILE */
+  .titulo h1 {
+    font-size: 20px;
+  }
+
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO TEXTO DE BOAS VINDAS COMPLEMENTAR DO TOPO */
+  .titulo h2 {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  /* .BOTOES-HEADER - DISTRIBUI O GRUPO DE BOTÕES DE MANEIRA HORIZONTAL INTEGRAL POR TODO O ESPAÇO DISPONÍVEL */
+  .botoes-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* .BTN-HEADER - COMPACTA O PREENCHIMENTO INTERNO DO BOTÃO DE SAÍDA E CENTRALIZA SUA LARGURA MÁXIMA NO TOPO */
+  .btn-header {
+    padding: 6px 20px !important;
+    font-size: 13px !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 200px !important;
+    text-align: center;
+    display: inline-block;
+  }
+
+  /* MAIN - ADICIONA ALINHAMENTO CENTRALIZADO PARA GARANTIR O POSICIONAMENTO DA CAIXA FLUTUANTE DE FORMULÁRIO */
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* .LOGIN-BOX - ADAPTA A LARGURA DA CAIXA DO FORMULÁRIO ÀS BORDAS DA TELA DO CELULAR E REDUZ O PREENCHIMENTO INTERNO */
+  .login-box {
+    width: 100% !important;
+    max-width: 360px !important;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+
+  /* .LOGIN-BOX H2 - REDUZ A TIPOGRAFIA DO TEXTO DO ENUNCIADO DE AUTENTICAÇÃO DO MÓDULO RESTRITO */
+  .login-box h2 {
+    font-size: 22px !important;
+    margin-bottom: 15px;
+  }
+
+  /* LABEL - DIMINUI O TAMANHO DA LETRA DOS RÓTULOS DE CAMPOS DE USUÁRIO E SENHA DO FORMULÁRIO */
+  label {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+
+  /* INPUT - COMPACTA OS ESPAÇAMENTOS DE PREENCHIMENTO INTERNO DAS CAIXAS DE DIGITAÇÃO DOS CLIENTES */
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* .LOGIN-BOX BUTTON - RECONFIGURA O COMPONENTE PRINCIPAL DE ACESSO COM PREENCHIMENTO E FONTES ADEQUADAS AO TOQUE */
+  .login-box button {
+    padding: 12px !important;
+    font-size: 15px !important;
+    margin-top: 20px;
+    width: 100% !important;
+  }
+
+  /* #MENSAGEM - REDUZ O ESPAÇAMENTO DA MENSAGEM VERMELHA DE REJEIÇÃO OU SUCESSO DE CREDENCIAIS */
+  #mensagem {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  /* .LINKS - REDUZ A TIPOGRAFIA DOS LINKS AUXILIARES DE CADASTRO E RECUPERAÇÃO NA BASE DA CAIXA MANTENDO ALINHAMENTO INTERNO */
+  .links {
+    margin-top: 12px;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
+    width: 100%;
+  }
+
+  .links a {
+    font-size: 13px !important;
+    width: auto !important;
+    text-align: left;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA */
+  footer {
+    padding: 10px;
+    font-size: 11px;
   }
 }
 

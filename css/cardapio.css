@@ -51,6 +51,7 @@ nav a:hover{
 .hero {
   min-height: 95vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -391,46 +392,72 @@ footer p {
   }
 }
 
-/* RESPONSIVIDADE PRINCIPAL ADAPTAR A ESTRUTURA DA PÁGINA PARA DISPOSITIVOS MENORES COMO TABLETS E CELULARES */
+/* REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS COM REORGANIZAÇÃO COMPLETA DO MENU SUPERIOR E DA GRADE DE EXIBIÇÃO DE PRODUTOS EM DUAS COLUNAS */
 @media (max-width: 768px) {
-
-  /* CABEÇALHO MOBILE ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA */
   header {
+    position: relative;
     flex-direction: column;
-    height: auto;
-    padding: 15px;
+    padding: 15px 10px;
+    text-align: center;
   }
 
-  /* MENU MOBILE ORGANIZA OS LINKS EM LINHAS FLEXÍVEIS E CENTRALIZA AS OPÇÕES */
+  .logo {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
   nav {
-    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    gap: 8px;
   }
 
-  /* LINKS MOBILE AJUSTA O ESPAÇAMENTO ENTRE OS LINKS PARA FACILITAR O TOQUE */
   nav a {
-    margin: 10px;
+    font-size: 14px;
+    margin: 0 4px;
   }
 
-  /* TÍTULO DO BANNER MOBILE REDUZ O TAMANHO DO TEXTO PRINCIPAL DA ÁREA HERO */
-  .hero h1 {
-    font-size: 38px;
+  .hero, .produtos, .cardapio {
+    padding-top: 20px !important; 
   }
 
-  /* TEXTO DO BANNER MOBILE DIMINUI O TAMANHO DO TEXTO COMPLEMENTAR PARA MELHORAR A LEITURA */
-  .hero p {
-    font-size: 20px;
+  .produtos {
+    padding: 40px 4%;
   }
 
+  .cards, .grade-iguarias {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
 
-  /* TÍTULO DAS CATEGORIAS MOBILE CENTRALIZA OS TÍTULOS DAS CATEGORIAS */
-  .categoria h3{
-    text-align: center;
+  .card img {
+    height: 120px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+
+  .card p {
+    font-size: 13px;
+    padding: 0 10px 10px;
+  }
+
+  .preco {
+    font-size: 18px;
+    margin: 0 10px 5px;
+  }
+
+  .btn-pedir {
+    padding: 8px 14px;
+    font-size: 14px;
+    margin: 10px auto;
   }
 }
+
+
 
 /* RESPONSIVIDADE ADICIONAL DIRECIONADA PARA APARELHOS DE TELAS CURTAS OU CELULARES FINOS */
 @media (max-width: 500px) {

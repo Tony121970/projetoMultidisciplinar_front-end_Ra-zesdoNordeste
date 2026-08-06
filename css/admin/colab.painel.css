@@ -197,24 +197,110 @@ footer p {
   gap: 8px;
 }
 
-/* REGRAS DE ADAPTAÇÃO PARA TELAS DE NOTEBOOKS PEQUENOS E TABLETS */
-@media (max-width:900px){
-
-  /* EMPILHA OS ELEMENTOS DO CABEÇALHO VERTICALMENTE */
-  header{
-      height: auto;
-      flex-direction:column;
-      gap:20px;
-      text-align:center;
-      padding: 15px 0;
+/* @MEDIA (MAX-WIDTH: 900PX) - CONFIGURA AS REGRAS DE TRANSIÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 900px) {
+  header {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 15px 0;
   }
-  
-  /* CENTRALIZA OS BOTÕES DE CONTROLE DO TOPO */
-  .acesso{
-      justify-content:center;
-      flex-wrap:wrap;
+
+  .acesso {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E RECUOS INTERNOS COMPACTOS */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+    text-align: center;
+    position: sticky !important;
+  }
+
+  /* .TITULO - CENTRALIZA VISUALMENTE TODO O CONTEÚDO DOS TEXTOS IDENTIFICADORES DO PAINEL GERAL DO COLABORADOR */
+  .titulo {
+    text-align: center;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL EM TELAS DE SMARTPHONES */
+  .titulo h1 {
+    font-size: 24px;
+  }
+
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SUBTÍTULO DE GERÊNCIA COOPERANDO COM TELAS MENORES */
+  .titulo h2 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  /* .ACESSO - DISTRIBUI OS BOTÕES DE VOLTAR E SAIR EM FLUXO CENTRALIZADO INTEGRAL HORIZONTAL POR TODO O ESPAÇO DO MOBILE */
+  .acesso {
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    flex-direction: row !important;
+  }
+
+  /* .BTN-VOLTAR, .BTN-SAIR - COMPACTA O PREENCHIMENTO INTERNO E DETERMINA QUE CADA COMANDO DO TOPO OCUPE METADE DA LINHA INFERIOR */
+  .btn-voltar,
+  .btn-sair {
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(50% - 8px);
+    max-width: 100%;
+    text-align: center;
+    width: auto !important;
+  }
+
+  /* MAIN - SUBSTITUI A REGRA PADRÃO DA GRADE PARA FORÇAR EXATAMENTE DOIS CARDS DE GERENCIAMENTO LADO A LADO NO MOBILE */
+  main {
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 95%;
+    gap: 12px !important;
+    margin: 20px auto 80px !important;
+  }
+
+  /* .CARD - COMPACTA OS RECUOS INTERNOS DOS BLOCOS INTERNOS E LIMITA A ESPESSURA DA BORDA LATERAL DE CONTROLE */
+  .card {
+    padding: 18px 12px;
+    border-left-width: 5px;
+    border-radius: 12px;
+  }
+
+  /* .ICONE - DIMINUI O TAMANHO FONTE DOS ÍCONES PARA COMBINAR DE MANEIRA HARMONIOSA COM O CARD COMPACTO */
+  .icone {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  /* .CARD H3 - REDUZ A TIPOGRAFIA DOS NOMES DOS MÓDULOS COMO COZINHA, ENTREGAS OU HISTÓRICO */
+  .card h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARD P - DIMINUI O TAMANHO DA LETRA DOS TEXTOS RESTRITOS DE DESCRIÇÃO DOS SETORES OPERACIONAIS */
+  .card p {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DO CELULAR */
+  footer {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
   
 
 /* REGRAS DE ADAPTAÇÃO DIRECIONADAS PARA SMARTPHONES */

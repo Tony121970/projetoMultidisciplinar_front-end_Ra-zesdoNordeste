@@ -166,89 +166,145 @@ footer p {
   gap: 8px;
 }
 
-/* REGRAS DE ADAPTAÇÃO PARA TELAS DE NOTEBOOKS PEQUENOS E TABLETS */
+/* @MEDIA (MAX-WIDTH: 992PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
 @media (max-width: 992px) {
-
-  /* ADICIONA ESPAÇAMENTO EXTERNO NO CORPO DA PÁGINA */
   body {
     padding: 90px 20px 70px;
     height: auto;
     min-height: 100vh;
   }
 
-  /* REDUZ O ESPAÇAMENTO INTERNO DO CABEÇALHO */
   header {
     padding: 10px 15px;
   }
 
-  /* REDUZ O TAMANHO DO TÍTULO DO CABEÇALHO */
   .titulo h1 {
     margin-left: 10px;
     font-size: 28px;
   }
 
-  /* REDUZ O ESPAÇAMENTO DO BOTÃO DO CABEÇALHO */
   .btn-header {
     margin-right: 10px;
     padding: 10px 16px;
   }
 
-  /* REAJUSTA O TAMANHO DA CAIXA BRANCA DE LOGIN */
   .login-box {
     width: 90%;
     max-width: 420px;
     padding: 30px;
   }
 
-  /* AJUSTE: CORRIGIDO SELETOR PARA REDUZIR TITULO INTERNO MARROM */
   .login-box h2 {
     font-size: 28px;
   }
 }
 
-/* REGRAS DE ADAPTAÇÃO PARA TELAS DE TABLETS EM POSIÇÃO VERTICAL */
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
 @media (max-width: 768px) {
 
-  /* REORGANIZA O ALINHAMENTO DO CORPO DA PÁGINA PARA O TOPO */
+  /* BODY - DESATIVA O ALINHAMENTO FLEXBOX ABSOLUTO RECONFIGURANDO O FLUXO VERTICAL DA TELA MÓVEL */
   body {
-    padding: 140px 15px 80px;
-    justify-content: flex-start;
-    align-items: center;
+    display: block !important;
+    height: auto !important;
+    min-height: 100vh;
+    padding: 140px 15px 80px !important;
   }
 
-  /* EMPILHA OS ELEMENTOS DO CABEÇALHO EM COLUNA VERTICAL */
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
   header {
     height: auto;
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    padding: 15px 10px;
+    gap: 12px;
     text-align: center;
+    position: fixed !important;
   }
 
-  /* REAJUSTA AS MARGENS E TAMANHO DO TÍTULO DO CABEÇALHO */
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO PRINCIPAL DA ÁREA INTERNA E ELIMINA RECUOS LATERAIS */
   .titulo h1 {
-    margin: 0;
-    font-size: 24px;
+    font-size: 20px;
+    margin: 0 !important;
   }
 
-  /* CENTRALIZA E DEFINE UMA LARGURA PARA O BOTÃO DO TOPO */
+  /* .BOTOES-HEADER - DISTRIBUI O GRUPO DE BOTÕES DE MANEIRA HORIZONTAL INTEGRAL POR TODO O ESPAÇO DISPONÍVEL */
+  .botoes-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* .BTN-HEADER - COMPACTA O PREENCHIMENTO INTERNO DO BOTÃO DE SAÍDA E CENTRALIZA SUA LARGURA MÁXIMA NO TOPO */
   .btn-header {
-    margin: 0;
-    width: 200px;
+    padding: 6px 20px !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 200px !important;
+    text-align: center;
+    display: inline-block;
+  }
+
+  /* MAIN - ADICIONA ALINHAMENTO CENTRALIZADO PARA GARANTIR O POSICIONAMENTO DA CAIXA FLUTUANTE DE FORMULÁRIO */
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* .LOGIN-BOX - ADAPTA A LARGURA DA CAIXA DO FORMULÁRIO ÀS BORDAS DA TELA DO CELULAR E REDUZ O PREENCHIMENTO INTERNO */
+  .login-box {
+    width: 100% !important;
+    max-width: 360px !important;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+    margin: 20px auto 0 !important;
+  }
+
+  /* .LOGIN-BOX H2 - REDUZ A TIPOGRAFIA DO TEXTO DO ENUNCIADO DE AUTENTICAÇÃO DO MÓDULO RESTRITO */
+  .login-box h2 {
+    font-size: 22px !important;
+    margin-bottom: 15px;
+  }
+
+  /* LABEL - DIMINUI O TAMANHO DA LETRA DOS RÓTULOS DE CAMPOS DE USUÁRIO E SENHA DO FORMULÁRIO */
+  label {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+
+  /* INPUT - COMPACTA OS ESPAÇAMENTOS DE PREENCHIMENTO INTERNO DAS CAIXAS DE DIGITAÇÃO DOS COLABORADORES */
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* .LOGIN-BOX BUTTON - RECONFIGURA O COMPONENTE PRINCIPAL DE ACESSO COM PREENCHIMENTO E FONTES ADEQUADAS AO TOQUE */
+  .login-box button {
+    padding: 12px !important;
+    font-size: 15px !important;
+    margin-top: 20px;
+    width: 100% !important;
+  }
+
+  /* #ERRO - REDUZ O ESPAÇAMENTO DA MENSAGEM VERMELHA DE REJEIÇÃO DE CREDENCIAIS */
+  #erro {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  /* FORM P - AJUSTA O TAMANHO DO TEXTO DA BASE QUE NOTIFICA INSTRUÇÕES PARA FALAR COM O RH */
+  form p {
+    font-size: 13px;
+    margin-top: 15px;
     text-align: center;
   }
 
-  /* ADICIONA ESPAÇAMENTO SUPERIOR NA CAIXA DE LOGIN */
-  .login-box {
-    width: 100%;
-    max-width: 420px;
-    padding: 25px;
-    margin-top: 20px;
-  }
-
-  /* AJUSTE: CORRIGIDO SELETOR PARA REDUZIR TITULO INTERNO MARROM */
-  .login-box h2 {
-    font-size: 26px;
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA */
+  footer {
+    padding: 10px;
+    font-size: 11px;
   }
 }
 

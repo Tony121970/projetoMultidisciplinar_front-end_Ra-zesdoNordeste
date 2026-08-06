@@ -210,25 +210,163 @@ footer p {
   gap: 8px;
 }
 
-/* RESPONSIVIDADE PARA DISPOSITIVOS EM FORMATO TABLET */
+/* @MEDIA (MAX-WIDTH: 900PX) - CONFIGURA AS REGRAS DE TRANSIÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
 @media (max-width: 900px) {
-
-  /* ALTERA OS GRIDS PARA EXIBIÇÃO EM DUAS COLUNAS */
   .indicadores,
   .informacoes {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* REDUZ O PREENCHIMENTO LATERAL DO TOPO FIXO */
   header {
     padding: 10px 20px;
   }
 
-  /* REAJUSTA O RECUO DOS BOTÕES DO TOPO */
   .btn-header {
     margin-right: 30px;
   }
 }
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 12px 10px;
+    gap: 12px;
+    text-align: center;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* .TITULO - CENTRALIZA VISUALMENTE TODO O CONTEÚDO DOS TEXTOS IDENTIFICADORES DO CABEÇALHO */
+  .titulo {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DA DASHBOARD EM TELAS DE SMARTPHONES */
+  .titulo h1 {
+    font-size: 22px;
+    margin: 0 !important;
+  }
+
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DOS INDICADORES OPERACIONAIS DO SISTEMA */
+  .titulo h2 {
+    font-size: 13px;
+    margin: 4px 0 0 !important;
+  }
+
+  /* .BTN-HEADER - CONFIGURA O CONTAINER DE BOTÕES PARA MOSTRAR OS DOIS COMANDOS TOTALMENTE ALINHADOS LADO A LADO NA MESMA LINHA HORIZONTAL */
+  .btn-header {
+    margin-right: 0 !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    padding: 0 4px !important;
+  }
+
+  /* .BTN-HEADER BUTTON - DIVIDE O ESPAÇO IGUALMENTE EM DUAS PARTES, AJUSTANDO PREENCHIMENTO E ALTURA PARA O CELULAR */
+  .btn-header button {
+    flex: 1 !important;
+    padding: 6px 4px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: bold !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 34px !important;
+    max-width: 150px !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* .BTN-VOLTAR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERDE LADO A LADO DO MOBILE */
+  .btn-voltar {
+    background: green !important;
+    color: white !important;
+  }
+
+  /* .BTN-SAIR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERMELHO LADO A LADO DO MOBILE */
+  .btn-sair {
+    background: red !important;
+    color: white !important;
+  }
+
+  /* MAIN - REAJUSTA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO A ALTURA MAIS ENXUTA DO CABEÇALHO COM BOTÕES LADO A LADO */
+  main {
+    padding: 165px 10px 80px !important;
+  }
+
+  /* .INDICADORES - MANTÉM A GRADE SUPERIOR DE MÉTRICAS FINANCEIRAS COM EXATAMENTE DOIS CARDS LADO A LADO */
+  .indicadores {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* .CARD-INDICADOR - REDUZ OS ESPAÇAMENTOS INTERNOS DOS BLOCOS E LIMITA A ESPESSURA DA BORDA LATERAL DO CARD */
+  .card-indicador {
+    padding: 15px 10px;
+    border-left-width: 5px;
+    border-radius: 12px;
+  }
+
+  /* .CARD-INDICADOR H3 - REDUZ A TIPOGRAFIA DOS RÓTULOS DE FATURAMENTO, PEDIDOS OU CANCELAMENTOS */
+  .card-indicador h3 {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARD-INDICADOR P - DIMINUI O TAMANHO DOS VALORES NUMÉRICOS GRANDES OU MOEDAS EXIBIDAS NO PAINEL COMPACTO */
+  .card-indicador p {
+    font-size: 20px;
+  }
+
+  /* .INFORMACOES - MANTÉM A SEÇÃO INFERIOR DE DETALHES GERENCIAIS COM EXATAMENTE DOIS CARDS LADO A LADO */
+  .informacoes {
+    margin-top: 15px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* .PAINEL-INFO - REDUZ OS ESPAÇAMENTOS INTERNOS DE CADA BLOCO DE RELATÓRIO DO HISTÓRICO */
+  .painel-info {
+    padding: 12px;
+    border-left-width: 5px;
+    border-radius: 12px;
+  }
+
+  /* .PAINEL-INFO H2 - DIMINUI O TAMANHO DA FONTE DO TÍTULO DO PAINEL IMPEDINDO QUEBRAS DE LINHA DESALINHADAS */
+  .painel-info h2 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  /* .PAINEL-INFO P - COMPACTA A TIPOGRAFIA DAS INFORMAÇÕES DE PRODUTOS COMPRIDOS OU NOMES DE CLIENTES DESTAQUE */
+  .painel-info p {
+    font-size: 14px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA DO CELULAR */
+  footer {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
+
 
 /* RESPONSIVIDADE PARA DISPOSITIVOS EM FORMATO CELULAR */
 @media (max-width: 500px) {

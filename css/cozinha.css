@@ -89,6 +89,7 @@ header{
   color: red !important;
 }
 
+
 /* DEFINE OS ESPAÇAMENTOS NECESSÁRIOS PARA COMPENSAR O HEADER FIXO E ORGANIZAR O CONTEÚDO CENTRAL. */
 main{
   margin-top:105px;
@@ -257,15 +258,12 @@ footer p {
   gap: 8px;
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+/* @MEDIA (MAX-WIDTH: 1200PX) - COMPACTA OS COMPONENTES PARA EXIBIÇÃO EM TELAS DE NOTEBOOKS OU DESKTOPS PEQUENOS */
 @media (max-width: 1200px) {
-
-  /* CABEÇALHO ADAPTADO NOTEBOOK COMPACTA O PREENCHIMENTO INTERNO DA BARRA SUPERIOR EM TELAS DE NOTEBOOK */
   header {
     padding: 15px 25px;
   }
 
-  /* LISTA DE DISPONIBILIDADE ADAPTADA NOTEBOOK REAJUSTA AS COLUNAS DA GRADE RESPONSIVA PARA PREVENIR APERTOS */
   #listaDisponibilidade {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
@@ -286,6 +284,159 @@ footer p {
   main{
       margin-top:150px;
       margin-bottom: 80px;
+  }
+}
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DO PAINEL PRINCIPAL EM TELAS DE SMARTPHONES */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* .TITULO P - DIMINUI O TAMANHO DO SUBTÍTULO DO SETOR OPERACIONAL DA COZINHA E ZERA A MARGEM INFERIOR */
+  .titulo p {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  /* .ACOES - DISTRIBUI OS CINCO BOTÕES DE CONTROLE EM FLUXO FLEXÍVEL CENTRALIZADO OCUPANDO TODO O ESPAÇO DISPONÍVEL */
+  .acoes {
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    flex-direction: row !important;
+  }
+
+  /* .ACOES BUTTON - COMPACTA O PREENCHIMENTO INTERNO E FIXA AS LARGURAS DOS COMPONENTES DO TOPO EM ATÉ TRÊS POR LINHA */
+  .acoes button {
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(33.33% - 8px) !important;
+    max-width: 100%;
+    width: auto !important;
+  }
+
+  /* BUTTON[ONCLICK*="HISTORY.BACK"], BUTTON[ONCLICK*="LOGOUT"] - ASSEGURA QUE OS BOTÕES DE SAÍDA E RETORNO OCUPEM METADE DA LINHA INFERIOR */
+  button[onclick="window.history.back()"], button[onclick="logoutColaborador()"] {
+    flex: 1 1 calc(50% - 8px) !important;
+    margin: 4px 0 0;
+  }
+
+  /* MAIN - AMPLIA O RECUO SUPERIOR COMPENSANDO O ENGENHO DO NOVO CABEÇALHO ACUMULADO E AJUSTA O PREENCHIMENTO DAS BORDAS */
+  main {
+    margin-top: 210px;
+    margin-bottom: 70px;
+    padding: 10px;
+  }
+
+  /* #PAINELDISPONIBILIDADE - COMPACTA OS RECUOS INTERNOS DO BLOCO SUPERIOR DE MONITORAMENTO DE INGREDIENTES */
+  #painelDisponibilidade {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+  }
+
+  /* #PAINELDISPONIBILIDADE H2 - REDUZ O TAMANHO DA MANCHETE CENTRAL DA DISPONIBILIDADE DOS PRATOS */
+  #painelDisponibilidade h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  /* #LISTADISPONIBILIDADE - ALTERA A EXIBIÇÃO DA FILA DE COMPONENTES DE PRODUTOS PARA DUAS COLUNAS LADO A LADO */
+  #listaDisponibilidade {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* .PRODUTODISPONIBILIDADE - REDUZ PREENCHIMENTOS INTERNOS E LIMITA A ESPESSURA DA BORDA DE STATUS DO INGREDIENTE */
+  .produtoDisponibilidade {
+    padding: 8px 10px;
+    border-left-width: 4px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  /* .PRODUTODISPONIBILIDADE SPAN - DIMINUI A FONTE DO NOME DO PRATO DE CONTROLE */
+  .produtoDisponibilidade span {
+    font-size: 12px;
+  }
+
+  /* .PRODUTODISPONIBILIDADE BUTTON - COMPACTA OS BOTÕES INTERNOS DE ALTERAÇÃO DA SITUAÇÃO DO PRODUTO */
+  .produtoDisponibilidade button {
+    padding: 6px 10px;
+    font-size: 11px;
+    width: 100%;
+  }
+
+  /* #LISTACOZINHA - SUBSTITUI A REGRA PADRÃO PARA FORÇAR EXATAMENTE DOIS CARDS DE PEDIDOS EM ANDAMENTO LADO A LADO */
+  #listaCozinha {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 2px;
+  }
+
+  /* .CARD, .CARD-PEDIDO - ANULA A LARGURA FIXA DE TREZENTOS E SETENTA PIXELS PERMITINDO FLUIDEZ E REDUZ OS RECUOS INTERNOS */
+  .card,
+  .card-pedido {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px;
+  }
+
+  /* .CARD H2, .CARD H3, .CARD-PEDIDO H2, .CARD-PEDIDO H3 - DIMINUI A TIPOGRAFIA DOS CÓDIGOS DE PEDIDOS IDENTIFICADOS */
+  .card h2,
+  .card h3,
+  .card-pedido h2,
+  .card-pedido h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  /* .CARD P, .CARD-PEDIDO P - REDUZ A FONTE E REDUZ A DISTÂNCIA ENTRE AS LINHAS DE DADOS DO CONSUMIDOR E PAGAMENTO */
+  .card p,
+  .card-pedido p {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .CARD UL, .CARD-PEDIDO UL - DIMINUI O RECUO LATERAL ESQUERDO DO LISTADO DE ITENS EXIBIDOS NO CARD */
+  .card ul,
+  .card-pedido ul {
+    margin-top: 6px;
+    padding-left: 12px;
+  }
+
+  /* .CARD LI, .CARD-PEDIDO LI - AJUSTA O ESPAÇAMENTO E TAMANHO DOS ITENS DA COZINHA COMO CUSCUZ OU MACAXEIRA */
+  .card li,
+  .card-pedido li {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  /* .CARD BUTTON, .CARD-PEDIDO BUTTON - RECONFIGURA OS COMANDOS DE PREPARO E CANCELAMENTO PARA OCUPAR TODA A LARGURA DO CARD COMPACTO */
+  .card button,
+  .card-pedido button {
+    width: 100% !important;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA */
+  footer {
+    padding: 10px;
+    font-size: 11px;
   }
 }
 

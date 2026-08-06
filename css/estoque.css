@@ -304,21 +304,220 @@ footer p {
   margin: 0;
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
-@media(max-width: 1024px) {
-
-  /* CABEÇALHO ADAPTADO TABLET REDUZ O ESPAÇAMENTO INTERNO PARA ACOMODAR OS TEXTOS EM TELAS MÉDIAS */
+/* @MEDIA (MAX-WIDTH: 1024PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+@media (max-width: 1024px) {
   header {
     padding: 0 4%;
   }
 
-  /* GRADE DE PRODUTOS ADAPTADA TABLET AJUSTA A EXIBIÇÃO PARA EXIBIR DUAS COLUNAS EM TELAS INTERMEDIÁRIAS */
   .lista {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* DISPOSITIVOS MOBILE INTERMEDIÁRIOS OU SMARTPHONES */
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
+@media (max-width: 768px) {
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 12px 10px;
+    gap: 12px;
+    text-align: center;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* .TITULO - CENTRALIZA VISUALMENTE TODO O CONTEÚDO DOS TEXTOS IDENTIFICADORES DO CABEÇALHO */
+  .titulo {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DE CONTROLE DE INSUMOS EM TELAS DE SMARTPHONES */
+  .titulo h1 {
+    font-size: 22px;
+    margin: 0 !important;
+  }
+
+  /* .TITULO H2 - DIMINUI A TIPOGRAFIA DO ENUNCIADO DO SUBTÍTULO RESTRITO COOPERANDO COM TELAS MENORES */
+  .titulo h2 {
+    font-size: 13px;
+    margin: 4px 0 0 !important;
+  }
+
+  /* .BTN-HEADER, .ACESSO, HEADER BUTTON, .BTN-VOLTAR - CONFIGURA O CONTAINER DE BOTÕES PARA MOSTRAR OS COMANDOS TOTALMENTE ALINHADOS LADO A LADO NA MESMA LINHA HORIZONTAL */
+  .btn-header, .acesso, header button, header .btn-voltar, header .btn-sair {
+    margin-right: 0 !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    padding: 0 4px !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* HEADER BUTTON, .BTN-VOLTAR - DIVIDE O ESPAÇO IGUALMENTE, AJUSTANDO PREENCHIMENTO E ALTURA PARA O CELULAR */
+  header button, .btn-voltar, .btn-sair {
+    flex: 1 !important;
+    padding: 6px 4px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: bold !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 34px !important;
+    max-width: 150px !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* .BTN-VOLTAR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERDE LADO A LADO DO MOBILE */
+  .btn-voltar {
+    background: green !important;
+    color: white !important;
+  }
+
+  /* .BTN-SAIR - AJUSTA A ESTILIZAÇÃO DO BOTÃO VERMELHO LADO A LADO DO MOBILE CASO EXISTA NO HTML */
+  .btn-sair {
+    background: red !important;
+    color: white !important;
+  }
+
+  /* MAIN - REAJUSTA A DISTÂNCIA DA ÁREA CENTRAL COMPENSANDO A ALTURA MAIS ENXUTA DO CABEÇALHO COM BOTÕES LADO A LADO */
+  main {
+    padding-top: 165px !important;
+    margin: 20px auto 80px !important;
+    width: 95%;
+  }
+
+  /* .TOPO - REORGANIZA A BARRA DE PESQUISA ADICIONANDO EMPILHAMENTO VERTICAL NO MOBILE */
+  .topo {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  /* #PESQUISA - AJUSTA O PREENCHIMENTO INTERNO E A TIPOGRAFIA DA BARRA DE PROCURA DE INSUMOS */
+  #pesquisa {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* #BTNNOVO - COMPACTA A ALTURA DO BOTÃO DE REGISTRO E FORÇA O COMPONENTE A TRABALHAR COM LARGURA COMPLETA */
+  #btnNovo {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* .RESUMO - ADAPTA O CONTAINER DE MÉTRICAS DO ESTOQUE PARA EXIBIÇÃO DE COLUNAS PARALELAS RESPONSIVAS */
+  .resumo {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-bottom: 20px;
+    flex-direction: row !important;
+  }
+
+  /* .BOX - ANULA QUALQUER RESTRIÇÃO HORIZONTAL MÍNIMA OU MÁXIMA GARANTINDO ADAPTAÇÃO E REDUZ RECUOS INTERNOS */
+  .box {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 8px;
+  }
+
+  /* .BOX:NTH-CHILD(1) - DETECTA O PRIMEIRO CONTADOR DE TOTALIZADOR DE INSUMOS E EXPANDI O BLOCO PARA OCUPAR TODA A LARGURA */
+  .box:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  /* .BOX H3 - REDUZ A TIPOGRAFIA DOS RÓTULOS DE PRODUTOS COM ESTOQUE BAIXO OU SEM ESTOQUE NO MOBILE */
+  .box h3 {
+    font-size: 12px;
+  }
+
+  /* .BOX SPAN - DIMINUI O TAMANHO DOS CONTADORES NUMÉRICOS GRANDES DE QUANTIDADES DO ESTOQUE */
+  .box span {
+    font-size: 24px;
+    margin-top: 6px;
+  }
+
+  /* .LISTA - MODIFICA A ESTRUTURA GLOBAL DA GRADE PARA MANTER EXATAMENTE DOIS CARDS DE INSUMOS LADO A LADO NO MOBILE */
+  .lista {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 2px;
+  }
+
+  /* .CARD-ESTOQUE - REDUZ OS ESPAÇAMENTOS INTERNOS DE CADA BLOCO INFORMATIVO DE INSUMO */
+  .card-estoque {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  /* .CARD-ESTOQUE H2 - DIMINUI O TAMANHO DA FONTE DO NOME DO ITEM IMPEDINDO QUEBRAS DE LINHA DESALINHADAS */
+  .card-estoque h2 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* .INFO - REDUZ O TAMANHO DA LETRA DOS METADADOS DE CATEGORIA, QUANTIDADES E STATUS DO INSUMO */
+  .info {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .STATUS - AJUSTA O DESTAQUE VISUAL E DIMINUI O TAMANHO DO ENUNCIADO DE VALOR DE SITUAÇÃO NO CARD COMPACTO */
+  .status {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  /* .BOTOES - COMPACTA A DISTÂNCIA ENTRE AS OPÇÕES DE MANUTENÇÃO DE CADA CARD */
+  .botoes {
+    gap: 6px;
+    margin-top: 10px;
+    flex-direction: column !important;
+  }
+
+  /* .BOTOES BUTTON - REDUZ O PREENCHIMENTO INTERNO E COMPACTA A FONTE DOS COMANDOS DE EDIÇÃO E EXCLUSÃO DO ESTOQUE */
+  .botoes button {
+    padding: 8px;
+    font-size: 12px;
+    width: 100% !important;
+  }
+
+  /* .MODAL-CONTEUDO - DIMINUI O RECUO INTERNO DA CAIXA FLUTUANTE PARA GANHAR ÁREA ÚTIL EM DISPOSITIVOS INTERMEDIÁRIOS */
+  .modal-conteudo {
+    padding: 20px 15px;
+  }
+
+  /* .ACOES-MODAL - EMPILHA OS BOTÕES DE SALVAR E CANCELAR VERTICALMENTE PREVENINDO APERTOS */
+  .acoes-modal {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA DO CELULAR */
+  footer {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+
 @media(max-width: 700px) {
 
   /* CABEÇALHO ADAPTADO REORGANIZA OS TEXTOS EM COLUNA EVITANDO QUEBRAS */

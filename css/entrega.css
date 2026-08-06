@@ -281,65 +281,161 @@ footer p {
 }
 
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO DESKTOP PEQUENO OU NOTEBOOK */
+/* @MEDIA (MAX-WIDTH: 1200PX) - AJUSTA A QUANTIDADE DE CARDS EM NOTEBOOKS OU TABLETS DEITADOS */
 @media (max-width: 1200px) {
-  /* LISTA DE ENTREGA RESPONSIVA AJUSTA A GRADE DE PEDIDOS PARA EXIBIR TRÊS COLUNAS EM TELAS INTERMEDIÁRIAS */
   #listaEntrega {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ADAPTAÇÃO PARA DISPOSITIVOS EM FORMATO TABLET */
+/* @MEDIA (MAX-width: 992PX) - REDUZ O ESPAÇAMENTO LATERAL INTERNO DO MENU SUPERIOR E ALTERA O GRID PARA DUAS COLUNAS EM TABLETS */
 @media (max-width: 992px) {
-  /* CABEÇALHO RESPONSIVO REDUZ O ESPAÇAMENTO LATERAL INTERNO DO MENU SUPERIOR EM TELAS MÉDIAS */
   header {
     padding: 0 20px;
   }
   
-  /* LISTA DE ENTREGA RESPONSIVA AJUSTA A GRADE DE PEDIDOS PARA EXIBIR DUAS COLUNAS EM TABLETS */
   #listaEntrega {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ADAPTAÇÃO PARA SMARTPHONES E TELAS MOBILE */
+
+/* @MEDIA (MAX-WIDTH: 768PX) - INICIA AS REGRAS DE ADAPTAÇÃO PARA DISPOSITIVOS MÓVEIS NO PADRÃO DE SETECENTOS E SESSENTA E OITO PIXELS */
 @media (max-width: 768px) {
-  /* CABEÇALHO RESPONSIVO ALTERA A ORGANIZAÇÃO DO CABEÇALHO PARA COLUNA E CENTRALIZA SEUS ELEMENTOS EM TELAS MENORES */
+
+  /* HEADER - RECONFIGURA O TOPO PARA ORGANIZAÇÃO VERTICAL EM COLUNA COM ALTURA FLUÍDA E CENTRALIZAÇÃO COMPLETA */
   header {
     height: auto;
     flex-direction: column;
-    padding: 15px;
+    padding: 15px 10px;
     gap: 15px;
     text-align: center;
-    position: relative;
+    position: fixed !important;
   }
 
-  /* BOTÕES DO HEADER MOBILE CENTRALIZA OS BOTÕES DE AÇÃO DO CABEÇALHO QUANDO O ESPAÇO HORIZONTAL FICA REDUZIDO */
+  /* .TITULO H1 - REDUZ O TAMANHO DA TIPOGRAFIA DO TÍTULO DO PAINEL DE LOGÍSTICA EM TELAS DE SMARTPHONES */
+  .titulo h1 {
+    font-size: 22px;
+  }
+
+  /* .ACOES - DISTRIBUI OS BOTÕES DE CONTROLE EM FLUXO FLEXÍVEL CENTRALIZADO OCUPANDO TODO O ESPAÇO DISPONÍVEL DO SMARTPHONE */
   .acoes {
     justify-content: center;
+    gap: 8px;
     width: 100%;
+    flex-direction: row !important;
   }
 
-  /* ÁREA PRINCIPAL MOBILE AJUSTA O ESPAÇO SUPERIOR PARA COMPENSAR A MUDANÇA DE ALTURA DO CABEÇALHO EM DISPOSITIVOS MÓVEIS */
-  main {
-    padding-top: 20px;
+  /* .ACOES BUTTON - COMPACTA O PREENCHIMENTO INTERNE E FIXA AS LARGURAS DOS COMPONENTES DO TOPO EM ATÉ TRÊS POR LINHA */
+  .acoes button {
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(33.33% - 8px) !important;
+    max-width: 100%;
+    width: auto !important;
   }
 
-  /* ÁREA DOS CONTADORES RESPONSIVA REDUZ AS MARGENS DOS CONTADORES E REMOVE O POSICIONAMENTO FIXO EM TELAS MENORES */
+  /* .RESUMO-ENTREGA - ADAPTA O CONTAINER DE MÉTRICAS SUPERIORES PARA EXIBIR OS CONTADORES EM DUAS COLUNAS PARALELAS LADO A LADO */
   .resumo-entrega {
-    position: relative;
-    top: 0;
-    margin-top: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin-top: 190px !important;
+    margin-bottom: 10px !important;
+    padding: 0 10px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
   }
 
-  /* LISTA DE ENTREGA RESPONSIVA ALTERA A GRADE PARA UMA ÚNICA COLUNA FACILITANDO A LEITURA DOS PEDIDOS NO CELULAR */
+  /* .CARD-RESUMO - ANULA A LARGURA MÁXIMA FIXA E REDUZ O PREENCHIMENTO INTERNO DAS CAIXAS DE CONTAGEM */
+  .card-resumo {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 8px !important;
+  }
+
+  /* .CARD-RESUMO H3 - REDUZ A TIPOGRAFIA DAS MANCHETES DE PRODUTOS PENDENTES OU ENTREGUES NO MOBILE */
+  .card-resumo h3 {
+    font-size: 12px;
+  }
+
+  /* .CARD-RESUMO SPAN - DIMINUI O TAMANHO DOS NÚMEROS GRANDES DE EXIBIÇÃO DE MÓDULO LOGÍSTICO */
+  .card-resumo span {
+    font-size: 24px;
+  }
+
+  /* MAIN - AJUSTA O PREENCHIMENTO DAS BORDAS LATERAIS DO CONTEÚDO PRINCIPAL DOS DISPOSITIVOS MÓVEIS REFORÇANDO O TOPO */
+  main {
+    padding: 10px 10px 80px !important;
+  }
+
+  /* #LISTAENTREGA - SUBSTITUI A REGRA PADRÃO PARA FORÇAR EXATAMENTE DOIS CARDS DE DESPACHO LADO A LADO NO MOBILE */
   #listaEntrega {
-    grid-template-columns: 1fr;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 2px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* .CARD - ANULA QUALQUER RESTRIÇÃO HORIZONTAL DO CONTAINER DINÂMICO E COMPACTA OS RECUOS INTERNOS */
+  .card {
+    width: 100% !important;
+    padding: 12px;
+    border-left-width: 5px;
+  }
+
+  /* .CARD H2, .CARD H3 - DIMINUI A TIPOGRAFIA DOS DETALHES DE REGISTROS DE IDENTIFICAÇÃO DO COMPRADOR */
+  .card h2, .card h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-top: 2px;
+  }
+
+  /* H4 - REDUZ O TAMANHO DA EXIBIÇÃO DE ADVERTÊNCIAS OU MENSAGENS EM TEXTO VERMELHO */
+  h4 {
+    font-size: 12px;
+  }
+
+  /* .CARD P - DIMINUI A FONTE E REDUZ A DISTÂNCIA ENTRE AS LINHAS DE ENDEREÇO, TELEFONE E FORMA DE PAGAMENTO */
+  .card p {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  /* .CARD UL - AJUSTA OS RECUOS DO AGRUPAMENTO DOS PEDIDOS DENTRO DA ÁREA DO CARD COMPACTO */
+  .card ul {
+    margin: 4px 0;
+    padding-left: 0;
+  }
+
+  /* .CARD LI - DIMINUI O TAMANHO DO TEXTO DOS ITENS QUE COMPÕEM A ENTREGA */
+  .card li {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  /* .BOTOES-ACAO-CARD - COMPACTA A DISTÂNCIA ENTRE OS BOTÕES INTERNOS NO MOBILE */
+  .botoes-acao-card {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  /* .CARD BUTTON - REDUZ O PREENCHIMENTO INTERNO E COMPACTA A TIPOGRAFIA DOS COMANDOS DAS DE TRABALHO LOGÍSTICO */
+  .card button {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  /* FOOTER - COMPACTA A DIMENSÃO DO RODAPÉ E REDUZ A TIPOGRAFIA DO AVISO ACADÊMICO NA BASE DA TELA DO CELULAR */
+  footer {
+    padding: 10px;
+    font-size: 11px;
   }
 }
+
 
 /* ADAPTAÇÃO PARA SMARTPHONES INTERMEDIÁRIOS */
 @media (max-width: 600px) {
