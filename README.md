@@ -7,7 +7,7 @@
 
 ## Tecnologias utilizadas
 * HTML5
-* CSS3
+* CSS
 * JavaScript
 * Progressive Web App (PWA)
 * Git e GitHub
