@@ -1,9 +1,9 @@
 # Raízes do Nordeste
 
 ## Do Projeto
-<h1><font weight="normal">O Raízes do Nordeste é um projeto acadêmico desenvolvido com o objetivo de apresentar e valorizar a culinária nordestina brasileira por meio de uma aplicação web interativa e responsiva.</font></h1>
+<h1><font weight="normal">  O "Raízes do Nordeste" é um projeto acadêmico multidisciplinar desenvolvido com o objetivo de testar todo o conhecimento adquirido pelo aluno ao longo do curso.</font></h1>
 
-<h1><font weight="normal">O projeto foi desenvolvido como parte das atividades acadêmicas, utilizando tecnologias de desenvolvimento web e recursos para disponibilização da aplicação também como aplicativo.</font></h1>
+<h1><font weight="normal">  O projeto foi desenvolvido como parte das atividades acadêmicas, utilizando tecnologias de desenvolvimento web e recursos para disponibilização da aplicação também como aplicativo.</font></h1>
 
 ## Tecnologias utilizadas
 * HTML5
